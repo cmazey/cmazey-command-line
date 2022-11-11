@@ -8,7 +8,7 @@ After you have NODE.JS installed. open the ZIP file and extract it, then right c
 
 After that, open the Command Line and type in cd [FILE PATH] (If you right click using Windows, it was paste in the code, also DONT USE CTRL V, use right click and click paste.)
 
-After you did that, type in the following codes. These code will install neccessary modules to make the code functional.
+After you did that, type in the following codes. These code will install necessary modules to make the code functional.
 
 - npm install readline-sync
 - npm install colors
