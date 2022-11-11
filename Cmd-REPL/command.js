@@ -721,7 +721,12 @@ else {
     console.log("\nColton is a sleepy head.");
   }
   else {
-    console.log();
+    console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
+    console.log(`+ ${cmdanswer}`.red);
+    console.log("+ ~~~\n".red);
+    console.log(`  + CategoryInfo     : ObjectNotFound: (${cmdanswer}:string) , CommandNotFoundException`.red);
+    console.log("  + FullyQualifiedErrorId : CommandNotFoundException\n".red);
+
   }
 
 
