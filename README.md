@@ -2,7 +2,7 @@
 ------------------
 I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
-##COMMANDS:
+## COMMANDS:
 ------------------
 - admin
 - help
@@ -11,7 +11,7 @@ I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
 More coming soon!
 
-###REQUIREMENTS
+### REQUIREMENTS
 ------------------
 Make sure you have NODE.JS in your operating system.
 https://nodejs.org/en/
