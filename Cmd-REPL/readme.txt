@@ -1,7 +1,7 @@
 --- CMAZEY COMMAND LINE REPL ---
 
 -- SET UP --
-Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows for this code.
+Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 https://nodejs.org/en/
 
 After you have NODE.JS installed. open the ZIP file and extract it, then right click and click [COPY AS FILE PATH]. (Dont use the Administrator Command Line)
