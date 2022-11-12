@@ -51,6 +51,8 @@ while (commandline) {
     console.log("help");
     console.log("crazy");
     console.log("about");
+    console.log("clear");
+    console.log("sleepy");
     console.log("More coming soon\n");
   }
 
@@ -719,6 +721,9 @@ else {
   }
   else if (cmdanswer == "sleepy") {
     console.log("\nColton is a sleepy head.");
+  }
+  else if (cmdanswer == "clear") {
+    console.clear();
   }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
