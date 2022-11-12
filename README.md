@@ -1,6 +1,8 @@
 # cmazey-command-line
 I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
+[setup](https://github.com/cmazey/cmazey-command-line/tree/node/Cmd-REPL#---set-up---)
+
 ## COMMANDS:
 ------------------
 - admin
