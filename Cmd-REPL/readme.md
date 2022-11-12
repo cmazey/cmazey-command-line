@@ -1,6 +1,6 @@
---- CMAZEY COMMAND LINE REPL ---
+# --- CMAZEY COMMAND LINE REPL ---
 
--- SET UP --
+## -- SET UP --
 Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 https://nodejs.org/en/
 
@@ -20,7 +20,7 @@ After you typed in these codes, then the code is ready for use. To activate it, 
 And if you follow all of these steps, then the code is all ready for use, if you still having issues, repeat the steps and if the issue still presist, then email me at mazeycolt@sehs.net.
 
 
---- COMMANDS ---
+### --- COMMANDS ---
 
 - help
 - admin
