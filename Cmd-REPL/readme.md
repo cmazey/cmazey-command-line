@@ -5,13 +5,14 @@ Before you start using the code, make sure you have NODE.JS in your operating sy
 https://nodejs.org/en/
 
 After that, you can now start cloning the system, type the following code to clone it.
+> I recommend using the [git bash](https://git-scm.com/) command line.
 ```
 git clone https://github.com/cmazey/cmazey-command-line.git
 ```
 
 After that, change the directory that is showned below.
 ```
-cd Cmd-REPL
+cd cmazey-command-line/Cmd-REPL
 ```
 
 After you did that, type in the following codes. These code will install necessary modules to make the code functional.
