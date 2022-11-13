@@ -14,7 +14,7 @@ More coming soon!
 
 ### REQUIREMENTS
 ------------------
-Make sure you have [NODE.JS](https://node.js/en/) in your operating system.
+Make sure you have [NODE.JS](https://nodejs.org/en/) in your operating system.
 > I recommend the LTS version.
 
 
