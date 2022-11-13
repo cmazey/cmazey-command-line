@@ -19,6 +19,8 @@ cd cmazey-command-line/Cmd-REPL
 After you did that, type in the following codes. These code will install necessary modules to make the code functional.
 ```
 npm install readline-sync
+```
+```
 npm install colors
 ```
 After you typed in these codes, then the code is ready for use. To activate it, type in the following code:
