@@ -1,5 +1,5 @@
 # --- CMAZEY COMMAND LINE REPL ---
-
+Version: v1.0.1
 ## -- SET UP --
 Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 
