@@ -34,5 +34,7 @@ And if you follow all of these steps, then the code is all ready for use, if you
 - admin
 - crazy
 - about
+- clear
+- sleepy
 
 More coming soon.

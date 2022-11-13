@@ -9,6 +9,8 @@ Click here to check out the [setup](https://github.com/cmazey/cmazey-command-lin
 - help
 - crazy
 - about
+- clear
+- sleepy
 
 More coming soon!
 
