@@ -653,6 +653,7 @@ else {
     else if (answer == "exit") {
       console.log("REPL Terminated...\n");
       console.log("This Project is made by COLTON MAZEY from class of 2025!!!\n\n");  
+      commandPrompt = false;
     }
     else if (answer == "help") {
       console.log("node");
