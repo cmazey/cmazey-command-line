@@ -725,6 +725,28 @@ else {
   else if (cmdanswer == "clear") {
     console.clear();
   }
+  else if (cmdanswer == "play") {
+    console.clear();
+
+    var playanswer = readline.question("Do you want to check out the play? (yes, no) -> ");
+
+    if (playanswer == "yes") {
+      console.log("\nThe play is called 'The 25th Annual Putnam County Spelling Bee'!")
+      console.log("The play starts thorugh November 17 to November 22 from 7:00 PM to 10:00 PM!\n");
+      var playcredits = readline.question("Do you want to check out the play credits? (yes, no) -> ");
+
+      if (playcredits == "yes") {
+        console.log("\nComing soon...\n");
+      }
+      else {
+        console.log();
+      }
+      
+    }
+    else {
+      console.log("Request Terminated..\n\n".red);
+    }
+  }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
     console.log(`+ ${cmdanswer}`.red);
@@ -742,4 +764,5 @@ else {
 }
 
 
-//LAST UPDATED 11/10/2022, 12:49 PM
+
+//LAST UPDATED 11/13/2022, 11:44 AM
