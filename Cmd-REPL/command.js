@@ -753,6 +753,9 @@ else {
   else if (cmdanswer == "test") {
     console.log("\nThis is a test...\n");
   }
+  else if (cmdanswer == "St. Eds") {
+    console.log("\nComing soon..\n\n");
+  }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
     console.log(`+ ${cmdanswer}`.red);
