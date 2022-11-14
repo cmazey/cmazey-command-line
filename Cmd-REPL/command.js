@@ -26,7 +26,7 @@ var ans1 = readline.question("Are you sure you want to continue? (yes) -> ".yell
 
 if (ans1 == "yes") {
     console.clear();
-
+  
     console.log("- WINDOWS COMMAND LINE -");
     console.log("REPL RECREATED BY COLTON MAZEY AKA 'CMAZEY'\n");
     console.log("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site for any recent updates, thanks!".red);
