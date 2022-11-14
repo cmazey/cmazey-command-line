@@ -3,7 +3,7 @@ I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
 Click here to check out the [setup](https://github.com/cmazey/cmazey-command-line/tree/node/Cmd-REPL#---set-up---)!
 
-> If you dont want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line#Cmd-REPL/command.js) to use it without doing anything below!
+> If you dont want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line#Cmd-REPL/command.js) to use it without doing anything in the setup!
 ## COMMANDS:
 ------------------
 - admin
