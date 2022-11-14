@@ -2,7 +2,7 @@ import time
 import os
 
 
-checkup = int(input("Are you sure you want to proceed? (yes) -> "))
+checkup = input("Are you sure you want to proceed? (yes) -> ")
 
 if checkup == "y":
     print("\nPlease hold...")
