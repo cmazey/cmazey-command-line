@@ -735,7 +735,7 @@ else {
 
     if (playanswer == "yes") {
       console.log("\nThe play is called 'The 25th Annual Putnam County Spelling Bee'!")
-      console.log("The play starts thorugh November 17 to November 22 from 7:00 PM to 10:00 PM!\n");
+      console.log("The play starts thorugh November 17 to November 20 from 7:00 PM to 10:00 PM!\n");
       var playcredits = readline.question("Do you want to check out the play credits? (yes, no) -> ");
 
       if (playcredits == "yes") {
