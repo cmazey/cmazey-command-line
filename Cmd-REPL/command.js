@@ -723,7 +723,7 @@ else {
     console.log("\nThis reimagine REPL is compiled by 'COLTON MAZEY' from the class of 2025!\n");
   }
   else if (cmdanswer == "sleepy") {
-    console.log("\nColton is a sleepy head.");
+    console.log("\nColton is a sleepy head\n.");
   }
   else if (cmdanswer == "clear") {
     console.clear();
