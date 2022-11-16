@@ -109,7 +109,7 @@ while(clear):
             print("sad")
             print("test")
             print("clear")
-            print("exit"
+            print("exit")
             print("More coming soon..")
             time.sleep(2)
             print()
@@ -166,6 +166,7 @@ while(clear):
             print()
             time.sleep(0.1)
             print()
+            Commandline = False
 
         elif cmdanswer == "play":
                 print("coming soon...")
