@@ -79,6 +79,8 @@ while(clear):
             time.sleep(1)
             print()
             time.sleep(0.1)
+        elif cmdanswer == "play":
+                print("coming soon...")
         else:
             print()
 
