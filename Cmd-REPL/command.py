@@ -61,8 +61,24 @@ while(clear):
             time.sleep(1)
         elif cmdanswer == "test":
             print("\nThis is a test...\n")
+        elif cmdanswer == "sad":
+            print()
+            time.sleep(1)
+            print("Someone named Braedon had made me sad because he was given the role to use the sound effect and yeah. : ( ")
+            time.sleep(3)
+            print()
+            time.sleep(1)
+        elif cmdanswer == "clear":
+            os.system('cls')
+            time.sleep(1)
+            print("Microsoft Windows [Version 10.0.22000.493]")
+            print("(c) Microsoft Corporation. All rights reserved.")
+            time.sleep(1)
+            print()
+            time.sleep(0.1)
         else:
             print()
+
 
 
 
