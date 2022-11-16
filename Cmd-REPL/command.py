@@ -60,7 +60,7 @@ while(clear):
             print()
             time.sleep(1)
         elif cmdanswer == "test":
-            print("\ntest\n")
+            print("\nThis is a test...\n")
         else:
             print()
 
