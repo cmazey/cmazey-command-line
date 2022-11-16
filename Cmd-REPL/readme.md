@@ -57,7 +57,7 @@ After that, open the file explorer and find the file. The file name is "cmazey-c
 
 After you find it, double click the file, and then double click the file named "Cmd-REPL".
 
-After that, click on the command.py and there you go, if you are experiencing issues access the Python file, then please email me at mazeycolt@sehs.net.
+After that, click on the "command.py" file and there you go, if you are experiencing issues access the Python file, then please email me at mazeycolt@sehs.net.
 
 ##### -- PYTHON COMMANDS --
 
