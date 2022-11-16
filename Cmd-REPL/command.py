@@ -97,7 +97,7 @@ while(clear):
     time.sleep(2)
     print()
     time.sleep(1)
-
+    clear = False
     Commandline = True
 
     while(Commandline):
