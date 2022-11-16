@@ -87,7 +87,7 @@ while(clear):
     time.sleep(0.1)
     print()
 
-
+    
 
     os.system('cls')
     time.sleep(3)
