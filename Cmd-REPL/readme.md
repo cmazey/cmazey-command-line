@@ -43,7 +43,7 @@ And if you follow all of these steps, then the code is all ready for use, if you
 
 More coming soon.
 
-#### SETUP PYTHON
+#### - PYTHON SET UP -
 
 You would need Python to use the code, please click below to download and install Python, If you already have Python, then please ignore and continue below.
 
