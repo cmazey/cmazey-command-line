@@ -22,7 +22,7 @@ while(clear):
     time.sleep(2)
     print("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site to check for recent updates, thanks!")
     time.sleep(1)
-    print("Version: [N/A]")
+    print("Version: PRE ALPHA: V1.0.0")
     time.sleep(3)
     print()
     time.sleep(1)
@@ -55,6 +55,9 @@ while(clear):
         if cmdanswer == "help":
             time.sleep(1)
             print("\nhelp")
+            print("sad")
+            print("test")
+            print("clear")
             print("More coming soon..")
             time.sleep(2)
             print()
