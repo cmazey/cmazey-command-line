@@ -1,6 +1,8 @@
-# --- CMAZEY COMMAND LINE REPL ---
-Version: v1.0.1
-## -- SET UP --
+# - CMAZEY COMMAND LINE REPL -
+NodeJS: Version: v1.0.1
+
+Python: Version: PRE ALPHA: v1.0.0
+## - NODEJS SET UP -
 Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 
 https://nodejs.org/en/
@@ -30,7 +32,7 @@ node ./command.js
 And if you follow all of these steps, then the code is all ready for use, if you still having issues, repeat the steps and if the issue still presist, then email me at mazeycolt@sehs.net.
 
 
-### --- COMMANDS ---
+### -- NodeJS COMMANDS --
 
 - help
 - admin
@@ -40,3 +42,28 @@ And if you follow all of these steps, then the code is all ready for use, if you
 - sleepy
 
 More coming soon.
+
+#### - PYTHON SET UP -
+
+You would need Python to use the code, please click below to download and install Python, If you already have Python, then please ignore and continue below.
+
+https://www.python.org/downloads/
+
+After that, please make sure you clone the code, to do so, please type in the following code below:
+```
+git clone https://github.com/cmazey/cmazey-command-line.git
+```
+After that, open the file explorer and find the file. The file name is "cmazey-command-line".
+
+After you find it, double click the file, and then double click the file named "Cmd-REPL".
+
+After that, click on the "command.py" file and there you go, if you are experiencing issues access the Python file, then please email me at mazeycolt@sehs.net.
+
+##### -- PYTHON COMMANDS --
+
+- help
+- sad
+- test
+- clear
+
+More coming soon..

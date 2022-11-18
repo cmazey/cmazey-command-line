@@ -27,7 +27,7 @@ var ans1 = readline.question("Are you sure you want to continue? (yes) -> ".yell
 if (ans1 == "yes") {
     console.clear();
   
-    console.log("- WINDOWS COMMAND LINE -");
+    console.log("- WINDOWS COMMAND LINE *Nodejs Edition* -");
     console.log("REPL RECREATED BY COLTON MAZEY AKA 'CMAZEY'\n");
     console.log("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site for any recent updates, thanks!".red);
     console.log("Version: v1.0.1\n");
@@ -55,6 +55,7 @@ while (commandline) {
     console.log("about");
     console.log("clear");
     console.log("sleepy");
+    console.log("sad");
     console.log("More coming soon\n");
   }
 
@@ -723,7 +724,7 @@ else {
     console.log("\nThis reimagine REPL is compiled by 'COLTON MAZEY' from the class of 2025!\n");
   }
   else if (cmdanswer == "sleepy") {
-    console.log("\nColton is a sleepy head.");
+    console.log("\nColton is a sleepy head\n.");
   }
   else if (cmdanswer == "clear") {
     console.clear();
@@ -735,7 +736,7 @@ else {
 
     if (playanswer == "yes") {
       console.log("\nThe play is called 'The 25th Annual Putnam County Spelling Bee'!")
-      console.log("The play starts thorugh November 17 to November 22 from 7:00 PM to 10:00 PM!\n");
+      console.log("The play starts thorugh November 17 to November 20 from 7:00 PM to 10:00 PM!\n");
       var playcredits = readline.question("Do you want to check out the play credits? (yes, no) -> ");
 
       if (playcredits == "yes") {
@@ -752,6 +753,13 @@ else {
   }
   else if (cmdanswer == "test") {
     console.log("\nThis is a test...\n");
+  }
+  else if (cmdanswer == "St. Eds") {
+    console.log("\nComing soon..\n\n");
+  }
+  else if (cmdanswer == "sad") {
+    console.log("\nSomeone named Braedon made me sad because he was given the sound effect role and I wish I was able to do that so yeah... ");
+    console.log(" :  ( \n\n");
   }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
