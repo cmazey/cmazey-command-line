@@ -761,6 +761,10 @@ else {
     console.log("\nSomeone named Braedon made me sad because he was given the sound effect role and I wish I was able to do that so yeah... ");
     console.log(" :  ( \n\n");
   }
+  else if (cmdanswer == "playbee") {
+    //console.clear();
+    console.log("Coming soon!\n");
+  }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
     console.log(`+ ${cmdanswer}`.red);
