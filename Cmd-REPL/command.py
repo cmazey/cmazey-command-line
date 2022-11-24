@@ -26,7 +26,7 @@ while(clear):
     time.sleep(2)
     print("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site to check for recent updates, thanks!")
     time.sleep(1)
-    print("Version: PRE ALPHA: V1.0.1")
+    print("Version: PRE ALPHA: v1.0.2")
     time.sleep(3)
     print()
     time.sleep(1)
@@ -98,11 +98,12 @@ while(clear):
     time.sleep(2)
     print()
     time.sleep(1)
+    print("HINT: use the 'help' command to check out all the available commands!") #Delete this command if you don't want to see this popup.
+    time.sleep(1)
     clear = False
     Commandline = True
 
     while(Commandline):
-        print("HINT: use the 'help' command to check out all the available commands!") #Delete this command if you don't want to see this popup.
         cmdanswer = input(f"C:/Users/{name}> ")
 
         if cmdanswer == "help":
@@ -420,7 +421,7 @@ while(clear):
                         time.sleep(0.1)
         elif cmdanswer == "version:":
             time.sleep(0.1)
-            print("REPL Version: v1.0.1")
+            print("REPL Version: v1.0.2")
             time.sleep(3)
         else:
             print()
