@@ -170,6 +170,10 @@ while(clear):
 
         elif cmdanswer == "play":
                 print("coming soon...")
+                print("More coming soon later...")
+                time.sleep(2)
+                print()
+                time.sleep(1)
         else:
             print()
 
