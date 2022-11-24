@@ -1,6 +1,7 @@
 # cmazey-command-line
 I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
+<img alt="GitHub" src="https://img.shields.io/github/license/cmazey/cmazey-command-line?style=plastic"> <img alt="GitHub" src ="https://img.shields.io/badge/Made%20for-VSCode-informational?style=plastic">
 
 Click here to check out the [setup](https://github.com/cmazey/cmazey-command-line/tree/node/Cmd-REPL#---set-up---)!
 
