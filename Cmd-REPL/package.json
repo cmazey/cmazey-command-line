@@ -2,6 +2,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "git": "^0.1.5",
+    "mime": "^3.0.0",
     "readline-sync": "^1.4.10"
   },
   "name": "@cmazey/cmazey-command-line",
