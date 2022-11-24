@@ -1,0 +1,4 @@
+run = "node ./Cmd-REPL/command.js"
+
+[nix]
+channel = "stable-21_11"
