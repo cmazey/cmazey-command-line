@@ -7,6 +7,7 @@ Click here to check out the [setup](https://github.com/cmazey/cmazey-command-lin
 
 > If you dont want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
 <img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.coltondogportraits.com">
+
 ## COMMANDS:
 ------------------
 - admin
