@@ -763,6 +763,7 @@ else {
   }
   else if (cmdanswer == "playbee") {
     //console.clear();
+    //Test
     console.log("Coming soon!\n");
   }
   else {
