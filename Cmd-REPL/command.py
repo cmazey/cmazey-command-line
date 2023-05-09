@@ -26,7 +26,7 @@ while(clear):
     time.sleep(2)
     print("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site to check for recent updates, thanks!")
     time.sleep(1)
-    print("Version: PRE ALPHA: v1.0.2")
+    print("Version: PRE ALPHA: v1.0.3")
     time.sleep(3)
     print()
     time.sleep(1)
@@ -197,7 +197,7 @@ while(clear):
 
                 while playplay:
                     playanswer = input("-> ")
-
+                #Start Play
                     if playanswer == "bee":
                         #This may take about 2 to 5 minutes
                         time.sleep(1)
@@ -375,6 +375,9 @@ while(clear):
                         time.sleep(5)
                         print()
                         time.sleep(1)
+                    elif playanswer == "newsies":
+                        print("Coming soon...")
+                        time.sleep(1)
                     elif playanswer == "exit":
                         time.sleep(1)
                         print()
@@ -410,6 +413,7 @@ while(clear):
                         print("'bee' - SPELLING BEE PLAY (FALL 2022)")
                         print("'upd-11/15 - Updates from November 15, 2022")
                         print("'help' - Displays the available commands")
+                        print("newsies - DISNEY NEWSIES: THE BROADWAY MUSICAL")
                         print("exit")
                         time.sleep(4)
                         print()
@@ -419,9 +423,10 @@ while(clear):
                         time.sleep(1)
                         print()
                         time.sleep(0.1)
+        #End of "Play"
         elif cmdanswer == "version:":
             time.sleep(0.1)
-            print("REPL Version: v1.0.2")
+            print("REPL Version: v1.0.3")
             time.sleep(3)
         else:
             print()

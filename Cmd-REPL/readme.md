@@ -1,7 +1,7 @@
 # - CMAZEY COMMAND LINE REPL -
 NodeJS: Version: v1.0.1
 
-Python: Version: PRE ALPHA: v1.0.2
+Python: Version: PRE ALPHA: v1.0.3
 ## - NODEJS SET UP -
 Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 
