@@ -1,4 +1,7 @@
 # cmazey-command-line
+
+REVAMP COMING SOON!
+
 I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 
 [![GitHub](https://img.shields.io/github/license/cmazey/cmazey-command-line?style=plastic)](https://github.com/cmazey/cmazey-command-line/blob/main/license)
