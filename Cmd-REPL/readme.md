@@ -3,33 +3,33 @@ NodeJS: Version: v1.0.1
 
 Python: Version: PRE ALPHA: v1.0.3
 ## - NODEJS SET UP -
-Before you start using the code, make sure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
+Before using the code, ensure you have NODE.JS in your operating system. I recommend Linux and Windows since I don't personally use MacOS.
 
 https://nodejs.org/en/
 
-After that, you can now start cloning the system, type the following code to clone it.
+After that, you can now start cloning the system, and type the following code to clone it.
 > I recommend using the [git bash](https://git-scm.com/) command line.
 ```
 git clone https://github.com/cmazey/cmazey-command-line.git
 ```
 
-After that, change the directory that is showned below.
+After that, change the directory that is shown below.
 ```
 cd cmazey-command-line/Cmd-REPL
 ```
 
-After you did that, type in the following codes. These code will install necessary modules to make the code functional.
+After you do that, type in the following codes, these codes will install the necessary modules to make the code functional.
 ```
 npm install readline-sync
 ```
 ```
 npm install colors
 ```
-After you typed in these codes, then the code is ready for use. To activate it, type in the following code:
+After you type in these codes, then the code is ready for use. To activate it, type in the following code:
 ```
 node ./command.js
 ```
-And if you follow all of these steps, then the code is all ready for use, if you still having issues, repeat the steps and if the issue still presist, then email me at mazeycolt@sehs.net.
+And if you follow all of these steps, then the code is ready for use, if you still having issues, repeat the steps and if the issue still exists, then email me at mazeycolt@sehs.net.
 
 
 ### -- NodeJS COMMANDS --
@@ -55,9 +55,9 @@ git clone https://github.com/cmazey/cmazey-command-line.git
 ```
 After that, open the file explorer and find the file. The file name is "cmazey-command-line".
 
-After you find it, double click the file, and then double click the file named "Cmd-REPL".
+After you find it, double-click the file, and then double-click the file named "Cmd-REPL".
 
-After that, click on the "command.py" file and there you go, if you are experiencing issues access the Python file, then please email me at mazeycolt@sehs.net.
+After that, click on the "command.py" file and there you go, if you are experiencing issues accessing the Python file, then please email me at mazeycolt@sehs.net.
 
 ##### -- PYTHON COMMANDS --
 
