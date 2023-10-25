@@ -32,7 +32,7 @@ node ./command.js
 And if you follow all of these steps, then the code is ready for use, if you still having issues, repeat the steps and if the issue still exists, then email me at mazeycolt@sehs.net.
 
 
-### -- NodeJS COMMANDS --
+## -- NodeJS COMMANDS --
 
 - help
 - admin
@@ -43,7 +43,7 @@ And if you follow all of these steps, then the code is ready for use, if you sti
 
 More coming soon.
 
-#### - PYTHON SET UP -
+## - PYTHON SET UP -
 
 You would need Python to use the code, please click below to download and install Python, If you already have Python, then please ignore and continue below.
 
@@ -59,7 +59,7 @@ After you find it, double-click the file, and then double-click the file named "
 
 After that, click on the "command.py" file and there you go, if you are experiencing issues accessing the Python file, then please email me at mazeycolt@sehs.net.
 
-##### -- PYTHON COMMANDS --
+## -- PYTHON COMMANDS --
 
 - help
 - sad
