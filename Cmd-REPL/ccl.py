@@ -81,7 +81,7 @@ while Prompt:
     print("- math")
     time.sleep(0.1)
     print("- lessons")
-    time.sleep(0,1)
+    time.sleep(0.1)
     print("- other")
     time.sleep(0.1)
     ans = input("-> ")
