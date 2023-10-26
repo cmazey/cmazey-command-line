@@ -80,6 +80,10 @@ while Prompt:
     time.sleep(0.1)
     print("- math")
     time.sleep(0.1)
+    print("- lessons")
+    time.sleep(0,1)
+    print("- other")
+    time.sleep(0.1)
     ans = input("-> ")
 
     if ans == "node":
@@ -111,6 +115,10 @@ while Prompt:
             mathPrompt = True
         else:
             print()
+    elif ans == "other":
+        print("Coming soon...")
+    elif ans == "lessons":
+        print("Coming soon...")
     else:
         print("Invalid prompt...")
 
