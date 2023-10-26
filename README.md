@@ -1,8 +1,8 @@
-# cmazey-command-line
+# CMAZEY COMMAND LINE
 
 REVAMP COMING SOON!
 
-I have made this custom Command Line or REPL for fun, I hope you enjoy this!
+I have revamp this amazing custom Command Line or REPL to make it easier for all, and it's all for fun, I hope you enjoy it!
 
 [![GitHub](https://img.shields.io/github/license/cmazey/cmazey-command-line?style=plastic)](https://github.com/cmazey/cmazey-command-line/blob/main/license)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)
@@ -17,25 +17,15 @@ I have made this custom Command Line or REPL for fun, I hope you enjoy this!
 [![GitHub top language](https://img.shields.io/github/languages/top/cmazey/cmazey-command-line?style=plastic)](https://img.shields.io/github/languages/top/cmazey/cmazey-command-line)
 [![GitHub language count](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line?style=plastic)](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line)
 
-Click here to check out the [setup](https://github.com/cmazey/cmazey-command-line/tree/node/Cmd-REPL#---set-up---)!
+Click here to check out the [setup](https://github.com/cmazey/cmazey-command-line/tree/node/Cmd-REPL#---set-up---) process!
 
 > If you dont want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
 <img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.com%2F%40NotCmazey%2Fcmazey-command-line%3Fv%3D1">
 
-## COMMANDS:
-------------------
-- admin
-- help
-- crazy
-- about
-- clear
-- sleepy
-
-More coming soon!
 
 ### REQUIREMENTS
 ------------------
-Make sure you have [NODE.JS](https://nodejs.org/en/) in your operating system.
-> I recommend the LTS version.
+You MUST have [Python](https://www.python.org/downloads/), [Node.Js](https://nodejs.org/en/), and [.NET](https://dotnet.microsoft.com/en-us/download) installed in your operating system for it to work propertly.
+
 
 
