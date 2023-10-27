@@ -33,7 +33,9 @@ done = True
 os.system('cls')
 
 
-print("MIT License\n")
+print('\033[1m' + "MIT License")
+print("\033[0m")
+
 time.sleep(0.1)
 print("Copyright (c) 2022 Colton Mazey")
 time.sleep(0.1)
@@ -67,9 +69,11 @@ if Agreed:
     print("Permission granted, please hold...")
     time.sleep(3)
 
+    print('\033[93m')
     os.system('cls')
-
-    print("CMAZEY COMMAND LINE")
+    
+    print('\033[1m' + 'CMAZEY COMMAND LINE')
+    print('\033[0m')
     time.sleep(2)
     Prompt = True
 
