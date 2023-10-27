@@ -12,13 +12,14 @@ This EULA agreement shall apply only to the Software supplied by Colton Dog Port
 
 ### License Grant
 
-Colton Dog Portraits hereby grants you a personal, non-transferable, non-exclusive licence to use the Cmazey Command Line software on your devices in accordance with the terms of this EULA agreement.
+- Colton Dog Portraits hereby grants you a personal, non-transferable, non-exclusive licence to use the Cmazey Command Line software on your devices in accordance with the terms of this EULA agreement.
 
-You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or tablet) under your control. You are responsible for ensuring your device meets the minimum requirements of the Cmazey Command Line software.
+- You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or tablet) under your control. You are responsible for ensuring your device meets the minimum requirements of the Cmazey Command Line software.
 
 ### You are not permitted to:
 
 - Use the Software in any way which breaches any applicable local, national or international law
+  
 - use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement
 
 ## Intellectual Property and Ownership
