@@ -104,7 +104,7 @@ else:
     print("Canceling program...")
 
 if Agreed:
-    print("Permission granted, please hold...")
+    print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
     time.sleep(3)
 
     print('\033[93m')
