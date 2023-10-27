@@ -75,6 +75,8 @@ if Agreed:
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
     time.sleep(2)
+    print("- chngdir")
+    time.sleep(0.1)
     Prompt = True
 
 while Prompt:
@@ -123,8 +125,18 @@ while Prompt:
         print("Coming soon...")
     elif ans == "lessons":
         print("Coming soon...")
+    elif ans == "chngdir":
+      print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
+      Confirming = input("-> ")
+
+      if Confirming == "y":
+        os.chdir('Cmd-REPL')
+        print("DIRECTORY CHANGED: ", os.getcwd())
+        print()
+      else:
+        print("Prompt Canceled\n")    
     else:
-        print("Invalid prompt...")
+        print("Invalid prompt...\n")
 
 
 if pyPrompt:

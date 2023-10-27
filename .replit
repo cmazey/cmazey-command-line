@@ -1,4 +1,5 @@
-run = "node ./Cmd-REPL/command.js"
+run = "python ./Cmd-REPL/ccl.py"
+
 
 [nix]
 channel = "stable-21_11"
