@@ -160,9 +160,9 @@ while Prompt:
         else:
             print()
     elif ans == "other":
-        print("Coming soon...")
+        print("Coming soon...\n")
     elif ans == "lessons":
-        print("Coming soon...")
+        print("Coming soon...\n")
     elif ans == "chngdir":
       print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
       print('\033[91m' + "NOTE: THIS IS MEANT TO BE USED IN REPLIT", '\033[0m')
