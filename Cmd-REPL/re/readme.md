@@ -44,8 +44,23 @@ More coming soon.
 
 ### -- Py Commands --
 
-- N/A
+- help
+- sad
+- test
+- clear
+- exit
+- play
+- version
+- currentdir
 
 ### -- Cmazey Math Commands --
 
-- N/A
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- LineSlope
+- HToI
+- 8Ball
+- Lottery
+- Change
