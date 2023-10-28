@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mazeycolt\\.nuget\\packages\\": {}
+    "C:\\Users\\Cmaze\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+      "projectUniqueName": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
       "projectName": "mathcmd",
-      "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
-      "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
+      "projectPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+      "packagesPath": "C:\\Users\\Cmaze\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Cmaze\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
