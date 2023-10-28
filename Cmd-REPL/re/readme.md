@@ -40,8 +40,6 @@ After that, you should be good, but if you still have issues accessing the 'node
 - clear
 - sleepy
 
-More coming soon.
-
 ### -- Py Commands --
 
 - help
@@ -64,3 +62,8 @@ More coming soon.
 - 8Ball
 - Lottery
 - Change
+
+
+### *More coming soon.*
+
+*Last Updated: 12:03 AM, 12/10/2023*
