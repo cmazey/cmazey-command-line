@@ -9,6 +9,7 @@ bool GuessN = true;
 
 Random random = new();
 
+
 Console.Clear();
 System.Console.WriteLine(" - - - GUESS THE NUMBER - - - ");
 System.Console.WriteLine(" - - Terminal Edition - - ");
@@ -83,3 +84,10 @@ System.Console.WriteLine($"/ Failed Attempts: {losses}  | ");
 
 System.Console.Write("\nPress enter to exit program...");
 Console.ReadLine();
+
+Console.WriteLine("Transfering back to 'ccl.py', please hold...");
+System.Threading.Thread.Sleep(4500);
+
+Console.Clear();
+Console.WriteLine("CMAZEY COMMAND LINE\n");
+System.Threading.Thread.Sleep(1000);
