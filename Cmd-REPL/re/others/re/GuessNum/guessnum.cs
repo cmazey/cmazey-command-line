@@ -11,11 +11,11 @@ Random random = new();
 
 Console.Clear();
 System.Console.WriteLine(" - - - GUESS THE NUMBER - - - ");
-System.Console.WriteLine(" - - Terminal Edition - - \n");
+System.Console.WriteLine(" - - Terminal Edition - - ");
 System.Threading.Thread.Sleep(1000);
 while (GuessN)
 {
-    System.Console.WriteLine($" - Round: {rounds} - ");
+    System.Console.WriteLine($"\n - Round: {rounds} - ");
     System.Threading.Thread.Sleep(500);
     System.Console.WriteLine($" - Guessed Correctly: {wins} - ");
     System.Threading.Thread.Sleep(500);
@@ -65,7 +65,6 @@ while (GuessN)
 
     if (input == "y")
     {
-        System.Console.WriteLine();
         Console.Clear();
         rounds++;
     }
