@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+defaults:
+  run:
+    working-directory: Cmd-REPL
+
 jobs:
   build:
 
@@ -27,7 +31,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd ./Cmd-REPL/re/node/rere
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
