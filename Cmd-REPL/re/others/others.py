@@ -27,4 +27,7 @@ while others:
     
 if NumGuess:
     time.sleep(3)
+
+    os.chdir('re/GuessNum')
+    os.system('dotnet run guessnum.cs')
     

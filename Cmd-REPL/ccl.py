@@ -158,9 +158,17 @@ while Prompt:
             Prompt = False
             mathPrompt = True
         else:
-            print()
+            print("Prompt Canceled\n")
     elif ans == "other":
-        print("Coming soon...\n")
+        print("Option Chosen: others")
+        Confirming = input("Do you want to continue? (y/n) -> ")
+
+        if Confirming == "y":
+            os.system('cls')
+            os.chdir('re/others')
+            os.system('python others.py')
+        else:
+            print("Prompt Canceled\n")
     elif ans == "lessons":
         print("Coming soon...")
     elif ans == "chngdir":
