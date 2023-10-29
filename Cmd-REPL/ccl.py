@@ -182,6 +182,9 @@ while Prompt:
         print()
       else:
         print("Prompt Canceled\n")    
+    elif ans == exit:
+        print("Thanks for checking out " + '\033[93m' + "Cmazey Command Line! " + '\033[0m')
+        Prompt = False
     else:
         print("Invalid prompt...\n")
 
