@@ -1,6 +1,9 @@
 import os
 import time
 lessons = True
+
+original_directory = os.getcwd()
+
 print("LESSONS")
 time.sleep(2)
 
@@ -27,10 +30,13 @@ while lessons:
         if Confirming == "y":
             os.chdir('re/cs')
             os.system('python csharp.py')
-            
+
             lessons = False
         else:
             print("Input canceled.\n")
 
     else:
         print("Invalid input, please try again.\n")
+
+
+

@@ -161,6 +161,7 @@ while Prompt:
             mathPrompt = True
         else:
             print("Prompt Canceled\n")
+
     elif ans == "other":
         print("Option Chosen: others")
         Confirming = input("Do you want to continue? (y/n) -> ")
@@ -171,16 +172,22 @@ while Prompt:
             os.system('python others.py')
         else:
             print("Prompt Canceled\n")
+
     elif ans == "lessons":
         print("Option Chosen: lessons")
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
+            original_directory = os.getcwd()
+            
             os.system('cls')
             os.chdir('re/lessons')
             os.system('python lessons.py')
+
+            original_directory = os.getcwd()
         else:
             print("Prompt Canceled\n")
+            
     elif ans == "chngdir":
       print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
       print('\033[91m' + "NOTE: THIS IS MEANT TO BE USED IN REPLIT", '\033[0m')
