@@ -77,7 +77,7 @@ while (GuessN)
 
 }
 
-System.Console.WriteLine("--- RESULTS ---");
+System.Console.WriteLine(" - - - RESULTS - - - ");
 System.Console.WriteLine($" | Guessed Correctly: {wins} / ");
 System.Console.WriteLine($" | Halfly Corrected: {half}  |");
 System.Console.WriteLine($"/ Failed Attempts: {losses}  | ");
