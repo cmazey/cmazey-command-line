@@ -62,6 +62,7 @@ while (cmazeyCalculator)
     Console.WriteLine("- 8Ball");
     Console.WriteLine("- Lottery");
     Console.WriteLine("- Change\n");
+    Console.WriteLine("- Exit");
   }
   
   // MULTIPLICATION
@@ -257,7 +258,7 @@ while (cmazeyCalculator)
   }
   // MORE COMING SOON
 
-  else if (input == "exit")
+  else if (input == "Exit")
   {
     Console.WriteLine("Exiting...\n\n");
     cmazeyCalculator = false;
@@ -281,3 +282,5 @@ while (cmazeyCalculator)
 }
 
 
+Console.Write("Press enter to exit program...");
+Console.ReadLine();
