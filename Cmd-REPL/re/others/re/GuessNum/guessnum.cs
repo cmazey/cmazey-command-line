@@ -65,6 +65,7 @@ while (GuessN)
 
     if (input == "y")
     {
+        System.Console.WriteLine();
         Console.Clear();
         rounds++;
     }
