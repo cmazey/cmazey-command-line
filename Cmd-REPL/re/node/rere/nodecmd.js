@@ -787,6 +787,6 @@ else {
 }
 
 console.log("Press enter to exit program...\n");
-console.readline();
+readline.question();
 
 //LAST UPDATED 10/29/2023, 12:56 PM EST
