@@ -28,6 +28,7 @@ while lessons:
 
 
     elif lessonAns == "1.1":
+         os.system('cls')
          os.chdir('1.1')
          os.system('dotnet run main.cs')
          os.system('cls')
