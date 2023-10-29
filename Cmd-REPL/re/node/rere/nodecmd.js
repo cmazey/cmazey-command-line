@@ -56,7 +56,7 @@ while (commandline) {
     console.log("clear");
     console.log("sleepy");
     console.log("sad");
-    console.log("exit")
+    console.log("exit");
     console.log("More coming soon\n");
   }
 
