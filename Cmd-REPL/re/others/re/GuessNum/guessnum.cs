@@ -9,6 +9,7 @@ bool GuessN = true;
 
 Random random = new();
 
+Console.Clear();
 System.Console.WriteLine(" - - - GUESS THE NUMBER - - - ");
 System.Console.WriteLine(" - - Terminal Edition - - \n");
 System.Threading.Thread.Sleep(1000);
@@ -32,7 +33,7 @@ while (GuessN)
     int entryNum = Convert.ToInt32(inputNum);
 
     int inputDigitOne = entryNum / 10;
-    int entryDigitTwo = entryNum % 10;
+    int inputDigitTwo = entryNum % 10;
     
     System.Console.WriteLine($"Input selected: {inputNum}\n");
     System.Threading.Thread.Sleep(1000);
@@ -43,6 +44,40 @@ while (GuessN)
     Console.SetCursorPosition(0, Console.CursorTop -1);
     System.Console.WriteLine($"And the winning number is {winningNum}");
     
-    
+    if (entryNum == winningNum)
+    {
+        System.Console.WriteLine("YOU GOT THE RIGHT NUMBER, CONGRATS MY DUDE!!!\n");
+        wins++;
+    }
+    else if (winningDigitOne == inputDigitTwo && winningDigitTwo == inputDigitOne)
+    {
+        System.Console.WriteLine("The digits are matched, but they are out of order though, so you halfly got it corrected, Congrats!\n");
+        half++;
+    }
+    else
+    {
+        System.Console.WriteLine("The winning number does not matched. Better luck next time!\n");
+        losses++;
+    }
+
+    System.Console.Write("\nPlay again? (y/n) -> ");
+    string input = Console.ReadLine();
+
+    if (input == "y")
+    {
+        Console.Clear();
+        rounds++;
+    }
+    else 
+    {
+        Console.Clear();
+        GuessN = false;
+    }
 
 }
+
+System.Console.WriteLine("--- RESULTS ---");
+System.Console.WriteLine($" | Guessed Correctly: {wins} / ");
+System.Console.WriteLine($" | Halfly Corrected: {half}  |");
+System.Console.WriteLine($"/ Failed Attempts: {losses}  | ");
+Console.ReadLine();
