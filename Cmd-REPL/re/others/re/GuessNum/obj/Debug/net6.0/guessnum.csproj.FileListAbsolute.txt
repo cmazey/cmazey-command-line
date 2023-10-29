@@ -1,0 +1,14 @@
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.AssemblyInfoInputs.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.AssemblyInfo.cs
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.csproj.CoreCompileInputs.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\bin\Debug\net6.0\guessnum.exe
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\bin\Debug\net6.0\guessnum.deps.json
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\bin\Debug\net6.0\guessnum.runtimeconfig.json
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\bin\Debug\net6.0\guessnum.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\bin\Debug\net6.0\guessnum.pdb
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\refint\guessnum.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.pdb
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\guessnum.genruntimeconfig.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\others\re\GuessNum\obj\Debug\net6.0\ref\guessnum.dll
