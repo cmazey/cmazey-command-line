@@ -9,19 +9,22 @@ time.sleep(2)
 print("- 1.1 (Hello World)")
 time.sleep(0.1)
 print("MORE COMING SOON")
+time.sleep(1)
+print("\nType in 'help' to see all the lessons/commands showned above.")
 
-print("Type in 'help' to see all the lessons showned above.")
 while lessons:
     lessonAns = input("-> ")
 
     if lessonAns == "help":
+         time.sleep(1)
          print("C SHARP LESSONS")
          print("- 1.1 (Hello World)")
-
+         time.sleep(1)
          print("\nHELPFUL COMMANDS")
          print("- help")
          print("- crntdir")
-         print("- exit")
+         print("- exit\n")
+         time.sleep(1)
 
 
     elif lessonAns == "1.1":
@@ -38,4 +41,4 @@ while lessons:
          print("Exiting, thanks for checking out my lessons project!")
          lessons = False
     else:
-         print("{lessonAns} not founded. Please check your spelling, or type in 'help' to see all available commands!\n")
+         print(f"{lessonAns} not founded. Please check your spelling, or type in 'help' to see all available commands!\n")
