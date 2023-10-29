@@ -2,6 +2,8 @@ import os
 import time
 lessons = True
 
+original_directory = os.getcwd()
+
 os.system('cls')
 print("C SHARP LESSONS (C#)")
 time.sleep(2)
@@ -31,7 +33,9 @@ while lessons:
          os.system('cls')
          os.chdir('1.1')
          os.system('dotnet run main.cs')
+         
          os.system('cls')
+         os.chdir(original_directory)
     
 
     # Helpful Cmds
