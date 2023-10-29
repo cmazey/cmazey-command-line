@@ -128,6 +128,8 @@ while Prompt:
     time.sleep(0.1)
     print("- other")
     time.sleep(0.1)
+    print("- exit")
+    time.sleep(0.1)
     ans = input("-> ")
 
     if ans == "node":
@@ -182,8 +184,9 @@ while Prompt:
         print()
       else:
         print("Prompt Canceled\n")    
-    elif ans == exit:
+    elif ans == "exit":
         print("Thanks for checking out " + '\033[93m' + "Cmazey Command Line! " + '\033[0m')
+        time.sleep(3)
         Prompt = False
     else:
         print("Invalid prompt...\n")
@@ -218,9 +221,6 @@ elif mathPrompt:
 
     os.chdir('re/math')
     os.system('python startup.py')
-
-
-
 
 
 
