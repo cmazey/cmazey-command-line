@@ -37,4 +37,5 @@ jobs:
     - name: Test with pytest
       run: |
       working-directory: Cmd-REPL
+        pip install pytest
         pytest
