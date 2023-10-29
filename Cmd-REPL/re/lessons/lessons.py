@@ -25,7 +25,10 @@ while lessons:
         Confirming = input("Continue? (y/n) -> ")
 
         if Confirming == "y":
-            print()
+            os.chdir('re/cs')
+            os.system('python csharp.py')
+            
+            lessons = False
         else:
             print("Input canceled.\n")
 
