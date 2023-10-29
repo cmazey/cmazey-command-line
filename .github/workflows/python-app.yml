@@ -38,4 +38,4 @@ jobs:
       run: |
       working-directory: Cmd-REPL
         pip install pytest
-        pytest
+        pytest ./ccl.py
