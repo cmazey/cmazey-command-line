@@ -1,5 +1,8 @@
 import os
 import time
+import itertools
+import threading
+import sys
 lessons = True
 
 original_directory = os.getcwd()
@@ -37,6 +40,24 @@ while lessons:
 
     else:
         print("Invalid input, please try again.\n")
+
+os.chdir(original_directory)
+print()
+
+done = False
+
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rTransfering back to "ccl.py", please hold... ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+t = threading.Thread(target=animate)
+t.start()
+
+time.sleep(5)
+done = True
 
 
 

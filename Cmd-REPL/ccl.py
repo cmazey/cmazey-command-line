@@ -9,6 +9,7 @@ mathPrompt = False
 nodePrompt = False
 pyPrompt = False
 
+original_directory = os.getcwd()
 
 print("Welcome!")
 time.sleep(0.1)
@@ -177,14 +178,15 @@ while Prompt:
         print("Option Chosen: lessons")
         Confirming = input("Do you want to continue? (y/n) -> ")
 
-        if Confirming == "y":
-            original_directory = os.getcwd()
-            
+        if Confirming == "y":           
             os.system('cls')
             os.chdir('re/lessons')
             os.system('python lessons.py')
 
-            original_directory = os.getcwd()
+            os.chdir(original_directory)
+
+            os.system('cls')
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
         else:
             print("Prompt Canceled\n")
             
