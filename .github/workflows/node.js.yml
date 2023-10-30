@@ -27,7 +27,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        working-directory: Cmd-REPL/re/node/rere
+        cache-dependency-path: 'Cmd-REPL/re/node/rere/package-lock.json'
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
