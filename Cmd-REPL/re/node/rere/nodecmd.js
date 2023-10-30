@@ -56,6 +56,7 @@ while (commandline) {
     console.log("clear");
     console.log("sleepy");
     console.log("sad");
+    console.log("exit");
     console.log("More coming soon\n");
   }
 
@@ -766,6 +767,10 @@ else {
     //Test
     console.log("Coming soon!\n");
   }
+  else if (cmdanswer == "exit") {
+    console.log("Thanks for checking out Cmazey Command Line NODE.JS Edition!\n")
+    commandline = false;
+  }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
     console.log(`+ ${cmdanswer}`.red);
@@ -782,6 +787,7 @@ else {
 
 }
 
+console.log("Press enter to exit program...\n");
+readline.question();
 
-
-//LAST UPDATED 11/13/2022, 11:44 AM
+//LAST UPDATED 10/29/2023, 12:56 PM EST

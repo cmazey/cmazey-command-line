@@ -9,6 +9,7 @@ mathPrompt = False
 nodePrompt = False
 pyPrompt = False
 
+original_directory = os.getcwd()
 
 print("Welcome!")
 time.sleep(0.1)
@@ -101,7 +102,8 @@ terms = input("-> ")
 if terms == "yes":
     Agreed = True
 else:
-    print("Canceling program...")
+    os.chdir('re/others/re/um')
+    os.system('noeula.vbs')
 
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
@@ -127,6 +129,8 @@ while Prompt:
     print("- lessons")
     time.sleep(0.1)
     print("- other")
+    time.sleep(0.1)
+    print("- exit")
     time.sleep(0.1)
     ans = input("-> ")
 
@@ -158,11 +162,35 @@ while Prompt:
             Prompt = False
             mathPrompt = True
         else:
-            print()
+            print("Prompt Canceled\n")
+
     elif ans == "other":
-        print("Coming soon...")
+        print("Option Chosen: others")
+        Confirming = input("Do you want to continue? (y/n) -> ")
+
+        if Confirming == "y":
+            os.system('cls')
+            os.chdir('re/others')
+            os.system('python others.py')
+        else:
+            print("Prompt Canceled\n")
+
     elif ans == "lessons":
-        print("Coming soon...")
+        print("Option Chosen: lessons")
+        Confirming = input("Do you want to continue? (y/n) -> ")
+
+        if Confirming == "y":           
+            os.system('cls')
+            os.chdir('re/lessons')
+            os.system('python lessons.py')
+
+            os.chdir(original_directory)
+
+            os.system('cls')
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+        else:
+            print("Prompt Canceled\n")
+            
     elif ans == "chngdir":
       print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
       print('\033[91m' + "NOTE: THIS IS MEANT TO BE USED IN REPLIT", '\033[0m')
@@ -174,6 +202,10 @@ while Prompt:
         print()
       else:
         print("Prompt Canceled\n")    
+    elif ans == "exit":
+        print("Thanks for checking out " + '\033[93m' + "Cmazey Command Line! " + '\033[0m')
+        time.sleep(3)
+        Prompt = False
     else:
         print("Invalid prompt...\n")
 
@@ -207,9 +239,6 @@ elif mathPrompt:
 
     os.chdir('re/math')
     os.system('python startup.py')
-
-
-
 
 
 
