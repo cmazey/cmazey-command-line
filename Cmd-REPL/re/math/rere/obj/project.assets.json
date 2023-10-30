@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd\\mathcmd.csproj",
+      "projectUniqueName": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
       "projectName": "mathcmd",
-      "projectPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd\\mathcmd.csproj",
+      "projectPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
       "packagesPath": "C:\\Users\\Cmaze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd\\obj\\",
+      "outputPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cmaze\\AppData\\Roaming\\NuGet\\NuGet.Config",
