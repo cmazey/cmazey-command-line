@@ -26,3 +26,17 @@ C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\n
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.pdb
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.genruntimeconfig.cache
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\ref\mathcmd.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\mathcmd.exe
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\mathcmd.deps.json
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\mathcmd.runtimeconfig.json
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\mathcmd.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\mathcmd.pdb
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.AssemblyInfoInputs.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.AssemblyInfo.cs
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.csproj.CoreCompileInputs.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\refint\mathcmd.dll
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.pdb
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.genruntimeconfig.cache
+C:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\ref\mathcmd.dll
