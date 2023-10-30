@@ -99,8 +99,6 @@ time.sleep(1)
 print("Do you agree to the EULA above? (yes, no): ")
 terms = input("-> ")
 
-assert terms == "yes"
-
 if terms == "yes":
     Agreed = True
 else:
