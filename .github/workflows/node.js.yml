@@ -29,7 +29,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: './Cmd-REPL/re/node/rere'
-    - run: npm ci        
+        cache-dependency-path: './Cmd-REPL/re/node/rere'       
     - run: npm run build
     - run: npm test 
