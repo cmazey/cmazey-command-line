@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Cmaze\\.nuget\\packages\\": {}
+    "C:\\Users\\mazeycolt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
+      "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
       "projectName": "guessnum",
-      "projectPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
-      "packagesPath": "C:\\Users\\Cmaze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\obj\\",
+      "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
+      "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cmaze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
