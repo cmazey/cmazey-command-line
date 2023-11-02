@@ -172,6 +172,11 @@ while Prompt:
             os.system('cls')
             os.chdir('re/others')
             os.system('python others.py')
+
+            os.chdir(original_directory)
+
+            os.system('cls')
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
         else:
             print("Prompt Canceled\n")
 
