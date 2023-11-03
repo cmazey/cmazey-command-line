@@ -1,6 +1,7 @@
 import os
 import time
 others = False
+Tetris = False
 import itertools
 import threading
 import sys
@@ -16,6 +17,8 @@ while others:
     print("- GuessNum")
     time.sleep(0.1)
     print("- Tetris")
+    time.sleep(0.1)
+    print("- 2.5")
     time.sleep(0.1)
     print("- (More coming soon...)")
     time.sleep(0.1)
@@ -40,7 +43,28 @@ while others:
             os.system('cls')
         else:
             print("Prompt Canceled\n")
+    elif otherAns == "2.5":
+        os.system('cls')
+        os.chdir('re/2.5')
+        os.system('dotnet run program.cs')
 
+        print("\n\nPress enter to continue...")
+        input()
+
+        os.system('cls')
+        os.chdir(original_directory)
+
+        print('\033[1m' + "OTHERS" + '\033[0m')
+        time.sleep(2)
+        print("- exit")
+        time.sleep(0.1)
+    
+
+    elif otherAns == "exit":
+        others = False
+        exit = True
+    else:
+        print("Undefined prompt, please try again.\n")
 
 if NumGuess:
     time.sleep(3)
@@ -56,6 +80,9 @@ elif Tetris:
     os.system('python Tetris.py')
     os.chdir(original_directory)
 
+elif exit:
+    print("Prompt executing, please for checking out others program!\n")
+    time.sleep(2)
 
 done = False
 

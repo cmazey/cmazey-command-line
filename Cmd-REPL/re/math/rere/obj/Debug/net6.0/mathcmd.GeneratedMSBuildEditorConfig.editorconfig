@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = mathcmd
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\Cmaze\OneDrive\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\
+=======
+build_property.ProjectDir = c:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\
+>>>>>>> 1c44277c66826bd5d4b072f7ec9cc2158e819bb3

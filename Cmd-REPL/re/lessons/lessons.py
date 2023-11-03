@@ -22,7 +22,10 @@ while lessons:
         Confirming = input("Continue? (y/n) -> ")
 
         if Confirming == "y":
-            print()
+            os.chdir('re/js')
+            os.system('python javascript.py')
+
+            lessons = False
         else:
             print("Input canceled.\n")
 
