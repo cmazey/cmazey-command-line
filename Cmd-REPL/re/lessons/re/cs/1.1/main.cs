@@ -30,7 +30,5 @@ class Program {
 
     // Console.WriteLine(GET OUT OF MY OFFICE NOW!!!);
 
-    Console.Write("Press enter to continue...");
-    Console.ReadLine();
   }
 }
