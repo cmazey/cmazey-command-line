@@ -31,11 +31,17 @@ while lessons:
 
     elif lessonAns == "1.1":
          os.system('cls')
+
+         time.sleep(2)
          os.chdir('1.1')
          os.system('node ./index')
-         
+
+         print("\nPress enter to continue...")
+         input()
          os.system('cls')
          os.chdir(original_directory)
+
+         print("JAVASCRIPT LESSON (.JS)\n")
     
 
     # Helpful Cmds
