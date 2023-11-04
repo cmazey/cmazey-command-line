@@ -2,14 +2,13 @@
 <img src=images/logo.png >
 </p>
 <p align="center">
- <a href="https://sehs.net/" alt="AP Computer Science Project">
-     <img alt="Static Badge" src="https://img.shields.io/badge/%20AP-Computer_Science-darkgreen?style=flat-square&link=https%3A%2F%2Fwww.sehs.net%2F">
-<a href="https://discord.gg/FMP6DhTjzfj" alt="Discord Server">
-    <img alt="Discord" src="https://img.shields.io/discord/1013992651676205128?style=flat-square&logo=discord&logoColor=5865F2&color=5865F2&link=https%3A%2F%2Fdiscord.gg%2FMP6DhTjzfj">
-<a href="#GithubCommits" alt="Github">
-<img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/cmazey/cmazey-command-line?style=flat-square&logo=Github&link=https%3A%2F%2Fgithub.com%2Fcmazey%2Fcmazey-command-line%2Fcommits%2Fearly">
-     <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/cmazey/cmazey-command-line/early?style=flat-square&logo=github">
-</p>
+ <a href="https://sehs.net/">
+   <img alt="Static Badge" src="https://img.shields.io/badge/%20AP-Computer_Science-darkgreen?style=flat-square" ></a>
+ <a href="https://discord.gg/FMP6DgTjzfj">
+    <img alt="Discord" src="https://img.shields.io/discord/1013992651676205128?style=flat-square&logo=discord&logoColor=5865F2&color=5865F2" ></a>
+ <img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/t/cmazey/cmazey-command-line?style=flat-square&logo=Github&link=https%3A%2F%2Fgithub.com%2Fcmazey%2Fcmazey-command-line%2Fcommits%2Fearly">
+ <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/cmazey/cmazey-command-line/early?style=flat-square&logo=github">
+</p>  
 <p align="center">
 NodeJS: Version: v1.0.1
 </p>
