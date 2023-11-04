@@ -2,6 +2,7 @@ import os
 import time
 others = False
 Tetris = False
+FlappyBird = False
 import itertools
 import threading
 import sys
@@ -19,6 +20,8 @@ while others:
     print("- Tetris")
     time.sleep(0.1)
     print("- 2.5")
+    time.sleep(0.1)
+    print("- FlappyBird")
     time.sleep(0.1)
     print("- (More coming soon...)")
     time.sleep(0.1)
@@ -58,6 +61,15 @@ while others:
         time.sleep(2)
         print("- exit")
         time.sleep(0.1)
+    elif otherAns == "FlappyBird":
+        print("OTHER:: Flappy Bird")
+        Confirming = input("Continue?(y/n) -> ")
+        if Confirming == "y":
+            others = False
+            FlappyBird = True
+            os.system('cls')
+        else:
+            print("Prompt Canceled\n")
     
 
     elif otherAns == "exit":
@@ -79,6 +91,14 @@ elif Tetris:
     os.chdir('re/Tetris')
     os.system('python Tetris.py')
     os.chdir(original_directory)
+
+elif FlappyBird:
+    time.sleep(3)
+
+    os.chdir('re/FlappyBird')
+    os.system('python fb.py')
+    os.chdir(original_directory)
+
 
 elif exit:
     print("Prompt executing, please for checking out others program!\n")
