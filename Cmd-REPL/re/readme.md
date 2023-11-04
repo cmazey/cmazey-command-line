@@ -1,4 +1,7 @@
 # - CMAZEY COMMAND LINE REPL -
+
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/cmazey/cmazey-command-line)
+
 NodeJS: Version: v1.0.1
 
 Python: Version: PRE ALPHA: v1.0.3
