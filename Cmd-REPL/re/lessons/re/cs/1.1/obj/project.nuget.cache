@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ic0HVk6oSzn1v+l1SXpD5b3YO/WKBTEw+HsyLpRhXevap6PHJJBhDKCz6fRy8oPxuk5Q6hmUqITiyFgnjnu2nw==",
+  "dgSpecHash": "CTDz5jDwObYE8MQ/9VGSvcrTukNMa5Z1uocoU/xBFajMDQSigPhBSNnELrYG885dJbL7is3Vu2iHBHXqQO3QNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cmaze\\OneDrive\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\main.csproj",
+  "projectFilePath": "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\main.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
