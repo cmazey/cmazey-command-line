@@ -1,4 +1,12 @@
 # - CMAZEY COMMAND LINE REPL -
+
+<p align="center>
+    <a href="https://github.com/cmazey/cmazey-command-line/commits/early" alt="GitHub commit activity">
+        <img src="https://img.shields.io/github/commit-activity/t/cmazey/cmazey-command-line?style=flat-square" /></a>
+    <a href="https://something.org" alt="Something">
+    
+</p>
+
 NodeJS: Version: v1.0.1
 
 Python: Version: PRE ALPHA: v1.0.3
