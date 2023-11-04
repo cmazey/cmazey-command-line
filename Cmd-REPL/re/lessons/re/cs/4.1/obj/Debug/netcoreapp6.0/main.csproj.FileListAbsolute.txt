@@ -1,0 +1,4 @@
+C:\Users\Cmaze\ccl\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\4.1\obj\Debug\netcoreapp6.0\main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cmaze\ccl\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\4.1\obj\Debug\netcoreapp6.0\main.AssemblyInfoInputs.cache
+C:\Users\Cmaze\ccl\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\4.1\obj\Debug\netcoreapp6.0\main.AssemblyInfo.cs
+C:\Users\Cmaze\ccl\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\4.1\obj\Debug\netcoreapp6.0\main.csproj.CoreCompileInputs.cache
