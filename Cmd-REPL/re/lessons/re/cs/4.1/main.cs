@@ -2,6 +2,7 @@ using System;
 
 class Program {
   public static void Main (string[] args) {
+    
 
     // See https://sehs.io/ for more information
 
@@ -12,7 +13,7 @@ class Program {
         Console.Write("What is your second wish? ");
         Console.ReadLine();
         Console.WriteLine("...");
-        Thread.Sleep(3000);
+        System.Threading.Thread.Sleep(3000);
         Console.WriteLine("I'll get right on that.");
     }
 
