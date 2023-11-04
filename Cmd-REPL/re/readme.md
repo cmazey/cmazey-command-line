@@ -1,7 +1,4 @@
 <p align="center">
-- CMAZEY COMMAND LINE REPL -
-</p>
-<p align="center">
 <img src=images/logo.png >
 </p>
 <p align="center">
