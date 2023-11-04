@@ -1,4 +1,13 @@
 # - CMAZEY COMMAND LINE REPL -
+
+<p align="center">
+    
+[![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/cmazey/cmazey-command-line?style=flat-square)](https://github.com/cmazey/cmazey-command-line/commits/early)
+[![GitHub last commit](https://img.shields.io/github/last-commit/cmazey/cmazey-command-line?style=flat-square)](https://img.shields.io/github/last-commit/cmazey/cmazey-command-line)
+[![Discord](https://img.shields.io/discord/1013992651676205128?style=flat-square&logo=discord&color=5865F2)](https://discord.gg/MP6DhTjzfj)
+
+</p>
+
 NodeJS: Version: v1.0.1
 
 Python: Version: PRE ALPHA: v1.0.3
