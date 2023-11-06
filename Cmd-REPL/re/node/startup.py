@@ -63,4 +63,11 @@ sleep(3)
 print()
 
 os.chdir('rere')
-os.system('node ./nodecmd.js')
+
+try:
+    os.system('node ./nodecmd.js')
+
+except:
+    print("Error has been occured while opening Node.JS file. ")
+    input()
+    
