@@ -42,16 +42,9 @@ time.sleep(4.3)
 done = True
 
 time.sleep(1)
-print()
+print("\n\nNote: if you are having some issues, please refer to the '" + os.getcwd() + "\Source.txt' for more info.\n")
 
-try:
-    os.system('python tet.py')
+os.system('python tet.py')
 
-    print("Program has been terminated, please press enter to continue, or close the terminal.")
-    input()
-
-except:
-    print("\n\n" + sys.exc_info()[0], " has been occured.\n")
-    print("Program seems to not be working. It might be occured since pygame, or numpy is downloaded in your operating system.")
-    print("Please refer to '" + os.getcwd() + "\Source.txt' for more information.")
-    input()
+print("\nProgram has been terminated, please press enter to continue, or close the terminal.")
+input()
