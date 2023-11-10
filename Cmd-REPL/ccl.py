@@ -139,10 +139,22 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n)-> ")
         
         if Confirming == "y":
-            Prompt = False
-            nodePrompt = True
+            os.system('cls')
+            print('\033[1m' + '\033[93m' + "CMAZEY COMMAND LINE: NODE.JS EDITION", '\033[0m')
+            time.sleep(1)
+            print("Please hold...")
+            time.sleep(5)
+
+            os.chdir('re/node')
+            os.system('python startup.py')
+
+            os.system('cls')
+            os.chdir(original_directory)
+
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+            time.sleep(1)
         else:
-            print()
+            print("Prompt Canceled\n")
     
     elif ans == "py":
         print("Command Line Selected: py")
@@ -223,16 +235,6 @@ if pyPrompt:
     time.sleep(3)
 
     os.chdir('re/py')
-    os.system('python startup.py')
-
-elif nodePrompt:
-    os.system('cls')
-    print('\033[1m' + '\033[93m' + "CMAZEY COMMAND LINE: NODE.JS EDITION", '\033[0m')
-    time.sleep(1)
-    print("Please hold...")
-    time.sleep(5)
-
-    os.chdir('re/node')
     os.system('python startup.py')
 
 elif mathPrompt:
