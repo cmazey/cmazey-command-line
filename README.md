@@ -1,8 +1,6 @@
 # CMAZEY COMMAND LINE
 
 I have revamped this amazing custom Command Line or REPL to make it easier for all, and it's all for fun, I hope you enjoy it!
-
-<p align="center">
   
   [![GitHub](https://img.shields.io/github/license/cmazey/cmazey-command-line?style=plastic)](https://github.com/cmazey/cmazey-command-line/blob/main/license)
   [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)
@@ -17,8 +15,6 @@ I have revamped this amazing custom Command Line or REPL to make it easier for a
   [![GitHub top language](https://img.shields.io/github/languages/top/cmazey/cmazey-command-line?style=plastic)](https://img.shields.io/github/languages/top/cmazey/cmazey-command-line)
   [![GitHub language count](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line?style=plastic)](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line)
   [![Discord](https://img.shields.io/discord/1013992651676205128)](https://discord.gg/MP6DhTjzfj)]
-
-</p>
 
 Click here to check out the [setup](https://github.com/cmazey/cmazey-command-line/tree/main/Cmd-REPL/re#--set-up--) process!
 
