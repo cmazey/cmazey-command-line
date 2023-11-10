@@ -66,7 +66,7 @@ while others:
         time.sleep(0.1)
     elif otherAns == "FlappyBird":
         print("OTHER:: Flappy Bird")
-        Confirming = input("Continue?(y/n) -> ")
+        Confirming = input("Continue? (y/n) -> ")
         if Confirming == "y":
             others = False
             FlappyBird = True
@@ -74,8 +74,8 @@ while others:
         else:
             print("Prompt Canceled\n")
     elif otherAns == "petRockAdventure":
-        print("OTHEER::petRockAdventure")
-        Confirming = input("Continue?(y/n) -> ")
+        print("OTHER::petRockAdventure")
+        Confirming = input("Continue? (y/n) -> ")
         if Confirming == "y":
             others = False
             petRock = True
@@ -113,6 +113,7 @@ elif FlappyBird:
 elif petRock:
     os.chdir('re/petRockAdventure')
     os.system('python petRockA.py')
+    os.chdir(original_directory)
 
 
 elif exit:
