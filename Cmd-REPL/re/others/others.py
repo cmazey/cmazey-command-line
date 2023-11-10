@@ -3,6 +3,7 @@ import time
 others = False
 Tetris = False
 FlappyBird = False
+petRock = False
 import itertools
 import threading
 import sys
@@ -22,6 +23,8 @@ while others:
     print("- 2.5")
     time.sleep(0.1)
     print("- FlappyBird")
+    time.sleep(0.1)
+    print("- petRockAdventure")
     time.sleep(0.1)
     print("- (More coming soon...)")
     time.sleep(0.1)
@@ -70,7 +73,15 @@ while others:
             os.system('cls')
         else:
             print("Prompt Canceled\n")
-    
+    elif otherAns == "petRockAdventure":
+        print("OTHEER::petRockAdventure")
+        Confirming = input("Continue?(y/n) -> ")
+        if Confirming == "y":
+            others = False
+            petRock = True
+        else:
+            print("Undefined prompt, please try again.\n")
+
 
     elif otherAns == "exit":
         others = False
@@ -98,6 +109,10 @@ elif FlappyBird:
     os.chdir('re/FlappyBird')
     os.system('python fb.py')
     os.chdir(original_directory)
+
+elif petRock:
+    os.chdir('re/petRockAdventure')
+    os.system('python petRockA.py')
 
 
 elif exit:
