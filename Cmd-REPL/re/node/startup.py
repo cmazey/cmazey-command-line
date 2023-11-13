@@ -54,7 +54,7 @@ if __name__ == "__main__":
         for i in range(10):
             sleep(0.25)
 
-    loader = Loader("Preparing to open file, please hold...", "Completed, install/updating package files", 0.05).start()
+    loader = Loader("Preparing to open file, please hold...", "Completed. Please hold...", 0.05).start()
     for i in range(15):
         sleep(0.25)
     loader.stop()
@@ -62,25 +62,36 @@ if __name__ == "__main__":
 sleep(1.5)
 print()
 
-os.chdir('rere')
+print("\nDo you want to install/update package files? (y/n)")
+Confirming = input("-> ")
 
-print("Installing/Updating 'readline-sync'")
-sleep(1)
-os.system('npm install readline-sync')
+if Confirming == "y":
 
-sleep(1)
+    os.chdir('rere')
+    print("Installing/Updating 'readline-sync'")
+    sleep(1)
+    os.system('npm install readline-sync')
 
-print("\n\n Installing/Updating 'colors'")
-os.system('npm install colors')
+    sleep(1)
 
-sleep(1)
+    print("\n\n Installing/Updating 'colors'")
+    os.system('npm install colors')
 
-os.system('cls')
+    sleep(1)
 
-print("\n\nPACKAGE FILES INSTALLED/UPDATED")
-sleep(0.5)
-print("Opening file...")
-sleep(3)
+    os.system('cls')
+
+    print("\n\nPACKAGE FILES INSTALLED/UPDATED")
+    sleep(0.5)
+    print("Opening file...")
+    sleep(3)
+
+else:
+    os.chdir('rere')
+    
+    print("Opening file...")
+    sleep(3)
+
 
 try:
     os.system('node ./nodecmd.js')
@@ -88,7 +99,10 @@ try:
 except:
     print("Error has been occured while opening Node.JS file. ")
     input()
-    
+
+
+
+
 print("Heading back to the start menu, please hold...")
 sleep(3)
 
