@@ -54,7 +54,7 @@ if __name__ == "__main__":
         for i in range(10):
             sleep(0.25)
 
-    loader = Loader("Preparing to open file, please hold...", "Completed. Please hold...", 0.05).start()
+    loader = Loader("Preparing to open file, please hold...", "Completed. Please answer the following prompt below..", 0.05).start()
     for i in range(15):
         sleep(0.25)
     loader.stop()
