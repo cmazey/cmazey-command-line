@@ -1,5 +1,6 @@
 import tkinter as tk
 import time
+import os
  
 def centerWindow(width, height, root):  # Return 4 values needed to center Window
     screen_width = root.winfo_screenwidth()  # Width of the screen
@@ -18,16 +19,78 @@ splash_screen.title("Splash Screen")
 x, y = centerWindow(1000, 444, root)
 splash_screen.geometry(f"1000x444+{x}+{y}")
  
-image = tk.PhotoImage(file="logo.png") 
+image = tk.PhotoImage(file="image/logo.png") 
 label = tk.Label(splash_screen, image = image)
 label.pack()
 splash_screen.update()
  
 # MAIN WINDOW CODE + Other Processing
-time.sleep(3)
+time.sleep(5)
  
 # Start the event loop
 splash_screen.destroy()
 
-print("hi")
-input()
+os.chdir('Cmd-REPL')
+
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+print(".")
+time.sleep(0.1)
+
+os.system('cls')
+
+
+os.system('ccl.py')
+
