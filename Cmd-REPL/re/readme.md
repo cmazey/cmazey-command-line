@@ -10,6 +10,9 @@
  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/cmazey/cmazey-command-line/early?style=flat-square&logo=github">
 </p>  
 <p align="center">
+CCL Version: v1.0.0
+</p>
+<p align="center">
 NodeJS: Version: v1.0.1
 </p>
 <p align="center">
