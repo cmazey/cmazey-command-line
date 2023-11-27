@@ -3,6 +3,7 @@ import time
 import itertools
 import threading
 import sys
+import subprocess
 
 
 print()
@@ -212,4 +213,4 @@ time.sleep(3)
 print()
 
 os.chdir('rere') # Changes Directory
-os.system('python pycmd.py') # Loads in Directory
+subprocess.call('python pycmd.py', shell=False) # Loads in Directory

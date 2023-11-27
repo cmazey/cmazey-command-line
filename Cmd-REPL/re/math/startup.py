@@ -1,5 +1,7 @@
 import os
+import sys
 import time
+import subprocess
 
 
 print()
@@ -15,10 +17,19 @@ time.sleep(0.1)
 print("LOADING COMPLETED")
 time.sleep(1)
 print("Loading Repl...")
-time.sleep(2)
-print("Loading Repl completed")
+animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+
+for i in range(len(animation)):
+    time.sleep(1.1)
+    sys.stdout.write("\r" + animation[i % len(animation)])
+    sys.stdout.flush()
+
+print("\n")
+print("REPL LOADED! Please hold...")
 time.sleep(3)
 print("ENJOY MATH Y'ALL NERDS!")
+
+
 
 time.sleep(0.5)
 
@@ -26,4 +37,4 @@ os.system('cls')
 time.sleep(2)
 
 os.chdir('rere')
-os.system('dotnet run mathcmd.cs')
+subprocess.call('dotnet run mathcmd.cs', shell=False)

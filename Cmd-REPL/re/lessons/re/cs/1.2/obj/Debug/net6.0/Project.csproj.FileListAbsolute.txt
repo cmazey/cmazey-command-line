@@ -1,0 +1,14 @@
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\bin\Debug\net6.0\Project.exe
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\bin\Debug\net6.0\Project.deps.json
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\bin\Debug\net6.0\Project.runtimeconfig.json
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\bin\Debug\net6.0\Project.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\bin\Debug\net6.0\Project.pdb
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.AssemblyInfoInputs.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.AssemblyInfo.cs
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.csproj.CoreCompileInputs.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\refint\Project.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.pdb
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\Project.genruntimeconfig.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\1.2\obj\Debug\net6.0\ref\Project.dll
