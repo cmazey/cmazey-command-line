@@ -37,4 +37,4 @@ os.system('cls')
 time.sleep(2)
 
 os.chdir('rere')
-os.system('dotnet run mathcmd.cs')
+subprocess.call('dotnet run mathcmd.cs', shell=False)

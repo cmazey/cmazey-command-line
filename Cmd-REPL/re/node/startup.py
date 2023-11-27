@@ -95,7 +95,7 @@ else:
 
 
 try:
-    os.system('node ./nodecmd.js')
+    subprocess.call('node ./nodecmd.js', shell=False)
 
 except:
     print("Error has been occured while opening Node.JS file. ")
