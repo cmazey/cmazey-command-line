@@ -149,7 +149,7 @@ while Prompt:
             time.sleep(5)
 
             os.chdir('re/node')
-            os.system('python startup.py')
+            subprocess.call('python startup.py', shell=False)
 
             os.system('cls')
             os.chdir(original_directory)
@@ -164,8 +164,14 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            pyPrompt = True
-            Prompt = False
+            os.system('cls')
+            print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
+            time.sleep(1)
+            print("Please hold...")
+            time.sleep(3)
+
+            os.chdir('re/py')
+            subprocess.call('python startup.py', shell=False)
         else:
             print()
 
@@ -174,8 +180,14 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            Prompt = False
-            mathPrompt = True
+            os.system('cls')
+            print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
+            time.sleep(1)
+            print("Please hold...")
+            time.sleep(5)
+
+            os.chdir('re/math')
+            subprocess.call('python startup.py', shell=False)
         else:
             print("Prompt Canceled\n")
 
@@ -202,7 +214,7 @@ while Prompt:
         if Confirming == "y":           
             os.system('cls')
             os.chdir('re/lessons')
-            os.system('python lessons.py')
+            subprocess.call('python lessons.py', shell=False)
 
             os.chdir(original_directory)
 
@@ -230,25 +242,11 @@ while Prompt:
         print("Invalid prompt...\n")
 
 
-if pyPrompt:
-    os.system('cls')
-    print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
-    time.sleep(1)
-    print("Please hold...")
-    time.sleep(3)
 
-    os.chdir('re/py')
-    os.system('python startup.py')
 
-elif mathPrompt:
-    os.system('cls')
-    print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
-    time.sleep(1)
-    print("Please hold...")
-    time.sleep(5)
 
-    os.chdir('re/math')
-    os.system('python startup.py')
+
+
 
 
 

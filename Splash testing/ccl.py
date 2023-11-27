@@ -19,7 +19,7 @@ splash_screen.title("Splash Screen")
 x, y = centerWindow(1000, 444, root)
 splash_screen.geometry(f"1000x444+{x}+{y}")
  
-image = tk.PhotoImage(file="image/logo.png") 
+image = tk.PhotoImage(file="image\\logo.png") 
 label = tk.Label(splash_screen, image = image)
 label.pack()
 splash_screen.update()
@@ -30,7 +30,7 @@ time.sleep(5)
 # Start the event loop
 splash_screen.destroy()
 
-os.chdir('Cmd-REPL')
+# os.chdir('Cmd-REPL')
 
 print(".")
 time.sleep(0.1)
@@ -92,5 +92,5 @@ time.sleep(0.1)
 os.system('cls')
 
 
-os.system('ccl.py')
+# os.system('ccl.py')
 
