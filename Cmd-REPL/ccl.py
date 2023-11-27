@@ -3,6 +3,7 @@ import time
 import itertools
 import threading
 import sys
+import subprocess
 Agreed = False
 Prompt = False
 mathPrompt = False
@@ -114,6 +115,8 @@ if Agreed:
     
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
+    time.sleep(0.1)
+    print("v1.0.0")
     time.sleep(2)
     print("- chngdir")
     time.sleep(0.1)
@@ -146,7 +149,7 @@ while Prompt:
             time.sleep(5)
 
             os.chdir('re/node')
-            os.system('python startup.py')
+            subprocess.call('python startup.py', shell=False)
 
             os.system('cls')
             os.chdir(original_directory)
@@ -161,8 +164,20 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            pyPrompt = True
-            Prompt = False
+            os.system('cls')
+            print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
+            time.sleep(1)
+            print("Please hold...")
+            time.sleep(3)
+
+            os.chdir('re/py')
+            subprocess.call('python startup.py', shell=False)
+
+            os.system('cls')
+            os.chdir(original_directory)
+
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+            time.sleep(1)
         else:
             print()
 
@@ -171,8 +186,20 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            Prompt = False
-            mathPrompt = True
+            os.system('cls')
+            print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
+            time.sleep(1)
+            print("Please hold...")
+            time.sleep(5)
+
+            os.chdir('re/math')
+            subprocess.call('python startup.py', shell=False)
+
+            os.system('cls')
+            os.chdir(original_directory)
+
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+            time.sleep(1)
         else:
             print("Prompt Canceled\n")
 
@@ -183,7 +210,7 @@ while Prompt:
         if Confirming == "y":
             os.system('cls')
             os.chdir('re/others')
-            os.system('python others.py')
+            subprocess.call('python others.py', shell=False)
 
             os.chdir(original_directory)
 
@@ -199,7 +226,7 @@ while Prompt:
         if Confirming == "y":           
             os.system('cls')
             os.chdir('re/lessons')
-            os.system('python lessons.py')
+            subprocess.call('python lessons.py', shell=False)
 
             os.chdir(original_directory)
 
@@ -227,25 +254,11 @@ while Prompt:
         print("Invalid prompt...\n")
 
 
-if pyPrompt:
-    os.system('cls')
-    print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
-    time.sleep(1)
-    print("Please hold...")
-    time.sleep(3)
 
-    os.chdir('re/py')
-    os.system('python startup.py')
 
-elif mathPrompt:
-    os.system('cls')
-    print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
-    time.sleep(1)
-    print("Please hold...")
-    time.sleep(5)
 
-    os.chdir('re/math')
-    os.system('python startup.py')
+
+
 
 
 

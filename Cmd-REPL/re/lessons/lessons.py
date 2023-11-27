@@ -3,6 +3,7 @@ import time
 import itertools
 import threading
 import sys
+import subprocess
 lessons = True
 
 original_directory = os.getcwd()

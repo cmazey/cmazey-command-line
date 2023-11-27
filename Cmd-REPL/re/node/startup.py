@@ -3,6 +3,7 @@ from shutil import get_terminal_size
 from threading import Thread
 from time import sleep
 import os
+import subprocess
 
 sleep(2)
 print("LOADING COMPLETED")
@@ -94,7 +95,7 @@ else:
 
 
 try:
-    os.system('node ./nodecmd.js')
+    subprocess.call('node ./nodecmd.js', shell=False)
 
 except:
     print("Error has been occured while opening Node.JS file. ")
