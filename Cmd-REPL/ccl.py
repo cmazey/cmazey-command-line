@@ -3,6 +3,7 @@ import time
 import itertools
 import threading
 import sys
+import subprocess
 Agreed = False
 Prompt = False
 mathPrompt = False
@@ -114,6 +115,8 @@ if Agreed:
     
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
+    time.sleep(0.1)
+    print("v1.0.0")
     time.sleep(2)
     print("- chngdir")
     time.sleep(0.1)
@@ -183,7 +186,7 @@ while Prompt:
         if Confirming == "y":
             os.system('cls')
             os.chdir('re/others')
-            os.system('python others.py')
+            subprocess.call('python others.py', shell=False)
 
             os.chdir(original_directory)
 
