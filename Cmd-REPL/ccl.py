@@ -172,6 +172,12 @@ while Prompt:
 
             os.chdir('re/py')
             subprocess.call('python startup.py', shell=False)
+
+            os.system('cls')
+            os.chdir(original_directory)
+
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+            time.sleep(1)
         else:
             print()
 
@@ -188,6 +194,12 @@ while Prompt:
 
             os.chdir('re/math')
             subprocess.call('python startup.py', shell=False)
+
+            os.system('cls')
+            os.chdir(original_directory)
+
+            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+            time.sleep(1)
         else:
             print("Prompt Canceled\n")
 

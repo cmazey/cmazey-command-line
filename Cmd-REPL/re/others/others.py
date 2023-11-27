@@ -7,6 +7,7 @@ petRock = False
 import itertools
 import threading
 import sys
+import subprocess
 
 original_directory = os.getcwd()
 

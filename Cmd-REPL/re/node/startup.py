@@ -3,6 +3,7 @@ from shutil import get_terminal_size
 from threading import Thread
 from time import sleep
 import os
+import subprocess
 
 sleep(2)
 print("LOADING COMPLETED")
