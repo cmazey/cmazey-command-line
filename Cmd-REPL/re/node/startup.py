@@ -80,7 +80,7 @@ if Confirming == "y":
 
     sleep(1)
 
-    os.system('cls')
+    subprocess.call('cls', shell=True)
 
     print("\n\nPACKAGE FILES INSTALLED/UPDATED")
     sleep(0.5)

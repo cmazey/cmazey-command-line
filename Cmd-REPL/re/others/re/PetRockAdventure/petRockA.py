@@ -1,10 +1,11 @@
 import os
 import time
+import subprocess
 
 time.sleep(3)
 print()
 
-os.system('cls')
+subprocess.call('cls', shell=True)
 time.sleep(1)
 os.system('petRockAdventure.exe')
 

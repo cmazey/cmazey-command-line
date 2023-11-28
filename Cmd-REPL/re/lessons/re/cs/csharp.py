@@ -1,10 +1,11 @@
 import os
 import time
+import subprocess
 lessons = True
 
 original_directory = os.getcwd()
 
-os.system('cls')
+subprocess.call('cls', shell=True)
 print("C SHARP LESSONS (C#)")
 time.sleep(2)
 
@@ -116,265 +117,265 @@ while lessons:
      # Part 1 - Programming Basics
 
     elif lessonAns == "1.1":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.1')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
          
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "1.2":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.2')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
      
     elif lessonAns == "1.3":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.3')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
      
     elif lessonAns == "1.4":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.4')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
     
     elif lessonAns == "1.5":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.5')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "1.6":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.6')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "1.7":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.7')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "1.8":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('1.8')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
      # Part 2 - Control Flow: Selection and Iteration
 
     elif lessonAns == "2.1":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.1')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.2":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.2')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.3":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.3')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.4":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.4')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.5":
          print("Coming soon...\n")
 
     elif lessonAns == "2.6":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.6')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.7":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.7')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.8":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.8')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "2.10":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('2.10')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
      # Part 3 - Data Structures
 
     elif lessonAns == "3.1":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('3.1')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "3.2":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('3.2')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "3.3":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('3.3')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "3.4":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('3.4')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
     elif lessonAns == "3.5":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('3.5')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
      # Part 4 - Methods
 
     elif lessonAns == "4.1":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('4.1')
-         os.system('dotnet run main.cs')
+         subprocess.call('dotnet run main.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
      
     elif lessonAns == "4.2":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir('4.2')
-         os.system('dotnet run program.cs')
+         subprocess.call('dotnet run program.cs', shell=False)
 
          print("\n\nPress enter to continue...")
          input()
 
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)              
 
 

@@ -24,7 +24,7 @@ while lessons:
 
         if Confirming == "y":
             os.chdir('re/js')
-            os.system('python javascript.py')
+            subprocess.call('python javascript.py', shell=False)
 
             lessons = False
         else:
@@ -36,7 +36,7 @@ while lessons:
 
         if Confirming == "y":
             os.chdir('re/cs')
-            os.system('python csharp.py')
+            subprocess.call('python csharp.py', shell=False)
 
             lessons = False
         else:

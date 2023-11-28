@@ -32,7 +32,7 @@ t.start()
 time.sleep(5)
 done = True
 
-os.system('cls')
+subprocess.call('cls', shell=True)
 
 
 print('\033[1m' + "End-User License Agreement (EULA)")
@@ -111,7 +111,7 @@ if Agreed:
     time.sleep(3)
 
     print('\033[93m')
-    os.system('cls')
+    subprocess.call('cls', shell=True)
     
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
@@ -142,7 +142,7 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n)-> ")
         
         if Confirming == "y":
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             print('\033[1m' + '\033[93m' + "CMAZEY COMMAND LINE: NODE.JS EDITION", '\033[0m')
             time.sleep(1)
             print("Please hold...")
@@ -151,7 +151,7 @@ while Prompt:
             os.chdir('re/node')
             subprocess.call('python startup.py', shell=False)
 
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             os.chdir(original_directory)
 
             print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
@@ -164,7 +164,7 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
             time.sleep(1)
             print("Please hold...")
@@ -173,7 +173,7 @@ while Prompt:
             os.chdir('re/py')
             subprocess.call('python startup.py', shell=False)
 
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             os.chdir(original_directory)
 
             print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
@@ -186,7 +186,7 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
             time.sleep(1)
             print("Please hold...")
@@ -195,7 +195,7 @@ while Prompt:
             os.chdir('re/math')
             subprocess.call('python startup.py', shell=False)
 
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             os.chdir(original_directory)
 
             print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
@@ -208,13 +208,13 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             os.chdir('re/others')
             subprocess.call('python others.py', shell=False)
 
             os.chdir(original_directory)
 
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
         else:
             print("Prompt Canceled\n")
@@ -224,13 +224,13 @@ while Prompt:
         Confirming = input("Do you want to continue? (y/n) -> ")
 
         if Confirming == "y":           
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             os.chdir('re/lessons')
             subprocess.call('python lessons.py', shell=False)
 
             os.chdir(original_directory)
 
-            os.system('cls')
+            subprocess.call('cls', shell=True)
             print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
         else:
             print("Prompt Canceled\n")

@@ -38,7 +38,7 @@ while others:
         if Confirming == "y":
             others = False
             NumGuess = True
-            os.system('cls')
+            subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
     elif otherAns == "Tetris":
@@ -47,18 +47,18 @@ while others:
         if Confirming == "y":
             others = False
             Tetris = True
-            os.system('cls')
+            subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
     elif otherAns == "2.5":
-        os.system('cls')
+        subprocess.call('cls', shell=True)
         os.chdir('re/2.5')
         os.system('dotnet run program.cs')
 
         print("\n\nPress enter to continue...")
         input()
 
-        os.system('cls')
+        subprocess.call('cls', shell=True)
         os.chdir(original_directory)
 
         print('\033[1m' + "OTHERS" + '\033[0m')
@@ -71,7 +71,7 @@ while others:
         if Confirming == "y":
             others = False
             FlappyBird = True
-            os.system('cls')
+            subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
     elif otherAns == "petRockAdventure":
@@ -93,27 +93,27 @@ while others:
 if NumGuess:
     time.sleep(3)
 
-    os.chdir('re/GuessNum')
-    os.system('dotnet run guessnum.cs')
+    os.chdir('re/GuessNum/bin/Debug/net6.0')
+    subprocess.call('guessnum', shell=False)
     os.chdir(original_directory)
 
 elif Tetris:
     time.sleep(3)
 
     os.chdir('re/Tetris')
-    os.system('python Tetris.py')
+    subprocess.call('python Tetris.py', shell=False)
     os.chdir(original_directory)
 
 elif FlappyBird:
     time.sleep(3)
 
     os.chdir('re/FlappyBird')
-    os.system('python fb.py')
+    subprocess.call('python fb.py', shell=False)
     os.chdir(original_directory)
 
 elif petRock:
     os.chdir('re/petRockAdventure')
-    os.system('python petRockA.py')
+    subprocess.call('python petRockA.py', shell=False)
     os.chdir(original_directory)
 
 

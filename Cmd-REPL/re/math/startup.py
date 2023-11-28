@@ -33,8 +33,8 @@ print("ENJOY MATH Y'ALL NERDS!")
 
 time.sleep(0.5)
 
-os.system('cls')
+subprocess.call('cls', shell=True)
 time.sleep(2)
 
-os.chdir('rere')
-subprocess.call('dotnet run mathcmd.cs', shell=False)
+os.chdir('rere/bin/Debug/net6.0')
+subprocess.call('mathcmd', shell=False)

@@ -1,10 +1,11 @@
 import os
 import time
+import subprocess
 lessons = True
 
 original_directory = os.getcwd()
 
-os.system('cls')
+subprocess.call('cls', shell=True)
 print("JAVASCRIPT LESSONS (.JS)")
 time.sleep(2)
 
@@ -30,15 +31,15 @@ while lessons:
 
 
     elif lessonAns == "1.1":
-         os.system('cls')
+         subprocess.call('cls', shell=True)
 
          time.sleep(2)
          os.chdir('1.1')
-         os.system('node ./index')
+         subprocess.call('node ./index', shell=False)
 
          print("\nPress enter to continue...")
          input()
-         os.system('cls')
+         subprocess.call('cls', shell=True)
          os.chdir(original_directory)
 
          print("JAVASCRIPT LESSON (.JS)\n")
