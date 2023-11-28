@@ -29,6 +29,5 @@ class Program {
     Console.WriteLine("PS You're fired!");
 
     // Console.WriteLine(GET OUT OF MY OFFICE NOW!!!);
-
   }
 }
