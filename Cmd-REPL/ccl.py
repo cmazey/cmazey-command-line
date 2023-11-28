@@ -104,7 +104,7 @@ if terms == "yes":
     Agreed = True
 else:
     os.chdir('re/others/re/um')
-    os.system('noeula.vbs')
+    subprocess.call('noeula.vbs', shell=False)
 
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
