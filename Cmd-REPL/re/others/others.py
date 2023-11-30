@@ -27,6 +27,8 @@ while others:
     time.sleep(0.1)
     print("- petRockAdventure")
     time.sleep(0.1)
+    print("- Pygame (Installing pygame modules)")
+    time.sleep(0.1)
     print("- (More coming soon...)")
     time.sleep(0.1)
     otherAns = input("-> ")
@@ -82,6 +84,17 @@ while others:
             petRock = True
         else:
             print("Undefined prompt, please try again.\n")
+    elif otherAns == "Pygame":
+        print("\nAre you sure that you want to install the Pygame modules.")
+        Confirming = input("(y/n) -> ")
+        if Confirming == "y":
+            subprocess.call('pip install pygame', shell=False)
+            time.sleep(1)
+            print("PYGAME module has been installed, press the enter key to continue")
+            input()
+            subprocess.call('cls', shell=True)
+        else:
+            print("")
 
 
     elif otherAns == "exit":
