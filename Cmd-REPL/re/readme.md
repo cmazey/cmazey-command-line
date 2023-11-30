@@ -35,7 +35,7 @@ git clone https://github.com/cmazey/cmazey-command-line.git
 ```
 
 # Node JS Requirements
-Before you can open the Node command line, you must install these necessary packages for it to work properly, to do so, open the command line, and type in the following.
+Before you can open the Node command line, you must install these necessary packages for it to work properly, to do so, open the command line, and type in the following. (v1.0.0 or later, there's a option to install/update these package files in the application without the need to type in any code.)
 
 ```
 npm install readline-sync
