@@ -30,6 +30,6 @@ Check out our [discord](https://discord.gg/MP6DhTjzfj) server if you have to rep
 > You can get the @updates role in #Channels%Roles.
 
 ### Installations
-
+------------------
 Check out our [Github Release page](https://github.com/cmazey/cmazey-command-line/releases) for the latest versions of Cmazey Command Line!
 > You can check out the [setup process](https://github.com/cmazey/cmazey-command-line/blob/main/Cmd-REPL/re/readme.md) if you want to download the whole source.
