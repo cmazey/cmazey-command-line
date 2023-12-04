@@ -19,7 +19,7 @@ NodeJS: Version: v1.0.1
 Python: Version: PRE ALPHA: v1.0.3
 </p>
 <p align="center">
-Cmazey Math Cmd: v6.9
+Cmazey Math Cmd: v6.9.5
 </p>
 
 ## - SET UP -

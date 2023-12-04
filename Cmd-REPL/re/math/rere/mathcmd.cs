@@ -2,7 +2,7 @@ System.Threading.Thread.Sleep(3000);
 Console.Clear();
 
 Console.WriteLine ("--- CMAZEY CALCULATOR ---");
-Console.WriteLine("ALPHA v6.9");
+Console.WriteLine("ALPHA v6.9.5");
 
 Console.WriteLine("\nType /help to show all the available commands!");
 
@@ -61,8 +61,9 @@ while (cmazeyCalculator)
     Console.WriteLine("- HToI");
     Console.WriteLine("- 8Ball");
     Console.WriteLine("- Lottery");
-    Console.WriteLine("- Change\n");
-    Console.WriteLine("- Exit");
+    Console.WriteLine("- Change");
+    Console.WriteLine("- Clear");
+    Console.WriteLine("- Exit\n");
   }
   
   // MULTIPLICATION
