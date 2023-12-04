@@ -30,7 +30,7 @@ if (ans1 == "yes") {
     console.log("- WINDOWS COMMAND LINE *Nodejs Edition* -");
     console.log("REPL RECREATED BY COLTON MAZEY AKA 'CMAZEY'\n");
     console.log("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site for any recent updates, thanks!".red);
-    console.log("Version: v1.0.1\n");
+    console.log("Version: v1.0.3\n");
     var name = readline.question("Please enter your username: ");
 
     console.clear();
@@ -736,15 +736,15 @@ else {
     var playanswer = readline.question("Do you want to check out the play? (yes, no) -> ");
 
     if (playanswer == "yes") {
-      console.log("\nThe play is called 'The 25th Annual Putnam County Spelling Bee'!")
-      console.log("The play starts thorugh November 17 to November 20 from 7:00 PM to 10:00 PM!\n");
+      console.log("\nThe play is called 'Little Shop of Horrors'!")
+      console.log("November 17, 2023 -> November 19, 2023.\n");
       var playcredits = readline.question("Do you want to check out the play credits? (yes, no) -> ");
 
       if (playcredits == "yes") {
         console.log("\nComing soon...\n");
       }
       else {
-        console.log();
+        console.log("The following prompt has been canceled.\n");
       }
       
     }
@@ -756,16 +756,11 @@ else {
     console.log("\nThis is a test...\n");
   }
   else if (cmdanswer == "St. Eds") {
-    console.log("\nComing soon..\n\n");
+    console.log("\A school...\n\n");
   }
   else if (cmdanswer == "sad") {
     console.log("\nSomeone named Braedon made me sad because he was given the sound effect role and I wish I was able to do that so yeah... ");
     console.log(" :  ( \n\n");
-  }
-  else if (cmdanswer == "playbee") {
-    //console.clear();
-    //Test
-    console.log("Coming soon!\n");
   }
   else if (cmdanswer == "exit") {
     console.log("Thanks for checking out Cmazey Command Line NODE.JS Edition!\n")

@@ -13,7 +13,7 @@
 CCL Version: v1.0.0
 </p>
 <p align="center">
-NodeJS: Version: v1.0.1
+NodeJS: Version: v1.0.3
 </p>
 <p align="center">
 Python: Version: PRE ALPHA: v1.0.3
