@@ -765,6 +765,8 @@ else {
   else if (cmdanswer == "exit") {
     console.log("Thanks for checking out Cmazey Command Line NODE.JS Edition!\n")
     commandline = false;
+
+    console.log("The application has been terminated. Press enter to head back to the start menu, or close the terminal.")
   }
   else {
     console.log(`\n${cmdanswer} : The term '${cmdanswer} is not recognized as the name of a cmd, function, script file, or operable program. Please check the spelling or use the help command to see all the available commands.`.red);
