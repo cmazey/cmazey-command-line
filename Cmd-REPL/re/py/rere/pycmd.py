@@ -436,12 +436,3 @@ while(clear):
             print()
 
 
-
-
-
-
-
-
-
-
-

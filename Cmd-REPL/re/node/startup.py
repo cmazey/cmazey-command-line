@@ -93,16 +93,12 @@ else:
     print("Opening file...")
     sleep(3)
 
-
 try:
     subprocess.call('node ./nodecmd.js', shell=False)
 
 except:
     print("Error has been occured while opening Node.JS file. ")
     input()
-
-
-
 
 print("Heading back to the start menu, please hold...")
 sleep(3)

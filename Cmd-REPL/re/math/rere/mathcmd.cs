@@ -285,3 +285,4 @@ while (cmazeyCalculator)
 
 Console.Write("Press enter to exit program...");
 Console.ReadLine();
+
