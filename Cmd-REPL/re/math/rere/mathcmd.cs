@@ -2,7 +2,7 @@ System.Threading.Thread.Sleep(3000);
 Console.Clear();
 
 Console.WriteLine ("--- CMAZEY CALCULATOR ---");
-Console.WriteLine("ALPHA v6.9.5");
+Console.WriteLine("ALPHA v6.9.1");
 
 Console.WriteLine("\nType /help to show all the available commands!");
 

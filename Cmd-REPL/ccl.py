@@ -116,7 +116,7 @@ if Agreed:
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
     time.sleep(0.1)
-    print("v1.0.0")
+    print("v1.1.0")
     time.sleep(2)
     print("- chngdir")
     time.sleep(0.1)

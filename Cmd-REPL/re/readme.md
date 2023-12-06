@@ -10,16 +10,16 @@
  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/cmazey/cmazey-command-line/early?style=flat-square&logo=github">
 </p>  
 <p align="center">
-CCL Version: v1.0.0
+CCL Version: v1.1.0
 </p>
 <p align="center">
-NodeJS: Version: v1.0.3
+NodeJS: Version: v1.0.4
 </p>
 <p align="center">
-Python: Version: PRE ALPHA: v1.0.3
+Python: Version: PRE ALPHA: v1.0.4
 </p>
 <p align="center">
-Cmazey Math Cmd: v6.9.5
+Cmazey Math Cmd: v6.9.1
 </p>
 
 ## - SET UP -
