@@ -27,6 +27,8 @@ while others:
     time.sleep(0.1)
     print("- petRockAdventure")
     time.sleep(0.1)
+    print("- PswdGenrtr")
+    time.sleep(0.1)
     print("- Pygame (Installing pygame modules)")
     time.sleep(0.1)
     print("- (More coming soon...)")
@@ -43,6 +45,7 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
+
     elif otherAns == "Tetris":
         print("OTHER:: Tetris")
         Confirming = input("Continue? (y/n) -> ")
@@ -52,6 +55,7 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
+
     elif otherAns == "2.5":
         subprocess.call('cls', shell=True)
         os.chdir('re/2.5')
@@ -59,7 +63,6 @@ while others:
 
         print("\n\nPress enter to continue...")
         input()
-
         subprocess.call('cls', shell=True)
         os.chdir(original_directory)
 
@@ -67,6 +70,22 @@ while others:
         time.sleep(2)
         print("- exit")
         time.sleep(0.1)
+    
+    elif otherAns == "PswdGenrtr":
+        subprocess.call('cls', shell=True)
+        os.chdir('re/PswdGenrtr')
+        subprocess.call('python pass.py')
+
+        print("\n\nPress enter to continue...")
+        input()
+        subprocess.call('cls', shell=True)
+        os.chdir(original_directory)
+
+        print('\033[1m' + "OTHERS" + '\033[0m')
+        time.sleep(2)
+        print("- exit")
+        time.sleep(0.1)
+
     elif otherAns == "FlappyBird":
         print("OTHER:: Flappy Bird")
         Confirming = input("Continue? (y/n) -> ")
@@ -76,6 +95,7 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
+
     elif otherAns == "petRockAdventure":
         print("OTHER::petRockAdventure")
         Confirming = input("Continue? (y/n) -> ")
@@ -84,6 +104,7 @@ while others:
             petRock = True
         else:
             print("Undefined prompt, please try again.\n")
+
     elif otherAns == "Pygame":
         print("\nAre you sure that you want to install the Pygame modules.")
         Confirming = input("(y/n) -> ")
