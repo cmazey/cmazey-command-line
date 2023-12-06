@@ -152,7 +152,7 @@ elif petRock:
 
 
 elif exit:
-    print("Prompt executing, please for checking out others program!\n")
+    print("Prompt executing.. Thanks for checking out others program!\n")
     time.sleep(2)
 
 done = False
