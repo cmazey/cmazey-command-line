@@ -1,4 +1,5 @@
 # CMAZEY COMMAND LINE
+> Updating README.md... It may take a while.
 
 I have revamped this amazing custom Command Line or REPL to make it easier for all, and it's all for fun, I hope you enjoy it!
   
@@ -18,8 +19,8 @@ I have revamped this amazing custom Command Line or REPL to make it easier for a
   [![CodeFactor](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/badge/main)](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/overview/main)
 
 
-> If you don't want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
-<img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.com%2F%40NotCmazey%2Fcmazey-command-line%3Fv%3D1">
+~~> If you don't want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
+<img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.com%2F%40NotCmazey%2Fcmazey-command-line%3Fv%3D1">~~
 
 
 ### REQUIREMENTS
