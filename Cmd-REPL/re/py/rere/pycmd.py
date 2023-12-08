@@ -1,3 +1,5 @@
+version = "PRE ALPHA v1.0.5"
+
 import time
 import os
 clear = False
@@ -26,7 +28,7 @@ while(clear):
     time.sleep(2)
     print("WARNING: This recreated command line is NOT finished, This command line will be constantly updated, please check the Github site to check for recent updates, thanks!")
     time.sleep(1)
-    print("Version: PRE ALPHA: v1.0.4")
+    print(f"Version: {version}")
     time.sleep(3)
     print()
     time.sleep(1)
@@ -425,9 +427,9 @@ while(clear):
                         print()
                         time.sleep(0.1)
         #End of "Play"
-        elif cmdanswer == "version:":
+        elif cmdanswer == "version":
             time.sleep(0.1)
-            print("REPL Version: v2.4.3")
+            print(f"REPL Version: {version}")
             time.sleep(3)
         elif cmdanswer == "currentdir":
             print("Current Directory:", os.getcwd())

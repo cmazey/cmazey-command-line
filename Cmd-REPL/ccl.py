@@ -4,11 +4,11 @@ import itertools
 import threading
 import sys
 import subprocess
+from datetime import datetime
 Agreed = False
+deBug = False
 Prompt = False
-mathPrompt = False
-nodePrompt = False
-pyPrompt = False
+dBugPrompt = False
 
 original_directory = os.getcwd()
 
@@ -102,6 +102,8 @@ terms = input("-> ")
 
 if terms == "yes":
     Agreed = True
+elif terms == "dbug":
+    deBug = True
 else:
     os.chdir('re/others/re/um')
     subprocess.call('noeula.vbs', shell=False)
@@ -252,4 +254,210 @@ while Prompt:
         Prompt = False
     else:
         print("Invalid prompt...\n")
+
+if deBug:
+    subprocess.call('cls', shell=True)
+
+    if not os.path.exists('./debugs'):
+        os.mkdir('./debugs')
+        os.chdir('debugs')
+    else:
+        os.chdir('debugs')
+    
+    time.sleep(1)
+
+    if os.path.exists('debugLogs.txt'):
+        f = open("debugLogs.txt", "a")
+        time.sleep(1)
+        f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Debug panel has been opened.")
+        time.sleep(0.5)
+        f.close()
+    else:
+        f = open("debugLogs.txt", "w")
+        time.sleep(0.5)
+        f.write("---- CCL DEBUG LOGS ----\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Debug panel has been created and opened")
+        time.sleep(0.5)
+        f.close()
+
+
+    print("CMAZEY COMMAND LINE DEBUG")
+    time.sleep(0.5)
+    print("\nnode")
+    print("py")
+    print("math")
+    print("other")
+    print("lessons\n")
+    print("crntdir")
+    print("exit")
+
+    print()
+    dBugPrompt = True
+
+    while dBugPrompt:
+        dBugg = input("-> ")
+
+        if dBugg == "node":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: node")
+            time.sleep(0.5)
+            f.close()
+            os.chdir(original_directory)
+            
+            os.chdir('re/node/rere')
+            subprocess.call('node ./nodecmd.js', shell=False)
+
+            os.chdir(original_directory)
+            os.chdir('debugs')
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: node")
+            time.sleep(0.5)
+            f.close()
+
+        elif dBugg == "help":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following command: help")
+            time.sleep(0.5)
+            f.close()
+
+            print("\nnode")
+            print("py")
+            print("math")
+            print("other")
+            print("lessons")
+            print("crntdir")
+            print("exit")
+
+        elif dBugg == "py":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: pycmd")
+            time.sleep(0.5)
+            f.close()
+            os.chdir(original_directory)
+
+            sys.stdout = open('debugLogs.txt', 'a')
+            os.chdir('re/py/rere')
+            subprocess.call('python pycmd.py', shell=False)
+            f.close()
+
+            os.chdir(original_directory)
+            os.chdir('debugs')
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: pycmd")
+            time.sleep(0.5)
+            f.close()
+
+        elif dBugg == "math":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: math")
+            time.sleep(0.5)
+            f.close()
+            os.chdir(original_directory)
+
+            os.chdir('re/math/rere')
+            subprocess.call('dotnet run mathcmd.cs', shell=False)
+
+            os.chdir(original_directory)
+            os.chdir('debugs')
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Closing following prompt: math")
+            time.sleep(0.5)
+            f.close()
+
+        elif dBugg == "other":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: others")
+            time.sleep(0.5)
+            f.close()
+            os.chdir(original_directory)
+
+            os.chdir('re/others')
+            subprocess.call('python others.py', shell=False)
+
+            os.chdir(original_directory)
+            os.chdir('debugs')
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: others")
+            time.sleep(0.5)
+            f.close()
+
+        elif dBugg == "lessons":
+            print("- csharp (C#)")
+            print("- javascript (.JS)")
+            lessonsPrompt = input("-> ")
+
+            if lessonsPrompt == "csharp":
+                f = open("debugLogs.txt", "a")
+                time.sleep(1)
+                f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: lessons:cs")
+                time.sleep(0.5)
+                f.close()      
+                os.chdir(original_directory)
+
+
+                os.chdir('re/lessons/re/cs')
+                subprocess.call('python csharp.py', shell=False)
+
+                os.chdir(original_directory)
+                os.chdir('debugs')
+                f = open("debugLogs.txt", "a")
+                time.sleep(1)
+                f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: lessons:cs")
+                time.sleep(0.5)
+                f.close()      
+                
+
+            elif lessonsPrompt == "javascript":
+                f = open("debugLogs.txt", "a")
+                time.sleep(1)
+                f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: lessons:js")
+                time.sleep(0.5)
+                f.close()      
+                os.chdir(original_directory)
+
+                os.chdir('re/lessons/re/js')
+                subprocess.call('python javascript.py', shell=False)
+
+                os.chdir(original_directory)
+                os.chdir('debugs')
+
+                f = open("debugLogs.txt", "a")
+                time.sleep(1)
+                f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: lessons:js")
+                time.sleep(0.5)
+                f.close()      
+
+            else:
+                print("Invalid prompt, canceled...\n")
+
+        elif dBugg == "crntdir":
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following command: crntdir")
+            time.sleep(0.5)
+            f.close()      
+            print("Current directory: '" + os.getcwd() + "'\n")
+        
+        elif dBugg == "exit":
+            print("Exiting debug mode...")
+            time.sleep(5)
+            f = open("debugLogs.txt", "a")
+            time.sleep(1)
+            f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> debug panel terminated")
+            time.sleep(0.5)
+            f.close()      
+            os.chdir(original_directory)
+            dBugPrompt = False
+            
+        else:
+            print("Invalid prompt, please try again.\n")
+
 
