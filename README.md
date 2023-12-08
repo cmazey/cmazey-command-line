@@ -1,4 +1,5 @@
 # CMAZEY COMMAND LINE
+> Updating README.md... It may take a while.
 
 I have revamped this amazing custom Command Line or REPL to make it easier for all, and it's all for fun, I hope you enjoy it!
   
@@ -18,9 +19,11 @@ I have revamped this amazing custom Command Line or REPL to make it easier for a
   [![CodeFactor](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/badge/main)](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/overview/main)
 
 
-> If you don't want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
-<img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.com%2F%40NotCmazey%2Fcmazey-command-line%3Fv%3D1">
+~~> If you don't want to use the command line locally, then [click here](https://replit.com/@NotCmazey/cmazey-command-line?v=1) to use it without doing anything in the setup! 
+<img alt="Website" src="https://img.shields.io/website?style=plastic&url=https%3A%2F%2Freplit.com%2F%40NotCmazey%2Fcmazey-command-line%3Fv%3D1">~~
 
+### FEATURES
+> Coming soon
 
 ### REQUIREMENTS
 ------------------
@@ -29,7 +32,7 @@ You MUST have [Python](https://www.python.org/downloads/), [Node.Js](https://nod
 Check out our [discord](https://discord.gg/MP6DhTjzfj) server if you have to report any bugs within the code, and to get notified of the latest updates!
 > You can get the @updates role in #Channels%Roles.
 
-### Installations
+### INSTALLATIONS
 ------------------
 Check out our [Github Release page](https://github.com/cmazey/cmazey-command-line/releases) for the latest versions of Cmazey Command Line!
 > You can check out the [setup process](https://github.com/cmazey/cmazey-command-line/blob/main/Cmd-REPL/re/readme.md) if you want to download the whole source.
