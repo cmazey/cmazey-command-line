@@ -9,7 +9,7 @@ Agreed = False
 deBug = False
 Prompt = False
 dBugPrompt = False
-version = "v1.1.1"
+version = "v1.1.1" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -105,6 +105,8 @@ if terms == "yes":
     Agreed = True
 elif terms == "dbug":
     deBug = True
+elif terms == "dbugNoLoogs":
+    deBugNoLogs = True
 else:
     os.chdir('re/others/re/um')
     subprocess.call('noeula.vbs', shell=False)
@@ -112,7 +114,6 @@ else:
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
     time.sleep(3)
-
     print('\033[93m')
     subprocess.call('cls', shell=True)
     
@@ -457,8 +458,90 @@ if deBug:
             f.close()      
             os.chdir(original_directory)
             dBugPrompt = False
-            
+
+        elif dBugg == "clear" | dBugg == "cls":
+            subprocess.call("cls", shell=True)
+
         else:
             print("Invalid prompt, please try again.\n")
+            
+if deBugNoLogs:
+    time.sleep(1)
+    print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
+
+    print("\nnode")
+    print("py")
+    print("math")
+    print("other")
+    print("lessons")
+    print("crntdir")
+    print("exit\n")
+
+    deBugNoLogsPrompt = True
+
+    while deBugNoLogsPrompt:
+            dBugg = input("-> ")
+
+            if dBugg == "node":
+                os.chdir('re/node/rere')
+                subprocess.call('node ./nodecmd.js', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "help":
+                print("\nnode")
+                print("py")
+                print("math")
+                print("other")
+                print("lessons")
+                print("crntdir")
+                print("exit")
+
+            elif dBugg == "py":  
+                subprocess.call('python pycmd.py', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "math":
+                os.chdir('re/math/rere')
+                subprocess.call('dotnet run mathcmd.cs', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "other":
+                os.chdir('re/others')
+                subprocess.call('python others.py', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "lessons":
+                print("- csharp (C#)")
+                print("- javascript (.JS)")
+                lessonsPrompt = input("-> ")
+
+                if lessonsPrompt == "csharp":
+                    os.chdir('re/lessons/re/cs')
+                    subprocess.call('python csharp.py', shell=False)
+                    os.chdir(original_directory)
+    
+                elif lessonsPrompt == "javascript":   
+                    os.chdir('re/lessons/re/js')
+                    subprocess.call('python javascript.py', shell=False)
+                    os.chdir(original_directory)   
+
+                else:
+                    print("Invalid prompt, canceled...\n")
+
+            elif dBugg == "crntdir":
+                print("Current directory: '" + os.getcwd() + "'\n")
+            
+            elif dBugg == "exit":
+                print("Exiting debug mode...")
+                time.sleep(5)
+                deBugNoLogsPrompt = False
+
+            elif dBugg == "clear" | dBugg == "cls":
+                subprocess.call("cls", shell=True)
+
+            else:
+                print("Invalid prompt, please try again.\n")
+            
+
 
 
