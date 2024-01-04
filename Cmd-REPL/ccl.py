@@ -9,6 +9,7 @@ Agreed = False
 deBug = False
 Prompt = False
 dBugPrompt = False
+version = "v1.1.1"
 
 original_directory = os.getcwd()
 
@@ -118,7 +119,7 @@ if Agreed:
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
     time.sleep(0.1)
-    print("v1.1.0")
+    print(version)
     time.sleep(2)
     print("- chngdir")
     time.sleep(0.1)
