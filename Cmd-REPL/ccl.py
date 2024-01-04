@@ -8,8 +8,10 @@ from datetime import datetime
 Agreed = False
 deBug = False
 Prompt = False
+deBugNoLogs = False
+
 dBugPrompt = False
-version = "v1.1.3" # Make sure to change version number before publishing changes!!!
+version = "v1.1.4" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -105,11 +107,11 @@ if terms == "yes":
     Agreed = True
 elif terms == "dbug":
     deBug = True
-elif terms == "dbugNoLoogs":
+elif terms == "dbugnoloogs" or terms == "dbugn/l":
     deBugNoLogs = True
 else:
     os.chdir('re/others/re/um')
-    subprocess.call('noeula.vbs', shell=False)
+    subprocess.call('noeula.vbs', shell=True)
 
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
@@ -257,6 +259,7 @@ while Prompt:
     else:
         print("Invalid prompt...\n")
 
+# debug option
 if deBug:
     subprocess.call('cls', shell=True)
 
@@ -459,13 +462,15 @@ if deBug:
             os.chdir(original_directory)
             dBugPrompt = False
 
-        elif dBugg == "clear" | dBugg == "cls":
+        elif dBugg == "clear" or dBugg == "cls":
             subprocess.call("cls", shell=True)
 
         else:
             print("Invalid prompt, please try again.\n")
 
+# debug option but with no logs
 if deBugNoLogs:
+    subprocess.call('cls', shell=True)
     time.sleep(1)
     print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
 
@@ -536,7 +541,7 @@ if deBugNoLogs:
                 time.sleep(5)
                 deBugNoLogsPrompt = False
 
-            elif dBugg == "clear" | dBugg == "cls":
+            elif dBugg == "clear" or dBugg == "cls":
                 subprocess.call("cls", shell=True)
 
             else:
