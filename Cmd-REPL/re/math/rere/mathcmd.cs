@@ -1,8 +1,10 @@
+string version = "ALPHA v6.9.2";
+
 System.Threading.Thread.Sleep(3000);
 Console.Clear();
 
 Console.WriteLine ("--- CMAZEY CALCULATOR ---");
-Console.WriteLine("ALPHA v6.9.1");
+Console.WriteLine(version);
 
 Console.WriteLine("\nType /help to show all the available commands!");
 
@@ -63,6 +65,7 @@ while (cmazeyCalculator)
     Console.WriteLine("- Lottery");
     Console.WriteLine("- Change");
     Console.WriteLine("- Clear");
+    Console.WriteLine("- Version");
     Console.WriteLine("- Exit\n");
   }
   
@@ -156,6 +159,12 @@ while (cmazeyCalculator)
 
     Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
     Console.ReadLine();
+  }
+  
+  //Version
+  else if (input == "Version")
+  {
+    Console.WriteLine($"Version: {version}");
   }
 
   //HeightToInches
