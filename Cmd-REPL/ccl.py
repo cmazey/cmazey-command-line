@@ -9,7 +9,7 @@ Agreed = False
 deBug = False
 Prompt = False
 dBugPrompt = False
-version = "v1.1.1" # Make sure to change version number before publishing changes!!!
+version = "v1.1.3" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -464,7 +464,7 @@ if deBug:
 
         else:
             print("Invalid prompt, please try again.\n")
-            
+
 if deBugNoLogs:
     time.sleep(1)
     print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
@@ -494,7 +494,7 @@ if deBugNoLogs:
                 print("other")
                 print("lessons")
                 print("crntdir")
-                print("exit")
+                print("exit\n")
 
             elif dBugg == "py":  
                 subprocess.call('python pycmd.py', shell=False)
