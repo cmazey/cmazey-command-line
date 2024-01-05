@@ -1,10 +1,15 @@
-string version = "ALPHA v6.9.2";
+using Spectre.Console;
+bool basic = false;
+string version = "ALPHA v6.10.0";
 
 System.Threading.Thread.Sleep(3000);
 Console.Clear();
 
-Console.WriteLine ("--- CMAZEY CALCULATOR ---");
-Console.WriteLine(version);
+AnsiConsole.Write(
+  new FigletText("CMAZEY CALCULATOR")
+  .LeftJustified()
+  .Color(Color.Red));
+AnsiConsole.Markup($"[yellow]{version}[/]");
 
 Console.WriteLine("\nType /help to show all the available commands!");
 
@@ -66,6 +71,7 @@ while (cmazeyCalculator)
     Console.WriteLine("- Change");
     Console.WriteLine("- Clear");
     Console.WriteLine("- Version");
+    Console.WriteLine("- Basic");
     Console.WriteLine("- Exit\n");
   }
   
@@ -128,11 +134,45 @@ while (cmazeyCalculator)
     Console.SetCursorPosition(0, Console.CursorTop -1);
     Console.WriteLine($"Change Amount: {change}₵                                        ");
 
-    Console.WriteLine($"\nQuarters: {Quarters}");
-    Console.WriteLine($"Dimes: {Dimes}");
-    Console.WriteLine($"Nickels: {Nickels}");
-    Console.WriteLine($"Pennies: {Pennies}");
-    
+    if (basic)
+    {
+      Console.WriteLine($"\nQuarters: {Quarters}");
+      Console.WriteLine($"Dimes: {Dimes}");
+      Console.WriteLine($"Nickels: {Nickels}");
+      Console.WriteLine($"Pennies: {Pennies}");
+    }
+    else
+    {
+      var changeAmountResult = new Table();
+
+      AnsiConsole.Live(changeAmountResult)
+      .Start(ctx =>
+      {
+        changeAmountResult.AddColumn("[yellow]Change[/]");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddColumn(new TableColumn ("[yellow]Amount[/]"));
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Quarters", $"{Quarters}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Dimes", $"{Dimes}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Nickels", $"{Nickels}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Pennies", $"{Pennies}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+      });
+    }
     Console.ReadLine();
   }
   //Clear
@@ -272,6 +312,22 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("Exiting...\n\n");
     cmazeyCalculator = false;
+  }
+
+  // Basic Mode
+  else if (input == "Basic")
+  {
+    Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
+    string inputBasic = Console.ReadLine();
+
+    if (inputBasic == "y")
+    {
+      basic = true;
+    }
+    else
+    {
+      Console.WriteLine("Prompt Canceled...\n");
+    }
   }
       
   // INVALID RESPONSE

@@ -12,3 +12,10 @@ C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\n
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.pdb
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.genruntimeconfig.cache
 C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\ref\mathcmd.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\Spectre.Console.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\Spectre.Console.Cli.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\de\Spectre.Console.Cli.resources.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\fr\Spectre.Console.Cli.resources.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\bin\Debug\net6.0\sv\Spectre.Console.Cli.resources.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.csproj.AssemblyReference.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\math\rere\obj\Debug\net6.0\mathcmd.csproj.CopyComplete
