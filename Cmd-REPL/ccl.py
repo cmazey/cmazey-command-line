@@ -293,6 +293,7 @@ if deBug:
     print("other")
     print("lessons\n")
     print("crntdir")
+    print("del")
     print("exit")
 
     print()
@@ -333,6 +334,7 @@ if deBug:
             print("other")
             print("lessons")
             print("crntdir")
+            print("del")
             print("exit")
 
         elif dBugg == "py":
@@ -464,6 +466,39 @@ if deBug:
 
         elif dBugg == "clear" or dBugg == "cls":
             subprocess.call("cls", shell=True)
+
+        elif dBugg == "del":
+            print("Are you sure that you want to delete Pswd Results, and any Debug Directorys?")
+            doubleCheck = input("(y/n) -> ")
+
+            if doubleCheck == "y":
+                os.chdir(original_directory)
+                os.chdir('re/others/re/PswdGenrtr/Result')
+                if os.path.exists("PassGenResult.txt"):
+                    os.remove("PassGenResult.txt")
+                    print("PassGenResult.txt Deleted")
+                else:
+                    print()
+                time.sleep(2)
+                os.chdir(original_directory)
+                os.chdir("debugs")
+                if os.path.exists("debugLogs.txt"):
+                    os.remove("debugLogs.txt")
+                    print("debugLogs.txt Deleted")
+                else:
+                    print()
+                time.sleep(2)
+                os.chdir(original_directory)
+                os.rmdir("debugs")
+                print("debug directory Deleted")
+                time.sleep(4)
+
+                print("\nPress enter to exit terminal, thank you for checking out Cmazey Command Line!")
+                input()
+                dBugPrompt = False
+
+            else:
+                print("Prompt canceled...\n")
 
         else:
             print("Invalid prompt, please try again.\n")
