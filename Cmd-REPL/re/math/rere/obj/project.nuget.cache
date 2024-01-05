@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/YOdhsHxmcEd8g+EiJmhOku/0TkRSZKndkRaYSd1RUJF0owSVxix0lJ5cRL1x5z2M7YcWWuoi1B6svoJxeQRow==",
+  "dgSpecHash": "flHqMcxwyca0usz0/HB0BNyLdlnaJRr95EAxM81/aSIzXnw3sbaq4W+8xc/sgLcMCeBoAhF0MHPY+WSWE5nGnA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+  "projectFilePath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mazeycolt\\.nuget\\packages\\spectre.console\\0.48.0\\spectre.console.0.48.0.nupkg.sha512",
     "C:\\Users\\mazeycolt\\.nuget\\packages\\spectre.console.cli\\0.48.0\\spectre.console.cli.0.48.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {}
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+        "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
         "projectName": "mathcmd",
-        "projectPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+        "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
         "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
+        "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
