@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {}
+    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {
+    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+        "projectUniqueName": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
         "projectName": "mathcmd",
-        "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
+        "projectPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\mathcmd.csproj",
         "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
+        "outputPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\math\\rere\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Spectre.Console": {
+              "target": "Package",
+              "version": "[0.48.0, )"
+            },
+            "Spectre.Console.Cli": {
+              "target": "Package",
+              "version": "[0.48.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
