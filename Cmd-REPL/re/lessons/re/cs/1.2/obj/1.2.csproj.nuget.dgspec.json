@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj": {}
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj": {
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj",
+        "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj",
         "projectName": "1.2",
-        "projectPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj",
+        "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\1.2.csproj",
         "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\obj\\",
+        "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
