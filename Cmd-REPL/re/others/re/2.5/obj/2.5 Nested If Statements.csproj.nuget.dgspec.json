@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj": {}
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj": {
+    "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj",
+        "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj",
         "projectName": "2.5 Nested If Statements",
-        "projectPath": "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj",
-        "packagesPath": "C:\\Users\\Cmaze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\obj\\",
+        "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\2.5 Nested If Statements.csproj",
+        "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\2.5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Cmaze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
