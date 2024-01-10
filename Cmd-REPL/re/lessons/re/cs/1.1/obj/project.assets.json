@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\1.1.csproj",
+      "projectUniqueName": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\1.1.csproj",
       "projectName": "1.1",
-      "projectPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\1.1.csproj",
+      "projectPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\1.1.csproj",
       "packagesPath": "C:\\Users\\mazeycolt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\obj\\",
+      "outputPath": "c:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\lessons\\re\\cs\\1.1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mazeycolt\\AppData\\Roaming\\NuGet\\NuGet.Config",
