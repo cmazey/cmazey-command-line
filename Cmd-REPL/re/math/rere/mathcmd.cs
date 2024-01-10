@@ -1,8 +1,15 @@
+using Spectre.Console;
+bool basic = false;
+string version = "ALPHA v6.10.0";
+
 System.Threading.Thread.Sleep(3000);
 Console.Clear();
 
-Console.WriteLine ("--- CMAZEY CALCULATOR ---");
-Console.WriteLine("ALPHA v6.9.1");
+AnsiConsole.Write(
+  new FigletText("CMAZEY CALCULATOR")
+  .LeftJustified()
+  .Color(Color.Red));
+AnsiConsole.Markup($"[yellow]{version}[/]");
 
 Console.WriteLine("\nType /help to show all the available commands!");
 
@@ -63,6 +70,8 @@ while (cmazeyCalculator)
     Console.WriteLine("- Lottery");
     Console.WriteLine("- Change");
     Console.WriteLine("- Clear");
+    Console.WriteLine("- Version");
+    Console.WriteLine("- Basic");
     Console.WriteLine("- Exit\n");
   }
   
@@ -125,11 +134,45 @@ while (cmazeyCalculator)
     Console.SetCursorPosition(0, Console.CursorTop -1);
     Console.WriteLine($"Change Amount: {change}₵                                        ");
 
-    Console.WriteLine($"\nQuarters: {Quarters}");
-    Console.WriteLine($"Dimes: {Dimes}");
-    Console.WriteLine($"Nickels: {Nickels}");
-    Console.WriteLine($"Pennies: {Pennies}");
-    
+    if (basic)
+    {
+      Console.WriteLine($"\nQuarters: {Quarters}");
+      Console.WriteLine($"Dimes: {Dimes}");
+      Console.WriteLine($"Nickels: {Nickels}");
+      Console.WriteLine($"Pennies: {Pennies}");
+    }
+    else
+    {
+      var changeAmountResult = new Table();
+
+      AnsiConsole.Live(changeAmountResult)
+      .Start(ctx =>
+      {
+        changeAmountResult.AddColumn("[yellow]Change[/]");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddColumn(new TableColumn ("[yellow]Amount[/]"));
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Quarters", $"{Quarters}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Dimes", $"{Dimes}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Nickels", $"{Nickels}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+
+        changeAmountResult.AddRow("Pennies", $"{Pennies}");
+        ctx.Refresh();
+        Thread.Sleep(500);
+      });
+    }
     Console.ReadLine();
   }
   //Clear
@@ -156,6 +199,12 @@ while (cmazeyCalculator)
 
     Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
     Console.ReadLine();
+  }
+  
+  //Version
+  else if (input == "Version")
+  {
+    Console.WriteLine($"Version: {version}");
   }
 
   //HeightToInches
@@ -234,26 +283,79 @@ while (cmazeyCalculator)
     int winningNumber = random.Next(0, 100);
     int winningDigitOne = winningNumber / 10;
     int winningDigitTwo = winningNumber % 10;
-    Console.Write("Enter your lottery number (0 - 99): ");
-    string inputLot = Console.ReadLine();
-    int entryNumber = Convert.ToInt32(inputLot);
-    int entryDigitOne = entryNumber / 10;
-    int entryDigitTwo = entryNumber % 10;
-    Console.WriteLine($"\nAnd the winning number is.... {winningNumber}");
-    if (entryNumber == winningNumber)
+
+    if (basic)
     {
-       Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+      Console.Write("Enter your lottery number (0 - 99): ");
+      string inputLot = Console.ReadLine();
+      int entryNumber = Convert.ToInt32(inputLot);
+      int entryDigitOne = entryNumber / 10;
+      int entryDigitTwo = entryNumber % 10;
+      Console.WriteLine($"\nAnd the winning number is.... {winningNumber}");
+      if (entryNumber == winningNumber)
+      {
+        Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+      }
+      else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
+      {
+        Console.WriteLine("You digits match, but out of order! You win $3,000!");
+      }
+      else
+      {
+        Console.WriteLine("No match. Better luck next time!");
+      }
+
+      Console.ReadLine();
     }
-    else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
-    {
-      Console.WriteLine("You digits match, but out of order! You win $3,000!");
-    }
+    
     else
     {
-      Console.WriteLine("No match. Better luck next time!");
-    }
+      var lotInput = AnsiConsole.Prompt(
+        new SelectionPrompt<string>()
+        .Title("Select your [green] lottery number [/]:")
+        .PageSize(100)
+        .AddChoices(new[] {
+          "0", "1", "2", "3", "4", "5",
+          "6", "7", "8", "9", "10", "11",
+          "12", "13", "14", "15", "16", "17",
+          "18", "19", "20", "21", "22", "23",
+          "24", "25", "26", "27", "28", "29",
+          "30", "31", "32", "33", "34", "35",
+          "36", "37", "38", "39", "40", "41",
+          "42", "43", "44", "45", "46", "47", "48",
+          "49", "50", "51", "52", "53", "54", "55", "56",
+          "57", "58", "59", "60", "61", "62", "63", "64",
+          "65", "66", "67", "68", "69", "70", "71",
+          "72", "73", "74", "75", "76", "77", "78",
+          "70", "80", "81", "82", "83", "84", "85",
+          "86", "87", "88", "89", "90", "91", "92", "93",
+          "94", "95", "96", "97", "98", "99", "100"
+        }));
 
-    Console.ReadLine();
+      int entryNumber = Convert.ToInt32(lotInput);
+      int entryDigitOne = entryNumber / 10;
+      int entryDigitTwo = entryNumber % 10;
+
+      AnsiConsole.WriteLine($"[green]Lottery Number Selected: [/] {lotInput}");
+      Thread.Sleep(1000);
+      Console.WriteLine($"And the winning number is....... {winningNumber}");
+
+      if (entryNumber == winningNumber)
+      {
+        Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+      }
+      else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
+      {
+        Console.WriteLine("You digits match, but out of order! You win $3,000!");
+      }
+      else
+      {
+        Console.WriteLine("No match. Better luck next time!");
+      }
+
+      Console.ReadLine();
+
+    }
 
     Console.WriteLine("----------------------------------------------\n"); 
   }
@@ -263,6 +365,29 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("Exiting...\n\n");
     cmazeyCalculator = false;
+  }
+
+  // Basic Mode
+  else if (input == "Basic")
+  {
+    Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
+    if (basic)
+    {
+      Console.WriteLine("Basic is enabled\n");
+    }
+    else
+    {
+      string inputBasic = Console.ReadLine();
+
+      if (inputBasic == "y")
+      {
+        basic = true;
+      }
+      else
+      {
+        Console.WriteLine("Prompt Canceled...\n");
+      }
+    }
   }
       
   // INVALID RESPONSE

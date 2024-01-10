@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "siuqFrHU4NMyIDd/uEfoQZOx4WZ2wSP4ZXr92hQpxDL6dTerLNZKa1lqaQxrlUjJo/gMMj92O8SL4kQeGXxKdQ==",
+  "dgSpecHash": "1KacHGPjkjHJX5U40hhzUgthPV2ijBCQU3FEj4TAX0JLH5RdecATAq4aW/AdR25FbD99ybYSl6BrotL5XFGheQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cmaze\\ccl\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
+  "projectFilePath": "C:\\Users\\mazeycolt\\Desktop\\cmazey-command-line\\Cmd-REPL\\re\\others\\re\\GuessNum\\guessnum.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

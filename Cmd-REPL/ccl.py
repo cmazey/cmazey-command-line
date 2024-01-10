@@ -7,8 +7,12 @@ import subprocess
 from datetime import datetime
 Agreed = False
 deBug = False
+termsNotice = False
 Prompt = False
+deBugNoLogs = False
+
 dBugPrompt = False
+version = "v1.1.6" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -34,91 +38,100 @@ done = True
 
 subprocess.call('cls', shell=True)
 
-
-print('\033[1m' + "End-User License Agreement (EULA)")
-print("\033[0m")
-
-print("This End-User License Agreement ('EULA') is a legal agreement between you and Colton Dog")
-print("Portraits.\n")
-time.sleep(0.1)
-print("This EULA agreement governs your acquisition and use of our Cmazey Command Line software")
-print("('Software') directly from Colton Dog Portraits or indirectly through a Colton Dog Portraits authorized")
-print("reseller or distributor (a 'Reseller'). Anything it says below, you don't have to follow.\n")
-time.sleep(0.1)
-print("Please read this EULA agreement carefully before completing the installation process and using the")
-print("Cmazey Command Line software. It provides a license to use the Cmazey Command Line software")
-print("and contains warranty information and liability disclaimers.\n")
-time.sleep(0.1)
-print("If you are entering into this EULA agreement on behalf of a company or other legal entity, you")
-print("represent that you have the authority to bind such entity and its affiliates to these terms and")
-print("conditions. If you do not have such authority or if you do not agree with the terms and conditions of")
-print("this EULA agreement, do not install or use the Software, and you must not accept this EULA")
-print("agreement.\n")
-time.sleep(0.1)
-print("This EULA agreement will not apply only to the Software supplied by Colton Dog Portraits herewith")
-print("regardless of whether other software is referred to or described herein. The terms doesn't also apply")
-print("to any Colton Dog Portraits updates, supplements, Internet-based services, and support services for the")
-print("Software, unless other terms accompany those items on delivery. If so, those terms apply.\n")
-time.sleep(0.1)
-print('\033[1m' + "License Grant\n" + "\033[0m")
-time.sleep(0.1)
-print("Software, unless other terms accompany those items on delivery. If so, those terms apply.")
-print("the Cmazey Command Line software on your devices in accordance with the terms of this EULA")
-print("agreement.\n")
-time.sleep(0.1)
-print("You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or")
-print("tablet) under your control. You are responsible for ensuring your device meets the minimum")
-print("requirements of the Cmazey Command Line software.\n")
-time.sleep(0.1)
-print('\033[1m' + "You are totally not permitted to:\n" + '\033[0m')
-time.sleep(0.1)
-print("- use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement")
-print("- Use the Software in any way which breaches any applicable local, national or international law\n")
-time.sleep(0.1)
-print('\033[1m' + "Intellectual Property and Ownership\n" + '\033[0m')
-time.sleep(0.1)
-print("Colton Dog Portraits doesn't retain ownership of the Software as originally downloaded by")
-print("you and all subsequent downloads of the Software by you. The Software (and the copyright, and")
-print("other intellectual property rights of whatever nature in the Software, including any modifications")
-print("made thereto) are and shall remain the property by no one.\n")
-time.sleep(0.1)
-print('\033[1m' + "Termination\n" + '\033[0m')
-time.sleep(0.1)
-print("This EULA agreement is never effective/enforced from the date you first use the Software and shall continue until")
-print("terminated. You may terminate it at any time upon written notice to Colton Dog somethings.\n")
-time.sleep(0.1)
-print("It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon")
-print("such termination, the licenses granted by this EULA agreement won't immediately terminate and you")
-print("don't have to agree to stop all access and use of the Software. The provisions that by their nature")
-print("continue and survive will survive any termination of this EULA agreement.\n")
-time.sleep(0.1)
-print('\033[1m' + "Governing Law\n" + '\033[0m')
-time.sleep(0.1)
-print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
-print("shall be governed by and construed in accordance with the laws of no one.\n")
-time.sleep(1)
-print("Do you agree to the EULA above? (yes, no): ")
+print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
+print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
+termsNotice = True
 terms = input("-> ")
 
 if terms == "yes":
+    termsNotice = False
     Agreed = True
+elif terms == "terms":
+    print("End-User License Agreement (EULA)\n")
+    print("This End-User License Agreement ('EULA') is a legal agreement between you and Colton Dog")
+    print("Portraits.\n")
+    time.sleep(0.1)
+    print("This EULA agreement governs your acquisition and use of our Cmazey Command Line software")
+    print("('Software') directly from Colton Dog Portraits or indirectly through a Colton Dog Portraits authorized")
+    print("reseller or distributor (a 'Reseller'). Anything it says below, you don't have to follow.\n")
+    time.sleep(0.1)
+    print("Please read this EULA agreement carefully before completing the installation process and using the")
+    print("Cmazey Command Line software. It provides a license to use the Cmazey Command Line software")
+    print("and contains warranty information and liability disclaimers.\n")
+    time.sleep(0.1)
+    print("If you are entering into this EULA agreement on behalf of a company or other legal entity, you")
+    print("represent that you have the authority to bind such entity and its affiliates to these terms and")
+    print("conditions. If you do not have such authority or if you do not agree with the terms and conditions of")
+    print("this EULA agreement, do not install or use the Software, and you must not accept this EULA")
+    print("agreement.\n")
+    time.sleep(0.1)
+    print("This EULA agreement will not apply only to the Software supplied by Colton Dog Portraits herewith")
+    print("regardless of whether other software is referred to or described herein. The terms doesn't also apply")
+    print("to any Colton Dog Portraits updates, supplements, Internet-based services, and support services for the")
+    print("Software, unless other terms accompany those items on delivery. If so, those terms apply.\n")
+    time.sleep(0.1)
+    print('\033[1m' + "License Grant\n" + "\033[0m")
+    time.sleep(0.1)
+    print("Software, unless other terms accompany those items on delivery. If so, those terms apply.")
+    print("the Cmazey Command Line software on your devices in accordance with the terms of this EULA")
+    print("agreement.\n")
+    time.sleep(0.1)
+    print("You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or")
+    print("tablet) under your control. You are responsible for ensuring your device meets the minimum")
+    print("requirements of the Cmazey Command Line software.\n")
+    time.sleep(0.1)
+    print('\033[1m' + "You are totally not permitted to:\n" + '\033[0m')
+    time.sleep(0.1)
+    print("- use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement")
+    print("- Use the Software in any way which breaches any applicable local, national or international law\n")
+    time.sleep(0.1)
+    print('\033[1m' + "Intellectual Property and Ownership\n" + '\033[0m')
+    time.sleep(0.1)
+    print("Colton Dog Portraits doesn't retain ownership of the Software as originally downloaded by")
+    print("you and all subsequent downloads of the Software by you. The Software (and the copyright, and")
+    print("other intellectual property rights of whatever nature in the Software, including any modifications")
+    print("made thereto) are and shall remain the property by no one.\n")
+    time.sleep(0.1)
+    print('\033[1m' + "Termination\n" + '\033[0m')
+    time.sleep(0.1)
+    print("This EULA agreement is never effective/enforced from the date you first use the Software and shall continue until")
+    print("terminated. You may terminate it at any time upon written notice to Colton Dog somethings.\n")
+    time.sleep(0.1)
+    print("It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon")
+    print("such termination, the licenses granted by this EULA agreement won't immediately terminate and you")
+    print("don't have to agree to stop all access and use of the Software. The provisions that by their nature")
+    print("continue and survive will survive any termination of this EULA agreement.\n")
+    time.sleep(0.1)
+    print('\033[1m' + "Governing Law\n" + '\033[0m')
+    time.sleep(0.1)
+    print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
+    print("shall be governed by and construed in accordance with the laws of no one.\n")
+    time.sleep(1)
+    print("To agree to the terms, type in 'yes' with NO CAPS.")
 elif terms == "dbug":
+    termsNotice = False
     deBug = True
+elif terms == "dbugnoloogs" or terms == "dbugn/l":
+    termsNotice = False
+    deBugNoLogs = True
 else:
     os.chdir('re/others/re/um')
-    subprocess.call('noeula.vbs', shell=False)
+    try:
+        subprocess.call('noeula.vbs', shell=True)
+    except:
+        print("EULA NOT ACCEPTED, terminating program...")
+        time.sleep(5)
 
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
     time.sleep(3)
-
     print('\033[93m')
     subprocess.call('cls', shell=True)
     
     print('\033[1m' + 'CMAZEY COMMAND LINE')
     print('\033[0m')
     time.sleep(0.1)
-    print("v1.1.0")
+    print(version)
     time.sleep(2)
     print("- chngdir")
     time.sleep(0.1)
@@ -131,7 +144,7 @@ while Prompt:
     time.sleep(0.1)
     print("- math")
     time.sleep(0.1)
-    print("- lessons")
+    print("- lessons (disable due to issues)")
     time.sleep(0.1)
     print("- other")
     time.sleep(0.1)
@@ -222,20 +235,21 @@ while Prompt:
             print("Prompt Canceled\n")
 
     elif ans == "lessons":
-        print("Option Chosen: lessons")
-        Confirming = input("Do you want to continue? (y/n) -> ")
+        print("This module has been disabled since most of the code is being flagged as 'malware'. We apologizes for the inconvience but don't worry. The issue will be resolved soon.\n")
+        # print("Option Chosen: lessons")
+        # Confirming = input("Do you want to continue? (y/n) -> ")
 
-        if Confirming == "y":           
-            subprocess.call('cls', shell=True)
-            os.chdir('re/lessons')
-            subprocess.call('python lessons.py', shell=False)
+        # if Confirming == "y":           
+        #    subprocess.call('cls', shell=True)
+        #    os.chdir('re/lessons')
+        #    subprocess.call('python lessons.py', shell=False)
 
-            os.chdir(original_directory)
+        #    os.chdir(original_directory)
 
-            subprocess.call('cls', shell=True)
-            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-        else:
-            print("Prompt Canceled\n")
+        #    subprocess.call('cls', shell=True)
+        #    print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
+        # else:
+        #    print("Prompt Canceled\n")
             
     elif ans == "chngdir":
       print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
@@ -255,6 +269,7 @@ while Prompt:
     else:
         print("Invalid prompt...\n")
 
+# debug option
 if deBug:
     subprocess.call('cls', shell=True)
 
@@ -288,6 +303,7 @@ if deBug:
     print("other")
     print("lessons\n")
     print("crntdir")
+    print("del")
     print("exit")
 
     print()
@@ -328,6 +344,7 @@ if deBug:
             print("other")
             print("lessons")
             print("crntdir")
+            print("del")
             print("exit")
 
         elif dBugg == "py":
@@ -461,8 +478,125 @@ if deBug:
             f.close()      
             os.chdir(original_directory)
             dBugPrompt = False
-            
+
+        elif dBugg == "clear" or dBugg == "cls":
+            subprocess.call("cls", shell=True)
+
+        elif dBugg == "del":
+            print("Are you sure that you want to delete Pswd Results, and any Debug Directorys?")
+            doubleCheck = input("(y/n) -> ")
+
+            if doubleCheck == "y":
+                os.chdir(original_directory)
+                os.chdir('re/others/re/PswdGenrtr/Result')
+                if os.path.exists("PassGenResult.txt"):
+                    os.remove("PassGenResult.txt")
+                    print("PassGenResult.txt Deleted")
+                else:
+                    print()
+                time.sleep(2)
+                os.chdir(original_directory)
+                os.chdir("debugs")
+                if os.path.exists("debugLogs.txt"):
+                    os.remove("debugLogs.txt")
+                    print("debugLogs.txt Deleted")
+                else:
+                    print()
+                time.sleep(2)
+                os.chdir(original_directory)
+                os.rmdir("debugs")
+                print("debug directory Deleted")
+                time.sleep(4)
+
+                print("\nPress enter to exit terminal, thank you for checking out Cmazey Command Line!")
+                input()
+                dBugPrompt = False
+
+            else:
+                print("Prompt canceled...\n")
+
         else:
             print("Invalid prompt, please try again.\n")
+
+# debug option but with no logs
+if deBugNoLogs:
+    subprocess.call('cls', shell=True)
+    time.sleep(1)
+    print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
+
+    print("\nnode")
+    print("py")
+    print("math")
+    print("other")
+    print("lessons")
+    print("crntdir")
+    print("exit\n")
+
+    deBugNoLogsPrompt = True
+
+    while deBugNoLogsPrompt:
+            dBugg = input("-> ")
+
+            if dBugg == "node":
+                os.chdir('re/node/rere')
+                subprocess.call('node ./nodecmd.js', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "help":
+                print("\nnode")
+                print("py")
+                print("math")
+                print("other")
+                print("lessons")
+                print("crntdir")
+                print("exit\n")
+
+            elif dBugg == "py":  
+                subprocess.call('python pycmd.py', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "math":
+                os.chdir('re/math/rere')
+                subprocess.call('dotnet run mathcmd.cs', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "other":
+                os.chdir('re/others')
+                subprocess.call('python others.py', shell=False)
+                os.chdir(original_directory)
+
+            elif dBugg == "lessons":
+                print("- csharp (C#)")
+                print("- javascript (.JS)")
+                lessonsPrompt = input("-> ")
+
+                if lessonsPrompt == "csharp":
+                    os.chdir('re/lessons/re/cs')
+                    subprocess.call('python csharp.py', shell=False)
+                    os.chdir(original_directory)
+    
+                elif lessonsPrompt == "javascript":   
+                    os.chdir('re/lessons/re/js')
+                    subprocess.call('python javascript.py', shell=False)
+                    os.chdir(original_directory)   
+
+                else:
+                    print("Invalid prompt, canceled...\n")
+
+            elif dBugg == "crntdir":
+                print("Current directory: '" + os.getcwd() + "'\n")
+            
+            elif dBugg == "exit":
+                print("Exiting debug mode...")
+                time.sleep(5)
+                deBugNoLogsPrompt = False
+
+            elif dBugg == "clear" or dBugg == "cls":
+                subprocess.call("cls", shell=True)
+
+            else:
+                print("Invalid prompt, please try again.\n")
+            
+
 
 

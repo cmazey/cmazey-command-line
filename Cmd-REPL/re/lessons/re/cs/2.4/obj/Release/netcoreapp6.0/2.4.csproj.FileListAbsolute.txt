@@ -1,0 +1,14 @@
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\bin\Release\netcoreapp6.0\2.4.exe
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\bin\Release\netcoreapp6.0\2.4.deps.json
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\bin\Release\netcoreapp6.0\2.4.runtimeconfig.json
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\bin\Release\netcoreapp6.0\2.4.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\bin\Release\netcoreapp6.0\2.4.pdb
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.AssemblyInfoInputs.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.AssemblyInfo.cs
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.csproj.CoreCompileInputs.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\refint\2.4.dll
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.pdb
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\2.4.genruntimeconfig.cache
+C:\Users\mazeycolt\Desktop\cmazey-command-line\Cmd-REPL\re\lessons\re\cs\2.4\obj\Release\netcoreapp6.0\ref\2.4.dll
