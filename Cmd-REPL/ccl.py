@@ -12,7 +12,7 @@ Prompt = False
 deBugNoLogs = False
 
 dBugPrompt = False
-version = "v1.1.5" # Make sure to change version number before publishing changes!!!
+version = "v1.1.6" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -144,7 +144,7 @@ while Prompt:
     time.sleep(0.1)
     print("- math")
     time.sleep(0.1)
-    print("- lessons")
+    print("- lessons (disable due to issues)")
     time.sleep(0.1)
     print("- other")
     time.sleep(0.1)
