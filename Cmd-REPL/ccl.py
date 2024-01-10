@@ -7,6 +7,7 @@ import subprocess
 from datetime import datetime
 Agreed = False
 deBug = False
+termsNotice = False
 Prompt = False
 deBugNoLogs = False
 
@@ -39,9 +40,11 @@ subprocess.call('cls', shell=True)
 
 print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
 print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
+termsNotice = True
 terms = input("-> ")
 
 if terms == "yes":
+    termsNotice = False
     Agreed = True
 elif terms == "terms":
     print("End-User License Agreement (EULA)\n")
@@ -104,9 +107,12 @@ elif terms == "terms":
     print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
     print("shall be governed by and construed in accordance with the laws of no one.\n")
     time.sleep(1)
+    print("To agree to the terms, type in 'yes' with NO CAPS.")
 elif terms == "dbug":
+    termsNotice = False
     deBug = True
 elif terms == "dbugnoloogs" or terms == "dbugn/l":
+    termsNotice = False
     deBugNoLogs = True
 else:
     os.chdir('re/others/re/um')
