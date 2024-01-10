@@ -11,7 +11,7 @@ Prompt = False
 deBugNoLogs = False
 
 dBugPrompt = False
-version = "v1.1.4" # Make sure to change version number before publishing changes!!!
+version = "v1.1.5" # Make sure to change version number before publishing changes!!!
 
 original_directory = os.getcwd()
 
@@ -242,7 +242,7 @@ while Prompt:
 
         #    subprocess.call('cls', shell=True)
         #    print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-        #else:
+        # else:
         #    print("Prompt Canceled\n")
             
     elif ans == "chngdir":
