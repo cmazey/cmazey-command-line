@@ -2,6 +2,7 @@ version = "PRE ALPHA v1.0.5"
 
 import time
 import os
+import sys
 clear = False
 Commandline = False
 
@@ -20,7 +21,19 @@ if checkup == "yes":
 else:
     print("\nRequest Terminated...\n\n")
 
+
 while(clear):
+    
+    if os.path.exists('./debugs'):
+        os.chdir('debugs')
+        with open('pyDebugLogs.txt', 'w') as outputFile:
+            def printing(text):
+                print(text)
+                if outputFile:
+                    outputFile.write(str(text))
+                
+        print("DEBUG: LOG RECORDING STARTED\n\n")
+
     time.sleep(1)
     print("-- WINDOWS COMMAND LINE *Python Version* --")
     time.sleep(0.1)
@@ -409,6 +422,9 @@ while(clear):
                         time.sleep(0.1)
                         print()
                         time.sleep(0.1)
+
+                        if os.path.exists('./debugs'):
+                            print("DEBUG: LOGS RECORDING ENDED")
 
                         playplay = False
                     elif playanswer == "help":

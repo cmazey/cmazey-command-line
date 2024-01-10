@@ -338,8 +338,13 @@ if deBug:
             f.close()
             os.chdir(original_directory)
 
-            sys.stdout = open('debugLogs.txt', 'a')
             os.chdir('re/py/rere')
+
+            if not os.path.exists('./debugs'):
+                os.mkdir('./debugs')
+            else:
+                time.sleep(0.5)
+
             subprocess.call('python pycmd.py', shell=False)
             f.close()
 
