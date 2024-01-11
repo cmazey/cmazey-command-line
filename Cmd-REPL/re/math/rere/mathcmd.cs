@@ -336,21 +336,21 @@ while (cmazeyCalculator)
       int entryDigitOne = entryNumber / 10;
       int entryDigitTwo = entryNumber % 10;
 
-      AnsiConsole.WriteLine($"[green]Lottery Number Selected: [/] {lotInput}");
+      AnsiConsole.Markup($"[green]Lottery Number Selected:[/] {lotInput}\n");
       Thread.Sleep(1000);
-      Console.WriteLine($"And the winning number is....... {winningNumber}");
+      Console.WriteLine($"And the winning number is....... {winningNumber}\n");
 
       if (entryNumber == winningNumber)
       {
-        Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+        AnsiConsole.Markup("[bright green]Exact match[/]! You win the grand prize of $[green]100,000![/]\n");
       }
       else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
       {
-        Console.WriteLine("You digits match, but out of order! You win $3,000!");
+        AnsiConsole.Markup("You digits match, but out of order! You win $[green]3,000![/]\n");
       }
       else
       {
-        Console.WriteLine("No match. Better luck next time!");
+        AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
       }
 
       Console.ReadLine();
@@ -370,13 +370,14 @@ while (cmazeyCalculator)
   // Basic Mode
   else if (input == "Basic")
   {
-    Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
     if (basic)
     {
       Console.WriteLine("Basic is enabled\n");
     }
+    
     else
     {
+      Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
       string inputBasic = Console.ReadLine();
 
       if (inputBasic == "y")

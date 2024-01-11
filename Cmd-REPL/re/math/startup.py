@@ -2,7 +2,7 @@ import os
 import sys
 import time
 import subprocess
-
+original_directory = os.getcwd()
 
 print()
 time.sleep(2)
@@ -20,7 +20,7 @@ print("Loading Repl...")
 animation = ["[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
 
 for i in range(len(animation)):
-    time.sleep(1.1)
+    time.sleep(0.4)
     sys.stdout.write("\r" + animation[i % len(animation)])
     sys.stdout.flush()
 
@@ -34,6 +34,35 @@ time.sleep(0.5)
 subprocess.call('cls', shell=True)
 time.sleep(2)
 
-os.chdir('rere/bin/Release/net6.0')
-subprocess.call('mathcmd', shell=False)
+try:
+    os.chdir('rere/bin/Release/net6.0')
+
+except OSError as e:
+    print(f"An error has been occured:: {e}")
+    print("\n\nChecking debug bin...")
+    time.sleep(2)
+
+    try:
+        os.chdir("rere/bin/Debug/net6.0")
+    
+    except OSError as e:
+        print("mathcmd cannot be located in the bin files.")
+        
+        print("Do you want to run mathcmd.cs file? [.NET 6.0 IS REQUIRED] (y/n)")
+        Confirming = input("-> ")
+
+        if Confirming == "y":
+            os.chdir(original_directory)
+            os.chdir('rere')
+            subprocess.call('dotnet run mathcmd.cs', shell=False)
+        else:
+            print("Application has been interupted, heading back to the main menu...")
+            time.sleep(3)
+            
+            
+try:
+    subprocess.call('mathcmd', shell=False)
+
+except subprocess.CalledProcessError:
+    print("THis is just here cuz why not. Also if u see this, I kinda want to ask Helen if she wanna hang out, idk")
 
