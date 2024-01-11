@@ -312,7 +312,7 @@ while (cmazeyCalculator)
     {
       var lotInput = AnsiConsole.Prompt(
         new SelectionPrompt<string>()
-        .Title("Select your [green] lottery number [/]:")
+        .Title("Select your [green]lottery number[/]:")
         .PageSize(100)
         .AddChoices(new[] {
           "0", "1", "2", "3", "4", "5",
