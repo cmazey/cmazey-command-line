@@ -132,18 +132,38 @@ while (cmazeyCalculator)
     Console.WriteLine("\n----------------------------------------------\n");
   
     Console.WriteLine("CMAZEY CALCULATOR: MULTIPLICATION [x]\n");
+    if (basic)
+    {
+      Console.Write("? x ? = ? -> ");
+      int mult1 = Convert.ToInt32(Console.ReadLine());
+      Console.Write($"{mult1} x ? = ? -> ");
+      int mult2 = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write("? x ? = ? -> ");
-    int mult1 = Convert.ToInt32(Console.ReadLine());
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    Console.Write($"{mult1} x ? = ? -> ");
-    int mult2 = Convert.ToInt32(Console.ReadLine());
+      int multTotal = mult1 * mult2; // Multiply the number
 
-    int multTotal = mult1 * mult2; // Multiply the number
-    Console.SetCursorPosition(0, Console.CursorTop -1);
+      Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
+      Console.ReadLine();
+    }
+    else
+    {
+      var mult1 = AnsiConsole.Prompt(
+        new TextPrompt<int>("[green]?[/] x ? = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
 
-    Console.WriteLine($"\r{mult1} x {mult2} = {multTotal}     ");
-    Console.ReadLine();
+      var mult2 = AnsiConsole.Prompt(
+        new TextPrompt<int>($"{mult1} x [green]?[/] = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      int multTotal = mult1 * mult2;
+
+      AnsiConsole.MarkupLine($"{mult1} x {mult2} = [green]{multTotal}[/]");
+      Console.ReadLine();
+    }
+    Console.WriteLine("----------------------------------------------\n");
   }
 
   // DIVISION / DIVIDE
