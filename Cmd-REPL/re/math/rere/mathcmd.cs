@@ -1,6 +1,6 @@
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.10.0";
+string version = "ALPHA v6.11.0";
 
 System.Threading.Thread.Sleep(3000);
 Console.Clear();
@@ -72,6 +72,7 @@ while (cmazeyCalculator)
     Console.WriteLine("- Clear");
     Console.WriteLine("- Version");
     Console.WriteLine("- Basic");
+    Console.WriteLine("- Calendar");
     Console.WriteLine("- Exit\n");
   }
   
@@ -359,6 +360,29 @@ while (cmazeyCalculator)
 
     Console.WriteLine("----------------------------------------------\n"); 
   }
+
+  else if (input == "Calendar")
+  {
+    if (basic)
+    {
+      Console.WriteLine("This command doesn't work in BASIC mode, sorry bud.\n");
+    }
+
+    else
+    {
+        int year = DateTime.Now.Year;
+        int month = DateTime.Now.Month;
+        int day = DateTime.Now.Day;
+
+        var calendar = new Calendar(year,month);
+        calendar.HeaderStyle(Style.Parse("yellow"));
+        calendar.AddCalendarEvent(year,month,day);
+        Console.WriteLine();
+        AnsiConsole.Write(calendar);
+        Console.WriteLine();
+    }
+  }
+
   // MORE COMING SOON
 
   else if (input == "Exit")
