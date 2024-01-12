@@ -1,6 +1,7 @@
+using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.11.0";
+string version = "ALPHA v6.11.1";
 
 System.Threading.Thread.Sleep(3000);
 Console.Clear();
@@ -23,17 +24,42 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine("CMAZEY CALCULATOR: ADDITION [+]");
-    Console.Write("\n? + ? = -> ");
-    int add1 = Convert.ToInt32(Console.ReadLine());
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    Console.Write($"\r{add1} + ? = ? -> ");
-    int add2 = Convert.ToInt32(Console.ReadLine());
+    
+    if (basic)
+    {
+      Console.Write("\n? + ? = -> ");
+      int add1 = Convert.ToInt32(Console.ReadLine());
+      Console.SetCursorPosition(0, Console.CursorTop -1);
+      Console.Write($"\r{add1} + ? = ? -> ");
+      int add2 = Convert.ToInt32(Console.ReadLine());
 
-    int addTotal = add1 + add2; // Adds the numbers
+      int addTotal = add1 + add2; // Adds the numbers
 
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    Console.WriteLine($"\r{add1} + {add2} = {addTotal}      ");
-    Console.ReadLine();
+      Console.SetCursorPosition(0, Console.CursorTop -1);
+      Console.WriteLine($"\r{add1} + {add2} = {addTotal}      ");
+      Console.ReadLine();
+    }
+
+    else
+    {
+      var add1 = AnsiConsole.Prompt(
+        new TextPrompt<int>("[green]?[/] + ? = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      var add2 = AnsiConsole.Prompt(
+        new TextPrompt<int>($"{add1} + [green]?[/] = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      int addTotal = add1 + add2;
+
+      AnsiConsole.MarkupLine($"{add1} + {add2} = [green]{addTotal}[/]");
+      Console.ReadLine();
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
   }
 
   // SUBTRACTION
@@ -42,19 +68,42 @@ while (cmazeyCalculator)
     Console.WriteLine("\n----------------------------------------------\n");
 
     Console.WriteLine("CMAZEY CALCULATOR: SUBTRACTION [-]");
+    if (basic)
+    {
+      Console.Write("\n? - ? = ? -> ");
+      int sub1 = Convert.ToInt32(Console.ReadLine());
+      Console.SetCursorPosition(0, Console.CursorTop -1);
 
-    Console.Write("\n? - ? = ? -> ");
-    int sub1 = Convert.ToInt32(Console.ReadLine());
-    Console.SetCursorPosition(0, Console.CursorTop -1);
+      Console.Write($"\r{sub1} - ? = ? -> ");
+      int sub2 = Convert.ToInt32(Console.ReadLine());
+      Console.SetCursorPosition(0, Console.CursorTop -1);
+      int subTotal = sub1 - sub2; // Subtracts the numbers
+    
 
-    Console.Write($"\r{sub1} - ? = ? -> ");
-    int sub2 = Convert.ToInt32(Console.ReadLine());
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    int subTotal = sub1 - sub2; // Subtracts the numbers
+      Console.WriteLine($"\r{sub1} - {sub2} = {subTotal}        ");
+      Console.ReadLine();
+    }
 
+    else
+    {
+      var sub1 = AnsiConsole.Prompt(
+        new TextPrompt<int>("[green]?[/] - ? = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
 
-    Console.WriteLine($"\r{sub1} - {sub2} = {subTotal}        ");
-    Console.ReadLine();
+      var sub2 = AnsiConsole.Prompt(
+        new TextPrompt<int>($"{sub1} - [green]?[/] = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      int subTotal = sub1 - sub2;
+
+      AnsiConsole.MarkupLine($"{sub1} - {sub2} = [green]{subTotal}[/]");
+      Console.ReadLine();
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
   }
 
   // HELP COMMAND
@@ -227,6 +276,7 @@ while (cmazeyCalculator)
   // 8 BALL
   else if (input == "8Ball")
   {
+
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine ("--- Magic 8 Ball ---\n");
     Console.WriteLine("What is your question?");
