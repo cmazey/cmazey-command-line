@@ -587,9 +587,14 @@ if deBugNoLogs:
                 print("Current directory: '" + os.getcwd() + "'\n")
             
             elif dBugg == "exit":
-                print("Exiting debug mode...")
-                time.sleep(5)
-                deBugNoLogsPrompt = False
+                Confirming = input("Are you sure that you want exit the debug panel? (y/n) -> ")
+
+                if Confirming == "y":
+                    print("Exiting debug mode...")
+                    time.sleep(5)
+                    deBugNoLogsPrompt = False
+                else:
+                    print("Prompt canceled\n")
 
             elif dBugg == "clear" or dBugg == "cls":
                 subprocess.call("cls", shell=True)

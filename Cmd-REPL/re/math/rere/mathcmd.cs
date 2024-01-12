@@ -1,9 +1,9 @@
 using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.11.1";
+string version = "ALPHA v6.11.2";
 
-System.Threading.Thread.Sleep(3000);
+Thread.Sleep(3000);
 Console.Clear();
 
 AnsiConsole.Write(
@@ -29,12 +29,12 @@ while (cmazeyCalculator)
     if (basic)
     {
       Console.Write("\n? + ? = -> ");
-      int add1 = Convert.ToInt32(Console.ReadLine());
+      double add1 = Convert.ToDouble(Console.ReadLine());
       Console.SetCursorPosition(0, Console.CursorTop -1);
       Console.Write($"\r{add1} + ? = ? -> ");
-      int add2 = Convert.ToInt32(Console.ReadLine());
+      double add2 = Convert.ToDouble(Console.ReadLine());
 
-      int addTotal = add1 + add2; // Adds the numbers
+      double addTotal = add1 + add2; // Adds the numbers
 
       Console.SetCursorPosition(0, Console.CursorTop -1);
       Console.WriteLine($"\r{add1} + {add2} = {addTotal}      ");
@@ -44,25 +44,24 @@ while (cmazeyCalculator)
     else
     {
       var add1 = AnsiConsole.Prompt(
-        new TextPrompt<int>("[green]?[/] + ? = ? -> ")
+        new TextPrompt<double>("[green]?[/] + ? = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var add2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
-      int addTotal = add1 + add2;
+      double addTotal = add1 + add2;
 
       var addTable = new Table();
       addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [green]{addTotal}[/]");
       AnsiConsole.Write(addTable);
-      Console.ReadLine();
     }
-    Console.WriteLine("----------------------------------------------\n");
+    Console.WriteLine("\n----------------------------------------------\n");
   }
 
   // SUBTRACTION
@@ -74,16 +73,12 @@ while (cmazeyCalculator)
     if (basic)
     {
       Console.Write("\n? - ? = ? -> ");
-      int sub1 = Convert.ToInt32(Console.ReadLine());
-      Console.SetCursorPosition(0, Console.CursorTop -1);
-
-      Console.Write($"\r{sub1} - ? = ? -> ");
-      int sub2 = Convert.ToInt32(Console.ReadLine());
-      Console.SetCursorPosition(0, Console.CursorTop -1);
-      int subTotal = sub1 - sub2; // Subtracts the numbers
+      double sub1 = Convert.ToDouble(Console.ReadLine());
+      Console.Write($"{sub1} - ? = ? -> ");
+      double sub2 = Convert.ToDouble(Console.ReadLine());
+      double subTotal = sub1 - sub2; // Subtracts the numbers
     
-
-      Console.WriteLine($"\r{sub1} - {sub2} = {subTotal}        ");
+      Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
       Console.ReadLine();
     }
 
@@ -106,7 +101,6 @@ while (cmazeyCalculator)
       var subTable = new Table();
       subTable.AddColumn($"[lightskyblue1]{sub1} + {sub2} =[/] [green]{subTotal}[/]");
       AnsiConsole.Write(subTable);
-      Console.ReadLine();
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
@@ -140,11 +134,11 @@ while (cmazeyCalculator)
     if (basic)
     {
       Console.Write("? x ? = ? -> ");
-      int mult1 = Convert.ToInt32(Console.ReadLine());
+      double mult1 = Convert.ToDouble(Console.ReadLine());
       Console.Write($"{mult1} x ? = ? -> ");
-      int mult2 = Convert.ToInt32(Console.ReadLine());
+      double mult2 = Convert.ToDouble(Console.ReadLine());
 
-      int multTotal = mult1 * mult2; // Multiply the number
+      double multTotal = mult1 * mult2; // Multiply the number
 
       Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
       Console.ReadLine();
@@ -152,25 +146,23 @@ while (cmazeyCalculator)
     else
     {
       var mult1 = AnsiConsole.Prompt(
-        new TextPrompt<int>("[green]?[/] x ? = ? -> ")
+        new TextPrompt<double>("[green]?[/] x ? = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var mult2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"[lightskyblue1]{mult1} x[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
-      int multTotal = mult1 * mult2;
-
+      double multTotal = mult1 * mult2;
       var multTable = new Table();
       multTable.AddColumn($"[lightskyblue1]{mult1} + {mult2} =[/] [green]{multTotal}[/]");
-      AnsiConsole.Write(multTable);
-      Console.ReadLine();
+      AnsiConsole.Write(multTable);    
     }
-    Console.WriteLine("----------------------------------------------\n");
+    Console.WriteLine("\n----------------------------------------------\n");
   }
 
   // DIVISION / DIVIDE
@@ -189,28 +181,26 @@ while (cmazeyCalculator)
       double divTotal = div1 / div2; // Divides the numbers
 
       Console.WriteLine($"{div1} / {div2} = {divTotal}");
-      Console.ReadLine();
     }
     else
     {
       var div1 = AnsiConsole.Prompt(
-        new TextPrompt<int>("[green]?[/] / ? = ? -> ")
+        new TextPrompt<double>("[green]?[/] / ? = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var div2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"[lightskyblue1]{div1} /[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
-      int divTotal = div1 / div2;
+      double divTotal = div1 / div2;
 
       var divTable = new Table();
       divTable.AddColumn($"[lightskyblue1]{div1} + {div2} =[/] [green]{divTotal}[/]");
       AnsiConsole.Write(divTable);
-      Console.ReadLine();
     }
     Console.WriteLine("----------------------------------------------\n");
   }
@@ -281,7 +271,7 @@ while (cmazeyCalculator)
         Thread.Sleep(100);
       });
     }
-    Console.ReadLine();
+    Console.WriteLine("\n----------------------------------------------\n");
   }
   //Clear
   else if (input == "clear" || input == "cls")
@@ -294,19 +284,57 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine ("CMAZEY CALCULATOR: Line Slope Calculator\n");
-    Console.Write("x1: ");
-    double x1 = Convert.ToDouble(Console.ReadLine());
-    Console.Write("y1: ");
-    double y1 = Convert.ToDouble(Console.ReadLine());
-    Console.Write("x2: ");
-    double x2 = Convert.ToDouble(Console.ReadLine());
-    Console.Write("y2: ");
-    double y2 = Convert.ToDouble(Console.ReadLine());
 
-    double slope = (y2 - y1) / (x2 - x1);
+    if (basic)
+    {
+      Console.Write("x1: ");
+      double x1 = Convert.ToDouble(Console.ReadLine());
+      Console.Write("y1: ");
+      double y1 = Convert.ToDouble(Console.ReadLine());
+      Console.Write("x2: ");
+      double x2 = Convert.ToDouble(Console.ReadLine());
+      Console.Write("y2: ");
+      double y2 = Convert.ToDouble(Console.ReadLine());
 
-    Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
-    Console.ReadLine();
+      double slope = (y2 - y1) / (x2 - x1);
+
+      Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
+      Console.ReadLine();
+    }
+
+    else
+    {
+      var x1 = AnsiConsole.Prompt(
+        new TextPrompt<double>("x1: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      var y1 = AnsiConsole.Prompt(
+        new TextPrompt<double>("y1: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      var x2 = AnsiConsole.Prompt(
+        new TextPrompt<double>("x2: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      var y2 = AnsiConsole.Prompt(
+        new TextPrompt<double>("y2: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      double slope = (y2 - y1) / (x2 - x1);
+
+      var linSlpeTable = new Table();
+      linSlpeTable.AddColumn($"\nThe slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
+      AnsiConsole.Write(linSlpeTable);
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
   }
   
   //Version
@@ -316,19 +344,38 @@ while (cmazeyCalculator)
   }
 
   //HeightToInches
-  else if (input == "htoi")
+  else if (input == "htoi" || input == "itoh")
   {
     Console.WriteLine("\n----------------------------------------------\n");
-    Console.WriteLine("CMAZEY CALCULATOR: HEIGHT TO INCHES\n");
-    Console.Write("Enter your height in inches: ");
-    int height = Convert.ToInt32(Console.ReadLine());
-    int num = 12;
-    int foot = height / num; // Dividing the height in inches by 12
-    int inches = height % num;
+    Console.WriteLine("CMAZEY CALCULATOR: INCHES TO HEIGHT\n");
+    if (basic)
+    {
+      Console.Write("Enter your height in inches: ");
+      int height = Convert.ToInt32(Console.ReadLine());
+      int num = 12;
+      int foot = height / num; // Dividing the height in inches by 12
+      int inches = height % num;
 
-    Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
-    Console.ReadLine();
-    Console.WriteLine("----------------------------------------------\n");
+      Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
+      Console.ReadLine();
+      Console.WriteLine("----------------------------------------------\n");
+    }
+    else
+    {
+      var height = AnsiConsole.Prompt(
+        new TextPrompt<int>("Enter you [lightskyblue1]height[/] in [yellow]inches[/]: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+      int num = 12;
+      int foot = height / num;
+      int inches = height % num;
+
+      var heightTable = new Table();
+      heightTable.AddColumn($"[yellow]{foot}[/]ft, [yellow]{inches}[/]in.");
+      AnsiConsole.Write(heightTable);
+      Console.WriteLine("\n----------------------------------------------\n");
+    }
   }
 
   // 8 BALL
