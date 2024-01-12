@@ -18,9 +18,10 @@ bool cmazeyCalculator = true;
 while (cmazeyCalculator)
 {
   Console.Write("-> ");
-  string input = Console.ReadLine();
+  string input = Console.ReadLine().ToLower();
+
   // ADDITION
-  if (input == "Addition" || input == "+")
+  if (input == "addition" || input == "+")
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine("CMAZEY CALCULATOR: ADDITION [+]");
@@ -49,21 +50,23 @@ while (cmazeyCalculator)
       );
 
       var add2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"{add1} + [green]?[/] = ? -> ")
+        new TextPrompt<int>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       int addTotal = add1 + add2;
 
-      AnsiConsole.MarkupLine($"{add1} + {add2} = [green]{addTotal}[/]");
+      var addTable = new Table();
+      addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [green]{addTotal}[/]");
+      AnsiConsole.Write(addTable);
       Console.ReadLine();
     }
-    Console.WriteLine("\n----------------------------------------------\n");
+    Console.WriteLine("----------------------------------------------\n");
   }
 
   // SUBTRACTION
-    else if (input == "Subtraction" || input == "-") 
+    else if (input == "subtraction" || input == "-") 
   {
     Console.WriteLine("\n----------------------------------------------\n");
 
@@ -93,14 +96,16 @@ while (cmazeyCalculator)
       );
 
       var sub2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"{sub1} - [green]?[/] = ? -> ")
+        new TextPrompt<int>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       int subTotal = sub1 - sub2;
 
-      AnsiConsole.MarkupLine($"{sub1} - {sub2} = [green]{subTotal}[/]");
+      var subTable = new Table();
+      subTable.AddColumn($"[lightskyblue1]{sub1} + {sub2} =[/] [green]{subTotal}[/]");
+      AnsiConsole.Write(subTable);
       Console.ReadLine();
     }
     Console.WriteLine("\n----------------------------------------------\n");
@@ -126,7 +131,7 @@ while (cmazeyCalculator)
   }
   
   // MULTIPLICATION
-  else if (input == "Multiplication" || input == "x")
+  else if (input == "multiplication" || input == "x")
   {
     
     Console.WriteLine("\n----------------------------------------------\n");
@@ -153,59 +158,80 @@ while (cmazeyCalculator)
       );
 
       var mult2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"{mult1} x [green]?[/] = ? -> ")
+        new TextPrompt<int>($"[lightskyblue1]{mult1} x[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       int multTotal = mult1 * mult2;
 
-      AnsiConsole.MarkupLine($"{mult1} x {mult2} = [green]{multTotal}[/]");
+      var multTable = new Table();
+      multTable.AddColumn($"[lightskyblue1]{mult1} + {mult2} =[/] [green]{multTotal}[/]");
+      AnsiConsole.Write(multTable);
       Console.ReadLine();
     }
     Console.WriteLine("----------------------------------------------\n");
   }
 
   // DIVISION / DIVIDE
-  else if (input == "Division" || input == "/")
+  else if (input == "division" || input == "/")
   {
     Console.WriteLine("\n----------------------------------------------\n");
 
     Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/]");
+    if (basic)
+    {
+      Console.Write("\n? / ? = ? -> ");
+      double div1 = Convert.ToDouble(Console.ReadLine());
+      Console.Write($"{div1} / ? = ? -> ");
+      double div2 = Convert.ToDouble(Console.ReadLine());
 
-    Console.Write("\n? / ? = ? -> ");
-    double div1 = Convert.ToDouble(Console.ReadLine());
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    Console.Write($"\r{div1} / ? = ? -> ");
-    double div2 = Convert.ToDouble(Console.ReadLine());
+      double divTotal = div1 / div2; // Divides the numbers
 
-    double divTotal = (div1 / div2); // Divides the numbers
-    Console.SetCursorPosition(0, Console.CursorTop -1);
+      Console.WriteLine($"{div1} / {div2} = {divTotal}");
+      Console.ReadLine();
+    }
+    else
+    {
+      var div1 = AnsiConsole.Prompt(
+        new TextPrompt<int>("[green]?[/] / ? = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
 
-    Console.WriteLine($"\r{div1} / {div2} = {divTotal}           ");
-    Console.ReadLine();
+      var div2 = AnsiConsole.Prompt(
+        new TextPrompt<int>($"[lightskyblue1]{div1} /[/] [green]?[/] = ? -> ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      int divTotal = div1 / div2;
+
+      var divTable = new Table();
+      divTable.AddColumn($"[lightskyblue1]{div1} + {div2} =[/] [green]{divTotal}[/]");
+      AnsiConsole.Write(divTable);
+      Console.ReadLine();
+    }
+    Console.WriteLine("----------------------------------------------\n");
   }
 
   //CHANGECALCULATOR // CHANGE
-  else if (input == "Change")
+  else if (input == "change")
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine("CMAZEY CALCULATOR: CHANGE CALCULATOR [₵]");
 
-    Console.Write("\nEnter change to give back (1c - 99c): ");
-
-    int change = Convert.ToInt32(Console.ReadLine());
-
-    int Quarters = (change / 25); // Divides the change amount by 25.
-    int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
-    int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
-    int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
-
-    Console.SetCursorPosition(0, Console.CursorTop -1);
-    Console.WriteLine($"Change Amount: {change}₵                                        ");
-
     if (basic)
     {
+      Console.Write("\nEnter change to give back (1c - 99c): ");
+      int change = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine($"Change Amount: {change}₵");
+
+      int Quarters = change / 25; // Divides the change amount by 25.
+      int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
+      int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
+      int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
+
       Console.WriteLine($"\nQuarters: {Quarters}");
       Console.WriteLine($"Dimes: {Dimes}");
       Console.WriteLine($"Nickels: {Nickels}");
@@ -213,46 +239,58 @@ while (cmazeyCalculator)
     }
     else
     {
-      var changeAmountResult = new Table();
+      var change = AnsiConsole.Prompt(
+        new TextPrompt<int>("Enter [yellow]Change Amount[/]: ")
+        .ValidationErrorMessage("[red]Not a valid number/Cannot be a decibel number[/]")
+        .PromptStyle("yellow")
+      );
 
+      AnsiConsole.MarkupLine($"\n[bold yellow]CHANGE AMOUNT[/]: {change}");
+
+      int Quarters = change / 25; // Divides the change amount by 25.
+      int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
+      int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
+      int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
+
+      var changeAmountResult = new Table();
       AnsiConsole.Live(changeAmountResult)
       .Start(ctx =>
       {
         changeAmountResult.AddColumn("[yellow]Change[/]");
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
 
         changeAmountResult.AddColumn(new TableColumn ("[yellow]Amount[/]"));
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
 
         changeAmountResult.AddRow("Quarters", $"{Quarters}");
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
 
         changeAmountResult.AddRow("Dimes", $"{Dimes}");
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
 
         changeAmountResult.AddRow("Nickels", $"{Nickels}");
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
 
         changeAmountResult.AddRow("Pennies", $"{Pennies}");
         ctx.Refresh();
-        Thread.Sleep(500);
+        Thread.Sleep(100);
       });
     }
     Console.ReadLine();
   }
   //Clear
-  else if (input == "Clear")
+  else if (input == "clear" || input == "cls")
   {
     Console.Clear();
     Console.WriteLine("\nType /help to show all the available commands!\n");
   }
   //LINE SLOPE CALCULATOR
-  else if (input == "LineSlope")
+  else if (input == "lineslope")
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine ("CMAZEY CALCULATOR: Line Slope Calculator\n");
@@ -272,13 +310,13 @@ while (cmazeyCalculator)
   }
   
   //Version
-  else if (input == "Version")
+  else if (input == "version")
   {
     Console.WriteLine($"Version: {version}");
   }
 
   //HeightToInches
-  else if (input == "HToI")
+  else if (input == "htoi")
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine("CMAZEY CALCULATOR: HEIGHT TO INCHES\n");
@@ -294,7 +332,7 @@ while (cmazeyCalculator)
   }
 
   // 8 BALL
-  else if (input == "8Ball")
+  else if (input == "8ball" || input == "eightball")
   {
 
     Console.WriteLine("\n----------------------------------------------\n");
@@ -346,7 +384,7 @@ while (cmazeyCalculator)
   }
 
   // LOTTERY
-  else if (input == "Lottery")
+  else if (input == "lottery")
   {
     Console.WriteLine("\n----------------------------------------------\n"); 
       
@@ -431,7 +469,7 @@ while (cmazeyCalculator)
     Console.WriteLine("----------------------------------------------\n"); 
   }
 
-  else if (input == "Calendar")
+  else if (input == "calendar")
   {
     if (basic)
     {
@@ -455,14 +493,14 @@ while (cmazeyCalculator)
 
   // MORE COMING SOON
 
-  else if (input == "Exit")
+  else if (input == "exit")
   {
     Console.WriteLine("Exiting...\n\n");
     cmazeyCalculator = false;
   }
 
   // Basic Mode
-  else if (input == "Basic")
+  else if (input == "basic")
   {
     if (basic)
     {
