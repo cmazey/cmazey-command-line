@@ -57,7 +57,7 @@ while (cmazeyCalculator)
       double addTotal = add1 + add2;
 
       var addTable = new Table();
-      addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [green]{addTotal}[/]");
+      addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
       AnsiConsole.Write(addTable);
     }
     Console.WriteLine("\n----------------------------------------------\n");
@@ -97,7 +97,7 @@ while (cmazeyCalculator)
       double subTotal = sub1 - sub2;
 
       var subTable = new Table();
-      subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [green]{subTotal}[/]");
+      subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
       AnsiConsole.Write(subTable);
     }
     Console.WriteLine("\n----------------------------------------------\n");
@@ -153,7 +153,7 @@ while (cmazeyCalculator)
       );
 
       var mult2 = AnsiConsole.Prompt(
-        new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [yellow]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
@@ -170,10 +170,10 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("\n----------------------------------------------\n");
 
-    Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/]");
+    Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/]\n");
     if (basic)
     {
-      Console.Write("\n? / ? = ? -> ");
+      Console.Write("? / ? = ? -> ");
       double div1 = Convert.ToDouble(Console.ReadLine());
       Console.Write($"{div1} / ? = ? -> ");
       double div2 = Convert.ToDouble(Console.ReadLine());
@@ -191,7 +191,7 @@ while (cmazeyCalculator)
       );
 
       var div2 = AnsiConsole.Prompt(
-        new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [yellow]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
@@ -304,25 +304,25 @@ while (cmazeyCalculator)
     else
     {
       var x1 = AnsiConsole.Prompt(
-        new TextPrompt<double>("x1: ")
+        new TextPrompt<double>("[yellow]x1[/]: ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var y1 = AnsiConsole.Prompt(
-        new TextPrompt<double>("y1: ")
+        new TextPrompt<double>("[green]y1[/]: ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var x2 = AnsiConsole.Prompt(
-        new TextPrompt<double>("x2: ")
+        new TextPrompt<double>("[yellow]x2[/]: ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var y2 = AnsiConsole.Prompt(
-        new TextPrompt<double>("y2: ")
+        new TextPrompt<double>("[green]y2[/]: ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
@@ -330,7 +330,7 @@ while (cmazeyCalculator)
       double slope = (y2 - y1) / (x2 - x1);
 
       var linSlpeTable = new Table();
-      linSlpeTable.AddColumn($"\nThe slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
+      linSlpeTable.AddColumn($"The slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
       AnsiConsole.Write(linSlpeTable);
     }
     Console.WriteLine("\n----------------------------------------------\n");
@@ -559,7 +559,7 @@ while (cmazeyCalculator)
       double roundTotal = Math.Round(trunNum);
 
       var trunTable = new Table();
-      trunTable.AddColumn($"[yellow]yellow[/] value: [lightskyblue1]{trunTotal}[/] [black]//[/] [yellow]Rounded-Off[/] value: [lightskyblue1]{roundTotal}[/]");
+      trunTable.AddColumn($"[yellow]Truncated[/] value: [lightskyblue1]{trunTotal}[/] [black]//[/] [yellow]Rounded-Off[/] value: [lightskyblue1]{roundTotal}[/]");
       AnsiConsole.Write(trunTable);
     }
     Console.WriteLine("\n----------------------------------------------\n");
