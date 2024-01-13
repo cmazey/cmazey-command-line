@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.11.2";
+string version = "ALPHA v6.11.3";
 
 Thread.Sleep(3000);
 Console.Clear();
