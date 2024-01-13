@@ -40,7 +40,6 @@ while (cmazeyCalculator)
       Console.WriteLine($"\r{add1} + {add2} = {addTotal}      ");
       Console.ReadLine();
     }
-
     else
     {
       var add1 = AnsiConsole.Prompt(
@@ -63,7 +62,6 @@ while (cmazeyCalculator)
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-
   // SUBTRACTION
     else if (input == "subtraction" || input == "-") 
   {
@@ -85,26 +83,25 @@ while (cmazeyCalculator)
     else
     {
       var sub1 = AnsiConsole.Prompt(
-        new TextPrompt<int>("[green]?[/] - ? = ? -> ")
+        new TextPrompt<double>("[green]?[/] - ? = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
       var sub2 = AnsiConsole.Prompt(
-        new TextPrompt<int>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
+        new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
         .PromptStyle("blue")
         .ValidationErrorMessage("[red] That's not a valid number[/]")
       );
 
-      int subTotal = sub1 - sub2;
+      double subTotal = sub1 - sub2;
 
       var subTable = new Table();
-      subTable.AddColumn($"[lightskyblue1]{sub1} + {sub2} =[/] [green]{subTotal}[/]");
+      subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [green]{subTotal}[/]");
       AnsiConsole.Write(subTable);
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-
   // HELP COMMAND
   else if (input == "/help" || input == "help")
   {
@@ -123,7 +120,6 @@ while (cmazeyCalculator)
     Console.WriteLine("- Calendar");
     Console.WriteLine("- Exit\n");
   }
-  
   // MULTIPLICATION
   else if (input == "multiplication" || input == "x")
   {
@@ -159,12 +155,11 @@ while (cmazeyCalculator)
 
       double multTotal = mult1 * mult2;
       var multTable = new Table();
-      multTable.AddColumn($"[lightskyblue1]{mult1} + {mult2} =[/] [green]{multTotal}[/]");
+      multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
       AnsiConsole.Write(multTable);    
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-
   // DIVISION / DIVIDE
   else if (input == "division" || input == "/")
   {
@@ -180,7 +175,7 @@ while (cmazeyCalculator)
 
       double divTotal = div1 / div2; // Divides the numbers
 
-      Console.WriteLine($"{div1} / {div2} = {divTotal}");
+      Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
     }
     else
     {
@@ -199,12 +194,11 @@ while (cmazeyCalculator)
       double divTotal = div1 / div2;
 
       var divTable = new Table();
-      divTable.AddColumn($"[lightskyblue1]{div1} + {div2} =[/] [green]{divTotal}[/]");
+      divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
       AnsiConsole.Write(divTable);
     }
-    Console.WriteLine("----------------------------------------------\n");
+    Console.WriteLine("\n----------------------------------------------\n");
   }
-
   //CHANGECALCULATOR // CHANGE
   else if (input == "change")
   {
@@ -336,13 +330,11 @@ while (cmazeyCalculator)
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-  
   //Version
   else if (input == "version")
   {
     Console.WriteLine($"Version: {version}");
   }
-
   //HeightToInches
   else if (input == "htoi" || input == "itoh")
   {
@@ -377,7 +369,6 @@ while (cmazeyCalculator)
       Console.WriteLine("\n----------------------------------------------\n");
     }
   }
-
   // 8 BALL
   else if (input == "8ball" || input == "eightball")
   {
@@ -429,7 +420,6 @@ while (cmazeyCalculator)
 
     Console.WriteLine("----------------------------------------------\n"); 
   }
-
   // LOTTERY
   else if (input == "lottery")
   {
@@ -498,7 +488,7 @@ while (cmazeyCalculator)
 
       if (entryNumber == winningNumber)
       {
-        AnsiConsole.Markup("[bright green]Exact match[/]! You win the grand prize of $[green]100,000![/]\n");
+        AnsiConsole.Markup("[green1]Exact match[/]! You win the grand prize of $[green]100,000![/]\n");
       }
       else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
       {
@@ -515,7 +505,6 @@ while (cmazeyCalculator)
 
     Console.WriteLine("----------------------------------------------\n"); 
   }
-
   else if (input == "calendar")
   {
     if (basic)
