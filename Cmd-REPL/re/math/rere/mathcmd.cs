@@ -118,6 +118,11 @@ while (cmazeyCalculator)
     Console.WriteLine("- Version");
     Console.WriteLine("- Basic");
     Console.WriteLine("- Calendar");
+    Console.WriteLine("- Bigmul-Big");
+    Console.WriteLine("- Square Root");
+    Console.WriteLine("- Truncate");
+    Console.WriteLine("- PI");
+    Console.WriteLine("- E4");
     Console.WriteLine("- Exit\n");
   }
   // MULTIPLICATION
@@ -524,6 +529,130 @@ while (cmazeyCalculator)
         Console.WriteLine();
         AnsiConsole.Write(calendar);
         Console.WriteLine();
+    }
+  }
+  // Truncate
+  else if (input == "truncate")
+  {
+    Console.WriteLine("----------------------------------------------\n");
+    Console.WriteLine("CMAZEY CALCULATOR: Truncate [.]\n");
+    if (basic)
+    {
+      Console.Write("Enter a value: ");
+      double trunNum = Convert.ToDouble(Console.ReadLine());
+
+      double trunTotal = Math.Truncate(trunNum);
+      double roundTotal = Math.Round(trunNum);
+
+      Console.WriteLine($"\nTruncated value is {trunTotal}");
+      Console.WriteLine($"Rounded-Off value is {roundTotal}");
+    }
+    else
+    {
+      var trunNum = AnsiConsole.Prompt(
+        new TextPrompt<double>("Enter a [yellow]value[/]: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+
+      double trunTotal = Math.Truncate(trunNum);
+      double roundTotal = Math.Round(trunNum);
+
+      var trunTable = new Table();
+      trunTable.AddColumn($"[yellow]yellow[/] value: [lightskyblue1]{trunTotal}[/] [black]//[/] [yellow]Rounded-Off[/] value: [lightskyblue1]{roundTotal}[/]");
+      AnsiConsole.Write(trunTable);
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
+  }
+  // Square Root
+  else if (input == "square" || input == "square root")
+  {
+    Console.WriteLine("\n----------------------------------------------\n");
+    Console.WriteLine("CMAZEY CALCULATOR: SQUARE ROOT [√]\n");
+    if (basic)
+    {
+      Console.Write("Enter a number: ");
+      double squareNum = Convert.ToDouble(Console.ReadLine());
+      double squareTotal = Math.Sqrt(squareNum);
+      Console.WriteLine($"\nSquare root: {squareTotal}");
+    }
+    else
+    {
+      var squareNum = AnsiConsole.Prompt(
+        new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+      );
+      double squareTotal = Math.Sqrt(squareNum);
+
+      var squareTable = new Table();
+      squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
+      AnsiConsole.Write(squareTable);
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
+  }
+
+  else if (input == "bignul multiplication" || input == "bigmul-big")
+  {
+    Console.WriteLine("\n----------------------------------------------\n");
+    Console.WriteLine("CMAZEY CALCULATOR: BigMul-Big Multiplication [x]\n");
+
+    if (basic)
+    {
+       Console.Write("Enter a number: ");
+       int bigMult1 = Convert.ToInt32(Console.ReadLine());
+      double bigMultTotal = Math.BigMul(bigMult1, bigMult1);
+      Console.WriteLine($"{bigMult1} x {bigMult1} == {bigMultTotal}");
+    }
+    else
+    {
+      var bigMult1 = AnsiConsole.Prompt(
+        new TextPrompt<int>("Enter a [yellow]number[/]: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/] // [red]Number too high for[/] [yellow]int[/] [red]value[/]")
+      );
+      double bigMultTotal = Math.BigMul(bigMult1, bigMult1);
+
+      var bigMultTable = new Table();
+      bigMultTable.AddColumn($"[yellow dim]{bigMult1}[/] [red]x[/] [yellow dim]{bigMult1}[/] = [chartreuse1]{bigMultTotal}[/]");
+      AnsiConsole.Write(bigMultTable);
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
+  }
+
+  else if (input == "pi")
+  {
+    if (basic)
+    {
+      Console.WriteLine("\nThe value of PI is " + Math.PI);
+    }
+    else
+    {
+      Console.WriteLine();
+      double pi = Math.PI;
+      var piTable = new Table();
+      piTable.Title("[dim]PI[/]");
+      piTable.AddColumn($"[yellow]{pi}[/]");
+      AnsiConsole.Write(piTable);
+      Console.WriteLine();
+    }
+  }
+
+  else if (input == "e4" || input == "efour")
+  {
+    if (basic)
+    {
+      Console.WriteLine("\nThe value of logarithmic base E is " + Math.E);
+    }
+    else
+    {
+      Console.WriteLine();
+      double eFour = Math.E;
+      var e4Table = new Table();
+      e4Table.Title("[dim]e4[/]");
+      e4Table.AddColumn($"[yellow]{eFour}[/]");
+      AnsiConsole.Write(e4Table);
+      Console.WriteLine();
     }
   }
 
