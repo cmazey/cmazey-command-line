@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.11.3";
+string version = "ALPHA v6.12.0";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -28,17 +28,17 @@ while (cmazeyCalculator)
     
     if (basic)
     {
-      Console.Write("\n? + ? = -> ");
+      Console.Write("\n[?] + ? = -> ");
       double add1 = Convert.ToDouble(Console.ReadLine());
       Console.SetCursorPosition(0, Console.CursorTop -1);
-      Console.Write($"\r{add1} + ? = ? -> ");
+      Console.Write($"\r{add1} + [?] = ? -> ");
       double add2 = Convert.ToDouble(Console.ReadLine());
 
       double addTotal = add1 + add2; // Adds the numbers
 
       Console.SetCursorPosition(0, Console.CursorTop -1);
-      Console.WriteLine($"\r{add1} + {add2} = {addTotal}      ");
-      Console.ReadLine();
+      Console.WriteLine($"\r{add1} + {add2} = {addTotal}            ");
+      Console.ReadKey();
     }
     else
     {
@@ -70,14 +70,14 @@ while (cmazeyCalculator)
     Console.WriteLine("CMAZEY CALCULATOR: SUBTRACTION [-]");
     if (basic)
     {
-      Console.Write("\n? - ? = ? -> ");
+      Console.Write("\n[?] - ? = ? -> ");
       double sub1 = Convert.ToDouble(Console.ReadLine());
-      Console.Write($"{sub1} - ? = ? -> ");
+      Console.Write($"{sub1} - [?] = ? -> ");
       double sub2 = Convert.ToDouble(Console.ReadLine());
       double subTotal = sub1 - sub2; // Subtracts the numbers
     
       Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
-      Console.ReadLine();
+      Console.ReadKey();
     }
 
     else
@@ -123,6 +123,7 @@ while (cmazeyCalculator)
     Console.WriteLine("- Truncate");
     Console.WriteLine("- PI");
     Console.WriteLine("- E4");
+    Console.WriteLine("- Math.Um");
     Console.WriteLine("- Exit\n");
   }
   // MULTIPLICATION
@@ -134,15 +135,15 @@ while (cmazeyCalculator)
     Console.WriteLine("CMAZEY CALCULATOR: MULTIPLICATION [x]\n");
     if (basic)
     {
-      Console.Write("? x ? = ? -> ");
+      Console.Write("[?] x ? = ? -> ");
       double mult1 = Convert.ToDouble(Console.ReadLine());
-      Console.Write($"{mult1} x ? = ? -> ");
+      Console.Write($"{mult1} x [?] = ? -> ");
       double mult2 = Convert.ToDouble(Console.ReadLine());
 
       double multTotal = mult1 * mult2; // Multiply the number
 
       Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
-      Console.ReadLine();
+      Console.ReadKey();
     }
     else
     {
@@ -173,9 +174,9 @@ while (cmazeyCalculator)
     Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/]\n");
     if (basic)
     {
-      Console.Write("? / ? = ? -> ");
+      Console.Write("[?] / ? = ? -> ");
       double div1 = Convert.ToDouble(Console.ReadLine());
-      Console.Write($"{div1} / ? = ? -> ");
+      Console.Write($"{div1} / [?] = ? -> ");
       double div2 = Convert.ToDouble(Console.ReadLine());
 
       double divTotal = div1 / div2; // Divides the numbers
@@ -298,7 +299,7 @@ while (cmazeyCalculator)
       double slope = (y2 - y1) / (x2 - x1);
 
       Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
-      Console.ReadLine();
+      Console.ReadKey();
     }
 
     else
@@ -354,7 +355,7 @@ while (cmazeyCalculator)
       int inches = height % num;
 
       Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
-      Console.ReadLine();
+      Console.ReadKey();
       Console.WriteLine("----------------------------------------------\n");
     }
     else
@@ -390,37 +391,37 @@ while (cmazeyCalculator)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("It is certain!");
-      Console.ReadLine();
+      Console.ReadKey();
     }
     else if (eightBall == 2)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("Without a doubt!");
-      Console.ReadLine();
+      Console.ReadKey();
     }
     else if (eightBall == 3)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("Ask again later.");
-      Console.ReadLine();
+      Console.ReadKey();
    }
     else if (eightBall == 4)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("Cannot predict now.");
-      Console.ReadLine();
+      Console.ReadKey();
     }
     else if (eightBall == 5)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("Don't count on it.");
-      Console.ReadLine();
+      Console.ReadKey();
     }
     else if (eightBall == 6)
     {
       Console.Write("\nMagic 8-Ball: ");
       Console.WriteLine("Outlook not so good.");
-      Console.ReadLine();
+      Console.ReadKey();
     }
 
     Console.WriteLine("----------------------------------------------\n"); 
@@ -434,7 +435,6 @@ while (cmazeyCalculator)
     int winningNumber = random.Next(0, 100);
     int winningDigitOne = winningNumber / 10;
     int winningDigitTwo = winningNumber % 10;
-
     if (basic)
     {
       Console.Write("Enter your lottery number (0 - 99): ");
@@ -456,9 +456,8 @@ while (cmazeyCalculator)
         Console.WriteLine("No match. Better luck next time!");
       }
 
-      Console.ReadLine();
+      Console.ReadKey();
     }
-    
     else
     {
       var lotInput = AnsiConsole.Prompt(
@@ -503,13 +502,11 @@ while (cmazeyCalculator)
       {
         AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
       }
-
-      Console.ReadLine();
-
+      Console.ReadKey();
     }
-
     Console.WriteLine("----------------------------------------------\n"); 
   }
+  // CALENDAR
   else if (input == "calendar")
   {
     if (basic)
@@ -591,8 +588,8 @@ while (cmazeyCalculator)
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-
-  else if (input == "bignul multiplication" || input == "bigmul-big")
+  // BigMul Multiplication
+  else if (input == "bigmul multiplication" || input == "bigmul-big")
   {
     Console.WriteLine("\n----------------------------------------------\n");
     Console.WriteLine("CMAZEY CALCULATOR: BigMul-Big Multiplication [x]\n");
@@ -619,7 +616,7 @@ while (cmazeyCalculator)
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-
+  // pi
   else if (input == "pi")
   {
     if (basic)
@@ -637,7 +634,7 @@ while (cmazeyCalculator)
       Console.WriteLine();
     }
   }
-
+  //e4
   else if (input == "e4" || input == "efour")
   {
     if (basic)
@@ -655,15 +652,85 @@ while (cmazeyCalculator)
       Console.WriteLine();
     }
   }
+  //math.um
+else if (input == "math.um")
+{
+  if (basic)
+  {
+    Console.WriteLine("This command doesn't work in BASIC mode, sorry bro.\n");
+  }
+  else
+  {
+    Console.WriteLine("\n----------------------------------------------\n");
 
+    AnsiConsole.MarkupLine("[yellow]CMAZEY CALCULATOR:[/] [white]Math.um[/]\n");
+
+    var mathNum = AnsiConsole.Prompt(
+        new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
+        .PromptStyle("blue")
+        .ValidationErrorMessage("[red] That's not a valid number[/]")
+    );
+
+    var mathPrompt = AnsiConsole.Prompt(
+      new SelectionPrompt<string>()
+      .Title($"What equation do you want to use for [yellow]{mathNum}[/]?")
+      .PageSize(7)
+      .MoreChoicesText("[grey]Use the arrow keys to move up or down, press <ENTER> to select[/]")
+      .AddChoices(new[] {
+        "Math.Sqrt", "Math.Abs", "Math.Round", "Math.Ceiling", "Math.Floor"
+      }));
+
+    if (mathPrompt == "Math.Sqrt")
+    {
+      double mathAns = Math.Sqrt(mathNum);
+      AnsiConsole.MarkupLine("[green]PROMPT SELECTED:[/] [yellow dim]Math.Sqrt[/]");
+      var mathTable = new Table();
+      mathTable.AddColumn($"[yellow]{mathAns}[/]");
+      AnsiConsole.Write(mathTable);
+    }
+    else if (mathPrompt == "Math.Abs")
+    {
+      double mathAns = Math.Abs(mathNum);
+      AnsiConsole.MarkupLine("[green]PROMPT SELECTED:[/] [yellow dim]Math.Abs[/]");
+      var mathTable = new Table();
+      mathTable.AddColumn($"[yellow]{mathAns}[/]");
+      AnsiConsole.Write(mathTable);
+    }
+    else if (mathPrompt == "Math.Round")
+    {
+      double mathAns = Math.Round(mathNum);
+      AnsiConsole.MarkupLine("[green]PROMPT SELECTED:[/] [yellow dim]Math.Round[/]");
+      var mathTable = new Table();
+      mathTable.AddColumn($"[yellow]{mathAns}[/]");
+      AnsiConsole.Write(mathTable);
+    }
+    else if (mathPrompt == "Math.Ceiling")
+    {
+      double mathAns = Math.Ceiling(mathNum);
+      AnsiConsole.MarkupLine("[green]PROMPT SELECTED:[/] [yellow dim]Math.Ceiling[/]");
+      var mathTable = new Table();
+      mathTable.AddColumn($"[yellow]{mathAns}[/]");
+      AnsiConsole.Write(mathTable);
+    }
+    else if (mathPrompt == "Math.Floor")
+    {
+      double mathAns = Math.Floor(mathNum);
+      AnsiConsole.MarkupLine("[green]PROMPT SELECTED:[/] [yellow dim]Math.Floor[/]");
+      var mathTable = new Table();
+      mathTable.AddColumn($"[yellow]{mathAns}[/]");
+      AnsiConsole.Write(mathTable);
+    }
+    Console.WriteLine("\n----------------------------------------------\n");
+  }
+}
+  
   // MORE COMING SOON
-
+  
   else if (input == "exit")
   {
     Console.WriteLine("Exiting...\n\n");
     cmazeyCalculator = false;
   }
-
   // Basic Mode
   else if (input == "basic")
   {
@@ -687,7 +754,6 @@ while (cmazeyCalculator)
       }
     }
   }
-      
   // INVALID RESPONSE
   else 
   {
