@@ -10,10 +10,8 @@ deBug = False
 termsNotice = False
 Prompt = False
 deBugNoLogs = False
-
 dBugPrompt = False
 version = "v1.1.6" # Make sure to change version number before publishing changes!!!
-
 original_directory = os.getcwd()
 
 print("Welcome!")
@@ -34,7 +32,7 @@ t = threading.Thread(target=animate)
 t.start()
 
 time.sleep(5)
-done = True
+# done = True
 
 subprocess.call('cls', shell=True)
 
