@@ -1,6 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Xml.Serialization;
-
 bool wolfpackEnding = false;
 bool dragonEnding = false;
 int gold = 0;
@@ -157,4 +155,4 @@ if (gold > 0)
 
 }
 
-
+// (1/12/2023 [REDACTED]:: I have asked Helen if she wanted to hang out. She was out of town. But I felt pretty good that I did it, but who knows...)

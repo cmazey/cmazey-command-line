@@ -1,5 +1,3 @@
-using System;
-
 int wins = 0;
 int losses = 0;
 int half = 0;
@@ -35,16 +33,16 @@ while (GuessN)
 
     int inputDigitOne = entryNum / 10;
     int inputDigitTwo = entryNum % 10;
-    
+
     System.Console.WriteLine($"Input selected: {inputNum}\n");
     System.Threading.Thread.Sleep(1000);
     System.Console.WriteLine("And the winning number is...");
 
     System.Threading.Thread.Sleep(5000);
 
-    Console.SetCursorPosition(0, Console.CursorTop -1);
+    Console.SetCursorPosition(0, Console.CursorTop - 1);
     System.Console.WriteLine($"And the winning number is {winningNum}");
-    
+
     if (entryNum == winningNum)
     {
         System.Console.WriteLine("YOU GOT THE RIGHT NUMBER, CONGRATS MY DUDE!!!\n");
@@ -69,7 +67,7 @@ while (GuessN)
         Console.Clear();
         rounds++;
     }
-    else 
+    else
     {
         Console.Clear();
         GuessN = false;

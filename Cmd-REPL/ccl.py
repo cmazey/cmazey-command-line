@@ -32,7 +32,7 @@ t = threading.Thread(target=animate)
 t.start()
 
 time.sleep(5)
-# done = True
+done = True
 
 subprocess.call('cls', shell=True)
 
