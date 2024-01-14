@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.1";
+string version = "ALPHA v6.12.2";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -399,51 +399,89 @@ while (cmazeyCalculator)
   {
 
     Console.WriteLine("\n----------------------------------------------\n");
+    if (basic)
+    {
     Console.WriteLine ("--- Magic 8 Ball ---\n");
     Console.WriteLine("What is your question?");
     Console.Write("-> ");
     string EightBallInput = Console.ReadLine();
+    }
+    else
+    {
+      AnsiConsole.MarkupLine("[white]--- Magic [blue]8[/] Ball ---[/]");
+      var eightBallInput = AnsiConsole.Ask<string>("What is your [green]question[/]? -> ");
+    }
     Random random = new();
     
     int eightBall = Convert.ToInt32(random.Next(1,7));
-    if (eightBall == 1)
+    if (basic)
     {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("It is certain!");
-      Console.ReadKey();
+      if (eightBall == 1)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("It is certain!");
+      }
+      else if (eightBall == 2)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("Without a doubt!");
+      }
+      else if (eightBall == 3)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("Ask again later.");
+      }
+      else if (eightBall == 4)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("Cannot predict now.");
+      }
+      else if (eightBall == 5)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("Don't count on it.");
+      }
+      else if (eightBall == 6)
+      {
+        Console.Write("\nMagic 8-Ball: ");
+        Console.WriteLine("Outlook not so good.");
+      }
     }
-    else if (eightBall == 2)
+    else
     {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("Without a doubt!");
-      Console.ReadKey();
+      if (eightBall == 1)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[green1]It is certain![/]");
+      }
+      else if (eightBall == 2)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[green1]Without a doubt![/]");
+      }
+      else if (eightBall == 3)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[white]Ask again later.[/]");
+      }
+      else if (eightBall == 4)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[white]Cannot predict now.[/]");
+      }
+      else if (eightBall == 5)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[red]Don't count on it.[/]");
+      }
+      else if (eightBall == 6)
+      {
+        AnsiConsole.Markup("\n[white bold]Magic [blue]8[/]-Ball[/]: ");
+        AnsiConsole.MarkupLine("[red]Outlook not so good.[/]");
+      }
     }
-    else if (eightBall == 3)
-    {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("Ask again later.");
-      Console.ReadKey();
-   }
-    else if (eightBall == 4)
-    {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("Cannot predict now.");
-      Console.ReadKey();
-    }
-    else if (eightBall == 5)
-    {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("Don't count on it.");
-      Console.ReadKey();
-    }
-    else if (eightBall == 6)
-    {
-      Console.Write("\nMagic 8-Ball: ");
-      Console.WriteLine("Outlook not so good.");
-      Console.ReadKey();
-    }
-
-    Console.WriteLine("----------------------------------------------\n"); 
+    Console.ReadKey();
+    Console.WriteLine("\n----------------------------------------------\n"); 
   }
   // LOTTERY
   else if (input == "lottery")
@@ -682,7 +720,7 @@ while (cmazeyCalculator)
   {
     Console.WriteLine("\n----------------------------------------------\n");
 
-    AnsiConsole.MarkupLine("[yellow]CMAZEY CALCULATOR:[/] [white]Math.um[/]\n");
+    AnsiConsole.MarkupLine("[yellow]CMAZEY CALCULATOR:[/] [white]Math.um [[CC]][/]\n");
 
     var mathNum = AnsiConsole.Prompt(
         new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
@@ -793,4 +831,5 @@ while (cmazeyCalculator)
 
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
+Console.WriteLine();
 
