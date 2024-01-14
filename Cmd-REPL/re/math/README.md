@@ -20,4 +20,5 @@ You will see lots of options like `node`, `py`, etc. But type in `math`. That is
 That's how you access the lastest version of Cmazey Calculator. Please keep in mind that I am constantly updating it, and there will be bugs along the way. So if you find any bugs, then please report it in my discord server. Anyways, cheers y'all!
 
 -*Colton M*
+
 *Last updated: 08:39 PM EST, 1/13/2023*
