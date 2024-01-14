@@ -355,7 +355,7 @@ while (cmazeyCalculator)
     }
     Console.WriteLine("\n----------------------------------------------\n");
   }
-  //Version
+  //VERSION
   else if (input == "version")
   {
     Console.WriteLine($"Version: {version}");
