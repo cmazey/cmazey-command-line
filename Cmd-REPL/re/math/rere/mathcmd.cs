@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.0";
+string version = "ALPHA v6.12.1";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -11,13 +11,25 @@ AnsiConsole.Write(
   .LeftJustified()
   .Color(Color.Red));
 AnsiConsole.Markup($"[yellow]{version}[/]");
-
+if (basic)
+{
 Console.WriteLine("\nType /help to show all the available commands!");
-
+}
+else
+{
+  AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
+}
 bool cmazeyCalculator = true;
 while (cmazeyCalculator)
 {
-  Console.Write("-> ");
+  if (basic)
+  {
+    Console.Write("-> ");
+  }
+  else
+  {
+    AnsiConsole.Write(new Markup("[gold1]->[/] "));
+  }
   string input = Console.ReadLine().ToLower();
 
   // ADDITION
@@ -277,7 +289,14 @@ while (cmazeyCalculator)
   else if (input == "clear" || input == "cls")
   {
     Console.Clear();
-    Console.WriteLine("\nType /help to show all the available commands!\n");
+    if (basic)
+    {
+      Console.WriteLine("\nType /help to show all the available commands!");
+    }
+    else
+    {
+      AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
+    }
   }
   //LINE SLOPE CALCULATOR
   else if (input == "lineslope")
@@ -653,7 +672,7 @@ while (cmazeyCalculator)
     }
   }
   //math.um
-else if (input == "math.um")
+  else if (input == "math.um")
 {
   if (basic)
   {
@@ -773,5 +792,5 @@ else if (input == "math.um")
 
 
 Console.Write("Press enter to exit program...");
-Console.ReadLine();
+Console.ReadKey();
 
