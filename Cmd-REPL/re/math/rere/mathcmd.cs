@@ -791,7 +791,7 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("\n----------------------------------------------\n");
             AnsiConsole.MarkupLine("[yellow]CMAZEY COMMAND LINE:[/] [white]Custom Equations [[+-x/]][/]");
-            AnsiConsole.MarkupLine("[blink]Please hold...[/]");
+            AnsiConsole.MarkupLine("[blink]Please hold...[/]\n");
             Thread.Sleep(3000);
 
             var customSelct = AnsiConsole.Prompt(
@@ -799,8 +799,8 @@ while (cmazeyCalculator)
                 .Title("[white]What equation would you like to do?[/] [green](9 MAX)[/]")
                 .PageSize(50)
                 .AddChoices(new[] {
-                    "++", "+++", "++++", "+++++", "++++++", "+++++++", "++++++++", "+++++++", "+++++++",
-                    "--" 
+                    "++", "+++", "++++", "+++++", "++++++", "+++++++", "++++++++", "+++++++++",
+                    "--"
                 }));
             
             if (customSelct == "++")
@@ -811,12 +811,12 @@ while (cmazeyCalculator)
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
                 
                 var add2 = AnsiConsole.Prompt(
-                    new TextPrompt<double>("[lightskyblue1]? +[/] [green]?[/] + ? = ? -> ")
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
                 var add3 = AnsiConsole.Prompt(
-                    new TextPrompt<double>("[lightskyblue1]? + ? +[/] [green]?[/] = ? -> ")
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
@@ -825,6 +825,331 @@ while (cmazeyCalculator)
                     var addTable = new Table();
                     addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} =[/] [yellow]{addTotal}[/]");
                     AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "+++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "++++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? = ? + ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? = ? + ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "+++++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add6 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "++++++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add6 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add7 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "+++++++")
+
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add6 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add7 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add8 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "++++++++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? + ? = ? + ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? = ? + ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add6 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green][bold]?[/] [dim]+ ? + ? + ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add7 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green][bold]?[/] [dim]+ ? + ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add8 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green][bold]?[/] [dim]+ ? = ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add9 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} +[/] [green][bold]?[/] [dim]= ?[/][/] -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "+++++++++")
+            {
+                var add1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var add3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var add4 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                var add5 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add6 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add7 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] + ? + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add8 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green]?[/] + ? + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add9 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} +[/] [green]?[/] + ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+                
+                var add10 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red]That's not a valid number[/]"));
+
+                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10;
+
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} + {add10} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+            }
+            else if (customSelct == "--")
+            {
+                var sub1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] - ? - ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var sub2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] - ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var sub3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                    double subTotal = sub1 - sub2 - sub3;
+
+                    var subTable = new Table();
+                    subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} =[/] [yellow]{subTotal}[/]");
+                    AnsiConsole.Write(subTable);
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
