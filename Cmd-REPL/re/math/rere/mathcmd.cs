@@ -790,7 +790,7 @@ while (cmazeyCalculator)
         else
         {
             Console.WriteLine("\n----------------------------------------------\n");
-            AnsiConsole.MarkupLine("[yellow]CMAZEY COMMAND LINE:[/] [white]Custom Equations [[+-x/]][/]");
+            AnsiConsole.MarkupLine("[yellow]CMAZEY CALCULATOR:[/] [white]Custom Equations [[+-x/]][/]");
             AnsiConsole.MarkupLine("[blink]Please hold...[/]\n");
             Thread.Sleep(3000);
 
