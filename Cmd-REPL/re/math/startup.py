@@ -64,5 +64,5 @@ try:
     subprocess.call('mathcmd', shell=False)
 
 except subprocess.CalledProcessError:
-    print("THis is just here cuz why not. Also if u see this, I kinda want to ask Helen if she wanna hang out, idk")
+    print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
 
