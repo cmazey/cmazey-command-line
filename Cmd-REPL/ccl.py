@@ -308,7 +308,7 @@ if deBug:
     dBugPrompt = True
 
     while dBugPrompt:
-        dBugg = input("-> ")
+        dBugg = input("---> ")
 
         if dBugg == "node":
             f = open("debugLogs.txt", "a")
@@ -533,7 +533,7 @@ if deBugNoLogs:
     deBugNoLogsPrompt = True
 
     while deBugNoLogsPrompt:
-            dBugg = input("-> ")
+            dBugg = input("--> ")
 
             if dBugg == "node":
                 os.chdir('re/node/rere')
