@@ -1,16 +1,49 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.4";
+string version = "ALPHA v6.12.5";
 
 Thread.Sleep(3000);
 Console.Clear();
 
-AnsiConsole.Write(
-  new FigletText("CMAZEY CALCULATOR")
-  .LeftJustified()
-  .Color(Color.Red));
-AnsiConsole.Markup($"[yellow]{version}[/]");
+Console.WriteLine("Choose an option below:");
+Console.WriteLine("- basic");
+Console.WriteLine("- normal");
+Console.Write("-> ");
+string optionInput = Console.ReadLine();
+
+if (optionInput == "basic")
+{
+    Console.Clear();
+    basic = true;
+}
+else if (optionInput == "normal")
+{
+    Console.Clear();
+    basic = false;
+}
+else
+{
+    Console.WriteLine("Input invalid, defaulting to normal...");
+    Thread.Sleep(2000);
+    Console.Clear();
+    basic = false;
+}
+
+if (basic)
+{
+    Console.WriteLine("--- CMAZEY CALCULATOR ---");
+    Console.WriteLine($"Version: {version}");
+}
+else
+{
+    AnsiConsole.Write(
+    new FigletText("CMAZEY CALCULATOR")
+    .LeftJustified()
+    .Color(Color.Red));
+    AnsiConsole.Markup($"[yellow]{version}[/]");
+}
+
 if (basic)
 {
     Console.WriteLine("\nType /help to show all the available commands!");
@@ -136,6 +169,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- PI");
         Console.WriteLine("- E4");
         Console.WriteLine("- Math.Um");
+        Console.WriteLine("- Custom");
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
@@ -1477,6 +1511,7 @@ while (cmazeyCalculator)
                         multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} =[/] [yellow]{multTotal}[/]");
                         AnsiConsole.Write(multTable);
             }
+        
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
