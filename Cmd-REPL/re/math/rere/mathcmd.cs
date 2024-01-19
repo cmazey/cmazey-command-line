@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.5";
+string version = "ALPHA v6.12.6";
 
 Thread.Sleep(3000);
 Console.Clear();
