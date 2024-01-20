@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.7";
+string version = "ALPHA v6.12.8.1";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -9,7 +9,7 @@ Console.Clear();
 Console.WriteLine("Choose an option below:");
 Console.WriteLine("- basic");
 Console.WriteLine("- normal");
-Console.Write("-\> ");
+Console.Write("-\\> ");
 string optionInput = Console.ReadLine();
 
 if (optionInput == "basic")
