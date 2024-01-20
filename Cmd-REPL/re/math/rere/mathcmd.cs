@@ -1814,6 +1814,30 @@ while (cmazeyCalculator)
                         multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} x {mult10} =[/] [yellow]{multTotal}[/]");
                         AnsiConsole.Write(multTable);
             }
+            else if (customSelct == "// <3>")
+            {
+                var div1 = AnsiConsole.Prompt(
+                    new TextPrompt<double>("[green]?[/] / ? / ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var div2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+                
+                var div3 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                double divTotal = div1 / div2 / div3;
+
+                var divTable = new Table();
+                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} =[/] [yellow]{divTotal}[/]");
+                        AnsiConsole.Write(divTable);
+            }
+            
             else if (customSelct == "Cancel")
             {
                 Console.WriteLine("Prompt Canceled");
