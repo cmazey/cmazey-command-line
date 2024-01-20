@@ -9,7 +9,7 @@ Console.Clear();
 Console.WriteLine("Choose an option below:");
 Console.WriteLine("- basic");
 Console.WriteLine("- normal");
-Console.Write("-> ");
+Console.Write("-\> ");
 string optionInput = Console.ReadLine();
 
 if (optionInput == "basic")
