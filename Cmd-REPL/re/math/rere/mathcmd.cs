@@ -831,7 +831,7 @@ while (cmazeyCalculator)
 
             var customSelct = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                .Title("[white]What equation would you like to do?[/] [green](9 MAX)[/]")
+                .Title("[white]What equation would you like to do?[/] [green](10 MAX)[/]")
                 .PageSize(50)
                 .AddChoices(new[] {
                     "++ <3>", "+++ <4>", "++++ <5>", "+++++ <6>", "++++++ <7>", "+++++++ <8>", "++++++++ <9>", "+++++++++ <10>",
@@ -2218,7 +2218,6 @@ while (cmazeyCalculator)
                         addsubmultdivTable.AddColumn($"[lightskyblue1]{add1} + {sub1} - {mult1} * {div1} / {addsubmultdiv1} =[/] [yellow]{addsubmultdivTotal}[/]");
                         AnsiConsole.Write(addsubmultdivTable);
             }
-
             else if (customSelct == "Cancel")
             {
                 Console.WriteLine("Prompt Canceled");
