@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.8.1";
+string version = "ALPHA v6.12.9";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -2260,7 +2260,7 @@ while (cmazeyCalculator)
     {
         Console.WriteLine("Invalid Command, please try again.\n");
         Random random = new();
-        int elseChoice = random.Next(1, 4);
+        int elseChoice = random.Next(1, 5);
         if (elseChoice == 1)
         {
             Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
@@ -2268,6 +2268,19 @@ while (cmazeyCalculator)
         else if (elseChoice == 2)
         {
             Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
+        }
+        else if (elseChoice == 3)
+        {
+            double i = 0;
+            if (i == 0)
+            {
+                Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
+                i++;
+            }      
+            else
+            {
+                Console.WriteLine("Invalid Command, please try again.\n");
+            } 
         }
     }
 }
