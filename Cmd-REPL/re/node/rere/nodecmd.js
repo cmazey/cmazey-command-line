@@ -730,28 +730,6 @@ else {
   else if (cmdanswer == "clear") {
     console.clear();
   }
-  else if (cmdanswer == "play") {
-    console.clear();
-
-    var playanswer = readline.question("Do you want to check out the play? (yes, no) -> ");
-
-    if (playanswer == "yes") {
-      console.log("\nThe play is called 'Little Shop of Horrors'!")
-      console.log("November 17, 2023 -> November 19, 2023.\n");
-      var playcredits = readline.question("Do you want to check out the play credits? (yes, no) -> ");
-
-      if (playcredits == "yes") {
-        console.log("\nComing soon...\n");
-      }
-      else {
-        console.log("The following prompt has been canceled.\n");
-      }
-      
-    }
-    else {
-      console.log("Request Terminated..\n\n".red);
-    }
-  }
   else if (cmdanswer == "test") {
     console.log("\nThis is a test...\n");
   }

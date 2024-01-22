@@ -549,7 +549,8 @@ if deBugNoLogs:
                 print("crntdir")
                 print("exit\n")
 
-            elif dBugg == "py":  
+            elif dBugg == "py":
+                os.chdir('re/py/rere')
                 subprocess.call('python pycmd.py', shell=False)
                 os.chdir(original_directory)
 

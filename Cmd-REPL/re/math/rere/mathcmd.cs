@@ -1,7 +1,10 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
-string version = "ALPHA v6.12.9";
+string name = "[gray]Guest[/]";
+string fname = "";
+string name1 = "Guest";
+string version = "ALPHA v6.13.0";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -69,10 +72,11 @@ while (cmazeyCalculator)
     if (input == "addition" || input == "+")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: ADDITION [+]");
 
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
+
             Console.Write("\n[?] + ? = -> ");
             double add1 = Convert.ToDouble(Console.ReadLine());
             Console.SetCursorPosition(0, Console.CursorTop -1);
@@ -87,6 +91,8 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: ADDITION [[+]] ||[/] {name}");
+
             var add1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]?[/] + ? = ? -> ")
               .PromptStyle("blue")
@@ -112,9 +118,9 @@ while (cmazeyCalculator)
     {
         Console.WriteLine("\n----------------------------------------------\n");
 
-        Console.WriteLine("CMAZEY CALCULATOR: SUBTRACTION [-]");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
             Console.Write("\n[?] - ? = ? -> ");
             double sub1 = Convert.ToDouble(Console.ReadLine());
             Console.Write($"{sub1} - [?] = ? -> ");
@@ -127,6 +133,7 @@ while (cmazeyCalculator)
 
         else
         {
+            AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
             var sub1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]?[/] - ? = ? -> ")
               .PromptStyle("blue")
@@ -170,6 +177,8 @@ while (cmazeyCalculator)
         Console.WriteLine("- E4");
         Console.WriteLine("- Math.Um");
         Console.WriteLine("- Custom");
+        Console.WriteLine("- Name");
+        Console.WriteLine("- Little Shop of Horrors");
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
@@ -178,9 +187,9 @@ while (cmazeyCalculator)
 
         Console.WriteLine("\n----------------------------------------------\n");
 
-        Console.WriteLine("CMAZEY CALCULATOR: MULTIPLICATION [x]\n");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
             Console.Write("[?] x ? = ? -> ");
             double mult1 = Convert.ToDouble(Console.ReadLine());
             Console.Write($"{mult1} x [?] = ? -> ");
@@ -193,6 +202,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: MULTIPLICATION [[x]] ||[/] {name}\n");
             var mult1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]?[/] x ? = ? -> ")
               .PromptStyle("blue")
@@ -216,21 +226,20 @@ while (cmazeyCalculator)
     else if (input == "division" || input == "/")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
-        Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/]\n");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [/] || {name1}\n");
             Console.Write("[?] / ? = ? -> ");
             double div1 = Convert.ToDouble(Console.ReadLine());
             Console.Write($"{div1} / [?] = ? -> ");
             double div2 = Convert.ToDouble(Console.ReadLine());
-
             double divTotal = div1 / div2; // Divides the numbers
-
             Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
         }
         else
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [[/]] || {name}\n");
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
             var div1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]?[/] / ? = ? -> ")
               .PromptStyle("blue")
@@ -255,10 +264,9 @@ while (cmazeyCalculator)
     else if (input == "change")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: CHANGE CALCULATOR [₵]");
-
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: CHANGE CALCULATOR [₵] || {name1}");
             Console.Write("\nEnter change to give back (1c - 99c): ");
             int change = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Change Amount: {change}₵");
@@ -275,6 +283,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR:[/] [white]CHANGE CALCULATOR [[₵]] ||[/] {name}");
             var change = AnsiConsole.Prompt(
               new TextPrompt<int>("Enter [yellow]Change Amount[/]: ")
               .ValidationErrorMessage("[red]Not a valid number/Cannot be a decibel number[/]")
@@ -336,10 +345,9 @@ while (cmazeyCalculator)
     else if (input == "lineslope")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: Line Slope Calculator\n");
-
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: Line Slope Calculator || {name1}\n");
             Console.Write("x1: ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("y1: ");
@@ -348,15 +356,14 @@ while (cmazeyCalculator)
             double x2 = Convert.ToDouble(Console.ReadLine());
             Console.Write("y2: ");
             double y2 = Convert.ToDouble(Console.ReadLine());
-
             double slope = (y2 - y1) / (x2 - x1);
-
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
             Console.ReadKey();
         }
 
         else
         {
+            AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR: Line Slope Calculator ||[/] {name}\n");
             var x1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[yellow]x1[/]: ")
               .PromptStyle("blue")
@@ -392,15 +399,16 @@ while (cmazeyCalculator)
     //VERSION
     else if (input == "version")
     {
-        Console.WriteLine($"Version: {version}");
+        Console.WriteLine($"\nVersion: {version}");
+        Console.WriteLine($"Name: {name1}\n");
     }
     //HeightToInches
     else if (input == "htoi" || input == "itoh")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: INCHES TO HEIGHT\n");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: INCHES TO HEIGHT || {name1}\n");
             Console.Write("Enter your height in inches: ");
             int height = Convert.ToInt32(Console.ReadLine());
             int num = 12;
@@ -413,6 +421,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: INCHES TO HEIGHT || {name}\n");
             var height = AnsiConsole.Prompt(
               new TextPrompt<int>("Enter you [lightskyblue1]height[/] in [yellow]inches[/]: ")
               .PromptStyle("blue")
@@ -443,7 +452,14 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine("[white]--- Magic [blue]8[/] Ball ---[/]");
-            var eightBallInput = AnsiConsole.Ask<string>("What is your [green]question[/]? -> ");
+            if (name == "Guest")
+            {
+                var eightBallInput = AnsiConsole.Ask<string>("What is your [green]question[/]? -> ");
+            }
+            else
+            {
+                var eightBallInput = AnsiConsole.Ask<string>($"What is your [green]question[/] {fname}? -> ");
+            }
         }
         Random random = new();
 
@@ -553,7 +569,7 @@ while (cmazeyCalculator)
         {
             var lotInput = AnsiConsole.Prompt(
               new SelectionPrompt<string>()
-              .Title("Select your [green]lottery number[/]:")
+              .Title($"Select your [green]lottery number[/]:")
               .PageSize(100)
               .AddChoices(new[] {
           "0", "1", "2", "3", "4", "5",
@@ -577,7 +593,7 @@ while (cmazeyCalculator)
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
 
-            AnsiConsole.Markup($"[green]Lottery Number Selected:[/] {lotInput}\n");
+            AnsiConsole.Markup($"[green]{fname} Lottery Number Selected:[/] {lotInput}\n");
             Thread.Sleep(1000);
             Console.WriteLine($"And the winning number is....... {winningNumber}\n");
 
@@ -623,9 +639,9 @@ while (cmazeyCalculator)
     else if (input == "truncate")
     {
         Console.WriteLine("----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: Truncate [.]\n");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: Truncate [.] || {name1}\n");
             Console.Write("Enter a value: ");
             double trunNum = Convert.ToDouble(Console.ReadLine());
 
@@ -637,6 +653,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: Truncate [[.]] ||[/] {name}\n");
             var trunNum = AnsiConsole.Prompt(
               new TextPrompt<double>("Enter a [yellow]value[/]: ")
               .PromptStyle("blue")
@@ -656,9 +673,9 @@ while (cmazeyCalculator)
     else if (input == "square" || input == "square root")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: SQUARE ROOT [√]\n");
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: SQUARE ROOT [√] || {name1}\n");
             Console.Write("Enter a number: ");
             double squareNum = Convert.ToDouble(Console.ReadLine());
             double squareTotal = Math.Sqrt(squareNum);
@@ -666,6 +683,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SQUARE ROOT [[√]] || {name}\n");
             var squareNum = AnsiConsole.Prompt(
               new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
               .PromptStyle("blue")
@@ -683,10 +701,9 @@ while (cmazeyCalculator)
     else if (input == "bigmul multiplication" || input == "bigmul-big")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("CMAZEY CALCULATOR: BigMul-Big Multiplication [x]\n");
-
         if (basic)
         {
+            Console.WriteLine($"CMAZEY CALCULATOR: BigMul-Big Multiplication [x] || {name1}\n");
             Console.Write("Enter a number: ");
             int bigMult1 = Convert.ToInt32(Console.ReadLine());
             double bigMultTotal = Math.BigMul(bigMult1, bigMult1);
@@ -694,6 +711,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR:[/] [white]BigMul-Big Multiplication [[x]] ||[/] {name}\n");
             var bigMult1 = AnsiConsole.Prompt(
               new TextPrompt<int>("Enter a [yellow]number[/]: ")
               .PromptStyle("blue")
@@ -814,7 +832,6 @@ while (cmazeyCalculator)
             Console.WriteLine("\n----------------------------------------------\n");
         }
     }
-
     //custom
     else if (input == "custom")
     {
@@ -2225,6 +2242,252 @@ while (cmazeyCalculator)
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
+    //name
+    else if (input == "name")
+    {
+        if (basic)
+        {
+            Console.Write("\nWhat's your name?: ");
+            string namePrompt = Console.ReadLine();
+            name1 = namePrompt;
+            Console.WriteLine($"NAME CHANGED: {name1}");
+        }
+        else
+        {
+            var namePrompt = AnsiConsole.Ask<string>("What's your [green]first name[/]?").ToLower();
+
+            if (namePrompt == "colton")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Colton Mazey");
+                Console.WriteLine("\\owner");
+                name = "[gold]Colton Mazey[/]";
+                name1 = "Colton M";
+                fname = "Colton";
+            }
+            else if (namePrompt == "andy" || namePrompt == "anderson")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Anderson Scott");
+                Console.WriteLine("\\friend");
+                name = "[gold]Anderson Scott[/]";
+                name1 = "Anderson S";
+                fname = "Andy";
+            }
+            else if (namePrompt == "nolan")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Nolan Meyer");
+                Console.WriteLine("\\friend");
+                name = "[darkslategray3]Nolan Meyer[/]";
+                name1 = "Nolan M";
+                fname = "Nolan";
+            }
+            else if (namePrompt == "brandon")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Brandon Reed");
+                Console.WriteLine("\\friend");
+                name = "[gold]Brandon Reed[/]";
+                name1 = "Brandon R";
+                fname = "Brandon";
+            }
+            else if (namePrompt == "braeden")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Braeden Barker");
+                Console.WriteLine("\\friend");
+                name = "[gold]Braeden Barker[/]";
+                name1 = "Braeden B";
+                fname = "Braeden";
+            }
+            else if (namePrompt == "owen")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Owen Konjura");
+                Console.WriteLine("\\friend");
+                name = "[gold]Owen Konjura[/]";
+                name1 = "Owen K";
+                fname = "Owen";
+            }
+            else if (namePrompt == "helen")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Helen Gerrity");
+                Console.WriteLine("\\friend");
+                name = "[lightpink1]Helen Gerrity[/]";
+                name1 = "Helen G";
+                fname = "Helen";
+            }
+            else if (namePrompt == "david")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: David Burke");
+                Console.WriteLine("\\friend");
+                name = "[gold]David Burke[/]";
+                name1 = "David B";
+                fname = "David";
+            }
+            else if (namePrompt == "sean")
+            {
+                Console.WriteLine("\nNAME AUTOCORRECTED: Sean D");
+                Console.WriteLine("\\friend");
+                name = "[gold]Sean D[/]";
+                name1 = "Sean D";
+                fname = "Sean";
+            }
+            else
+            {
+                name = $"[white]{namePrompt}[/]";
+                name1 = namePrompt;
+                Console.WriteLine($"NAME CHANGED: {name1}");
+                fname = namePrompt;
+            }
+        }
+    }
+    //LSOH PLAY
+    else if (input == "play" || input == "little shop of horrors")
+    {
+        if (basic)
+        {
+            Console.WriteLine("This doesn't support BASIC mode, sorry bud.\n");
+        }
+        else
+        {
+            Console.Write("Do you want to check out the credits? (y/n) -> ");
+            input = Console.ReadLine();
+
+            if (input == "y")
+            {
+                Console.WriteLine("\n\n----------------------------------------------\n");
+
+                Thread.Sleep(1000);
+                AnsiConsole.MarkupLine("The Edwardian Player presents");
+                Thread.Sleep(500);
+                AnsiConsole.MarkupLine("[bold][underline]Little Shop Of Horrors[/][/]\n");
+                Thread.Sleep(500);
+                AnsiConsole.MarkupLine("Book and Lyrics by HOWARD ASHMAN\n");
+                Thread.Sleep(500);
+                AnsiConsole.MarkupLine("Music by ALAN MENKEN\n\n");
+                Thread.Sleep(500);
+                AnsiConsole.MarkupLine("[white bold]--- CAST MEMBERS ---[/]\n");
+                Thread.Sleep(1500);
+                AnsiConsole.MarkupLine("[yellow]Seymour[/] - [white]JOEY POKRYWKA[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[green]Audrey[/] - [white]LAURIEN PALMER[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[red]The Voice of Audrey II[/] - [white]ADAM DEMPSEY[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[yellow]Mr. Mushnik[/] - [white]THOMAS LOPEZ[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[green]Orin[/] - [white]MICHAEL DRVENKAR[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[red]Crystal[/] - [white]JULIA O'BRIAN[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[gold1]Ronnette[/] - [white]HELEN GERRITY[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[green]Chiffon[/] - [white]HAILY BETTERS[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[red]Audrey II Puppeteer[/] - [white]DANNY CERTO[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[yellow]Berstein[/] - [white]JACOB YANKOW[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[green]Mrs. Luce[/] - [white]KEONA CARABELLO[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[red]Snip[/] - [white]AIDEN NEWKIRK-SCHULZE[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[yellow]Ensemble[/] - [white]HANNA BETTERS[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[green]Ensemble[/] - [white]MICHAEL GREGORY[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[red]Ensemble[/] - [white]CONALL MCMAHON[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[yellow]Ensemble[/] - [white]LUKAS PARSONS[/]\n");
+                Thread.Sleep(1500);
+                AnsiConsole.MarkupLine("[white bold]--- CREW ---[/]\n");
+                Thread.Sleep(1000);
+                AnsiConsole.MarkupLine("[gold3_1]Stage Manager[/] - [white]Alexandra Gray[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[paleturquoise1]Sound Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Braeden Barker[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Crew Manager (Student Staff) - [white]Sean Dabydeen[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[darkorange]Costume Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Erin Houghtling[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[darkorange]Costume Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Julia Houghtling[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[paleturquoise1]Sound Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Colton Mazey[/] (DEV)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Alysia McGill[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Elijah Molseed[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[darkorange]Costume Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Sarah Molseed[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Clare Monahan[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Daniel Monahan[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Scott O'Neill[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Brandon Reed[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Benjamin Ross[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Dante Scott[/] (F)");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Bradley Sellers[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Rueben Shaffer[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[darkorange]Costume Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Rebecca Sinclair[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Andrew Smith[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[royalblue1]Paint Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Mia Strauss[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Gabriel Valore[/]");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Lucy Ye[/]\n");
+                Thread.Sleep(1500);
+                AnsiConsole.MarkupLine("[white bold]--- ORCHESTRA/PIT ---[/]\n");
+                Thread.Sleep(1000);
+                AnsiConsole.MarkupLine("[white]David Michaels[/] - Keyboard 1");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[white]Harry Richardson[/] - Keyboard 2");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[white]Calvin Polenz[/] - Percussion");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[white]Tyler Valentino[/] - Electric Guitar");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("[white]Matt Pukansky[/] - Bass Guitar\n");
+                Thread.Sleep(1500);
+                AnsiConsole.MarkupLine("[white bold]--- STAFF ---[/]\n");
+                Thread.Sleep(1000);
+                AnsiConsole.MarkupLine("Director - Tony Heffner '13");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Technical Director and Set Design - John F. Goers '78");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Master Carpenter - Matt O'Konowitz '01");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Choreographer - Sarah Heffner");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Music Director - David Michaels '03");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Props Director - Cari Foster");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Scenic Artist - Tracy Deal");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Lighting Designer and Director - Sean Monahan '93");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Lighting Technician - Corey Farr '12");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Costume Design - Joseph Basalla '15");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Technical & Scenic Design Assistant - Emily Hetman");
+                Thread.Sleep(100);
+                AnsiConsole.MarkupLine("Business Manager/Program/Box Office - Dawna Rae Warren");
+                Thread.Sleep(2000);
+                Console.WriteLine("\n----------------------------------------------\n");
+            }
+            else
+            {
+                Console.WriteLine("Prompt Canceled...");
+            }
+        }
+    }
     // MORE COMING SOON
 
     else if (input == "exit")
@@ -2272,7 +2535,7 @@ while (cmazeyCalculator)
         else if (elseChoice == 3)
         {
             double i = 0;
-            if (i == 0)
+            if (i > 0)
             {
                 Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
                 i++;
