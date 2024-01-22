@@ -2376,7 +2376,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[red]Crystal[/] - [white]JULIA O'BRIAN[/]");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[gold1]Ronnette[/] - [white]HELEN GERRITY[/] (F)");
+                AnsiConsole.MarkupLine("[gold1]Ronnette[/] - [white]HELEN GERRITY[/] (BF)");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[green]Chiffon[/] - [white]HAILY BETTERS[/]");
                 Thread.Sleep(100);
@@ -2400,7 +2400,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(1000);
                 AnsiConsole.MarkupLine("[gold3_1]Stage Manager[/] - [white]Alexandra Gray[/]");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[paleturquoise1]Sound Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Braeden Barker[/] (F)");
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[paleturquoise1]Sound Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Braeden Barker[/] (BF)");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("Crew Manager (Student Staff) - [white]Sean Dabydeen[/]");
                 Thread.Sleep(100);
@@ -2412,7 +2412,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Alysia McGill[/]");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Elijah Molseed[/] (F)");
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Elijah Molseed[/] (BF)");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[darkorange]Costume Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Sarah Molseed[/]");
                 Thread.Sleep(100);
@@ -2420,13 +2420,13 @@ while (cmazeyCalculator)
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Daniel Monahan[/]");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Scott O'Neill[/] (F)");
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Scott O'Neill[/] (BF)");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Brandon Reed[/] (F)");
+                AnsiConsole.MarkupLine("[aquamarine3]Prop Crew Co-Chief[/]/[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Brandon Reed[/] (BF)");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[lightgoldenrod1]Set Construction[/] - [white]Benjamin Ross[/]");
                 Thread.Sleep(100);
-                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Dante Scott[/] (F)");
+                AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Dante Scott[/] (BF)");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[lightgoldenrod1]Set Construction[/] - [white]Bradley Sellers[/]");
                 Thread.Sleep(100);
