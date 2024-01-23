@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
+bool crew = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
@@ -178,7 +179,10 @@ while (cmazeyCalculator)
         Console.WriteLine("- Math.Um");
         Console.WriteLine("- Custom");
         Console.WriteLine("- Name");
-        Console.WriteLine("- Little Shop of Horrors");
+        if (crew)
+        {
+            Console.WriteLine("- Little Shop of Horrors");
+        }
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
@@ -2287,6 +2291,7 @@ while (cmazeyCalculator)
                 name = "[gold]Brandon Reed[/]";
                 name1 = "Brandon R";
                 fname = "Brandon";
+                crew = true;
             }
             else if (namePrompt == "braeden")
             {
@@ -2295,6 +2300,7 @@ while (cmazeyCalculator)
                 name = "[gold]Braeden Barker[/]";
                 name1 = "Braeden B";
                 fname = "Braeden";
+                crew = true;
             }
             else if (namePrompt == "owen")
             {
@@ -2311,6 +2317,7 @@ while (cmazeyCalculator)
                 name = "[lightpink1]Helen Gerrity[/]";
                 name1 = "Helen G";
                 fname = "Helen";
+                crew = true;
             }
             else if (namePrompt == "david")
             {
@@ -2327,6 +2334,7 @@ while (cmazeyCalculator)
                 name = "[gold]Sean D[/]";
                 name1 = "Sean D";
                 fname = "Sean";
+                crew = true;
             }
             else
             {
@@ -2340,11 +2348,7 @@ while (cmazeyCalculator)
     //LSOH PLAY
     else if (input == "play" || input == "little shop of horrors")
     {
-        if (basic)
-        {
-            Console.WriteLine("This doesn't support BASIC mode, sorry bud.\n");
-        }
-        else
+        if (crew)
         {
             Console.Write("Do you want to check out the credits? (y/n) -> ");
             input = Console.ReadLine();
@@ -2487,6 +2491,14 @@ while (cmazeyCalculator)
                 Console.WriteLine("Prompt Canceled...");
             }
         }
+        else if (basic)
+    {
+        Console.WriteLine("This command isn't supported in BASIC mode, sorry bud..\n");
+    }
+        else
+        {
+            Console.WriteLine("Invalid command, please try again.\n");
+        }
     }
     // MORE COMING SOON
 
@@ -2535,14 +2547,14 @@ while (cmazeyCalculator)
         else if (elseChoice == 3)
         {
             double i = 0;
-            if (i > 0)
+            if (i == 0)
             {
                 Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
                 i++;
             }      
-            else
+            else if (i < 1)
             {
-                Console.WriteLine("Invalid Command, please try again.\n");
+                Console.WriteLine();
             } 
         }
     }
