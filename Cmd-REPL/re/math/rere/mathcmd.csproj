@@ -5,7 +5,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <ApplicationIcon>logo_200x200.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="logo_200x200.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.48.0" />
