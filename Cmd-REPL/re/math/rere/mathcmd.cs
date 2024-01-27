@@ -6,7 +6,7 @@ bool nameChange = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.1";
+string version = "v1.0.2";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -2204,7 +2204,7 @@ while (cmazeyCalculator)
                 double addsubTotal = sub1 - addSub1 + add1;
 
                 var addsubTable = new Table();
-                        addsubTable.AddColumn($"[lightskyblue1]{add1} - {addSub1} + {sub1} =[/] [yellow]{addsubTotal}[/]");
+                        addsubTable.AddColumn($"[lightskyblue1]{sub1} - {addSub1} + {add1} =[/] [yellow]{addsubTotal}[/]");
                         AnsiConsole.Write(addsubTable);
             }
             else if (customSelct == "+-*/ <5>")
