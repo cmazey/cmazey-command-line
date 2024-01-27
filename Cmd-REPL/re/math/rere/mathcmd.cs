@@ -2,10 +2,11 @@ using System.Runtime.InteropServices;
 using Spectre.Console;
 bool basic = false;
 bool crew = false;
+bool nameChange = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.0";
+string version = "v1.0.1";
 
 Thread.Sleep(3000);
 Console.Clear();
@@ -2258,100 +2259,124 @@ while (cmazeyCalculator)
         }
         else
         {
-            var namePrompt = AnsiConsole.Ask<string>("What's your [green]first name[/]?").ToLower();
-
-            if (namePrompt == "colton")
+            if (name1 == "Guest")
             {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Colton Mazey");
-                Console.WriteLine("\\owner");
-                name = "[darkgoldenrod]Colton Mazey[/]";
-                name1 = "Colton M";
-                fname = "Colton";
-                crew = true;
-            }
-            else if (namePrompt == "andy" || namePrompt == "anderson")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Anderson Scott");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]Anderson Scott[/]";
-                name1 = "Anderson S";
-                fname = "Andy";
-            }
-            else if (namePrompt == "nolan")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Nolan Meyer");
-                Console.WriteLine("\\friend");
-                name = "[darkslategray3]Nolan Meyer[/]";
-                name1 = "Nolan M";
-                fname = "Nolan";
-            }
-            else if (namePrompt == "brandon")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Brandon Reed");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]Brandon Reed[/]";
-                name1 = "Brandon R";
-                fname = "Brandon";
-                crew = true;
-            }
-            else if (namePrompt == "braeden")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Braeden Barker");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]Braeden Barker[/]";
-                name1 = "Braeden B";
-                fname = "Braeden";
-                crew = true;
-            }
-            else if (namePrompt == "owen")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Owen Konjura");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]Owen Konjura[/]";
-                name1 = "Owen K";
-                fname = "Owen";
-            }
-            else if (namePrompt == "helen")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Helen Gerrity");
-                Console.WriteLine("\\friend");
-                name = "[lightpink1]Helen Gerrity[/]";
-                name1 = "Helen G";
-                fname = "Helen";
-                crew = true;
-            }
-            else if (namePrompt == "david")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: David Burke");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]David Burke[/]";
-                name1 = "David B";
-                fname = "David";
-            }
-            else if (namePrompt == "sean")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Sean D");
-                Console.WriteLine("\\friend");
-                name = "[darkgoldenrod]Sean D[/]";
-                name1 = "Sean D";
-                fname = "Sean";
-                crew = true;
-            }
-            else if (namePrompt == "xannie")
-            {
-                Console.WriteLine("\nNAME AUTOCORRECTED: Xannie Gray");
-                Console.WriteLine("\\Crew Manager");
-                name = "[darkgoldenrod]Xannie Gray[/]";
-                name1 = "Xannie G";
-                fname = "Xannie";
-                crew = true;
+                nameChange = true;
             }
             else
             {
-                name = $"[white]{namePrompt}[/]";
-                name1 = namePrompt;
-                Console.WriteLine($"NAME CHANGED: {name1}");
-                fname = namePrompt;
+                AnsiConsole.MarkupLine($"NAME CHOSEN: {name}");
+                var choice = AnsiConsole.Ask<string>("Change it? <[blue]y/n[/]>");
+                
+                if (choice == "y")
+                {
+                   nameChange = true; 
+                }
+                else
+                {
+                    AnsiConsole.MarkupLine("[red]Prompt canceled...[/]\n");
+                }
+                
+            }
+            
+            if (nameChange)
+            {
+                var namePrompt = AnsiConsole.Ask<string>("\nWhat's your [green]first name[/]?").ToLower();
+
+                if (namePrompt == "colton")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Colton Mazey");
+                    Console.WriteLine("\\owner");
+                    name = "[darkgoldenrod]Colton Mazey[/]";
+                    name1 = "Colton M";
+                    fname = "Colton";
+                    crew = true;
+                }
+                else if (namePrompt == "andy" || namePrompt == "anderson")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Anderson Scott");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]Anderson Scott[/]";
+                    name1 = "Anderson S";
+                    fname = "Andy";
+                }
+                else if (namePrompt == "nolan")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Nolan Meyer");
+                    Console.WriteLine("\\friend");
+                    name = "[darkslategray3]Nolan Meyer[/]";
+                    name1 = "Nolan M";
+                    fname = "Nolan";
+                }
+                else if (namePrompt == "brandon")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Brandon Reed");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]Brandon Reed[/]";
+                    name1 = "Brandon R";
+                    fname = "Brandon";
+                    crew = true;
+                }
+                else if (namePrompt == "braeden")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Braeden Barker");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]Braeden Barker[/]";
+                    name1 = "Braeden B";
+                    fname = "Braeden";
+                    crew = true;
+                }
+                else if (namePrompt == "owen")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Owen Konjura");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]Owen Konjura[/]";
+                    name1 = "Owen K";
+                    fname = "Owen";
+                }
+                else if (namePrompt == "helen")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Helen Gerrity");
+                    Console.WriteLine("\\friend");
+                    name = "[lightpink1]Helen Gerrity[/]";
+                    name1 = "Helen G";
+                    fname = "Helen";
+                    crew = true;
+                }
+                else if (namePrompt == "david")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: David Burke");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]David Burke[/]";
+                    name1 = "David B";
+                    fname = "David";
+                }
+                else if (namePrompt == "sean")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Sean D");
+                    Console.WriteLine("\\friend");
+                    name = "[darkgoldenrod]Sean D[/]";
+                    name1 = "Sean D";
+                    fname = "Sean";
+                    crew = true;
+                }
+                else if (namePrompt == "xannie")
+                {
+                    Console.WriteLine("\nNAME AUTOCORRECTED: Xannie Gray");
+                    Console.WriteLine("\\Crew Manager");
+                    name = "[darkgoldenrod]Xannie Gray[/]";
+                    name1 = "Xannie G";
+                    fname = "Xannie";
+                    crew = true;
+                }
+                else
+                {
+                    name = $"[white]{namePrompt}[/]";
+                    name1 = namePrompt;
+                    Console.WriteLine($"NAME CHANGED: {name1}");
+                    fname = namePrompt;
+                }
+                nameChange = false;
             }
         }
     }
