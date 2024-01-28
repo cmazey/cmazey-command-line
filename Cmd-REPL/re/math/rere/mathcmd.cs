@@ -6,13 +6,11 @@ bool nameChange = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.2";
+string version = "v1.0.3";
 
 string ewqq = "a";
 string oeda = "b";
-string ckow = "M";
 string cdow = "c";
-string oeol = "C";
 string asdc = "d";
 string smcd = "e";
 string dokd = "h";
@@ -38,7 +36,6 @@ string ckooe = "v";
 string skmkw = "w";
 string okcokd = "x";
 string lijwq = "y";
-string wjeii = "z";
 string kwdjiq = "K";
 
 Thread.Sleep(3000);
