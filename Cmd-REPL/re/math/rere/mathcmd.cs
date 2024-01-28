@@ -8,6 +8,39 @@ string fname = "";
 string name1 = "Guest";
 string version = "v1.0.2";
 
+string ewqq = "a";
+string oeda = "b";
+string ckow = "M";
+string cdow = "c";
+string oeol = "C";
+string asdc = "d";
+string smcd = "e";
+string dokd = "h";
+string ckew = "i";
+string ckwqo = "O";
+string ckoww = "j";
+string okdq = "k";
+string ciako = "l";
+string c9oqa = "D";
+string cakoe = "n";
+string ckiw = "G";
+string cidqq = "A";
+string kewd = "o";
+string ciwq = "X";
+string iciqa = "H";
+string jiweq = "S";
+string dkoq = "r";
+string caokw = "s";
+string fokcao = "t";
+string eiiwq = "u";
+string coqko = "B";
+string ckooe = "v";
+string skmkw = "w";
+string okcokd = "x";
+string lijwq = "y";
+string wjeii = "z";
+string kwdjiq = "K";
+
 Thread.Sleep(3000);
 Console.Clear();
 
@@ -2283,6 +2316,7 @@ while (cmazeyCalculator)
             {
                 var namePrompt = AnsiConsole.Ask<string>("\nWhat's your [green]first name[/]?").ToLower();
 
+
                 if (namePrompt == "colton")
                 {
                     Console.WriteLine("\nNAME AUTOCORRECTED: Colton Mazey");
@@ -2292,15 +2326,15 @@ while (cmazeyCalculator)
                     fname = "Colton";
                     crew = true;
                 }
-                else if (namePrompt == "andy" || namePrompt == "anderson")
+                else if (namePrompt == $"{ewqq}{cakoe}{asdc}{lijwq}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: Anderson Scott");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {cidqq}{cakoe}{asdc}{smcd}{dkoq}{caokw}{kewd}{cakoe} {jiweq}{cdow}{kewd}{fokcao}{fokcao}");
                     Console.WriteLine("\\friend");
-                    name = "[darkgoldenrod]Anderson Scott[/]";
-                    name1 = "Anderson S";
-                    fname = "Andy";
+                    name = $"[darkgoldenrod]{cidqq}{cakoe}{asdc}{smcd}{dkoq}{caokw}{kewd}{cakoe} {jiweq}{cdow}{kewd}{fokcao}{fokcao}[/]";
+                    name1 = $"{cidqq}{cakoe}{asdc}{smcd}{dkoq}{caokw}{kewd}{cakoe} {jiweq}";
+                    fname = $"{cidqq}{cakoe}{asdc}{lijwq}";
                 }
-                else if (namePrompt == "nolan")
+                else if (namePrompt == $"{cakoe}{kewd}{ciako}{ewqq}{cakoe}")
                 {
                     Console.WriteLine("\nNAME AUTOCORRECTED: Nolan Meyer");
                     Console.WriteLine("\\friend");
@@ -2308,7 +2342,7 @@ while (cmazeyCalculator)
                     name1 = "Nolan M";
                     fname = "Nolan";
                 }
-                else if (namePrompt == "brandon")
+                else if (namePrompt == $"{oeda}randon")
                 {
                     Console.WriteLine("\nNAME AUTOCORRECTED: Brandon Reed");
                     Console.WriteLine("\\friend");
@@ -2317,7 +2351,7 @@ while (cmazeyCalculator)
                     fname = "Brandon";
                     crew = true;
                 }
-                else if (namePrompt == "braeden")
+                else if (namePrompt == $"{oeda}raeden")
                 {
                     Console.WriteLine("\nNAME AUTOCORRECTED: Braeden Barker");
                     Console.WriteLine("\\friend");
@@ -2326,47 +2360,47 @@ while (cmazeyCalculator)
                     fname = "Braeden";
                     crew = true;
                 }
-                else if (namePrompt == "owen")
+                else if (namePrompt == $"{kewd}{skmkw}{smcd}{cakoe}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: Owen Konjura");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}");
                     Console.WriteLine("\\friend");
-                    name = "[darkgoldenrod]Owen Konjura[/]";
-                    name1 = "Owen K";
-                    fname = "Owen";
+                    name = $"[darkgoldenrod]{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}[/]";
+                    name1 = $"{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}";
+                    fname = $"{ckwqo}{skmkw}{smcd}{cakoe}";
                 }
-                else if (namePrompt == "helen")
+                else if (namePrompt == $"{dokd}{smcd}{ciako}{smcd}{cakoe}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: Helen Gerrity");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
                     Console.WriteLine("\\friend");
-                    name = "[lightpink1]Helen Gerrity[/]";
-                    name1 = "Helen G";
-                    fname = "Helen";
+                    name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
+                    name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
+                    fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
                     crew = true;
                 }
-                else if (namePrompt == "david")
+                else if (namePrompt == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: David Burke");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}");
                     Console.WriteLine("\\friend");
-                    name = "[darkgoldenrod]David Burke[/]";
-                    name1 = "David B";
-                    fname = "David";
+                    name = $"[darkgoldenrod]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
+                    name1 = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}";
+                    fname = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc}";
                 }
-                else if (namePrompt == "sean")
+                else if (namePrompt == $"{caokw}{smcd}{ewqq}{cakoe}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: Sean D");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {jiweq}{smcd}{ewqq}{cakoe} {c9oqa}");
                     Console.WriteLine("\\friend");
-                    name = "[darkgoldenrod]Sean D[/]";
-                    name1 = "Sean D";
-                    fname = "Sean";
+                    name = $"[darkgoldenrod]{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}[/]";
+                    name1 = $"{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}";
+                    fname = $"{jiweq}{smcd}{ewqq}{cakoe}";
                     crew = true;
                 }
-                else if (namePrompt == "xannie")
+                else if (namePrompt == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd}")
                 {
-                    Console.WriteLine("\nNAME AUTOCORRECTED: Xannie Gray");
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}");
                     Console.WriteLine("\\Crew Manager");
-                    name = "[darkgoldenrod]Xannie Gray[/]";
-                    name1 = "Xannie G";
-                    fname = "Xannie";
+                    name = $"[darkgoldenrod]{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}[/]";
+                    name1 = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}";
+                    fname = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd}";
                     crew = true;
                 }
                 else
