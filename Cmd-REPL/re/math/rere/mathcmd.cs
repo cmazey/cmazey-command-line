@@ -6,7 +6,9 @@ bool nameChange = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.3";
+string version = "v1.0.4";
+int lotWin = 0;
+int lotLoss = 0;
 
 string ewqq = "a";
 string oeda = "b";
@@ -30,6 +32,7 @@ string jiweq = "S";
 string dkoq = "r";
 string caokw = "s";
 string fokcao = "t";
+string rifkoa = "m";
 string eiiwq = "u";
 string coqko = "B";
 string ckooe = "v";
@@ -189,21 +192,21 @@ while (cmazeyCalculator)
     // HELP COMMAND
     else if (input == "/help" || input == "help")
     {
-        Console.WriteLine("\n- Addition");
-        Console.WriteLine("- Subtraction");
-        Console.WriteLine("- Multiplication");
-        Console.WriteLine("- Division");
-        Console.WriteLine("- LineSlope");
+        Console.WriteLine("\n- Addition (+)");
+        Console.WriteLine("- Subtraction (-)");
+        Console.WriteLine("- Multiplication (x)");
+        Console.WriteLine("- Division (/)");
+        Console.WriteLine("- LineSlope (ls)");
         Console.WriteLine("- HToI");
-        Console.WriteLine("- 8Ball");
-        Console.WriteLine("- Lottery");
+        Console.WriteLine("- EightBall (8ball)");
+        Console.WriteLine("- Lottery (lot)");
         Console.WriteLine("- Change");
-        Console.WriteLine("- Clear");
+        Console.WriteLine("- Clear (cls)");
         Console.WriteLine("- Version");
         Console.WriteLine("- Basic");
         Console.WriteLine("- Calendar");
         Console.WriteLine("- Bigmul-Big");
-        Console.WriteLine("- Square Root");
+        Console.WriteLine("- Square Root (Square)");
         Console.WriteLine("- Truncate");
         Console.WriteLine("- PI");
         Console.WriteLine("- E4");
@@ -212,7 +215,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- Name");
         if (crew)
         {
-            Console.WriteLine("- Little Shop of Horrors");
+            Console.WriteLine("- Little Shop of Horrors (play)");
         }
         Console.WriteLine("- Exit\n");
     }
@@ -377,7 +380,7 @@ while (cmazeyCalculator)
         }
     }
     //LINE SLOPE CALCULATOR
-    else if (input == "lineslope")
+    else if (input == "lineslope" || input == "ls")
     {
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
@@ -569,7 +572,7 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // LOTTERY
-    else if (input == "lottery")
+    else if (input == "lottery" || input == "lot")
     {
         Console.WriteLine("\n----------------------------------------------\n");
 
@@ -588,14 +591,17 @@ while (cmazeyCalculator)
             if (entryNumber == winningNumber)
             {
                 Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+                lotWin++;
             }
             else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
             {
                 Console.WriteLine("You digits match, but out of order! You win $3,000!");
+                lotWin++;
             }
             else
             {
                 Console.WriteLine("No match. Better luck next time!");
+                lotLoss++;
             }
 
             Console.ReadKey();
@@ -635,14 +641,17 @@ while (cmazeyCalculator)
             if (entryNumber == winningNumber)
             {
                 AnsiConsole.Markup("[green1]Exact match[/]! You win the grand prize of [green1]$100,000![/]\n");
+                lotWin++;
             }
             else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
             {
                 AnsiConsole.Markup("You digits match, but out of order! You win [green1]$3,000![/]\n");
+                lotWin++;
             }
             else
             {
                 AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
+                lotLoss++;
             }
             Console.ReadKey();
         }
@@ -2300,6 +2309,7 @@ while (cmazeyCalculator)
                 
                 if (choice == "y")
                 {
+                   crew = false;
                    nameChange = true; 
                 }
                 else
@@ -2399,6 +2409,14 @@ while (cmazeyCalculator)
                     name1 = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}";
                     fname = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd}";
                     crew = true;
+                }
+                else if (namePrompt == $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}")
+                {
+                    Console.WriteLine($"\nNAME AUTOCORRECTED: {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}");
+                    Console.WriteLine("\\Teacher");
+                    name = $"[darkgoldenrod]{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
+                    name1 = $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}";
+                    fname = $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}";
                 }
                 else
                 {
@@ -2564,6 +2582,28 @@ while (cmazeyCalculator)
         else
         {
             Console.WriteLine("Invalid command, please try again.\n");
+        }
+    }
+    else if (input == "lotteryresult" || input == "lotresult")
+    {
+        if (basic)
+        {
+            Console.WriteLine("\n--- Lottery Result ---\n");
+            Console.WriteLine($"Wins: {lotWin}");
+            Console.WriteLine($"Loss: {lotLoss}\n");
+        }
+        else
+        {
+            var lotTable = new Table();
+
+            Console.WriteLine($"\n--- {fname} Lottery Result ---\n");
+            lotTable.AddColumn("");
+            lotTable.AddColumn("#");
+            lotTable.AddRow("[green3_1]Wins[/]", $"[white]{lotWin}[/]");
+            lotTable.AddRow(new Markup("[red3]Loss[/]"), new Markup($"[white]{lotLoss}[/]"));
+
+            AnsiConsole.Write(lotTable);
+            Console.WriteLine();
         }
     }
     // MORE COMING SOON
