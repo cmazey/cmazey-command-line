@@ -200,6 +200,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- HToI");
         Console.WriteLine("- EightBall (8ball)");
         Console.WriteLine("- Lottery (lot)");
+        Console.WriteLine("- LotteryResult (lotResult)");
         Console.WriteLine("- Change");
         Console.WriteLine("- Clear (cls)");
         Console.WriteLine("- Version");
