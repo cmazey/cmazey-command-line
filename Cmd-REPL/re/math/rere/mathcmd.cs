@@ -160,7 +160,6 @@ while (cmazeyCalculator)
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
-                break;
             }
             double add2 = Convert.ToDouble(user_input);
             double addTotal = add1 + add2; // Adds the numbers
@@ -2911,6 +2910,7 @@ while (cmazeyCalculator)
             Console.WriteLine("Invalid command, please try again.\n");
         }
     }
+    //Lottery Results
     else if (input == "lotteryresult" || input == "lotresult")
     {
         if (basic)
