@@ -3,7 +3,12 @@ import random
 import os
 from time import sleep
 
-os.chdir('Result')
+if os.path.isdir('Result'):
+    os.chdir('Result')
+
+else:
+    os.mkdir('Result')
+    os.chdir('Result')
 
 if os.path.exists('PassGenResult.txt'):
     print("FILE LOCATED: '" + os.getcwd() + "\\PassGenResult.txt'")
