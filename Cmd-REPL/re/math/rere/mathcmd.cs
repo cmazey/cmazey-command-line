@@ -3,13 +3,15 @@ using Spectre.Console;
 bool basic = false;
 bool crew = false;
 bool nameChange = false;
+bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.4";
+string version = "v1.0.5";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
+
 
 string ewqq = "a";
 string oeda = "b";
@@ -114,13 +116,41 @@ while (cmazeyCalculator)
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
 
             Console.Write("\n[?] + ? = -> ");
-            double add1 = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+                break;
+            }
+            double add1 = Convert.ToDouble(user_input);
             Console.SetCursorPosition(0, Console.CursorTop -1);
             Console.Write($"\r{add1} + [?] = ? -> ");
-            double add2 = Convert.ToDouble(Console.ReadLine());
-
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+                break;
+            }
+            double add2 = Convert.ToDouble(user_input);
             double addTotal = add1 + add2; // Adds the numbers
-
             Console.SetCursorPosition(0, Console.CursorTop -1);
             Console.WriteLine($"\r{add1} + {add2} = {addTotal}            ");
             Console.ReadKey();
@@ -158,9 +188,39 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
             Console.Write("\n[?] - ? = ? -> ");
-            double sub1 = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+                break;
+            }
+            double sub1 = Convert.ToDouble(user_input);
             Console.Write($"{sub1} - [?] = ? -> ");
-            double sub2 = Convert.ToDouble(Console.ReadLine());
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+                break;
+            }
+            double sub2 = Convert.ToDouble(user_input);
             double subTotal = sub1 - sub2; // Subtracts the numbers
 
             Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
