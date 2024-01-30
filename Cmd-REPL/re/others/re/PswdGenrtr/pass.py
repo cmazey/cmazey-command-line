@@ -36,6 +36,9 @@ while True:
         if characters_number < 8:
             print("Your number should be at least 8.")
             user_input = input("Please, Enter your number again: ")
+        elif characters_number > 51:
+            print("Your number can't exceed over 51.")
+            user_input = input("Please, Enter your number again: ")
         else:
             break
  
