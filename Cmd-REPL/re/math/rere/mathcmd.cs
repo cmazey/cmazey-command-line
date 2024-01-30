@@ -478,9 +478,11 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    if (checking > 99)
                     {
-                        break;
+                        Console.WriteLine("You can't exceed over 99 in BASIC MODE..");
+                        Console.Write("Please enter an amount to give back (1c - 99c) -> ");
+                        user_input = Console.ReadLine();
                     }
                     else
                     {
@@ -495,7 +497,7 @@ while (cmazeyCalculator)
                 }
             }
             int change = Convert.ToInt32(user_input);
-            Console.WriteLine($"Change Amount: {change}₵");
+            Console.WriteLine($"Change Amount: {change}c");
 
             int Quarters = change / 25; // Divides the change amount by 25.
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
