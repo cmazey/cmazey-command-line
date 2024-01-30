@@ -2880,7 +2880,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(1500);
                 AnsiConsole.MarkupLine("[white bold]--- CREW ---[/]\n");
                 Thread.Sleep(1000);
-                AnsiConsole.MarkupLine("[gold3_1]Stage Manager[/] - [white]Alexandra Gray[/]");
+                AnsiConsole.MarkupLine("[gold3_1]Stage Manager[/] - [white]Xannie Gray[/]");
                 Thread.Sleep(100);
                 AnsiConsole.MarkupLine("[chartreuse4]Lighting Crew[/]/[paleturquoise1]Sound Crew Chief[/]/[lightgoldenrod1]Set Construction[/] - [white]Braeden Barker[/] (BF)");
                 Thread.Sleep(100);
