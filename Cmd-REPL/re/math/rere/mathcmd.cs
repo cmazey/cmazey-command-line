@@ -2999,8 +2999,7 @@ while (cmazeyCalculator)
             Console.WriteLine();
         }
     }
-    // MORE COMING SOON
-
+    // Exit
     else if (input == "exit")
     {
         Console.WriteLine("Exiting...\n\n");
