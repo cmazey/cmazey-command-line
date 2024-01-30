@@ -7,12 +7,10 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.6";
+string version = "v1.0.7";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
-
-
 string ewqq = "a";
 string oeda = "b";
 string cdow = "c";
@@ -84,7 +82,6 @@ else
     .Color(Color.Red));
     AnsiConsole.Markup($"[yellow]{version}[/]");
 }
-
 if (basic)
 {
     Console.WriteLine("\nType /help to show all the available commands!");
@@ -105,7 +102,6 @@ while (cmazeyCalculator)
         AnsiConsole.Write(new Markup("[gold1]->[/] "));
     }
     string input = Console.ReadLine().ToLower();
-
     // ADDITION
     if (input == "addition" || input == "+")
     {
@@ -675,6 +671,11 @@ while (cmazeyCalculator)
             }
             double y2 = Convert.ToDouble(user_input);
             double slope = (y2 - y1) / (x2 - x1);
+            if (x1 == 22 && x2 == 2 && y1 == 2 && y2 == 2)
+            {
+                Console.WriteLine("\n(Apparently, the answer is '-0' but I'm not going to show it, and i'm going to error this out.)");
+                slope = (2 - x2) / (y1 - y2);
+            }
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
             Console.ReadKey();
         }
@@ -1013,8 +1014,29 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: Truncate [.] || {name1}\n");
             Console.Write("Enter a value: ");
-            double trunNum = Convert.ToDouble(Console.ReadLine());
-
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double trunNum = Convert.ToDouble(user_input);
             double trunTotal = Math.Truncate(trunNum);
             double roundTotal = Math.Round(trunNum);
 
@@ -1047,7 +1069,29 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SQUARE ROOT [√] || {name1}\n");
             Console.Write("Enter a number: ");
-            double squareNum = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double squareNum = Convert.ToDouble(user_input);
             double squareTotal = Math.Sqrt(squareNum);
             Console.WriteLine($"\nSquare root: {squareTotal}");
         }
@@ -1075,7 +1119,29 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: BigMul-Big Multiplication [x] || {name1}\n");
             Console.Write("Enter a number: ");
-            int bigMult1 = Convert.ToInt32(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            int bigMult1 = Convert.ToInt32(user_input);
             double bigMultTotal = Math.BigMul(bigMult1, bigMult1);
             Console.WriteLine($"{bigMult1} x {bigMult1} == {bigMultTotal}");
         }
@@ -2991,7 +3057,6 @@ while (cmazeyCalculator)
         }
     }
 }
-
 
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
