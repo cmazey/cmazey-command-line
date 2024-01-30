@@ -7,7 +7,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.5";
+string version = "v1.0.6";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -114,7 +114,6 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
-
             Console.Write("\n[?] + ? = -> ");
             string user_input = Console.ReadLine();
             while (basicAns)
@@ -122,6 +121,14 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 catch
                 {
@@ -129,17 +136,23 @@ while (cmazeyCalculator)
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
-                break;
             }
             double add1 = Convert.ToDouble(user_input);
-            Console.SetCursorPosition(0, Console.CursorTop -1);
-            Console.Write($"\r{add1} + [?] = ? -> ");
+            Console.Write($"{add1} + [?] = ? -> ");
             user_input = Console.ReadLine();
             while (basicAns)
             {
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 catch
                 {
@@ -151,8 +164,7 @@ while (cmazeyCalculator)
             }
             double add2 = Convert.ToDouble(user_input);
             double addTotal = add1 + add2; // Adds the numbers
-            Console.SetCursorPosition(0, Console.CursorTop -1);
-            Console.WriteLine($"\r{add1} + {add2} = {addTotal}            ");
+            Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
             Console.ReadKey();
         }
         else
@@ -183,7 +195,6 @@ while (cmazeyCalculator)
     else if (input == "subtraction" || input == "-")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
@@ -194,6 +205,14 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 catch
                 {
@@ -201,7 +220,6 @@ while (cmazeyCalculator)
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
-                break;
             }
             double sub1 = Convert.ToDouble(user_input);
             Console.Write($"{sub1} - [?] = ? -> ");
@@ -211,6 +229,14 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
                 catch
                 {
@@ -218,15 +244,12 @@ while (cmazeyCalculator)
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
-                break;
             }
             double sub2 = Convert.ToDouble(user_input);
             double subTotal = sub1 - sub2; // Subtracts the numbers
-
             Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
             Console.ReadKey();
         }
-
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
@@ -291,12 +314,54 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
             Console.Write("[?] x ? = ? -> ");
-            double mult1 = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double mult1 = Convert.ToDouble(user_input);
             Console.Write($"{mult1} x [?] = ? -> ");
-            double mult2 = Convert.ToDouble(Console.ReadLine());
-
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double mult2 = Convert.ToDouble(user_input);
             double multTotal = mult1 * mult2; // Multiply the number
-
             Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
             Console.ReadKey();
         }
@@ -330,9 +395,53 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [/] || {name1}\n");
             Console.Write("[?] / ? = ? -> ");
-            double div1 = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double div1 = Convert.ToDouble(user_input);
             Console.Write($"{div1} / [?] = ? -> ");
-            double div2 = Convert.ToDouble(Console.ReadLine());
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double div2 = Convert.ToDouble(user_input);
             double divTotal = div1 / div2; // Divides the numbers
             Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
         }
@@ -368,7 +477,29 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: CHANGE CALCULATOR [₵] || {name1}");
             Console.Write("\nEnter change to give back (1c - 99c): ");
-            int change = Convert.ToInt32(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            int change = Convert.ToInt32(user_input);
             Console.WriteLine($"Change Amount: {change}₵");
 
             int Quarters = change / 25; // Divides the change amount by 25.
@@ -449,13 +580,101 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: Line Slope Calculator || {name1}\n");
             Console.Write("x1: ");
-            double x1 = Convert.ToDouble(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double x1 = Convert.ToDouble(user_input);
             Console.Write("y1: ");
-            double y1 = Convert.ToDouble(Console.ReadLine());
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double y1 = Convert.ToDouble(user_input);
             Console.Write("x2: ");
-            double x2 = Convert.ToDouble(Console.ReadLine());
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double x2 = Convert.ToDouble(user_input);
             Console.Write("y2: ");
-            double y2 = Convert.ToDouble(Console.ReadLine());
+            user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            double y2 = Convert.ToDouble(user_input);
             double slope = (y2 - y1) / (x2 - x1);
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
             Console.ReadKey();
@@ -510,7 +729,29 @@ while (cmazeyCalculator)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: INCHES TO HEIGHT || {name1}\n");
             Console.Write("Enter your height in inches: ");
-            int height = Convert.ToInt32(Console.ReadLine());
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(user_input);
+                    if (checking > 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            int height = Convert.ToInt32(user_input);
             int num = 12;
             int foot = height / num; // Dividing the height in inches by 12
             int inches = height % num;
@@ -646,6 +887,30 @@ while (cmazeyCalculator)
         {
             Console.Write("Enter your lottery number (0 - 99): ");
             string inputLot = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    double checking = Convert.ToDouble(inputLot);
+                    
+                    if (checking > 99)
+                    {
+                        Console.WriteLine("Lot number can't exceed over 100, please enter your lottery number again (0 - 99):");
+                        Console.Write("-> ");
+                        inputLot = Console.ReadLine();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    inputLot = Console.ReadLine();
+                }
+            }
             int entryNumber = Convert.ToInt32(inputLot);
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
