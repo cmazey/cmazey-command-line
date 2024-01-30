@@ -560,6 +560,13 @@ if deBugNoLogs:
                 os.chdir(original_directory)
 
             elif dBugg == "other":
+                i = 0
+                
+                for i in range(50):
+                    print(".")
+                    time.sleep(0.1)
+                    i = i + 1
+
                 os.chdir('re/others')
                 subprocess.call('python others.py', shell=False)
                 os.chdir(original_directory)

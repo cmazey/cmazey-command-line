@@ -9,6 +9,7 @@ string name1 = "Guest";
 string version = "v1.0.4";
 int lotWin = 0;
 int lotLoss = 0;
+int i = 0;
 
 string ewqq = "a";
 string oeda = "b";
@@ -2653,13 +2654,12 @@ while (cmazeyCalculator)
         }
         else if (elseChoice == 3)
         {
-            double i = 0;
             if (i == 0)
             {
                 Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
                 i++;
             }      
-            else if (i < 1)
+            else
             {
                 Console.WriteLine();
             } 
