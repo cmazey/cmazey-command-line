@@ -6,7 +6,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.9";
+string version = "v1.1.0";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -3018,6 +3018,7 @@ while (cmazeyCalculator)
             Console.WriteLine();
         }
     }
+    //bored
     else if (input == "bored")
     {
         ConsoleSpinner spinner = new ConsoleSpinner();
@@ -3059,28 +3060,64 @@ while (cmazeyCalculator)
     // INVALID RESPONSE
     else
     {
-        Console.WriteLine("Invalid Command, please try again.\n");
-        Random random = new();
-        int elseChoice = random.Next(1, 5);
-        if (elseChoice == 1)
+        while (basicAns)
         {
-            Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
-        }
-        else if (elseChoice == 2)
-        {
-            Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
-        }
-        else if (elseChoice == 3)
-        {
-            if (i == 0)
+           try
             {
-                Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
-                i++;
-            }      
-            else
+                double checking = Convert.ToDouble(input);
+                if (checking > 1)
+                {
+                    if (basic)
+                    {
+                        Console.WriteLine(checking);
+                    }
+                    else
+                    {
+                        AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                    }
+                    break;
+                }
+                else
+                {
+                    if (basic)
+                    {
+                        Console.WriteLine(checking);
+                    }
+                    else
+                    {
+                        AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                    }
+                    break;
+                }
+            }
+        
+            catch
             {
-                Console.WriteLine();
-            } 
+                Console.WriteLine("Invalid Command, please try again.\n");
+                Random random = new();
+                int elseChoice = random.Next(1, 5);
+                if (elseChoice == 1)
+                {
+                    Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
+                }
+                else if (elseChoice == 2)
+                {
+                    Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
+                }
+                else if (elseChoice == 3)
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
+                        i++;
+                    }      
+                    else
+                    {
+                        Console.WriteLine();
+                    } 
+                }
+                break;
+            }
         }
     }
 }
