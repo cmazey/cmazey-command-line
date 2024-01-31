@@ -7,7 +7,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.7";
+string version = "v1.0.8";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -442,7 +442,6 @@ while (cmazeyCalculator)
         }
         else
         {
-            Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [[/]] || {name}\n");
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
             var div1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]?[/] / ? = ? -> ")
