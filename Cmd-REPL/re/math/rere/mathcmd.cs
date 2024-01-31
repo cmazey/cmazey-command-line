@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Spectre.Console;
 bool basic = false;
 bool crew = false;
@@ -7,7 +6,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.8";
+string version = "v1.0.9";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -42,33 +41,52 @@ string okcokd = "x";
 string lijwq = "y";
 string kwdjiq = "K";
 
+Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
 Console.Clear();
 
-Console.WriteLine("Choose an option below:");
-Console.WriteLine("- basic");
-Console.WriteLine("- normal");
-Console.Write("-\\> ");
-string optionInput = Console.ReadLine();
+while (true)
+{
+    Console.WriteLine("Choose an option below:");
+    Console.WriteLine("- basic");
+    Console.WriteLine("- normal");
+    Console.WriteLine("- name");
+    Console.Write("-\\> ");
+    string optionInput = Console.ReadLine();
 
-if (optionInput == "basic")
-{
-    Console.Clear();
-    basic = true;
+    if (optionInput == "basic")
+    {
+        Console.Clear();
+        basic = true;
+        break;
+    }
+    else if (optionInput == "normal")
+    {
+        Console.Clear();
+        basic = false;
+        break;
+    }
+    else if (optionInput == "name")
+    {
+        Console.Write("Enter a name: ");
+        string nameInput = Console.ReadLine();
+        name = nameInput;
+        name1 = nameInput;
+        fname = nameInput;
+        Console.WriteLine("Name Changed Confirmed!");
+        Thread.Sleep(1000);
+        Console.Clear();
+    }
+    else
+    {
+        Console.WriteLine("Input invalid, defaulting to normal...");
+        Thread.Sleep(2000);
+        Console.Clear();
+        basic = false;
+        break;
+    }
 }
-else if (optionInput == "normal")
-{
-    Console.Clear();
-    basic = false;
-}
-else
-{
-    Console.WriteLine("Input invalid, defaulting to normal...");
-    Thread.Sleep(2000);
-    Console.Clear();
-    basic = false;
-}
-
+Thread.Sleep(1000);
 if (basic)
 {
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
@@ -3000,6 +3018,15 @@ while (cmazeyCalculator)
             Console.WriteLine();
         }
     }
+    else if (input == "bored")
+    {
+        ConsoleSpinner spinner = new ConsoleSpinner();
+        spinner.Delay = 300;
+        while (true)
+        {
+            spinner.Turn(displayMsg: "Working ",sequenceCode:5);
+        }
+    }
     // Exit
     else if (input == "exit")
     {
@@ -3062,3 +3089,51 @@ Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
 
+
+public class ConsoleSpinner
+    {
+        static string[,] sequence = null;
+
+        public int Delay { get; set; } = 200;
+
+        int totalSequences = 0;
+        int counter;
+
+        public ConsoleSpinner()
+        {
+            counter = 0;
+            sequence = new string[,] {
+                { "/", "-", "\\", "|" },
+                { ".", "o", "0", "o" },
+                { "+", "x","+","x" },
+                { "V", "<", "^", ">" },
+                { ".   ", "..  ", "... ", "...." },
+                { "=>   ", "==>  ", "===> ", "====>" },
+               // ADD YOUR OWN CREATIVE SEQUENCE HERE IF YOU LIKE
+            };
+
+            totalSequences = sequence.GetLength(0);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 </param>
+        public void Turn(string displayMsg = "", int sequenceCode = 0)
+        {
+            counter++;
+            
+            Thread.Sleep(Delay);
+
+            sequenceCode = sequenceCode > totalSequences - 1 ? 0 : sequenceCode;
+
+            int counterValue = counter % 4;
+
+            string fullMessage = displayMsg + sequence[sequenceCode, counterValue];
+            int msglength = fullMessage.Length;
+
+            Console.Write(fullMessage);
+
+            Console.SetCursorPosition(Console.CursorLeft - msglength, Console.CursorTop);
+        }
+    }
