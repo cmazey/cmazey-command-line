@@ -3000,46 +3000,6 @@ while (cmazeyCalculator)
             Console.WriteLine();
         }
     }
-    else if (input == "stopwatch")
-    {
-        // Create new stopwatch.
-        Stopwatch stopwatch = new Stopwatch();
-
-        // Begin timing.
-         stopwatch.Start();
-
-       bool tiome = true;
-       object Keyboard = null;
-       while (tiome)
-       {
-            for (int e = 0; e < 1000; e++)
-            {
-                Thread.Sleep(1);
-
-
-                else
-                {
-                    Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
-                }
-            }
-       }
-         stopwatch.Stop();
-
-        // Write result.
-        Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
-        Console.Write("-> ");
-        string unput = Console.ReadLine();
-
-        if (unput == "start")
-        {
-            stopwatch.Start();
-        }
-        else if (unput == "stop")
-        {
-            stopwatch.Stop();
-        }
-
-    }
     // Exit
     else if (input == "exit")
     {
