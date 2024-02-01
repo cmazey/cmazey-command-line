@@ -6,10 +6,13 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.1";
+string version = "v1.1.2";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
+double inputNum = 0;
+double inputNum2 = 0;
+int inputCancel = 1;
 string ewqq = "a";
 string oeda = "b";
 string cdow = "c";
@@ -111,6 +114,7 @@ else
 bool cmazeyCalculator = true;
 while (cmazeyCalculator)
 {
+    inputCancel = 1;
     if (basic)
     {
         Console.Write("-> ");
@@ -128,81 +132,152 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
-            Console.Write("\n[?] + ? = -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double addTotal = inputNum + inputNum2;
+                    Console.WriteLine($"{inputNum} + {inputNum2} = {addTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"\n{inputNum} + [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double add2 = Convert.ToDouble(user_input);
+                    double addTotal = inputNum + add2;
+                    Console.WriteLine($"{inputNum} + {add2} = {addTotal}");
+                    inputNum = 0;
+                    Console.ReadKey();
                 }
             }
-            double add1 = Convert.ToDouble(user_input);
-            Console.Write($"{add1} + [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("\n[?] + ? = -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double add1 = Convert.ToDouble(user_input);
+                Console.Write($"{add1} + [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double add2 = Convert.ToDouble(user_input);
+                double addTotal = add1 + add2; // Adds the numbers
+                Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
+                Console.ReadKey();
             }
-            double add2 = Convert.ToDouble(user_input);
-            double addTotal = add1 + add2; // Adds the numbers
-            Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
-            Console.ReadKey();
         }
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: ADDITION [[+]] ||[/] {name}");
-
-            var add1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] + ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var add2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double addTotal = add1 + add2;
-
-            var addTable = new Table();
-            addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
-            AnsiConsole.Write(addTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double addTotal = inputNum + inputNum2;
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+                    inputNum = 0;
+                    inputNum2 = 0;
+                    inputCancel = 0;
+                }
+                else
+                {
+                    var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double addTotal = inputNum + add2;
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{inputNum} + {add2} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+                    inputNum = 0;
+                    inputCancel = 0;
+                }
+            }
+            else
+            {
+                var add1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] + ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var add2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double addTotal = add1 + add2;
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        inputCancel = 0;
     }
     // SUBTRACTION
     else if (input == "subtraction" || input == "-")
@@ -211,80 +286,151 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
-            Console.Write("\n[?] - ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double subTotal = inputNum - inputNum2;
+                    Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
+                    inputCancel = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"\n{inputNum} - [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double sub2 = Convert.ToDouble(user_input);
+                    double subTotal = inputNum - sub2;
+                    Console.WriteLine($"{inputNum} - {sub2} = {subTotal}");
+                    inputNum = 0;
+                    inputCancel = 0;
                 }
             }
-            double sub1 = Convert.ToDouble(user_input);
-            Console.Write($"{sub1} - [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("\n[?] - ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double sub1 = Convert.ToDouble(user_input);
+                Console.Write($"{sub1} - [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double sub2 = Convert.ToDouble(user_input);
+                double subTotal = sub1 - sub2; // Subtracts the numbers
+                Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
+                Console.ReadKey();
             }
-            double sub2 = Convert.ToDouble(user_input);
-            double subTotal = sub1 - sub2; // Subtracts the numbers
-            Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
-            Console.ReadKey();
         }
         else
         {
-            AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
-            var sub1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] - ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var sub2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double subTotal = sub1 - sub2;
-
-            var subTable = new Table();
-            subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
-            AnsiConsole.Write(subTable);
+                AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
+                if (inputNum > 1)
+                {
+                    if (inputNum2 > 1)
+                    {
+                        double subTotal = inputNum - inputNum2;
+                        var addTable = new Table();
+                        addTable.AddColumn($"[lightskyblue1]{inputNum} - {inputNum2} =[/] [yellow]{subTotal}[/]");
+                        AnsiConsole.Write(addTable);
+                        inputNum = 0;
+                        inputNum2 = 0;
+                    }
+                    else
+                    {                        
+                        var sub2 = AnsiConsole.Prompt(
+                        new TextPrompt<double>($"[lightskyblue1]{inputNum} -[/] [green]?[/] = ? -> ")
+                        .PromptStyle("blue")
+                        .ValidationErrorMessage("[red] That's not a valid number[/]")
+                        );
+                        double subTotal = inputNum - sub2;
+                        var subTable = new Table();
+                        subTable.AddColumn($"[lightskyblue1]{inputNum} - {sub2} =[/] [yellow]{subTotal}[/]");
+                        AnsiConsole.Write(subTable);
+                        inputNum = 0;
+                    }
+                }
+                else
+                {
+                var sub1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] - ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var sub2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double subTotal = sub1 - sub2;
+                var subTable = new Table();
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        inputCancel = 0;
     }
     // HELP COMMAND
     else if (input == "/help" || input == "help")
@@ -315,6 +461,7 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("- Little Shop of Horrors (play)");
         }
+        Console.WriteLine("- numcheck (int)");
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
@@ -326,78 +473,148 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
-            Console.Write("[?] x ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double multTotal = inputNum * inputNum2;
+                    Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
+                    inputCancel = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"{inputNum} x [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double mult2 = Convert.ToDouble(user_input);
+                    double multTotal = inputNum * mult2;
+                    Console.WriteLine($"\n{inputNum} x {mult2} = {multTotal}");
+                    inputNum = 0;
+                    inputCancel = 0;
                 }
             }
-            double mult1 = Convert.ToDouble(user_input);
-            Console.Write($"{mult1} x [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("[?] x ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double mult1 = Convert.ToDouble(user_input);
+                Console.Write($"{mult1} x [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double mult2 = Convert.ToDouble(user_input);
+                double multTotal = mult1 * mult2; // Multiply the number
+                Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
+                Console.ReadKey();
             }
-            double mult2 = Convert.ToDouble(user_input);
-            double multTotal = mult1 * mult2; // Multiply the number
-            Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
-            Console.ReadKey();
         }
         else
-        {
+        {   
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: MULTIPLICATION [[x]] ||[/] {name}\n");
-            var mult1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] x ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var mult2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [yellow]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double multTotal = mult1 * mult2;
-            var multTable = new Table();
-            multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
-            AnsiConsole.Write(multTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double multTotal = inputNum * inputNum2;
+                    var multTable = new Table();
+                    multTable.AddColumn($"[lightskyblue1]{inputNum} x {inputNum2} =[/] [green]{multTotal}[/]");
+                    AnsiConsole.Write(multTable);
+                }
+                else
+                {
+                    var mult2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} x[/] [yellow]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double multTotal = inputNum * mult2;
+                    var multTable = new Table();
+                    multTable.AddColumn($"[lightskyblue1]{inputNum} x {mult2} =[/] [green]{multTotal}[/]");
+                    AnsiConsole.Write(multTable);
+                }
+                inputNum = 0;
+            }
+            else
+            {
+                var mult1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] x ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var mult2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [yellow]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double multTotal = mult1 * mult2;
+                var multTable = new Table();
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
+            }
         }
+        inputCancel = 0;
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // DIVISION / DIVIDE
@@ -407,79 +624,150 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [/] || {name1}\n");
-            Console.Write("[?] / ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double divTotal = inputNum / inputNum2;
+                    Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
+                    inputCancel = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"{inputNum} / [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double div2 = Convert.ToDouble(user_input);
+                    double divTotal = inputNum / div2;
+                    Console.WriteLine($"\n{inputNum} / {div2} = {divTotal}");
+                    inputNum = 0;
+                    inputCancel = 0;
                 }
             }
-            double div1 = Convert.ToDouble(user_input);
-            Console.Write($"{div1} / [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("[?] / ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double div1 = Convert.ToDouble(user_input);
+                Console.Write($"{div1} / [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double div2 = Convert.ToDouble(user_input);
+                double divTotal = div1 / div2; // Divides the numbers
+                Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
             }
-            double div2 = Convert.ToDouble(user_input);
-            double divTotal = div1 / div2; // Divides the numbers
-            Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
         }
         else
         {
-            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
-            var div1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] / ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var div2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [yellow]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double divTotal = div1 / div2;
-
-            var divTable = new Table();
-            divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
-            AnsiConsole.Write(divTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double divTotal = inputNum / inputNum2;
+                    var divTable = new Table();
+                    divTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{divTotal}[/]");
+                    AnsiConsole.Write(divTable);
+                    inputNum = 0;
+                    inputNum2 = 0;
+                }
+                else
+                {
+                    var div2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} /[/] [yellow]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double divTotal = inputNum / div2;
+                    var divTable = new Table();
+                    divTable.AddColumn($"[lightskyblue1]{inputNum} / {div2} =[/] [green]{divTotal}[/]");
+                    AnsiConsole.Write(divTable);
+                    inputNum = 0;
+                }
+            }
+            else
+            {
+                AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
+                var div1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] / ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var div2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [yellow]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double divTotal = div1 / div2;
+                var divTable = new Table();
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        inputCancel = 0;
     }
     //CHANGECALCULATOR // CHANGE
     else if (input == "change")
@@ -515,12 +803,10 @@ while (cmazeyCalculator)
             }
             int change = Convert.ToInt32(user_input);
             Console.WriteLine($"Change Amount: {change}c");
-
             int Quarters = change / 25; // Divides the change amount by 25.
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
-
             Console.WriteLine($"\nQuarters: {Quarters}");
             Console.WriteLine($"Dimes: {Dimes}");
             Console.WriteLine($"Nickels: {Nickels}");
@@ -534,14 +820,11 @@ while (cmazeyCalculator)
               .ValidationErrorMessage("[red]Not a valid number/Cannot be a decibel number[/]")
               .PromptStyle("yellow")
             );
-
             AnsiConsole.MarkupLine($"\n[bold yellow]CHANGE AMOUNT[/]: {change}");
-
             int Quarters = change / 25; // Divides the change amount by 25.
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
-
             var changeAmountResult = new Table();
             AnsiConsole.Live(changeAmountResult)
             .Start(ctx =>
@@ -1087,48 +1370,72 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SQUARE ROOT [√] || {name1}\n");
-            Console.Write("Enter a number: ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
-                {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
-                }
+                double squareNum = Convert.ToDouble(inputNum);
+                double squareTotal = Math.Sqrt(inputNum);
+                Console.WriteLine($"\nSquare root: {squareTotal}");
+                inputNum = 0;
+                inputCancel = 0;
             }
-            double squareNum = Convert.ToDouble(user_input);
-            double squareTotal = Math.Sqrt(squareNum);
-            Console.WriteLine($"\nSquare root: {squareTotal}");
+            else
+            {
+                Console.Write("Enter a number: ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
+                {
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
+                }
+                double squareNum = Convert.ToDouble(user_input);
+                double squareTotal = Math.Sqrt(squareNum);
+                Console.WriteLine($"\nSquare root: {squareTotal}");
+            }
         }
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SQUARE ROOT [[√]] || {name}\n");
-            var squareNum = AnsiConsole.Prompt(
-              new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-            double squareTotal = Math.Sqrt(squareNum);
-
-            var squareTable = new Table();
-            squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
-            AnsiConsole.Write(squareTable);
+            if (inputNum > 1)
+            {
+                double squareNum = Convert.ToDouble(inputNum);
+                double squareTotal = Math.Sqrt(inputNum);
+                var squareTable = new Table();
+                squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
+                AnsiConsole.Write(squareTable);
+                inputNum = 0;
+                inputCancel = 0;
+            }
+            else
+            {
+                var squareNum = AnsiConsole.Prompt(
+                new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double squareTotal = Math.Sqrt(squareNum);
+                var squareTable = new Table();
+                squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
+                AnsiConsole.Write(squareTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        inputCancel = 0;
     }
     // BigMul Multiplication
     else if (input == "bigmul multiplication" || input == "bigmul-big")
@@ -1197,6 +1504,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(piTable);
             Console.WriteLine();
         }
+        inputCancel = 0;
     }
     //e4
     else if (input == "e4" || input == "efour")
@@ -1215,6 +1523,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(e4Table);
             Console.WriteLine();
         }
+        inputCancel = 0;
     }
     //math.um
     else if (input == "math.um")
@@ -1286,6 +1595,7 @@ while (cmazeyCalculator)
             }
             Console.WriteLine("\n----------------------------------------------\n");
         }
+        inputCancel = 0;
     }
     //custom
     else if (input == "custom")
@@ -2696,6 +3006,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        inputCancel = 0;
     }
     //name
     else if (input == "name")
@@ -2839,6 +3150,7 @@ while (cmazeyCalculator)
                 nameChange = false;
             }
         }
+        inputCancel = 0;
     }
     //LSOH PLAY
     else if (input == "play" || input == "little shop of horrors")
@@ -2994,6 +3306,7 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("Invalid command, please try again.\n");
         }
+        inputCancel = 0;
     }
     //Lottery Results
     else if (input == "lotteryresult" || input == "lotresult")
@@ -3017,6 +3330,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(lotTable);
             Console.WriteLine();
         }
+        inputCancel = 0;
     }
     //bored
     else if (input == "bored")
@@ -3214,6 +3528,7 @@ while (cmazeyCalculator)
     {
         Console.WriteLine("Exiting...\n\n");
         cmazeyCalculator = false;
+        inputCancel = 0;
     }
     // Basic Mode
     else if (input == "basic")
@@ -3237,6 +3552,49 @@ while (cmazeyCalculator)
                 Console.WriteLine("Prompt Canceled...\n");
             }
         }
+        inputCancel = 0;
+    }
+    //numCheck
+    if (input == "numcheck" || input == "int")
+    {
+        if (basic)
+        {
+            if (inputNum > 1)
+            {
+                Console.WriteLine($"\nNum1: {inputNum}");
+            }
+            else
+            {
+                Console.WriteLine("\nNum1: N/A");
+            }
+            if (inputNum2 > 1)
+            {
+                Console.WriteLine($"Num2: {inputNum}\n");
+            }
+            else
+            {
+                Console.WriteLine("Num2: N/A\n");
+            }
+        }
+        else
+        {
+            if (inputNum > 1)
+            {
+                AnsiConsole.MarkupLine($"\n[white]Num1:[/] [green1]{inputNum}[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("\n[white]Num1:[/] [red]N/A[/]");
+            }
+            if (inputNum2 > 1)
+            {
+                AnsiConsole.MarkupLine($"[white]Num2:[/] [green1]{inputNum}[/]\n");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("[white]Num2:[/] [red]N/A[/]\n");
+            }
+        }
     }
     // INVALID RESPONSE
     else
@@ -3251,10 +3609,26 @@ while (cmazeyCalculator)
                     if (basic)
                     {
                         Console.WriteLine(checking);
+                        if (inputNum > 1)
+                        {
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            inputNum = checking;
+                        }
                     }
                     else
                     {
                         AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                        if (inputNum > 1)
+                        {
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            inputNum = checking;
+                        }
                     }
                     break;
                 }
@@ -3263,41 +3637,63 @@ while (cmazeyCalculator)
                     if (basic)
                     {
                         Console.WriteLine(checking);
+                        if (inputNum > 1)
+                        {
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            inputNum = checking;
+                        }
                     }
                     else
                     {
                         AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                        if (inputNum > 1)
+                        {
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            inputNum = checking;
+                        }
                     }
                     break;
                 }
             }
-        
             catch
             {
-                Console.WriteLine("Invalid Command, please try again.\n");
-                Random random = new();
-                int elseChoice = random.Next(1, 5);
-                if (elseChoice == 1)
+                if (inputCancel == 1)
                 {
-                    Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
-                }
-                else if (elseChoice == 2)
-                {
-                    Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
-                }
-                else if (elseChoice == 3)
-                {
-                    if (i == 0)
+                    Console.WriteLine("Invalid Command, please try again.\n");
+                    Random random = new();
+                    int elseChoice = random.Next(1, 5);
+                    if (elseChoice == 1)
                     {
-                        Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
-                        i++;
-                    }      
-                    else
+                        Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
+                    }
+                    else if (elseChoice == 2)
                     {
-                        Console.WriteLine();
-                    } 
+                        Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
+                    }
+                    else if (elseChoice == 3)
+                    {
+                        if (i == 0)
+                        {
+                            Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
+                            i++;
+                        }      
+                        else
+                        {
+                            Console.WriteLine();
+                        } 
+                    }
+                    break;
                 }
-                break;
+                else
+                {
+                    break;
+                }
             }
         }
     }
