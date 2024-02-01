@@ -6,7 +6,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.0";
+string version = "v1.1.1";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -3021,11 +3021,192 @@ while (cmazeyCalculator)
     //bored
     else if (input == "bored")
     {
-        ConsoleSpinner spinner = new ConsoleSpinner();
-        spinner.Delay = 300;
         while (true)
         {
-            spinner.Turn(displayMsg: "Working ",sequenceCode:5);
+            Random random = new();
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("This");
+            Thread.Sleep(3000);
+            Console.WriteLine("Is");
+            Thread.Sleep(3000);
+            Console.WriteLine("Cmazey");
+            Thread.Sleep(3000);
+            Console.WriteLine("Calculator");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("A");
+            Thread.Sleep(3000);
+            Console.WriteLine("Terminal");
+            Thread.Sleep(3000);
+            Console.WriteLine("Calculator");
+            Thread.Sleep(3000);
+            i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("+");
+            Thread.Sleep(3000);
+            Console.WriteLine("-");
+            Thread.Sleep(3000);
+            Console.WriteLine("x");
+            Thread.Sleep(3000);
+            Console.WriteLine("/");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine(".");
+                i++;
+                Thread.Sleep(3000);
+            }
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] + ? = ? -> -");
+            Thread.Sleep(3000);
+            int a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} + [?] = -> -");
+            Thread.Sleep(3000);
+            int b = Convert.ToInt32(random.Next(1, 999));
+            int c = a+b;
+            Console.WriteLine($"{a} + {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Thread.Sleep(3000);
+                Console.WriteLine(".");
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] - ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} - [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a-b;
+            Console.WriteLine($"{a} + {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] x ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} x [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a*b;
+            Console.WriteLine($"{a} x {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] / ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} / [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a/b;
+            Console.WriteLine($"{a} / {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 8)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("Created");
+            Thread.Sleep(3000);
+            Console.WriteLine("by");
+            Thread.Sleep(3000);
+            Console.WriteLine("Colton");
+            Thread.Sleep(3000);
+            Console.WriteLine("Mazey");
+            Thread.Sleep(3000);
+            i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            int lotwin = random.Next(0,100);
+            int d = lotwin / 10;
+            int e = lotwin % 10;
+            Console.WriteLine("Enter a lottery Number (0 - 99) -> ");
+            int fk = Convert.ToInt32(random.Next(0,100));
+            Thread.Sleep(3000);
+            Console.WriteLine($"And the winner is {lotwin}");
+            Thread.Sleep(3000);
+            if (fk == lotwin)
+            {
+                Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+            }
+            else
+            {
+                Console.WriteLine("No match. Better luck next time!");
+            }
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 15)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+
         }
     }
     // Exit
@@ -3125,52 +3306,3 @@ while (cmazeyCalculator)
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
-
-
-public class ConsoleSpinner
-    {
-        static string[,] sequence = null;
-
-        public int Delay { get; set; } = 200;
-
-        int totalSequences = 0;
-        int counter;
-
-        public ConsoleSpinner()
-        {
-            counter = 0;
-            sequence = new string[,] {
-                { "/", "-", "\\", "|" },
-                { ".", "o", "0", "o" },
-                { "+", "x","+","x" },
-                { "V", "<", "^", ">" },
-                { ".   ", "..  ", "... ", "...." },
-                { "=>   ", "==>  ", "===> ", "====>" },
-               // ADD YOUR OWN CREATIVE SEQUENCE HERE IF YOU LIKE
-            };
-
-            totalSequences = sequence.GetLength(0);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sequenceCode"> 0 | 1 | 2 |3 | 4 | 5 </param>
-        public void Turn(string displayMsg = "", int sequenceCode = 0)
-        {
-            counter++;
-            
-            Thread.Sleep(Delay);
-
-            sequenceCode = sequenceCode > totalSequences - 1 ? 0 : sequenceCode;
-
-            int counterValue = counter % 4;
-
-            string fullMessage = displayMsg + sequence[sequenceCode, counterValue];
-            int msglength = fullMessage.Length;
-
-            Console.Write(fullMessage);
-
-            Console.SetCursorPosition(Console.CursorLeft - msglength, Console.CursorTop);
-        }
-    }
