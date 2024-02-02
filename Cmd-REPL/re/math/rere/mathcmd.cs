@@ -6,7 +6,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.4";
+string version = "v1.1.5";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -471,7 +471,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
-    else if (input == "multiplication" || input == "x")
+    else if (input == "multiplication" || input == "x" || input == "*")
     {
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
@@ -1612,7 +1612,7 @@ while (cmazeyCalculator)
                     "-- <3>", "--- <4>", "---- <5>", "----- <6>", "------ <7>", "------- <8>", "-------- <9>", "--------- <10>",
                     "** <3>", "*** <4>", "**** <5>", "***** <6>", "****** <7>", "******* <8>", "******** <9>", "********* <10>",
                     "// <3>", "/// <4>", "//// <5>", "///// <6>", "////// <7>", "/////// <8>", "//////// <9>", "///////// <10>",
-                    "+- <3>", "-+ <3>", "+-*/ <5>",
+                    "+- <3>", "-+ <3>", "+-*/ <5>", "????????? <9>",
                     "Cancel",
                 }));
 
@@ -3610,25 +3610,27 @@ while (cmazeyCalculator)
                 {
                     if (basic)
                     {
-                        Console.WriteLine(checking);
                         if (inputNum > 1)
                         {
+                            Console.WriteLine($"{inputNum} <?> {checking}");
                             inputNum2 = checking;
                         }
                         else
                         {
+                            Console.WriteLine(checking);
                             inputNum = checking;
                         }
                     }
                     else
                     {
-                        AnsiConsole.MarkupLine($"[white]{checking}[/]");
                         if (inputNum > 1)
                         {
+                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
                             inputNum2 = checking;
                         }
                         else
                         {
+                            AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
                         }
                     }
@@ -3638,25 +3640,27 @@ while (cmazeyCalculator)
                 {
                     if (basic)
                     {
-                        Console.WriteLine(checking);
                         if (inputNum > 1)
                         {
+                            Console.WriteLine($"{inputNum} <?> {checking}");
                             inputNum2 = checking;
                         }
                         else
                         {
+                            Console.WriteLine(checking);
                             inputNum = checking;
                         }
                     }
                     else
                     {
-                        AnsiConsole.MarkupLine($"[white]{checking}[/]");
                         if (inputNum > 1)
                         {
+                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
                             inputNum2 = checking;
                         }
                         else
                         {
+                            AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
                         }
                     }
