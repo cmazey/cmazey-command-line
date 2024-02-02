@@ -126,7 +126,6 @@ while (cmazeyCalculator)
     if (input == "addition" || input == "+")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
@@ -290,8 +289,7 @@ while (cmazeyCalculator)
                     double subTotal = inputNum - inputNum2;
                     Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
                     inputNum = 0;
-                    inputNum2 = 0;
-                    
+                    inputNum2 = 0;  
                 }
                 else
                 {
@@ -322,7 +320,6 @@ while (cmazeyCalculator)
                     double subTotal = inputNum - sub2;
                     Console.WriteLine($"{inputNum} - {sub2} = {subTotal}");
                     inputNum = 0;
-                    
                 }
             }
             else
@@ -475,8 +472,7 @@ while (cmazeyCalculator)
                     double multTotal = inputNum * inputNum2;
                     Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
                     inputNum = 0;
-                    inputNum2 = 0;
-                    
+                    inputNum2 = 0;                    
                 }
                 else
                 {
@@ -506,8 +502,7 @@ while (cmazeyCalculator)
                     double mult2 = Convert.ToDouble(user_input);
                     double multTotal = inputNum * mult2;
                     Console.WriteLine($"\n{inputNum} x {mult2} = {multTotal}");
-                    inputNum = 0;
-                    
+                    inputNum = 0;                    
                 }
             }
             else
@@ -625,8 +620,7 @@ while (cmazeyCalculator)
                     double divTotal = inputNum / inputNum2;
                     Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
                     inputNum = 0;
-                    inputNum2 = 0;
-                    
+                    inputNum2 = 0;                   
                 }
                 else
                 {
@@ -656,8 +650,7 @@ while (cmazeyCalculator)
                     double div2 = Convert.ToDouble(user_input);
                     double divTotal = inputNum / div2;
                     Console.WriteLine($"\n{inputNum} / {div2} = {divTotal}");
-                    inputNum = 0;
-                    
+                    inputNum = 0;                   
                 }
             }
             else
@@ -1777,7 +1770,6 @@ while (cmazeyCalculator)
                     AnsiConsole.Write(addTable);
             }
             else if (customSelct == "+++++++ <8>")
-
             {
                 var add1 = AnsiConsole.Prompt(
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? + ? = ? -> ")
