@@ -3299,9 +3299,9 @@ while (cmazeyCalculator)
             }
         }
         else if (basic)
-    {
-        Console.WriteLine("This command isn't supported in BASIC mode, sorry bud..\n");
-    }
+        {
+            Console.WriteLine("This command isn't supported in BASIC mode, sorry bud..\n");
+        }
         else
         {
             Console.WriteLine("Invalid command, please try again.\n");
