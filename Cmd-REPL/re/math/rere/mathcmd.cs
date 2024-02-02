@@ -275,7 +275,6 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        
     }
     // SUBTRACTION
     else if (input == "subtraction" || input == "-")
@@ -427,8 +426,7 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(subTable);
             }
         }
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n"); 
     }
     // HELP COMMAND
     else if (input == "/help" || input == "help")
@@ -461,15 +459,12 @@ while (cmazeyCalculator)
             Console.WriteLine("- Little Shop of Horrors (play)");
         }
         Console.WriteLine("- numcheck (int)");
-        Console.WriteLine("- Exit\n");
-        
+        Console.WriteLine("- Exit\n");  
     }
     // MULTIPLICATION
     else if (input == "multiplication" || input == "x")
     {
-
         Console.WriteLine("\n----------------------------------------------\n");
-
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
@@ -614,7 +609,6 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(multTable);
             }
         }
-        
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // DIVISION / DIVIDE
@@ -766,8 +760,7 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(divTable);
             }
         }
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n");     
     }
     //CHANGECALCULATOR // CHANGE
     else if (input == "change")
@@ -855,7 +848,6 @@ while (cmazeyCalculator)
             });
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        
     }
     //Clear
     else if (input == "clear" || input == "cls")
@@ -1018,14 +1010,12 @@ while (cmazeyCalculator)
             AnsiConsole.Write(linSlpeTable);
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        
     }
     //VERSION
     else if (input == "version")
     {
         Console.WriteLine($"\nVersion: {version}");
-        Console.WriteLine($"Name: {name1}\n");
-        
+        Console.WriteLine($"Name: {name1}\n");  
     }
     //HeightToInches
     else if (input == "htoi" || input == "itoh")
@@ -1178,8 +1168,7 @@ while (cmazeyCalculator)
             }
         }
         Console.ReadKey();
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n");        
     }
     // LOTTERY
     else if (input == "lottery" || input == "lot")
@@ -1436,8 +1425,7 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(squareTable);
             }
         }
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n");     
     }
     // BigMul Multiplication
     else if (input == "bigmul multiplication" || input == "bigmul-big")
@@ -1487,8 +1475,7 @@ while (cmazeyCalculator)
             bigMultTable.AddColumn($"[yellow dim]{bigMult1}[/] [red]x[/] [yellow dim]{bigMult1}[/] = [chartreuse1]{bigMultTotal}[/]");
             AnsiConsole.Write(bigMultTable);
         }
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n");    
     }
     // pi
     else if (input == "pi")
@@ -1506,8 +1493,7 @@ while (cmazeyCalculator)
             piTable.AddColumn($"[yellow]{pi}[/]");
             AnsiConsole.Write(piTable);
             Console.WriteLine();
-        }
-        
+        }   
     }
     //e4
     else if (input == "e4" || input == "efour")
@@ -1525,8 +1511,7 @@ while (cmazeyCalculator)
             e4Table.AddColumn($"[yellow]{eFour}[/]");
             AnsiConsole.Write(e4Table);
             Console.WriteLine();
-        }
-        
+        }     
     }
     //math.um
     else if (input == "math.um")
@@ -1597,8 +1582,7 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(mathTable);
             }
             Console.WriteLine("\n----------------------------------------------\n");
-        }
-        
+        }       
     }
     //custom
     else if (input == "custom")
@@ -3008,8 +2992,7 @@ while (cmazeyCalculator)
                 Console.WriteLine("Prompt Canceled");
             }
         }
-        Console.WriteLine("\n----------------------------------------------\n");
-        
+        Console.WriteLine("\n----------------------------------------------\n");       
     }
     //name
     else if (input == "name")
@@ -3152,8 +3135,7 @@ while (cmazeyCalculator)
                 }
                 nameChange = false;
             }
-        }
-        
+        }       
     }
     //LSOH PLAY
     else if (input == "play" || input == "little shop of horrors")
@@ -3308,8 +3290,7 @@ while (cmazeyCalculator)
         else
         {
             Console.WriteLine("Invalid command, please try again.\n");
-        }
-        
+        }      
     }
     //Lottery Results
     else if (input == "lotteryresult" || input == "lotresult")
@@ -3332,8 +3313,7 @@ while (cmazeyCalculator)
 
             AnsiConsole.Write(lotTable);
             Console.WriteLine();
-        }
-        
+        }        
     }
     //bored
     else if (input == "bored")
@@ -3530,8 +3510,7 @@ while (cmazeyCalculator)
     else if (input == "exit")
     {
         Console.WriteLine("Exiting...\n\n");
-        cmazeyCalculator = false;
-        
+        cmazeyCalculator = false;       
     }
     // Basic Mode
     else if (input == "basic")
@@ -3553,8 +3532,7 @@ while (cmazeyCalculator)
             {
                 Console.WriteLine("Prompt Canceled...\n");
             }
-        }
-        
+        }        
     }
     //numCheck
     else if (input == "numcheck" || input == "int")
