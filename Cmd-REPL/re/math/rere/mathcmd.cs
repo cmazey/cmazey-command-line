@@ -6,13 +6,12 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.2";
+string version = "v1.1.3";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
 double inputNum = 0;
 double inputNum2 = 0;
-int inputCancel = 1;
 string ewqq = "a";
 string oeda = "b";
 string cdow = "c";
@@ -114,7 +113,6 @@ else
 bool cmazeyCalculator = true;
 while (cmazeyCalculator)
 {
-    inputCancel = 1;
     if (basic)
     {
         Console.Write("-> ");
@@ -241,7 +239,7 @@ while (cmazeyCalculator)
                     AnsiConsole.Write(addTable);
                     inputNum = 0;
                     inputNum2 = 0;
-                    inputCancel = 0;
+                    
                 }
                 else
                 {
@@ -255,7 +253,7 @@ while (cmazeyCalculator)
                     addTable.AddColumn($"[lightskyblue1]{inputNum} + {add2} =[/] [yellow]{addTotal}[/]");
                     AnsiConsole.Write(addTable);
                     inputNum = 0;
-                    inputCancel = 0;
+                    
                 }
             }
             else
@@ -277,7 +275,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        inputCancel = 0;
+        
     }
     // SUBTRACTION
     else if (input == "subtraction" || input == "-")
@@ -294,7 +292,7 @@ while (cmazeyCalculator)
                     Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
                     inputNum = 0;
                     inputNum2 = 0;
-                    inputCancel = 0;
+                    
                 }
                 else
                 {
@@ -325,7 +323,7 @@ while (cmazeyCalculator)
                     double subTotal = inputNum - sub2;
                     Console.WriteLine($"{inputNum} - {sub2} = {subTotal}");
                     inputNum = 0;
-                    inputCancel = 0;
+                    
                 }
             }
             else
@@ -430,7 +428,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        inputCancel = 0;
+        
     }
     // HELP COMMAND
     else if (input == "/help" || input == "help")
@@ -446,6 +444,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- LotteryResult (lotResult)");
         Console.WriteLine("- Change");
         Console.WriteLine("- Clear (cls)");
+        Console.WriteLine("- ClearInt (clsint)");
         Console.WriteLine("- Version");
         Console.WriteLine("- Basic");
         Console.WriteLine("- Calendar");
@@ -463,6 +462,7 @@ while (cmazeyCalculator)
         }
         Console.WriteLine("- numcheck (int)");
         Console.WriteLine("- Exit\n");
+        
     }
     // MULTIPLICATION
     else if (input == "multiplication" || input == "x")
@@ -481,7 +481,7 @@ while (cmazeyCalculator)
                     Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
                     inputNum = 0;
                     inputNum2 = 0;
-                    inputCancel = 0;
+                    
                 }
                 else
                 {
@@ -512,7 +512,7 @@ while (cmazeyCalculator)
                     double multTotal = inputNum * mult2;
                     Console.WriteLine($"\n{inputNum} x {mult2} = {multTotal}");
                     inputNum = 0;
-                    inputCancel = 0;
+                    
                 }
             }
             else
@@ -614,7 +614,7 @@ while (cmazeyCalculator)
                 AnsiConsole.Write(multTable);
             }
         }
-        inputCancel = 0;
+        
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // DIVISION / DIVIDE
@@ -632,7 +632,7 @@ while (cmazeyCalculator)
                     Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
                     inputNum = 0;
                     inputNum2 = 0;
-                    inputCancel = 0;
+                    
                 }
                 else
                 {
@@ -663,7 +663,7 @@ while (cmazeyCalculator)
                     double divTotal = inputNum / div2;
                     Console.WriteLine($"\n{inputNum} / {div2} = {divTotal}");
                     inputNum = 0;
-                    inputCancel = 0;
+                    
                 }
             }
             else
@@ -767,7 +767,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        inputCancel = 0;
+        
     }
     //CHANGECALCULATOR // CHANGE
     else if (input == "change")
@@ -855,6 +855,7 @@ while (cmazeyCalculator)
             });
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        
     }
     //Clear
     else if (input == "clear" || input == "cls")
@@ -868,6 +869,8 @@ while (cmazeyCalculator)
         {
             AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
         }
+        inputNum = 0;
+        inputNum2 = 0;
     }
     //LINE SLOPE CALCULATOR
     else if (input == "lineslope" || input == "ls")
@@ -981,7 +984,6 @@ while (cmazeyCalculator)
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
             Console.ReadKey();
         }
-
         else
         {
             AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR: Line Slope Calculator ||[/] {name}\n");
@@ -1016,12 +1018,14 @@ while (cmazeyCalculator)
             AnsiConsole.Write(linSlpeTable);
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        
     }
     //VERSION
     else if (input == "version")
     {
         Console.WriteLine($"\nVersion: {version}");
         Console.WriteLine($"Name: {name1}\n");
+        
     }
     //HeightToInches
     else if (input == "htoi" || input == "itoh")
@@ -1078,7 +1082,7 @@ while (cmazeyCalculator)
             heightTable.AddColumn($"[yellow]{foot}[/]ft, [yellow]{inches}[/]in.");
             AnsiConsole.Write(heightTable);
             Console.WriteLine("\n----------------------------------------------\n");
-        }
+        }       
     }
     // 8 BALL
     else if (input == "8ball" || input == "eightball")
@@ -1175,12 +1179,12 @@ while (cmazeyCalculator)
         }
         Console.ReadKey();
         Console.WriteLine("\n----------------------------------------------\n");
+        
     }
     // LOTTERY
     else if (input == "lottery" || input == "lot")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
         Random random = new();
         int winningNumber = random.Next(0, 100);
         int winningDigitOne = winningNumber / 10;
@@ -1284,7 +1288,7 @@ while (cmazeyCalculator)
             }
             Console.ReadKey();
         }
-        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("\n----------------------------------------------\n");       
     }
     // CALENDAR
     else if (input == "calendar")
@@ -1293,7 +1297,6 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("This command doesn't work in BASIC mode, sorry bud.\n");
         }
-
         else
         {
             int year = DateTime.Now.Year;
@@ -1306,7 +1309,7 @@ while (cmazeyCalculator)
             Console.WriteLine();
             AnsiConsole.Write(calendar);
             Console.WriteLine();
-        }
+        } 
     }
     // Truncate
     else if (input == "truncate")
@@ -1361,7 +1364,7 @@ while (cmazeyCalculator)
             trunTable.AddColumn($"[yellow]Truncated[/] value: [lightskyblue1]{trunTotal}[/] [black]//[/] [yellow]Rounded-Off[/] value: [lightskyblue1]{roundTotal}[/]");
             AnsiConsole.Write(trunTable);
         }
-        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("\n----------------------------------------------\n"); 
     }
     // Square Root
     else if (input == "square" || input == "square root")
@@ -1376,7 +1379,6 @@ while (cmazeyCalculator)
                 double squareTotal = Math.Sqrt(inputNum);
                 Console.WriteLine($"\nSquare root: {squareTotal}");
                 inputNum = 0;
-                inputCancel = 0;
             }
             else
             {
@@ -1419,7 +1421,7 @@ while (cmazeyCalculator)
                 squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
                 AnsiConsole.Write(squareTable);
                 inputNum = 0;
-                inputCancel = 0;
+                
             }
             else
             {
@@ -1435,7 +1437,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        inputCancel = 0;
+        
     }
     // BigMul Multiplication
     else if (input == "bigmul multiplication" || input == "bigmul-big")
@@ -1486,6 +1488,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(bigMultTable);
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        
     }
     // pi
     else if (input == "pi")
@@ -1504,7 +1507,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(piTable);
             Console.WriteLine();
         }
-        inputCancel = 0;
+        
     }
     //e4
     else if (input == "e4" || input == "efour")
@@ -1523,7 +1526,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(e4Table);
             Console.WriteLine();
         }
-        inputCancel = 0;
+        
     }
     //math.um
     else if (input == "math.um")
@@ -1595,7 +1598,7 @@ while (cmazeyCalculator)
             }
             Console.WriteLine("\n----------------------------------------------\n");
         }
-        inputCancel = 0;
+        
     }
     //custom
     else if (input == "custom")
@@ -3006,7 +3009,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        inputCancel = 0;
+        
     }
     //name
     else if (input == "name")
@@ -3150,7 +3153,7 @@ while (cmazeyCalculator)
                 nameChange = false;
             }
         }
-        inputCancel = 0;
+        
     }
     //LSOH PLAY
     else if (input == "play" || input == "little shop of horrors")
@@ -3306,7 +3309,7 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("Invalid command, please try again.\n");
         }
-        inputCancel = 0;
+        
     }
     //Lottery Results
     else if (input == "lotteryresult" || input == "lotresult")
@@ -3330,7 +3333,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(lotTable);
             Console.WriteLine();
         }
-        inputCancel = 0;
+        
     }
     //bored
     else if (input == "bored")
@@ -3528,7 +3531,7 @@ while (cmazeyCalculator)
     {
         Console.WriteLine("Exiting...\n\n");
         cmazeyCalculator = false;
-        inputCancel = 0;
+        
     }
     // Basic Mode
     else if (input == "basic")
@@ -3537,7 +3540,6 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("Basic is enabled\n");
         }
-
         else
         {
             Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
@@ -3552,10 +3554,10 @@ while (cmazeyCalculator)
                 Console.WriteLine("Prompt Canceled...\n");
             }
         }
-        inputCancel = 0;
+        
     }
     //numCheck
-    if (input == "numcheck" || input == "int")
+    else if (input == "numcheck" || input == "int")
     {
         if (basic)
         {
@@ -3569,7 +3571,7 @@ while (cmazeyCalculator)
             }
             if (inputNum2 > 1)
             {
-                Console.WriteLine($"Num2: {inputNum}\n");
+                Console.WriteLine($"Num2: {inputNum2}\n");
             }
             else
             {
@@ -3588,12 +3590,30 @@ while (cmazeyCalculator)
             }
             if (inputNum2 > 1)
             {
-                AnsiConsole.MarkupLine($"[white]Num2:[/] [green1]{inputNum}[/]\n");
+                AnsiConsole.MarkupLine($"[white]Num2:[/] [green1]{inputNum2}[/]\n");
             }
             else
             {
                 AnsiConsole.MarkupLine("[white]Num2:[/] [red]N/A[/]\n");
             }
+        }
+    }
+    // Clear num
+    else if (input == "clearint" || input == "clsint")
+    {
+        if (basic)
+        {
+            inputNum = 0;
+            Console.WriteLine("\nNum1: CLEARED");
+            inputNum2 = 0;
+            Console.WriteLine("Num2: CLEARED\n");
+        }
+        else
+        {
+            inputNum = 0;
+            AnsiConsole.MarkupLine("\n[white]Num1:[/] [green1]CLEARED[/]");
+            inputNum2 = 0;
+            AnsiConsole.MarkupLine("[white]Num2:[/] [green1]CLEARED[/]\n");
         }
     }
     // INVALID RESPONSE
@@ -3663,37 +3683,30 @@ while (cmazeyCalculator)
             }
             catch
             {
-                if (inputCancel == 1)
+                Console.WriteLine("Invalid Command, please try again.\n");
+                 Random random = new();
+                int elseChoice = random.Next(1, 5);
+                if (elseChoice == 1)
                 {
-                    Console.WriteLine("Invalid Command, please try again.\n");
-                    Random random = new();
-                    int elseChoice = random.Next(1, 5);
-                    if (elseChoice == 1)
-                    {
-                        Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
-                    }
-                    else if (elseChoice == 2)
-                    {
-                        Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
-                    }
-                    else if (elseChoice == 3)
-                    {
-                        if (i == 0)
-                        {
-                            Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
-                            i++;
-                        }      
-                        else
-                        {
-                            Console.WriteLine();
-                        } 
-                    }
-                    break;
-                }
-                else
+                     Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
+                 }
+                else if (elseChoice == 2)
                 {
-                    break;
+                    Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
                 }
+                else if (elseChoice == 3)
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
+                        i++;
+                    }      
+                    else
+                    {
+                        Console.WriteLine();
+                    } 
+                }
+                break;
             }
         }
     }
