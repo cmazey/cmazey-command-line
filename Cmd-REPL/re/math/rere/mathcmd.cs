@@ -6,7 +6,7 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.3";
+string version = "v1.1.4";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -94,6 +94,14 @@ if (basic)
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
     Console.WriteLine($"Version: {version}");
 }
+else if (name1 == "Colton M" || name1 == "test")
+{
+    AnsiConsole.Write(
+    new FigletText("CMAZEY CALCULATOR")
+    .LeftJustified()
+    .Color(Color.Blue));
+    AnsiConsole.Markup($"[yellow]{version}[/]");
+}
 else
 {
     AnsiConsole.Write(
@@ -105,6 +113,10 @@ else
 if (basic)
 {
     Console.WriteLine("\nType /help to show all the available commands!");
+}
+else if (name1 == "Colton M" || name1 == "test")
+{
+    AnsiConsole.MarkupLine("\n[white]Type [blue1]/help[/] to show all the available commands![/]");
 }
 else
 {
