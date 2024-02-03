@@ -10,16 +10,16 @@
  <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/cmazey/cmazey-command-line/early?style=flat-square&logo=github">
 </p>  
 <p align="center">
-CCL Version: v1.1.0
+CCL Version: v1.2.0
 </p>
 <p align="center">
 NodeJS: Version: v1.0.4
 </p>
 <p align="center">
-Python: Version: PRE ALPHA: v1.0.4
+Python: Version: PRE ALPHA: v1.0.5
 </p>
 <p align="center">
-Cmazey Math Cmd: v6.9.1
+Cmazey Math Cmd: v1.0.8
 </p>
 
 ## - SET UP -
@@ -82,4 +82,4 @@ After that, you should be good, but if you still have issues accessing the 'node
 
 ### *More coming soon.*
 
-*Last Updated: 10:45 AM, 4/12/2023*
+*Last Updated: 07:16 PM, 2/02/2024*
