@@ -21,4 +21,4 @@ That's how you access the lastest version of Cmazey Calculator. Please keep in m
 
 -*Colton M*
 
-*Last updated: 08:39 PM EST, 1/13/2023*
+*Last updated: 08:39 PM EST, 1/13/2024*

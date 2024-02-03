@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Spectre.Console;
 bool basic = false;
 bool crew = false;
@@ -7,10 +6,12 @@ bool basicAns = true;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.0.8";
+string version = "v1.1.5";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
+double inputNum = 0;
+double inputNum2 = 0;
 string ewqq = "a";
 string oeda = "b";
 string cdow = "c";
@@ -42,37 +43,64 @@ string okcokd = "x";
 string lijwq = "y";
 string kwdjiq = "K";
 
+Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
 Console.Clear();
 
-Console.WriteLine("Choose an option below:");
-Console.WriteLine("- basic");
-Console.WriteLine("- normal");
-Console.Write("-\\> ");
-string optionInput = Console.ReadLine();
+while (true)
+{
+    Console.WriteLine("Choose an option below:");
+    Console.WriteLine("- basic");
+    Console.WriteLine("- normal");
+    Console.WriteLine("- name");
+    Console.Write("-\\> ");
+    string optionInput = Console.ReadLine();
 
-if (optionInput == "basic")
-{
-    Console.Clear();
-    basic = true;
+    if (optionInput == "basic")
+    {
+        Console.Clear();
+        basic = true;
+        break;
+    }
+    else if (optionInput == "normal")
+    {
+        Console.Clear();
+        basic = false;
+        break;
+    }
+    else if (optionInput == "name")
+    {
+        Console.Write("Enter a name: ");
+        string nameInput = Console.ReadLine();
+        name = nameInput;
+        name1 = nameInput;
+        fname = nameInput;
+        Console.WriteLine("Name Changed Confirmed!");
+        Thread.Sleep(1000);
+        Console.Clear();
+    }
+    else
+    {
+        Console.WriteLine("Input invalid, defaulting to normal...");
+        Thread.Sleep(2000);
+        Console.Clear();
+        basic = false;
+        break;
+    }
 }
-else if (optionInput == "normal")
-{
-    Console.Clear();
-    basic = false;
-}
-else
-{
-    Console.WriteLine("Input invalid, defaulting to normal...");
-    Thread.Sleep(2000);
-    Console.Clear();
-    basic = false;
-}
-
+Thread.Sleep(1000);
 if (basic)
 {
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
     Console.WriteLine($"Version: {version}");
+}
+else if (name1 == "Colton M" || name1 == "test")
+{
+    AnsiConsole.Write(
+    new FigletText("CMAZEY CALCULATOR")
+    .LeftJustified()
+    .Color(Color.Blue));
+    AnsiConsole.Markup($"[yellow]{version}[/]");
 }
 else
 {
@@ -85,6 +113,10 @@ else
 if (basic)
 {
     Console.WriteLine("\nType /help to show all the available commands!");
+}
+else if (name1 == "Colton M" || name1 == "test")
+{
+    AnsiConsole.MarkupLine("\n[white]Type [blue1]/help[/] to show all the available commands![/]");
 }
 else
 {
@@ -106,83 +138,152 @@ while (cmazeyCalculator)
     if (input == "addition" || input == "+")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
-            Console.Write("\n[?] + ? = -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double addTotal = inputNum + inputNum2;
+                    Console.WriteLine($"{inputNum} + {inputNum2} = {addTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"\n{inputNum} + [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double add2 = Convert.ToDouble(user_input);
+                    double addTotal = inputNum + add2;
+                    Console.WriteLine($"{inputNum} + {add2} = {addTotal}");
+                    inputNum = 0;
+                    Console.ReadKey();
                 }
             }
-            double add1 = Convert.ToDouble(user_input);
-            Console.Write($"{add1} + [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("\n[?] + ? = -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double add1 = Convert.ToDouble(user_input);
+                Console.Write($"{add1} + [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double add2 = Convert.ToDouble(user_input);
+                double addTotal = add1 + add2; // Adds the numbers
+                Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
+                Console.ReadKey();
             }
-            double add2 = Convert.ToDouble(user_input);
-            double addTotal = add1 + add2; // Adds the numbers
-            Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
-            Console.ReadKey();
         }
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: ADDITION [[+]] ||[/] {name}");
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double addTotal = inputNum + inputNum2;
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+                    inputNum = 0;
+                    inputNum2 = 0;
 
-            var add1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] + ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
+                }
+                else
+                {
+                    var add2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} +[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double addTotal = inputNum + add2;
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{inputNum} + {add2} =[/] [yellow]{addTotal}[/]");
+                    AnsiConsole.Write(addTable);
+                    inputNum = 0;
 
-            var add2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double addTotal = add1 + add2;
-
-            var addTable = new Table();
-            addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
-            AnsiConsole.Write(addTable);
+                }
+            }
+            else
+            {
+                var add1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] + ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var add2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double addTotal = add1 + add2;
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -193,78 +294,146 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
-            Console.Write("\n[?] - ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double subTotal = inputNum - inputNum2;
+                    Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"\n{inputNum} - [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double sub2 = Convert.ToDouble(user_input);
+                    double subTotal = inputNum - sub2;
+                    Console.WriteLine($"{inputNum} - {sub2} = {subTotal}");
+                    inputNum = 0;
                 }
             }
-            double sub1 = Convert.ToDouble(user_input);
-            Console.Write($"{sub1} - [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("\n[?] - ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double sub1 = Convert.ToDouble(user_input);
+                Console.Write($"{sub1} - [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double sub2 = Convert.ToDouble(user_input);
+                double subTotal = sub1 - sub2; // Subtracts the numbers
+                Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
+                Console.ReadKey();
             }
-            double sub2 = Convert.ToDouble(user_input);
-            double subTotal = sub1 - sub2; // Subtracts the numbers
-            Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
-            Console.ReadKey();
         }
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
-            var sub1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] - ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var sub2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double subTotal = sub1 - sub2;
-
-            var subTable = new Table();
-            subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
-            AnsiConsole.Write(subTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double subTotal = inputNum - inputNum2;
+                    var addTable = new Table();
+                    addTable.AddColumn($"[lightskyblue1]{inputNum} - {inputNum2} =[/] [yellow]{subTotal}[/]");
+                    AnsiConsole.Write(addTable);
+                    inputNum = 0;
+                    inputNum2 = 0;
+                }
+                else
+                {
+                    var sub2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} -[/] [green]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double subTotal = inputNum - sub2;
+                    var subTable = new Table();
+                    subTable.AddColumn($"[lightskyblue1]{inputNum} - {sub2} =[/] [yellow]{subTotal}[/]");
+                    AnsiConsole.Write(subTable);
+                    inputNum = 0;
+                }
+            }
+            else
+            {
+                var sub1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] - ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var sub2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double subTotal = sub1 - sub2;
+                var subTable = new Table();
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -282,6 +451,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- LotteryResult (lotResult)");
         Console.WriteLine("- Change");
         Console.WriteLine("- Clear (cls)");
+        Console.WriteLine("- ClearInt (clsint)");
         Console.WriteLine("- Version");
         Console.WriteLine("- Basic");
         Console.WriteLine("- Calendar");
@@ -297,88 +467,154 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("- Little Shop of Horrors (play)");
         }
+        Console.WriteLine("- numcheck (int)");
         Console.WriteLine("- Exit\n");
     }
     // MULTIPLICATION
-    else if (input == "multiplication" || input == "x")
+    else if (input == "multiplication" || input == "x" || input == "*")
     {
-
         Console.WriteLine("\n----------------------------------------------\n");
-
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
-            Console.Write("[?] x ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double multTotal = inputNum * inputNum2;
+                    Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"{inputNum} x [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double mult2 = Convert.ToDouble(user_input);
+                    double multTotal = inputNum * mult2;
+                    Console.WriteLine($"\n{inputNum} x {mult2} = {multTotal}");
+                    inputNum = 0;
                 }
             }
-            double mult1 = Convert.ToDouble(user_input);
-            Console.Write($"{mult1} x [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("[?] x ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double mult1 = Convert.ToDouble(user_input);
+                Console.Write($"{mult1} x [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double mult2 = Convert.ToDouble(user_input);
+                double multTotal = mult1 * mult2; // Multiply the number
+                Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
+                Console.ReadKey();
             }
-            double mult2 = Convert.ToDouble(user_input);
-            double multTotal = mult1 * mult2; // Multiply the number
-            Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
-            Console.ReadKey();
         }
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: MULTIPLICATION [[x]] ||[/] {name}\n");
-            var mult1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] x ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var mult2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [yellow]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double multTotal = mult1 * mult2;
-            var multTable = new Table();
-            multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
-            AnsiConsole.Write(multTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double multTotal = inputNum * inputNum2;
+                    var multTable = new Table();
+                    multTable.AddColumn($"[lightskyblue1]{inputNum} x {inputNum2} =[/] [green]{multTotal}[/]");
+                    AnsiConsole.Write(multTable);
+                }
+                else
+                {
+                    var mult2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} x[/] [yellow]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double multTotal = inputNum * mult2;
+                    var multTable = new Table();
+                    multTable.AddColumn($"[lightskyblue1]{inputNum} x {mult2} =[/] [green]{multTotal}[/]");
+                    AnsiConsole.Write(multTable);
+                }
+                inputNum = 0;
+            }
+            else
+            {
+                var mult1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] x ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var mult2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [yellow]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double multTotal = mult1 * mult2;
+                var multTable = new Table();
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -389,77 +625,145 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [/] || {name1}\n");
-            Console.Write("[?] / ? = ? -> ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
+                if (inputNum2 > 1)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    double divTotal = inputNum / inputNum2;
+                    Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
+                    inputNum = 0;
+                    inputNum2 = 0;
                 }
-                catch
+                else
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    Console.Write($"{inputNum} / [?] = ? -> ");
+                    string user_input = Console.ReadLine();
+                    while (basicAns)
+                    {
+                        try
+                        {
+                            double checking = Convert.ToDouble(user_input);
+                            if (checking > 1)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Not a valid answer, please enter a number below:");
+                            Console.Write("-> ");
+                            user_input = Console.ReadLine();
+                        }
+                    }
+                    double div2 = Convert.ToDouble(user_input);
+                    double divTotal = inputNum / div2;
+                    Console.WriteLine($"\n{inputNum} / {div2} = {divTotal}");
+                    inputNum = 0;
                 }
             }
-            double div1 = Convert.ToDouble(user_input);
-            Console.Write($"{div1} / [?] = ? -> ");
-            user_input = Console.ReadLine();
-            while (basicAns)
+            else
             {
-                try
+                Console.Write("[?] / ? = ? -> ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
+                    try
                     {
-                        break;
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
+                    catch
                     {
-                        break;
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
                     }
                 }
-                catch
+                double div1 = Convert.ToDouble(user_input);
+                Console.Write($"{div1} / [?] = ? -> ");
+                user_input = Console.ReadLine();
+                while (basicAns)
                 {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
                 }
+                double div2 = Convert.ToDouble(user_input);
+                double divTotal = div1 / div2; // Divides the numbers
+                Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
             }
-            double div2 = Convert.ToDouble(user_input);
-            double divTotal = div1 / div2; // Divides the numbers
-            Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
         }
         else
         {
-            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
-            var div1 = AnsiConsole.Prompt(
-              new TextPrompt<double>("[green]?[/] / ? = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            var div2 = AnsiConsole.Prompt(
-              new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [yellow]?[/] = ? -> ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-
-            double divTotal = div1 / div2;
-
-            var divTable = new Table();
-            divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
-            AnsiConsole.Write(divTable);
+            if (inputNum > 1)
+            {
+                if (inputNum2 > 1)
+                {
+                    double divTotal = inputNum / inputNum2;
+                    var divTable = new Table();
+                    divTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{divTotal}[/]");
+                    AnsiConsole.Write(divTable);
+                    inputNum = 0;
+                    inputNum2 = 0;
+                }
+                else
+                {
+                    var div2 = AnsiConsole.Prompt(
+                    new TextPrompt<double>($"[lightskyblue1]{inputNum} /[/] [yellow]?[/] = ? -> ")
+                    .PromptStyle("blue")
+                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    );
+                    double divTotal = inputNum / div2;
+                    var divTable = new Table();
+                    divTable.AddColumn($"[lightskyblue1]{inputNum} / {div2} =[/] [green]{divTotal}[/]");
+                    AnsiConsole.Write(divTable);
+                    inputNum = 0;
+                }
+            }
+            else
+            {
+                AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
+                var div1 = AnsiConsole.Prompt(
+                new TextPrompt<double>("[green]?[/] / ? = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                var div2 = AnsiConsole.Prompt(
+                new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [yellow]?[/] = ? -> ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double divTotal = div1 / div2;
+                var divTable = new Table();
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -497,12 +801,10 @@ while (cmazeyCalculator)
             }
             int change = Convert.ToInt32(user_input);
             Console.WriteLine($"Change Amount: {change}c");
-
             int Quarters = change / 25; // Divides the change amount by 25.
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
-
             Console.WriteLine($"\nQuarters: {Quarters}");
             Console.WriteLine($"Dimes: {Dimes}");
             Console.WriteLine($"Nickels: {Nickels}");
@@ -516,14 +818,11 @@ while (cmazeyCalculator)
               .ValidationErrorMessage("[red]Not a valid number/Cannot be a decibel number[/]")
               .PromptStyle("yellow")
             );
-
             AnsiConsole.MarkupLine($"\n[bold yellow]CHANGE AMOUNT[/]: {change}");
-
             int Quarters = change / 25; // Divides the change amount by 25.
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
-
             var changeAmountResult = new Table();
             AnsiConsole.Live(changeAmountResult)
             .Start(ctx =>
@@ -567,6 +866,8 @@ while (cmazeyCalculator)
         {
             AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
         }
+        inputNum = 0;
+        inputNum2 = 0;
     }
     //LINE SLOPE CALCULATOR
     else if (input == "lineslope" || input == "ls")
@@ -680,7 +981,6 @@ while (cmazeyCalculator)
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
             Console.ReadKey();
         }
-
         else
         {
             AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR: Line Slope Calculator ||[/] {name}\n");
@@ -879,7 +1179,6 @@ while (cmazeyCalculator)
     else if (input == "lottery" || input == "lot")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-
         Random random = new();
         int winningNumber = random.Next(0, 100);
         int winningDigitOne = winningNumber / 10;
@@ -893,7 +1192,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(inputLot);
-                    
+
                     if (checking > 99)
                     {
                         Console.WriteLine("Lot number can't exceed over 100, please enter your lottery number again (0 - 99):");
@@ -992,7 +1291,6 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("This command doesn't work in BASIC mode, sorry bud.\n");
         }
-
         else
         {
             int year = DateTime.Now.Year;
@@ -1069,46 +1367,68 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SQUARE ROOT [√] || {name1}\n");
-            Console.Write("Enter a number: ");
-            string user_input = Console.ReadLine();
-            while (basicAns)
+            if (inputNum > 1)
             {
-                try
-                {
-                    double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine("Not a valid answer, please enter a number below:");
-                    Console.Write("-> ");
-                    user_input = Console.ReadLine();
-                }
+                double squareNum = Convert.ToDouble(inputNum);
+                double squareTotal = Math.Sqrt(inputNum);
+                Console.WriteLine($"\nSquare root: {squareTotal}");
+                inputNum = 0;
             }
-            double squareNum = Convert.ToDouble(user_input);
-            double squareTotal = Math.Sqrt(squareNum);
-            Console.WriteLine($"\nSquare root: {squareTotal}");
+            else
+            {
+                Console.Write("Enter a number: ");
+                string user_input = Console.ReadLine();
+                while (basicAns)
+                {
+                    try
+                    {
+                        double checking = Convert.ToDouble(user_input);
+                        if (checking > 1)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Not a valid answer, please enter a number below:");
+                        Console.Write("-> ");
+                        user_input = Console.ReadLine();
+                    }
+                }
+                double squareNum = Convert.ToDouble(user_input);
+                double squareTotal = Math.Sqrt(squareNum);
+                Console.WriteLine($"\nSquare root: {squareTotal}");
+            }
         }
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SQUARE ROOT [[√]] || {name}\n");
-            var squareNum = AnsiConsole.Prompt(
-              new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
-              .PromptStyle("blue")
-              .ValidationErrorMessage("[red] That's not a valid number[/]")
-            );
-            double squareTotal = Math.Sqrt(squareNum);
+            if (inputNum > 1)
+            {
+                double squareNum = Convert.ToDouble(inputNum);
+                double squareTotal = Math.Sqrt(inputNum);
+                var squareTable = new Table();
+                squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
+                AnsiConsole.Write(squareTable);
+                inputNum = 0;
 
-            var squareTable = new Table();
-            squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
-            AnsiConsole.Write(squareTable);
+            }
+            else
+            {
+                var squareNum = AnsiConsole.Prompt(
+                new TextPrompt<double>("Enter a [yellow]number[/] or [yellow]value[/]: ")
+                .PromptStyle("blue")
+                .ValidationErrorMessage("[red] That's not a valid number[/]")
+                );
+                double squareTotal = Math.Sqrt(squareNum);
+                var squareTable = new Table();
+                squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
+                AnsiConsole.Write(squareTable);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -1292,17 +1612,17 @@ while (cmazeyCalculator)
                     "-- <3>", "--- <4>", "---- <5>", "----- <6>", "------ <7>", "------- <8>", "-------- <9>", "--------- <10>",
                     "** <3>", "*** <4>", "**** <5>", "***** <6>", "****** <7>", "******* <8>", "******** <9>", "********* <10>",
                     "// <3>", "/// <4>", "//// <5>", "///// <6>", "////// <7>", "/////// <8>", "//////// <9>", "///////// <10>",
-                    "+- <3>", "-+ <3>", "+-*/ <5>",
+                    "+- <3>", "-+ <3>", "+-*/ <5>", "????????? <9>",
                     "Cancel",
                 }));
-            
+
             if (customSelct == "++ <3>")
             {
                 var add1 = AnsiConsole.Prompt(
                     new TextPrompt<double>("[green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1313,11 +1633,11 @@ while (cmazeyCalculator)
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3;
+                double addTotal = add1 + add2 + add3;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "+++ <4>")
             {
@@ -1325,7 +1645,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1335,17 +1655,17 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4;
+                double addTotal = add1 + add2 + add3 + add4;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "++++ <5>")
             {
@@ -1353,7 +1673,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? = ? + ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? = ? + ? -> ")
                     .PromptStyle("blue")
@@ -1363,7 +1683,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1374,11 +1694,11 @@ while (cmazeyCalculator)
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5;
+                double addTotal = add1 + add2 + add3 + add4 + add5;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "+++++ <6>")
             {
@@ -1386,7 +1706,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1396,7 +1716,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1406,17 +1726,17 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6;
+                double addTotal = add1 + add2 + add3 + add4 + add5 + add6;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "++++++ <7>")
             {
@@ -1424,7 +1744,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1434,7 +1754,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1444,31 +1764,30 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7;
+                double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "+++++++ <8>")
-
             {
                 var add1 = AnsiConsole.Prompt(
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1478,7 +1797,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1488,27 +1807,27 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8;
+                double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "++++++++ <9>")
             {
@@ -1516,7 +1835,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? + ? = ? + ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? = ? + ?[/][/] -> ")
                     .PromptStyle("blue")
@@ -1526,7 +1845,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? + ? = ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? + ? = ?[/][/] -> ")
                     .PromptStyle("blue")
@@ -1536,32 +1855,32 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green][bold]?[/] [dim]+ ? + ? + ? + ? = ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green][bold]?[/] [dim]+ ? + ? + ? = ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green][bold]?[/] [dim]+ ? + ? = ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green][bold]?[/] [dim]+ ? = ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} +[/] [green][bold]?[/] [dim]= ?[/][/] -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9;
+                double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "+++++++++ <10>")
             {
@@ -1569,7 +1888,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? + ? + ? + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1579,7 +1898,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} +[/] [green]?[/] + ? + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
@@ -1589,37 +1908,37 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} +[/] [green]?[/] + ? + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} +[/] [green]?[/] + ? + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} +[/] [green]?[/] + ? + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} +[/] [green]?[/] + ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} +[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
-                
+
                 var add10 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red]That's not a valid number[/]"));
 
-                    double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10;
+                double addTotal = add1 + add2 + add3 + add4 + add5 + add6 + add7 + add8 + add9 + add10;
 
-                    var addTable = new Table();
-                    addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} + {add10} =[/] [yellow]{addTotal}[/]");
-                    AnsiConsole.Write(addTable);
+                var addTable = new Table();
+                addTable.AddColumn($"[lightskyblue1]{add1} + {add2} + {add3} + {add4} + {add5} + {add6} + {add7} + {add8} + {add9} + {add10} =[/] [yellow]{addTotal}[/]");
+                AnsiConsole.Write(addTable);
             }
             else if (customSelct == "-- <3>")
             {
@@ -1627,7 +1946,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
@@ -1638,11 +1957,11 @@ while (cmazeyCalculator)
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
-                    double subTotal = sub1 - sub2 - sub3;
+                double subTotal = sub1 - sub2 - sub3;
 
-                    var subTable = new Table();
-                    subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} =[/] [yellow]{subTotal}[/]");
-                    AnsiConsole.Write(subTable);
+                var subTable = new Table();
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "--- <4>")
             {
@@ -1660,7 +1979,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1669,8 +1988,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "---- <5>")
             {
@@ -1688,12 +2007,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1702,8 +2021,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "----- <6>")
             {
@@ -1721,17 +2040,17 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1740,8 +2059,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5 - sub6;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "------ <7>")
             {
@@ -1759,22 +2078,22 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1783,8 +2102,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5 - sub6 - sub7;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "------- <8>")
             {
@@ -1802,27 +2121,27 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} -[/] [green]?[/] - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1831,8 +2150,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5 - sub6 - sub7 - sub8;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "-------- <9>")
             {
@@ -1850,32 +2169,32 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} -[/] [green]?[/] - ? - ? - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub4 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} -[/] [green]?[/] - ? - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} -[/] [green]?[/] - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} -[/] [green]?[/] - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1884,8 +2203,8 @@ while (cmazeyCalculator)
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5 - sub6 - sub7 - sub8 - sub9;
 
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} - {sub9} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} - {sub9} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "--------- <10>")
             {
@@ -1918,17 +2237,17 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} -[/] [green]?[/] - ? - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} -[/] [green]?[/] - ? - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} -[/] [green]?[/] - ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} -[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
@@ -1940,10 +2259,10 @@ while (cmazeyCalculator)
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
                 double subTotal = sub1 - sub2 - sub3 - sub4 - sub5 - sub6 - sub7 - sub8 - sub9 - sub10;
-                
+
                 var subTable = new Table();
-                        subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} - {sub9} - {sub10} =[/] [yellow]{subTotal}[/]");
-                        AnsiConsole.Write(subTable);
+                subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} - {sub3} - {sub4} - {sub5} - {sub6} - {sub7} - {sub8} - {sub9} - {sub10} =[/] [yellow]{subTotal}[/]");
+                AnsiConsole.Write(subTable);
             }
             else if (customSelct == "** <3>")
             {
@@ -1951,12 +2270,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -1965,8 +2284,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "*** <4>")
             {
@@ -1974,12 +2293,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? = ? -> ")
                     .PromptStyle("blue")
@@ -1993,8 +2312,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "**** <5>")
             {
@@ -2002,12 +2321,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2026,8 +2345,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "***** <6>")
             {
@@ -2035,12 +2354,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2064,8 +2383,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5 * mult6;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "****** <7>")
             {
@@ -2073,12 +2392,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2098,7 +2417,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x[/] [green]?[/] x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2107,8 +2426,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "******* <8>")
             {
@@ -2116,12 +2435,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2141,7 +2460,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x[/] [green]?[/] x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x[/] [green]?[/] x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2155,8 +2474,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "******** <9>")
             {
@@ -2164,12 +2483,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2189,7 +2508,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x[/] [green]?[/] x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x[/] [green]?[/] x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2208,8 +2527,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "********* <10>")
             {
@@ -2217,12 +2536,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] x ? x ? x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x[/] [green]?[/] x ? x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x[/] [green]?[/] x ? x ? x ? x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2242,7 +2561,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x[/] [green]?[/] x ? x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x[/] [green]?[/] x ? x ? x ? = ? -> ")
                     .PromptStyle("blue")
@@ -2257,7 +2576,7 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x[/] [green]?[/] x ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult10 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} x[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2266,8 +2585,8 @@ while (cmazeyCalculator)
                 double multTotal = mult1 * mult2 * mult3 * mult4 * mult5 * mult6 * mult7 * mult8 * mult9 * mult10;
 
                 var multTable = new Table();
-                        multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} x {mult10} =[/] [yellow]{multTotal}[/]");
-                        AnsiConsole.Write(multTable);
+                multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} x {mult3} x {mult4} x {mult5} x {mult6} x {mult7} x {mult8} x {mult9} x {mult10} =[/] [yellow]{multTotal}[/]");
+                AnsiConsole.Write(multTable);
             }
             else if (customSelct == "// <3>")
             {
@@ -2275,12 +2594,12 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2289,8 +2608,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "/// <4>")
             {
@@ -2298,27 +2617,27 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
 
                 double divTotal = div1 / div2 / div3 / div4;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "//// <5>")
             {
@@ -2326,22 +2645,22 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2350,8 +2669,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5}=[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5}=[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "///// <6>")
             {
@@ -2359,27 +2678,27 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2388,8 +2707,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5 / div6;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "////// <7>")
             {
@@ -2397,32 +2716,32 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2431,8 +2750,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5 / div6 / div7;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "/////// <8>")
             {
@@ -2440,37 +2759,37 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2479,8 +2798,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5 / div6 / div7 / div8;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "//////// <9>")
             {
@@ -2488,42 +2807,42 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} /[/] [green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2532,8 +2851,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5 / div6 / div7 / div8 / div9;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} / {div9} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} / {div9} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "///////// <10>")
             {
@@ -2541,47 +2860,47 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] / ? / ? / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div3 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
-                 var div4 = AnsiConsole.Prompt(
-                    new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? = ? -> ")
-                    .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
+                var div4 = AnsiConsole.Prompt(
+                   new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} /[/] [green]?[/] / ? / ? / ? / ? / ? / ? = ? -> ")
+                   .PromptStyle("blue")
+                   .ValidationErrorMessage("[red] That's not a valid number[/]"));
+
                 var div5 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} /[/] [green]?[/] / ? / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div6 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} /[/] [green]?[/] / ? / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div7 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} /[/] [green]?[/] / ? / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div8 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} /[/] [green]?[/] / ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div9 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} /[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div10 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} / {div9} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
@@ -2590,8 +2909,8 @@ while (cmazeyCalculator)
                 double divTotal = div1 / div2 / div3 / div4 / div5 / div6 / div7 / div8 / div9 / div10;
 
                 var divTable = new Table();
-                        divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} / {div9} / {div10} =[/] [yellow]{divTotal}[/]");
-                        AnsiConsole.Write(divTable);
+                divTable.AddColumn($"[lightskyblue1]{div1} / {div2} / {div3} / {div4} / {div5} / {div6} / {div7} / {div8} / {div9} / {div10} =[/] [yellow]{divTotal}[/]");
+                AnsiConsole.Write(divTable);
             }
             else if (customSelct == "+- <3>")
             {
@@ -2599,22 +2918,22 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] + ? - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var addSub1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] - ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {addSub1} -[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 double addsubTotal = add1 + addSub1 - sub1;
 
                 var addsubTable = new Table();
-                        addsubTable.AddColumn($"[lightskyblue1]{add1} + {addSub1} - {sub1} =[/] [yellow]{addsubTotal}[/]");
-                        AnsiConsole.Write(addsubTable);
+                addsubTable.AddColumn($"[lightskyblue1]{add1} + {addSub1} - {sub1} =[/] [yellow]{addsubTotal}[/]");
+                AnsiConsole.Write(addsubTable);
             }
             else if (customSelct == "-+ <3>")
             {
@@ -2622,22 +2941,22 @@ while (cmazeyCalculator)
                     new TextPrompt<double>("[green]?[/] - ? + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var addSub1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} -[/] [green]?[/] + ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var add1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{sub1} - {addSub1} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 double addsubTotal = sub1 - addSub1 + add1;
 
                 var addsubTable = new Table();
-                        addsubTable.AddColumn($"[lightskyblue1]{sub1} - {addSub1} + {add1} =[/] [yellow]{addsubTotal}[/]");
-                        AnsiConsole.Write(addsubTable);
+                addsubTable.AddColumn($"[lightskyblue1]{sub1} - {addSub1} + {add1} =[/] [yellow]{addsubTotal}[/]");
+                AnsiConsole.Write(addsubTable);
             }
             else if (customSelct == "+-*/ <5>")
             {
@@ -2645,32 +2964,32 @@ while (cmazeyCalculator)
                     new TextPrompt<double>($"[green]?[/] + ? - ? * ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var sub1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} +[/] [green]?[/] - ? * ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var mult1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {sub1} -[/] [green]?[/] * ? / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var div1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {sub1} - {mult1} *[/] [green]?[/] / ? = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 var addsubmultdiv1 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{add1} + {sub1} - {mult1} * {div1} /[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
                     .ValidationErrorMessage("[red] That's not a valid number[/]"));
-                
+
                 double addsubmultdivTotal = add1 + sub1 - mult1 * div1 / addsubmultdiv1;
 
                 var addsubmultdivTable = new Table();
-                        addsubmultdivTable.AddColumn($"[lightskyblue1]{add1} + {sub1} - {mult1} * {div1} / {addsubmultdiv1} =[/] [yellow]{addsubmultdivTotal}[/]");
-                        AnsiConsole.Write(addsubmultdivTable);
+                addsubmultdivTable.AddColumn($"[lightskyblue1]{add1} + {sub1} - {mult1} * {div1} / {addsubmultdiv1} =[/] [yellow]{addsubmultdivTotal}[/]");
+                AnsiConsole.Write(addsubmultdivTable);
             }
             else if (customSelct == "Cancel")
             {
@@ -2699,19 +3018,19 @@ while (cmazeyCalculator)
             {
                 AnsiConsole.MarkupLine($"NAME CHOSEN: {name}");
                 var choice = AnsiConsole.Ask<string>("Change it? <[blue]y/n[/]>");
-                
+
                 if (choice == "y")
                 {
-                   crew = false;
-                   nameChange = true; 
+                    crew = false;
+                    nameChange = true;
                 }
                 else
                 {
                     AnsiConsole.MarkupLine("[red]Prompt canceled...[/]\n");
                 }
-                
+
             }
-            
+
             if (nameChange)
             {
                 var namePrompt = AnsiConsole.Ask<string>("\nWhat's your [green]first name[/]?").ToLower();
@@ -2969,9 +3288,9 @@ while (cmazeyCalculator)
             }
         }
         else if (basic)
-    {
-        Console.WriteLine("This command isn't supported in BASIC mode, sorry bud..\n");
-    }
+        {
+            Console.WriteLine("This command isn't supported in BASIC mode, sorry bud..\n");
+        }
         else
         {
             Console.WriteLine("Invalid command, please try again.\n");
@@ -3000,6 +3319,197 @@ while (cmazeyCalculator)
             Console.WriteLine();
         }
     }
+    //bored
+    else if (input == "bored")
+    {
+        while (true)
+        {
+            Random random = new();
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("This");
+            Thread.Sleep(3000);
+            Console.WriteLine("Is");
+            Thread.Sleep(3000);
+            Console.WriteLine("Cmazey");
+            Thread.Sleep(3000);
+            Console.WriteLine("Calculator");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("A");
+            Thread.Sleep(3000);
+            Console.WriteLine("Terminal");
+            Thread.Sleep(3000);
+            Console.WriteLine("Calculator");
+            Thread.Sleep(3000);
+            i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("+");
+            Thread.Sleep(3000);
+            Console.WriteLine("-");
+            Thread.Sleep(3000);
+            Console.WriteLine("x");
+            Thread.Sleep(3000);
+            Console.WriteLine("/");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            i = 0;
+            while (i < 5)
+            {
+                Console.WriteLine(".");
+                i++;
+                Thread.Sleep(3000);
+            }
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] + ? = ? -> -");
+            Thread.Sleep(3000);
+            int a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} + [?] = -> -");
+            Thread.Sleep(3000);
+            int b = Convert.ToInt32(random.Next(1, 999));
+            int c = a + b;
+            Console.WriteLine($"{a} + {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Thread.Sleep(3000);
+                Console.WriteLine(".");
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] - ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} - [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a - b;
+            Console.WriteLine($"{a} + {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] x ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} x [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a * b;
+            Console.WriteLine($"{a} x {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 6)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("[?] / ? = ? -> -");
+            Thread.Sleep(3000);
+            a = Convert.ToInt32(random.Next(1, 999));
+            Console.WriteLine($"{a} / [?] = -> -");
+            Thread.Sleep(3000);
+            b = Convert.ToInt32(random.Next(1, 999));
+            c = a / b;
+            Console.WriteLine($"{a} / {b} = {c}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 8)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("Created");
+            Thread.Sleep(3000);
+            Console.WriteLine("by");
+            Thread.Sleep(3000);
+            Console.WriteLine("Colton");
+            Thread.Sleep(3000);
+            Console.WriteLine("Mazey");
+            Thread.Sleep(3000);
+            i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+            Console.WriteLine("----------------------------------------------");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            int lotwin = random.Next(0, 100);
+            int d = lotwin / 10;
+            int e = lotwin % 10;
+            Console.WriteLine("Enter a lottery Number (0 - 99) -> ");
+            int fk = Convert.ToInt32(random.Next(0, 100));
+            Thread.Sleep(3000);
+            Console.WriteLine($"And the winner is {lotwin}");
+            Thread.Sleep(3000);
+            if (fk == lotwin)
+            {
+                Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+            }
+            else
+            {
+                Console.WriteLine("No match. Better luck next time!");
+            }
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(3000);
+            Console.WriteLine("----------------------------------------------");
+            i = 0;
+            while (i < 15)
+            {
+                Console.WriteLine(".");
+                Thread.Sleep(3000);
+                i++;
+            }
+
+        }
+    }
     // Exit
     else if (input == "exit")
     {
@@ -3013,7 +3523,6 @@ while (cmazeyCalculator)
         {
             Console.WriteLine("Basic is enabled\n");
         }
-
         else
         {
             Console.Write("Are you sure you want to enable Basic Mode, you cannot reverse the change? (y/n) -> ");
@@ -3029,31 +3538,162 @@ while (cmazeyCalculator)
             }
         }
     }
+    //numCheck
+    else if (input == "numcheck" || input == "int")
+    {
+        if (basic)
+        {
+            if (inputNum > 1)
+            {
+                Console.WriteLine($"\nNum1: {inputNum}");
+            }
+            else
+            {
+                Console.WriteLine("\nNum1: N/A");
+            }
+            if (inputNum2 > 1)
+            {
+                Console.WriteLine($"Num2: {inputNum2}\n");
+            }
+            else
+            {
+                Console.WriteLine("Num2: N/A\n");
+            }
+        }
+        else
+        {
+            if (inputNum > 1)
+            {
+                AnsiConsole.MarkupLine($"\n[white]Num1:[/] [green1]{inputNum}[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("\n[white]Num1:[/] [red]N/A[/]");
+            }
+            if (inputNum2 > 1)
+            {
+                AnsiConsole.MarkupLine($"[white]Num2:[/] [green1]{inputNum2}[/]\n");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("[white]Num2:[/] [red]N/A[/]\n");
+            }
+        }
+    }
+    // Clear num
+    else if (input == "clearint" || input == "clsint")
+    {
+        if (basic)
+        {
+            inputNum = 0;
+            Console.WriteLine("\nNum1: CLEARED");
+            inputNum2 = 0;
+            Console.WriteLine("Num2: CLEARED\n");
+        }
+        else
+        {
+            inputNum = 0;
+            AnsiConsole.MarkupLine("\n[white]Num1:[/] [green1]CLEARED[/]");
+            inputNum2 = 0;
+            AnsiConsole.MarkupLine("[white]Num2:[/] [green1]CLEARED[/]\n");
+        }
+    }
     // INVALID RESPONSE
     else
     {
-        Console.WriteLine("Invalid Command, please try again.\n");
-        Random random = new();
-        int elseChoice = random.Next(1, 5);
-        if (elseChoice == 1)
+        while (basicAns)
         {
-            Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
-        }
-        else if (elseChoice == 2)
-        {
-            Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
-        }
-        else if (elseChoice == 3)
-        {
-            if (i == 0)
+            try
             {
-                Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
-                i++;
-            }      
-            else
+                double checking = Convert.ToDouble(input);
+                if (checking > 1)
+                {
+                    if (basic)
+                    {
+                        if (inputNum > 1)
+                        {
+                            Console.WriteLine($"{inputNum} <?> {checking}");
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            Console.WriteLine(checking);
+                            inputNum = checking;
+                        }
+                    }
+                    else
+                    {
+                        if (inputNum > 1)
+                        {
+                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                            inputNum = checking;
+                        }
+                    }
+                    break;
+                }
+                else
+                {
+                    if (basic)
+                    {
+                        if (inputNum > 1)
+                        {
+                            Console.WriteLine($"{inputNum} <?> {checking}");
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            Console.WriteLine(checking);
+                            inputNum = checking;
+                        }
+                    }
+                    else
+                    {
+                        if (inputNum > 1)
+                        {
+                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
+                            inputNum2 = checking;
+                        }
+                        else
+                        {
+                            AnsiConsole.MarkupLine($"[white]{checking}[/]");
+                            inputNum = checking;
+                        }
+                    }
+                    break;
+                }
+            }
+            catch
             {
-                Console.WriteLine();
-            } 
+                Console.WriteLine("Invalid Command, please try again.\n");
+                Random random = new();
+                int elseChoice = random.Next(1, 5);
+                if (elseChoice == 1)
+                {
+                    Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
+                }
+                else if (elseChoice == 2)
+                {
+                    Console.WriteLine("Fun Fact: You can use symbols too instead of typing commands. E.G. +, -, x, /\n");
+                }
+                else if (elseChoice == 3)
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("Um hey, there is a secret in this command line. Keep an eye out for suspicious things.\n");
+                        i++;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
+                }
+                break;
+            }
         }
     }
 }
@@ -3061,4 +3701,3 @@ while (cmazeyCalculator)
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
-
