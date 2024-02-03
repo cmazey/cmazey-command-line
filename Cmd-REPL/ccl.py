@@ -11,7 +11,7 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.1.6" # Make sure to change version number before publishing changes!!!
+version = "v1.2.0" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 print("Welcome!")
