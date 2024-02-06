@@ -3,10 +3,11 @@ bool basic = false;
 bool crew = false;
 bool nameChange = false;
 bool basicAns = true;
+bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5";
+string version = "v1.1.5 (PRE v1.12)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -42,6 +43,9 @@ string skmkw = "w";
 string okcokd = "x";
 string lijwq = "y";
 string kwdjiq = "K";
+string ansPrint = ""; // string used to append into a file
+string titleAppend = "";
+string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
@@ -89,6 +93,8 @@ while (true)
     }
 }
 Thread.Sleep(1000);
+
+
 if (basic)
 {
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
@@ -137,6 +143,7 @@ while (cmazeyCalculator)
     // ADDITION
     if (input == "addition" || input == "+")
     {
+        titleAppend = "CMAZEY CALCULATOR: ADDITION [+]";
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
@@ -149,6 +156,7 @@ while (cmazeyCalculator)
                     Console.WriteLine($"{inputNum} + {inputNum2} = {addTotal}");
                     inputNum = 0;
                     inputNum2 = 0;
+                    ansPrint = $"{inputNum} + {inputNum2} = {addTotal}";
                 }
                 else
                 {
@@ -179,6 +187,7 @@ while (cmazeyCalculator)
                     double addTotal = inputNum + add2;
                     Console.WriteLine($"{inputNum} + {add2} = {addTotal}");
                     inputNum = 0;
+                    ansPrint = $"{addTotal}";
                     Console.ReadKey();
                 }
             }
@@ -234,6 +243,7 @@ while (cmazeyCalculator)
                 double add2 = Convert.ToDouble(user_input);
                 double addTotal = add1 + add2; // Adds the numbers
                 Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
+                ansPrint = $"{addTotal}";
                 Console.ReadKey();
             }
         }
@@ -250,7 +260,7 @@ while (cmazeyCalculator)
                     AnsiConsole.Write(addTable);
                     inputNum = 0;
                     inputNum2 = 0;
-
+                    ansPrint = $"{addTotal}";
                 }
                 else
                 {
@@ -264,7 +274,7 @@ while (cmazeyCalculator)
                     addTable.AddColumn($"[lightskyblue1]{inputNum} + {add2} =[/] [yellow]{addTotal}[/]");
                     AnsiConsole.Write(addTable);
                     inputNum = 0;
-
+                    ansPrint = $"{addTotal}";
                 }
             }
             else
@@ -283,6 +293,7 @@ while (cmazeyCalculator)
                 var addTable = new Table();
                 addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
                 AnsiConsole.Write(addTable);
+                ansPrint = $"{addTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -3580,6 +3591,18 @@ while (cmazeyCalculator)
             }
         }
     }
+    //Log Access
+    else if (input == "log")
+    {
+        Console.Write("Do you want to enable log access? (y/n) -> ")
+        string logInput = Console.ReadLine();
+
+        if (logInput == "y")
+        {
+            Console.WriteLine($"LOG ARE ENABLED, Logs will be saved in '{path}'")
+            logAccess = true;
+        }
+    }
     // Clear num
     else if (input == "clearint" || input == "clsint")
     {
@@ -3694,6 +3717,27 @@ while (cmazeyCalculator)
                 }
                 break;
             }
+        }
+    }   
+
+    if (logAccess)
+    {
+        if (ansPrint == "")
+        {
+            ansPrint = "";
+            titleAppend = "";
+        }
+        else
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLResult.txt"), true))
+                {
+                    outputFile.WriteLine("\n----------\n");
+                    outputFile.WriteLine(titleAppend);
+                    outputFile.WriteLine(ansPrint);
+                    outputFile.WriteLine("\n----------\n");
+                    ansPrint = "";
+                    titleAppend = "";
+                }
         }
     }
 }
