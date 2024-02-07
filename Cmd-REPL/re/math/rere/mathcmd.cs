@@ -7,7 +7,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.12)"; // VERSION
+string version = "v1.1.5 (PRE v1.19)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -45,10 +45,21 @@ string lijwq = "y";
 string kwdjiq = "K";
 string ansPrint = ""; // string used to append into a file
 string titleAppend = "";
+string quarterAppend = "";
+string dimesAppend = "";
+string nickelAppend = "";
+string pennieAppend = "";
+string changeAppend = "";
 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
+if (File.Exists($"{path}\\CCLResult.txt"))
+{
+    Console.WriteLine($"RESULT LOCATED: '{path}\\CCLResult.txt'");
+    logAccess = true;
+    Thread.Sleep(2000);
+}
 Console.Clear();
 
 while (true)
@@ -154,9 +165,9 @@ while (cmazeyCalculator)
                 {
                     double addTotal = inputNum + inputNum2;
                     Console.WriteLine($"{inputNum} + {inputNum2} = {addTotal}");
+                    ansPrint = $"{inputNum} + {inputNum2} = {addTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
-                    ansPrint = $"{inputNum} + {inputNum2} = {addTotal}";
                 }
                 else
                 {
@@ -186,8 +197,8 @@ while (cmazeyCalculator)
                     double add2 = Convert.ToDouble(user_input);
                     double addTotal = inputNum + add2;
                     Console.WriteLine($"{inputNum} + {add2} = {addTotal}");
+                    ansPrint = $"{inputNum} + {add2} = {addTotal}";
                     inputNum = 0;
-                    ansPrint = $"{addTotal}";
                     Console.ReadKey();
                 }
             }
@@ -243,7 +254,7 @@ while (cmazeyCalculator)
                 double add2 = Convert.ToDouble(user_input);
                 double addTotal = add1 + add2; // Adds the numbers
                 Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
-                ansPrint = $"{addTotal}";
+                ansPrint = $"{add1} + {add2} = {addTotal}";
                 Console.ReadKey();
             }
         }
@@ -258,9 +269,9 @@ while (cmazeyCalculator)
                     var addTable = new Table();
                     addTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{addTotal}[/]");
                     AnsiConsole.Write(addTable);
+                    ansPrint = $"{inputNum} + {inputNum2} = {addTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
-                    ansPrint = $"{addTotal}";
                 }
                 else
                 {
@@ -273,8 +284,8 @@ while (cmazeyCalculator)
                     var addTable = new Table();
                     addTable.AddColumn($"[lightskyblue1]{inputNum} + {add2} =[/] [yellow]{addTotal}[/]");
                     AnsiConsole.Write(addTable);
+                    ansPrint = $"{inputNum} + {add2} = {addTotal}";
                     inputNum = 0;
-                    ansPrint = $"{addTotal}";
                 }
             }
             else
@@ -293,7 +304,7 @@ while (cmazeyCalculator)
                 var addTable = new Table();
                 addTable.AddColumn($"[lightskyblue1]{add1} + {add2} =[/] [yellow]{addTotal}[/]");
                 AnsiConsole.Write(addTable);
-                ansPrint = $"{addTotal}";
+                ansPrint = $"{add1} + {add2} = {addTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -304,6 +315,7 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
+            titleAppend = "CMAZEY CALCULATOR: SUBTRACTION [-]";
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
             if (inputNum > 1)
             {
@@ -311,6 +323,7 @@ while (cmazeyCalculator)
                 {
                     double subTotal = inputNum - inputNum2;
                     Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
+                    ansPrint = $"{inputNum} - {inputNum2} = {subTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
                 }
@@ -342,6 +355,7 @@ while (cmazeyCalculator)
                     double sub2 = Convert.ToDouble(user_input);
                     double subTotal = inputNum - sub2;
                     Console.WriteLine($"{inputNum} - {sub2} = {subTotal}");
+                    ansPrint = $"{inputNum} - {sub2} = {subTotal}";
                     inputNum = 0;
                 }
             }
@@ -397,7 +411,7 @@ while (cmazeyCalculator)
                 double sub2 = Convert.ToDouble(user_input);
                 double subTotal = sub1 - sub2; // Subtracts the numbers
                 Console.WriteLine($"\n{sub1} - {sub2} = {subTotal}");
-                Console.ReadKey();
+                ansPrint = $"{sub1} - {sub2} = {subTotal}";
             }
         }
         else
@@ -411,6 +425,7 @@ while (cmazeyCalculator)
                     var addTable = new Table();
                     addTable.AddColumn($"[lightskyblue1]{inputNum} - {inputNum2} =[/] [yellow]{subTotal}[/]");
                     AnsiConsole.Write(addTable);
+                    ansPrint = $"{inputNum} - {inputNum} = {subTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
                 }
@@ -425,6 +440,7 @@ while (cmazeyCalculator)
                     var subTable = new Table();
                     subTable.AddColumn($"[lightskyblue1]{inputNum} - {sub2} =[/] [yellow]{subTotal}[/]");
                     AnsiConsole.Write(subTable);
+                    ansPrint = $"{inputNum} - {sub2} = {subTotal}";
                     inputNum = 0;
                 }
             }
@@ -444,6 +460,7 @@ while (cmazeyCalculator)
                 var subTable = new Table();
                 subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
                 AnsiConsole.Write(subTable);
+                ansPrint = $"{sub1} = {sub2} = {subTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -484,6 +501,7 @@ while (cmazeyCalculator)
     // MULTIPLICATION
     else if (input == "multiplication" || input == "x" || input == "*")
     {
+        titleAppend = "CMAZEY CALCULATOR: MULTIPLICATION [x]";
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
@@ -494,6 +512,7 @@ while (cmazeyCalculator)
                 {
                     double multTotal = inputNum * inputNum2;
                     Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
+                    ansPrint = $"{inputNum} x {inputNum2} = {multTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
                 }
@@ -525,6 +544,7 @@ while (cmazeyCalculator)
                     double mult2 = Convert.ToDouble(user_input);
                     double multTotal = inputNum * mult2;
                     Console.WriteLine($"\n{inputNum} x {mult2} = {multTotal}");
+                    ansPrint = $"{inputNum} x {mult2} = {multTotal}";
                     inputNum = 0;
                 }
             }
@@ -580,7 +600,7 @@ while (cmazeyCalculator)
                 double mult2 = Convert.ToDouble(user_input);
                 double multTotal = mult1 * mult2; // Multiply the number
                 Console.WriteLine($"\n{mult1} x {mult2} = {multTotal}");
-                Console.ReadKey();
+                ansPrint = $"{mult1} x {mult2} = {multTotal}";
             }
         }
         else
@@ -594,6 +614,7 @@ while (cmazeyCalculator)
                     var multTable = new Table();
                     multTable.AddColumn($"[lightskyblue1]{inputNum} x {inputNum2} =[/] [green]{multTotal}[/]");
                     AnsiConsole.Write(multTable);
+                    ansPrint = $"{inputNum} x {inputNum2} = {multTotal}";
                 }
                 else
                 {
@@ -606,8 +627,10 @@ while (cmazeyCalculator)
                     var multTable = new Table();
                     multTable.AddColumn($"[lightskyblue1]{inputNum} x {mult2} =[/] [green]{multTotal}[/]");
                     AnsiConsole.Write(multTable);
+                    ansPrint = $"{inputNum} x {inputNum2} = {multTotal}";
                 }
                 inputNum = 0;
+                inputNum2 = 0;
             }
             else
             {
@@ -625,6 +648,7 @@ while (cmazeyCalculator)
                 var multTable = new Table();
                 multTable.AddColumn($"[lightskyblue1]{mult1} x {mult2} =[/] [green]{multTotal}[/]");
                 AnsiConsole.Write(multTable);
+                ansPrint = $"{mult1} x {mult2} = {multTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -632,6 +656,7 @@ while (cmazeyCalculator)
     // DIVISION / DIVIDE
     else if (input == "division" || input == "/")
     {
+        titleAppend = "CMAZEY CALCULATOR: DIVISION [/]";
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
@@ -642,6 +667,7 @@ while (cmazeyCalculator)
                 {
                     double divTotal = inputNum / inputNum2;
                     Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
+                    ansPrint = $"{inputNum} / {inputNum2} = {divTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
                 }
@@ -673,6 +699,7 @@ while (cmazeyCalculator)
                     double div2 = Convert.ToDouble(user_input);
                     double divTotal = inputNum / div2;
                     Console.WriteLine($"\n{inputNum} / {div2} = {divTotal}");
+                    ansPrint = $"{inputNum} / {div2} = {divTotal}";
                     inputNum = 0;
                 }
             }
@@ -728,6 +755,7 @@ while (cmazeyCalculator)
                 double div2 = Convert.ToDouble(user_input);
                 double divTotal = div1 / div2; // Divides the numbers
                 Console.WriteLine($"\n{div1} / {div2} = {divTotal}");
+                ansPrint = $"{div1} / {div2} = {divTotal}";
             }
         }
         else
@@ -740,6 +768,7 @@ while (cmazeyCalculator)
                     var divTable = new Table();
                     divTable.AddColumn($"[lightskyblue1]{inputNum} + {inputNum2} =[/] [yellow]{divTotal}[/]");
                     AnsiConsole.Write(divTable);
+                    ansPrint = $"{inputNum} / {inputNum2} = {divTotal}";
                     inputNum = 0;
                     inputNum2 = 0;
                 }
@@ -754,6 +783,7 @@ while (cmazeyCalculator)
                     var divTable = new Table();
                     divTable.AddColumn($"[lightskyblue1]{inputNum} / {div2} =[/] [green]{divTotal}[/]");
                     AnsiConsole.Write(divTable);
+                    ansPrint = $"{inputNum} / {div2} = {divTotal}";
                     inputNum = 0;
                 }
             }
@@ -774,6 +804,7 @@ while (cmazeyCalculator)
                 var divTable = new Table();
                 divTable.AddColumn($"[lightskyblue1]{div1} / {div2} =[/] [green]{divTotal}[/]");
                 AnsiConsole.Write(divTable);
+                ansPrint = $"{div1} / {div2} = {divTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -782,6 +813,7 @@ while (cmazeyCalculator)
     else if (input == "change")
     {
         Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: CHANGE CALCULATOR [c]";
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: CHANGE CALCULATOR [₵] || {name1}");
@@ -812,10 +844,15 @@ while (cmazeyCalculator)
             }
             int change = Convert.ToInt32(user_input);
             Console.WriteLine($"Change Amount: {change}c");
+            changeAppend = $"Change Amount: {change}c";
             int Quarters = change / 25; // Divides the change amount by 25.
+            quarterAppend = $"Quarter: {Quarters}";
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
+            dimesAppend = $"Dimes: {Dimes}";
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
+            nickelAppend = $"Nickel: {Nickels}";
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
+            pennieAppend = $"Pennie: {Pennies}";
             Console.WriteLine($"\nQuarters: {Quarters}");
             Console.WriteLine($"Dimes: {Dimes}");
             Console.WriteLine($"Nickels: {Nickels}");
@@ -830,10 +867,15 @@ while (cmazeyCalculator)
               .PromptStyle("yellow")
             );
             AnsiConsole.MarkupLine($"\n[bold yellow]CHANGE AMOUNT[/]: {change}");
+            changeAppend = $"Change Amount: {change}c";
             int Quarters = change / 25; // Divides the change amount by 25.
+            quarterAppend = $"Quarter: {Quarters}";
             int Dimes = (change - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
+            dimesAppend = $"Dimes: {Dimes}";
             int Nickels = (change - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
+            nickelAppend = $"Nickel: {Nickels}";
             int Pennies = (change - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
+            pennieAppend = $"Pennie: {Pennies}";
             var changeAmountResult = new Table();
             AnsiConsole.Live(changeAmountResult)
             .Start(ctx =>
@@ -884,6 +926,7 @@ while (cmazeyCalculator)
     else if (input == "lineslope" || input == "ls")
     {
         Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: Line Slope Calculator";
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: Line Slope Calculator || {name1}\n");
@@ -990,7 +1033,7 @@ while (cmazeyCalculator)
                 slope = (2 - x2) / (y1 - y2);
             }
             Console.WriteLine($"\nThe slope of the through points ({x1}, {y1}) and ({x2}, {y2}) is {slope}!");
-            Console.ReadKey();
+            ansPrint = $"({x1}, {y1}) and  ({x2}, {y2}) is {slope}";
         }
         else
         {
@@ -1020,6 +1063,7 @@ while (cmazeyCalculator)
             );
 
             double slope = (y2 - y1) / (x2 - x1);
+            ansPrint = $"({x1}, {y1}) and  ({x2}, {y2}) is {slope}";
 
             var linSlpeTable = new Table();
             linSlpeTable.AddColumn($"The slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
@@ -1037,6 +1081,7 @@ while (cmazeyCalculator)
     else if (input == "htoi" || input == "itoh")
     {
         Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: INCHES TO HEIGHT";
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: INCHES TO HEIGHT || {name1}\n");
@@ -1069,7 +1114,7 @@ while (cmazeyCalculator)
             int inches = height % num;
 
             Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
-            Console.ReadKey();
+            ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("----------------------------------------------\n");
         }
         else
@@ -1087,6 +1132,7 @@ while (cmazeyCalculator)
             var heightTable = new Table();
             heightTable.AddColumn($"[yellow]{foot}[/]ft, [yellow]{inches}[/]in.");
             AnsiConsole.Write(heightTable);
+            ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("\n----------------------------------------------\n");
         }
     }
@@ -1194,6 +1240,7 @@ while (cmazeyCalculator)
         int winningNumber = random.Next(0, 100);
         int winningDigitOne = winningNumber / 10;
         int winningDigitTwo = winningNumber % 10;
+        quarterAppend = $"Winning Number: {winningNumber}";
         if (basic)
         {
             Console.Write("Enter your lottery number (0 - 99): ");
@@ -1223,22 +1270,26 @@ while (cmazeyCalculator)
                 }
             }
             int entryNumber = Convert.ToInt32(inputLot);
+            dimesAppend = $"Your Number: {entryNumber}";
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
             Console.WriteLine($"\nAnd the winning number is.... {winningNumber}");
             if (entryNumber == winningNumber)
             {
                 Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+                pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
             else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
             {
                 Console.WriteLine("You digits match, but out of order! You win $3,000!");
+                pennieAppend = "Digits match, but are out of order. You won $3,000. Congrats!";
                 lotWin++;
             }
             else
             {
                 Console.WriteLine("No match. Better luck next time!");
+                pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
 
@@ -1269,6 +1320,7 @@ while (cmazeyCalculator)
               }));
 
             int entryNumber = Convert.ToInt32(lotInput);
+            dimesAppend = $"Your Number: {entryNumber}";
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
 
@@ -1279,19 +1331,22 @@ while (cmazeyCalculator)
             if (entryNumber == winningNumber)
             {
                 AnsiConsole.Markup("[green1]Exact match[/]! You win the grand prize of [green1]$100,000![/]\n");
+                pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
             else if (winningDigitOne == entryDigitTwo && winningDigitTwo == entryDigitOne)
             {
                 AnsiConsole.Markup("You digits match, but out of order! You win [green1]$3,000![/]\n");
+                pennieAppend = "Digits match, but are out of order. You won $3,000. Congrats!";
                 lotWin++;
             }
             else
             {
                 AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
+                pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
-            Console.ReadKey();
+            Thread.Sleep(2000);
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -1319,6 +1374,7 @@ while (cmazeyCalculator)
     // Truncate
     else if (input == "truncate")
     {
+        titleAppend = "CMAZEY CALCULATOR: Truncate [.]";
         Console.WriteLine("----------------------------------------------\n");
         if (basic)
         {
@@ -1352,6 +1408,7 @@ while (cmazeyCalculator)
 
             Console.WriteLine($"\nTruncated value is {trunTotal}");
             Console.WriteLine($"Rounded-Off value is {roundTotal}");
+            ansPrint = $"Truncated value is {trunTotal}\nRounded-Off value is {roundTotal}";
         }
         else
         {
@@ -1368,12 +1425,14 @@ while (cmazeyCalculator)
             var trunTable = new Table();
             trunTable.AddColumn($"[yellow]Truncated[/] value: [lightskyblue1]{trunTotal}[/] [black]//[/] [yellow]Rounded-Off[/] value: [lightskyblue1]{roundTotal}[/]");
             AnsiConsole.Write(trunTable);
+            ansPrint = $"Truncated value is {trunTotal}\nRounded-Off value is {roundTotal}";
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Square Root
     else if (input == "square" || input == "square root")
     {
+        titleAppend = "CMAZEY CALCULATOR: SQUARE ROOT [√]";
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
@@ -1383,6 +1442,7 @@ while (cmazeyCalculator)
                 double squareNum = Convert.ToDouble(inputNum);
                 double squareTotal = Math.Sqrt(inputNum);
                 Console.WriteLine($"\nSquare root: {squareTotal}");
+                ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
                 inputNum = 0;
             }
             else
@@ -1413,6 +1473,7 @@ while (cmazeyCalculator)
                 double squareNum = Convert.ToDouble(user_input);
                 double squareTotal = Math.Sqrt(squareNum);
                 Console.WriteLine($"\nSquare root: {squareTotal}");
+                ansPrint =$"Number: {squareNum}\nSquare Root: {squareTotal}";
             }
         }
         else
@@ -1425,6 +1486,7 @@ while (cmazeyCalculator)
                 var squareTable = new Table();
                 squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
                 AnsiConsole.Write(squareTable);
+                ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
                 inputNum = 0;
 
             }
@@ -1439,6 +1501,7 @@ while (cmazeyCalculator)
                 var squareTable = new Table();
                 squareTable.AddColumn($"[yellow]Square Root[/]: [lightskyblue1]{squareTotal}[/]");
                 AnsiConsole.Write(squareTable);
+                ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
@@ -1446,6 +1509,7 @@ while (cmazeyCalculator)
     // BigMul Multiplication
     else if (input == "bigmul multiplication" || input == "bigmul-big")
     {
+        titleAppend = "CMAZEY CALCULATOR: BigMul-Big Multiplication";
         Console.WriteLine("\n----------------------------------------------\n");
         if (basic)
         {
@@ -1476,6 +1540,7 @@ while (cmazeyCalculator)
             int bigMult1 = Convert.ToInt32(user_input);
             double bigMultTotal = Math.BigMul(bigMult1, bigMult1);
             Console.WriteLine($"{bigMult1} x {bigMult1} == {bigMultTotal}");
+            ansPrint = $"{bigMult1} x {bigMult1} == {bigMultTotal}";
         }
         else
         {
@@ -1490,6 +1555,7 @@ while (cmazeyCalculator)
             var bigMultTable = new Table();
             bigMultTable.AddColumn($"[yellow dim]{bigMult1}[/] [red]x[/] [yellow dim]{bigMult1}[/] = [chartreuse1]{bigMultTotal}[/]");
             AnsiConsole.Write(bigMultTable);
+            ansPrint = $"{bigMult1} x {bigMult1} == {bigMultTotal}";
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -3594,13 +3660,56 @@ while (cmazeyCalculator)
     //Log Access
     else if (input == "log")
     {
-        Console.Write("Do you want to enable log access? (y/n) -> ")
-        string logInput = Console.ReadLine();
-
-        if (logInput == "y")
+        if (basic)
         {
-            Console.WriteLine($"LOG ARE ENABLED, Logs will be saved in '{path}'")
-            logAccess = true;
+            if (logAccess)
+            {
+                Console.WriteLine($"\nLogs are already enabled. It's stored in {path}.\n");
+            }
+            else
+            {
+                Console.Write("\nDo you want to enable log access? (y/n) -> ");
+                string logInput = Console.ReadLine();
+
+                if (logInput == "y")
+                {
+                    Console.WriteLine($"LOG ARE ENABLED, Logs/Results will be saved in '{path}'");
+                    logAccess = true;
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+                    {
+                        outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
+                        outputFile.WriteLine($"---------- Name: {name1} --------------");
+                        outputFile.WriteLine("-------------------------------------\n");
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (logAccess)
+            {
+                AnsiConsole.MarkupLine("\n[white]Logs are enabled. It's store in '[green1]{path}[/]'.[/]\n");
+            }
+            else
+            {
+                var logInput = AnsiConsole.Ask<string>("\n[white]Do you want to enable [green]logs[/]? [blue]<y/n>[/]:[/]");
+                if (logInput == "y")
+                {
+                    AnsiConsole.MarkupLine("[green1]LOGS ARE ENABLED[/]");
+                    AnsiConsole.MarkupLine($"[white]Logs will be saved in '[green1]{path}[/]'[/]\n");
+                    logAccess = true;
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+                    {
+                        outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
+                        outputFile.WriteLine($"--- Name: {name1} ---");
+                        outputFile.WriteLine("-------------------------------------\n");
+                    }
+                }
+                else
+                {
+                    AnsiConsole.MarkupLine("[red]Prompt canceled.[/]\n");
+                }
+            }
         }
     }
     // Clear num
@@ -3725,7 +3834,6 @@ while (cmazeyCalculator)
         if (ansPrint == "")
         {
             ansPrint = "";
-            titleAppend = "";
         }
         else
         {
@@ -3735,9 +3843,53 @@ while (cmazeyCalculator)
                     outputFile.WriteLine(titleAppend);
                     outputFile.WriteLine(ansPrint);
                     outputFile.WriteLine("\n----------\n");
-                    ansPrint = "";
-                    titleAppend = "";
                 }
+            ansPrint = "";
+            titleAppend = "";
+        }
+        if (changeAppend == "")
+        {
+            changeAppend = "";
+        }
+        else
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+            {
+                outputFile.WriteLine("\n----------\n");
+                outputFile.WriteLine($"{titleAppend}\n");
+                outputFile.WriteLine($"{changeAppend}\n");
+                outputFile.WriteLine(quarterAppend);
+                outputFile.WriteLine(dimesAppend);
+                outputFile.WriteLine(nickelAppend);
+                outputFile.WriteLine(pennieAppend);
+                outputFile.WriteLine("\n----------\n");
+            }
+            changeAppend = "";
+            titleAppend = "";
+            changeAppend = "";
+            quarterAppend = "";
+            dimesAppend = "";
+            nickelAppend = "";
+            pennieAppend = "";
+        }
+        if (pennieAppend == "")
+        {
+            pennieAppend = "";
+        }
+        else
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+            {
+                outputFile.WriteLine("\n----------\n");
+                outputFile.WriteLine("--- Cmazey Calculator Lottery ---\n");
+                outputFile.WriteLine(dimesAppend);
+                outputFile.WriteLine(quarterAppend);
+                outputFile.WriteLine(pennieAppend);
+                outputFile.WriteLine("\n----------\n");
+            }
+            dimesAppend = "";
+            quarterAppend = "";
+            pennieAppend = "";
         }
     }
 }
