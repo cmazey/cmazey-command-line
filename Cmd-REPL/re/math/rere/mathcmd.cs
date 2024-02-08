@@ -7,7 +7,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.19)"; // VERSION
+string version = "v1.1.5 (PRE v1.25)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -1136,7 +1136,7 @@ while (cmazeyCalculator)
             Console.WriteLine("\n----------------------------------------------\n");
         }
     }
-    // 8 BALL
+    // 8BALL
     else if (input == "8ball" || input == "eightball")
     {
 
@@ -3587,6 +3587,69 @@ while (cmazeyCalculator)
 
         }
     }
+    //binary to hexadecimal
+    else if (input == "binarytohexadecimal" || input == "btoh")
+    {
+        Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: Binary To Hexadecimal [0101]";
+        if (basic)
+        {
+            Console.WriteLine($"CMAZEY CALCULATOR: Binary To Hexadecimal [0101] | {name1}");
+            Console.Write("Enter binary number: ");
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    int checking = Convert.ToInt32(user_input,2);
+                    string checkingBin = checking.ToString("X");
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            int decimalInput = Convert.ToInt32(user_input, 2);
+            string hexadecimalAns = decimalInput.ToString("X");
+            Console.WriteLine($"\nHexadecimal: {hexadecimalAns}");
+            ansPrint = $"Binary: {user_input} // {decimalInput}\nHexadecimal: {hexadecimalAns}";
+        }
+        else
+        {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: Binary To Hexadecimal [[0110]] |[/] {name}\n");
+            var decInput = AnsiConsole.Prompt(
+              new TextPrompt<string>("[white]Enter a [gold1]binary number[/]:[/] ")
+              .PromptStyle("blue")
+            );
+            while (true)
+            {
+                try
+                {
+                    int checking = Convert.ToInt32(decInput,2);
+                    string checkingBin = checking.ToString("X");
+                    break;
+                }
+                catch
+                {
+                    AnsiConsole.MarkupLine("[red]Invalid answer, please try again:[/]");
+                    decInput = AnsiConsole.Ask<string>("[white]->[/]");
+                }
+            }
+            int decimalInput = Convert.ToInt32(decInput,2);
+            string hexadecimalAns = decimalInput.ToString("X");
+            var hexBinTable = new Table();
+            hexBinTable.AddColumn($"[yellow]Binary:[/] [green1]{decInput}[/] \\ [yellow]Hexadecimal[/]: [green1]{hexadecimalAns}[/]");
+            AnsiConsole.Write(hexBinTable);
+            ansPrint = $"Binary: {decInput} // {decimalInput}\nHexadecimal: {hexadecimalAns}";
+
+        }
+        Console.WriteLine("\n----------------------------------------------\n");
+    }
+    
+    
     // Exit
     else if (input == "exit")
     {
@@ -3701,7 +3764,7 @@ while (cmazeyCalculator)
                     using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
                     {
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
-                        outputFile.WriteLine($"--- Name: {name1} ---");
+                        outputFile.WriteLine($"---------- Name: {name1} --------------");
                         outputFile.WriteLine("-------------------------------------\n");
                     }
                 }
@@ -3828,7 +3891,7 @@ while (cmazeyCalculator)
             }
         }
     }   
-
+    // Append strings into a .txt file
     if (logAccess)
     {
         if (ansPrint == "")
