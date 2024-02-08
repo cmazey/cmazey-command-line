@@ -7,7 +7,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.30)"; // VERSION
+string version = "v1.1.5 (PRE v1.31)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -312,9 +312,9 @@ while (cmazeyCalculator)
     else if (input == "subtraction" || input == "-")
     {
         Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: SUBTRACTION [-]";
         if (basic)
         {
-            titleAppend = "CMAZEY CALCULATOR: SUBTRACTION [-]";
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
             if (inputNum > 1)
             {
@@ -459,7 +459,7 @@ while (cmazeyCalculator)
                 var subTable = new Table();
                 subTable.AddColumn($"[lightskyblue1]{sub1} - {sub2} =[/] [yellow]{subTotal}[/]");
                 AnsiConsole.Write(subTable);
-                ansPrint = $"{sub1} = {sub2} = {subTotal}";
+                ansPrint = $"{sub1} - {sub2} = {subTotal}";
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
