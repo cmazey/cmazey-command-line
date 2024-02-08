@@ -7,7 +7,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.25)"; // VERSION
+string version = "v1.1.5 (PRE v1.30)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -104,7 +104,6 @@ while (true)
     }
 }
 Thread.Sleep(1000);
-
 
 if (basic)
 {
@@ -490,6 +489,8 @@ while (cmazeyCalculator)
         Console.WriteLine("- E4");
         Console.WriteLine("- Math.Um");
         Console.WriteLine("- Custom");
+        Console.WriteLine("- BinaryToHexadecimal (BToH)");
+        Console.WriteLine("- DecimalToBinary (DToB)");
         Console.WriteLine("- Name");
         if (crew)
         {
@@ -3594,7 +3595,7 @@ while (cmazeyCalculator)
         titleAppend = "CMAZEY CALCULATOR: Binary To Hexadecimal [0101]";
         if (basic)
         {
-            Console.WriteLine($"CMAZEY CALCULATOR: Binary To Hexadecimal [0101] | {name1}");
+            Console.WriteLine($"CMAZEY CALCULATOR: Binary To Hexadecimal [0101] | {name1}\n");
             Console.Write("Enter binary number: ");
             string user_input = Console.ReadLine();
             while (basicAns)
@@ -3612,15 +3613,15 @@ while (cmazeyCalculator)
                     user_input = Console.ReadLine();
                 }
             }
-            int decimalInput = Convert.ToInt32(user_input, 2);
-            string hexadecimalAns = decimalInput.ToString("X");
+            int binaryInput = Convert.ToInt32(user_input, 2);
+            string hexadecimalAns = binaryInput.ToString("X");
             Console.WriteLine($"\nHexadecimal: {hexadecimalAns}");
-            ansPrint = $"Binary: {user_input} // {decimalInput}\nHexadecimal: {hexadecimalAns}";
+            ansPrint = $"Binary: {user_input} // {binaryInput}\nHexadecimal: {hexadecimalAns}";
         }
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: Binary To Hexadecimal [[0110]] |[/] {name}\n");
-            var decInput = AnsiConsole.Prompt(
+            var binInput = AnsiConsole.Prompt(
               new TextPrompt<string>("[white]Enter a [gold1]binary number[/]:[/] ")
               .PromptStyle("blue")
             );
@@ -3628,27 +3629,71 @@ while (cmazeyCalculator)
             {
                 try
                 {
-                    int checking = Convert.ToInt32(decInput,2);
+                    int checking = Convert.ToInt32(binInput,2);
                     string checkingBin = checking.ToString("X");
                     break;
                 }
                 catch
                 {
                     AnsiConsole.MarkupLine("[red]Invalid answer, please try again:[/]");
-                    decInput = AnsiConsole.Ask<string>("[white]->[/]");
+                    binInput = AnsiConsole.Ask<string>("[white]->[/]");
                 }
             }
-            int decimalInput = Convert.ToInt32(decInput,2);
-            string hexadecimalAns = decimalInput.ToString("X");
+            int binaryInput = Convert.ToInt32(binInput,2);
+            string hexadecimalAns = binaryInput.ToString("X");
             var hexBinTable = new Table();
-            hexBinTable.AddColumn($"[yellow]Binary:[/] [green1]{decInput}[/] \\ [yellow]Hexadecimal[/]: [green1]{hexadecimalAns}[/]");
+            hexBinTable.AddColumn($"[yellow]Binary:[/] [green1]{binaryInput}[/] \\ [yellow]Hexadecimal[/]: [green1]{hexadecimalAns}[/]");
             AnsiConsole.Write(hexBinTable);
-            ansPrint = $"Binary: {decInput} // {decimalInput}\nHexadecimal: {hexadecimalAns}";
+            ansPrint = $"Binary: {binInput} // {binaryInput}\nHexadecimal: {hexadecimalAns}";
 
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
-    
+    //decimal to binary
+    else if (input == "decimaltobinary" || input == "dtob")
+    {
+        Console.WriteLine("\n----------------------------------------------\n");
+        titleAppend = "CMAZEY CALCULATOR: Decimal To Binary [0111]";
+        if (basic)
+        {
+            Console.WriteLine($"CMAZEY CALCULATOR: Decimal To Binary [0111] | {name1}\n");
+            Console.Write("Enter a number: ");
+            string user_input = Console.ReadLine();
+            while (basicAns)
+            {
+                try
+                {
+                    int checking = Convert.ToInt32(user_input);
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Not a valid answer, please enter a number below:");
+                    Console.Write("-> ");
+                    user_input = Console.ReadLine();
+                }
+            }
+            int decNum = Convert.ToInt32(user_input);
+            string binaryNum = Convert.ToString(decNum, 2);
+            Console.WriteLine($"Binary: {binaryNum}");
+            ansPrint = $"Decimal: {user_input}\nBinary: {binaryNum}";
+        }
+        else
+        {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: Decimal To Binary [[0111]] |[/] {name}\n");
+            var decNum = AnsiConsole.Prompt(
+              new TextPrompt<int>("[white]Enter a number:[/] ")
+              .PromptStyle("blue")
+              .ValidationErrorMessage("[red] That's not a valid number[/]")
+            );
+            string binaryNum = Convert.ToString(decNum, 2);
+            var decbinNum = new Table();
+            decbinNum.AddColumn($"[yellow]Decimal:[/] [green1]{decNum}[/] \\ [yellow]Binary[/]: [green1]{binaryNum}[/]");
+            AnsiConsole.Write(decbinNum);
+            ansPrint = $"Decimal: {decNum}\nBinary: {binaryNum}";
+        }
+        Console.WriteLine("\n----------------------------------------------\n");
+    }
     
     // Exit
     else if (input == "exit")
