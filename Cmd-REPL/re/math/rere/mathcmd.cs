@@ -3803,7 +3803,7 @@ while (cmazeyCalculator)
                     {
                         if (inputNum > 1)
                         {
-                            Console.WriteLine($"{inputNum} <?> {checking}");
+                            Console.WriteLine($":{checking}");
                             inputNum2 = checking;
                         }
                         else
@@ -3816,7 +3816,7 @@ while (cmazeyCalculator)
                     {
                         if (inputNum > 1)
                         {
-                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
+                            AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
                         }
                         else
@@ -3833,7 +3833,7 @@ while (cmazeyCalculator)
                     {
                         if (inputNum > 1)
                         {
-                            Console.WriteLine($"{inputNum} <?> {checking}");
+                            Console.WriteLine($":{checking}");
                             inputNum2 = checking;
                         }
                         else
@@ -3846,7 +3846,7 @@ while (cmazeyCalculator)
                     {
                         if (inputNum > 1)
                         {
-                            AnsiConsole.MarkupLine($"[white]{inputNum} <?>[/] [blue]{checking}[/]");
+                            AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
                         }
                         else

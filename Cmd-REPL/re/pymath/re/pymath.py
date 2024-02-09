@@ -7,6 +7,7 @@ num1 = 0
 num2 = 0
 numTotal = 0
 cmazeyPylicator = True
+document_path = os.path.expanduser('~/Documents')
 
 # This command line is used for fun rather than Cmazey Calculator which is used for my AP Project.
 # I hope you enjoy this, but don't forget, this is the most basic version for a 'terminal calculator'.

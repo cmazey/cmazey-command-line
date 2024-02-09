@@ -11,7 +11,7 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.0" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 print("Welcome!")
@@ -527,6 +527,7 @@ if deBugNoLogs:
     print("math")
     print("other")
     print("lessons")
+    print("pymath")
     print("crntdir")
     print("exit\n")
 
@@ -591,6 +592,11 @@ if deBugNoLogs:
 
             elif dBugg == "crntdir":
                 print("Current directory: '" + os.getcwd() + "'\n")
+            
+            elif dBugg == "pymath":
+                os.chdir('re/pymath/re')
+                subprocess.call('python pymath.py', shell=False)
+                os.chdir(original_directory)
             
             elif dBugg == "exit":
                 Confirming = input("Are you sure that you want exit the debug panel? (y/n) -> ")
