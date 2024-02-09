@@ -37,7 +37,7 @@ while cmazeyPylicator:
     elif CPinput == "subtraction" or CPinput == "-":
         print("\n---\n")
         num1 = int(input("[?] - ? = ? -> "))
-        num2 = int(input(f"{num1} - ? = ? -> "))
+        num2 = int(input(f"{num1} - [?] = ? -> "))
         numTotal = num1 - num2
         print(f"{num1} - {num2} = {numTotal}")
         print("\n---\n")
@@ -45,7 +45,7 @@ while cmazeyPylicator:
     elif CPinput == "multiplication" or CPinput == "x" or CPinput == "*":
         print("\n---\n")
         num1 = int(input("[?] x ? = ? -> "))
-        num2 = int(input(f"{num1} x ? = ? -> "))
+        num2 = int(input(f"{num1} x [?] = ? -> "))
         numTotal = num1 * num2
         print(f"{num1} x {num2} = {numTotal}")
         print("\n---\n")
@@ -53,7 +53,7 @@ while cmazeyPylicator:
     elif CPinput == "division" or CPinput == "/":
         print("\n---\n")
         num1 = int(input("[?] / ? = ? -> "))
-        num2 = int(input(f"{num1} / ? = ? -> "))
+        num2 = int(input(f"{num1} / [?] = ? -> "))
         numTotal = num1 / num2
         print(f"{num1} / {num2} = {numTotal}")
         print("\n---\n")
@@ -65,7 +65,7 @@ while cmazeyPylicator:
         inches = num1 % 12
         print(f"{foot}ft, {inches}in")
         print("\n---\n")
-    # 
+    # More Commands Coming soon
     
     # exit
     elif CPinput == "exit":

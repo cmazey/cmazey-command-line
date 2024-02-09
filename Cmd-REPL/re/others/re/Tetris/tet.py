@@ -390,7 +390,7 @@ def draw_centered_surface(screen, surface, y):
 
 def main():
     pygame.init()
-    pygame.display.set_caption("Tetris with PyGame")
+    pygame.display.set_caption("CCL: Tetris with PyGame")
     screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     run = True
     paused = False
