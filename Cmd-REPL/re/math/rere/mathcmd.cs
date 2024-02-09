@@ -1,3 +1,4 @@
+using NAudio.Wave;
 using Spectre.Console;
 bool basic = false;
 bool crew = false;
@@ -107,8 +108,12 @@ while (true)
         break;
     }
 }
-Thread.Sleep(1000);
 
+var reader = new Mp3FileReader("Resources\\startUp.mp3");
+var waveOut = new WaveOutEvent();
+waveOut.Init(reader);
+waveOut.Play();
+Thread.Sleep(1000);
 if (basic)
 {
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
@@ -311,6 +316,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        
     }
     // SUBTRACTION
     else if (input == "subtraction" || input == "-")

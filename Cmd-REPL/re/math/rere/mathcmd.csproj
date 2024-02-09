@@ -9,13 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="notifySound.mp3" />
+    <None Remove="Resources\notifySound.mp3" />
+    <None Remove="Resources\startUp.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="logo_200x200.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="ScottPlot" Version="5.0.21" />
     <PackageReference Include="Spectre.Console" Version="0.48.0" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.48.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="Resources\notifySound.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\startUp.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\notifySound.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
