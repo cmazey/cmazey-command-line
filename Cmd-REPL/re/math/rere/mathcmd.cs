@@ -7,7 +7,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.31)"; // VERSION
+string version = "v1.1.5 (PRE v1.32)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -938,14 +938,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -962,14 +955,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -986,14 +972,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -1010,14 +989,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -1093,14 +1065,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -1387,14 +1352,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
@@ -1522,14 +1480,7 @@ while (cmazeyCalculator)
                 try
                 {
                     double checking = Convert.ToDouble(user_input);
-                    if (checking > 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 catch
                 {
