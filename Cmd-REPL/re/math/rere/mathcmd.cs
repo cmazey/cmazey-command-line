@@ -7,12 +7,16 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.32)"; // VERSION
+string version = "v1.1.5 (PRE v1.33)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
 double inputNum = 0;
 double inputNum2 = 0;
+double x1 = 0;
+double y1 = 0;
+double x2 = 0;
+double y2 = 0;
 string ewqq = "a";
 string oeda = "b";
 string cdow = "c";
@@ -158,9 +162,9 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: ADDITION [+] || {name1}");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double addTotal = inputNum + inputNum2;
                     Console.WriteLine($"{inputNum} + {inputNum2} = {addTotal}");
@@ -260,9 +264,9 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: ADDITION [[+]] ||[/] {name}");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double addTotal = inputNum + inputNum2;
                     var addTable = new Table();
@@ -316,9 +320,9 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SUBTRACTION [-] || {name1}");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double subTotal = inputNum - inputNum2;
                     Console.WriteLine($"{inputNum} - {inputNum2} = {subTotal}");
@@ -416,9 +420,9 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SUBTRACTION [[-]] || {name}");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double subTotal = inputNum - inputNum2;
                     var addTable = new Table();
@@ -507,9 +511,9 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: MULTIPLICATION [x] || {name1}\n");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double multTotal = inputNum * inputNum2;
                     Console.WriteLine($"\n{inputNum} x {inputNum2} = {multTotal}");
@@ -607,9 +611,9 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: MULTIPLICATION [[x]] ||[/] {name}\n");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double multTotal = inputNum * inputNum2;
                     var multTable = new Table();
@@ -662,9 +666,9 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: DIVISION [/] || {name1}\n");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double divTotal = inputNum / inputNum2;
                     Console.WriteLine($"\n{inputNum} / {inputNum2} = {divTotal}");
@@ -761,9 +765,9 @@ while (cmazeyCalculator)
         }
         else
         {
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
-                if (inputNum2 > 1)
+                if (inputNum2 > 0)
                 {
                     double divTotal = inputNum / inputNum2;
                     var divTable = new Table();
@@ -947,7 +951,7 @@ while (cmazeyCalculator)
                     user_input = Console.ReadLine();
                 }
             }
-            double x1 = Convert.ToDouble(user_input);
+            x1 = Convert.ToDouble(user_input);
             Console.Write("y1: ");
             user_input = Console.ReadLine();
             while (basicAns)
@@ -964,7 +968,7 @@ while (cmazeyCalculator)
                     user_input = Console.ReadLine();
                 }
             }
-            double y1 = Convert.ToDouble(user_input);
+            y1 = Convert.ToDouble(user_input);
             Console.Write("x2: ");
             user_input = Console.ReadLine();
             while (basicAns)
@@ -981,7 +985,7 @@ while (cmazeyCalculator)
                     user_input = Console.ReadLine();
                 }
             }
-            double x2 = Convert.ToDouble(user_input);
+            x2 = Convert.ToDouble(user_input);
             Console.Write("y2: ");
             user_input = Console.ReadLine();
             while (basicAns)
@@ -998,7 +1002,7 @@ while (cmazeyCalculator)
                     user_input = Console.ReadLine();
                 }
             }
-            double y2 = Convert.ToDouble(user_input);
+            y2 = Convert.ToDouble(user_input);
             double slope = (y2 - y1) / (x2 - x1);
             if (x1 == 22 && x2 == 2 && y1 == 2 && y2 == 2)
             {
@@ -1011,25 +1015,25 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR: Line Slope Calculator ||[/] {name}\n");
-            var x1 = AnsiConsole.Prompt(
+            x1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[yellow]x1[/]: ")
               .PromptStyle("blue")
               .ValidationErrorMessage("[red] That's not a valid number[/]")
             );
 
-            var y1 = AnsiConsole.Prompt(
+            y1 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]y1[/]: ")
               .PromptStyle("blue")
               .ValidationErrorMessage("[red] That's not a valid number[/]")
             );
 
-            var x2 = AnsiConsole.Prompt(
+            x2 = AnsiConsole.Prompt(
               new TextPrompt<double>("[yellow]x2[/]: ")
               .PromptStyle("blue")
               .ValidationErrorMessage("[red] That's not a valid number[/]")
             );
 
-            var y2 = AnsiConsole.Prompt(
+            y2 = AnsiConsole.Prompt(
               new TextPrompt<double>("[green]y2[/]: ")
               .PromptStyle("blue")
               .ValidationErrorMessage("[red] That's not a valid number[/]")
@@ -1396,7 +1400,7 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"CMAZEY CALCULATOR: SQUARE ROOT [√] || {name1}\n");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
                 double squareNum = Convert.ToDouble(inputNum);
                 double squareTotal = Math.Sqrt(inputNum);
@@ -1438,7 +1442,7 @@ while (cmazeyCalculator)
         else
         {
             AnsiConsole.MarkupLine($"CMAZEY CALCULATOR: SQUARE ROOT [[√]] || {name}\n");
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
                 double squareNum = Convert.ToDouble(inputNum);
                 double squareTotal = Math.Sqrt(inputNum);
@@ -3679,7 +3683,7 @@ while (cmazeyCalculator)
     {
         if (basic)
         {
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
                 Console.WriteLine($"\nNum1: {inputNum}");
             }
@@ -3687,7 +3691,7 @@ while (cmazeyCalculator)
             {
                 Console.WriteLine("\nNum1: N/A");
             }
-            if (inputNum2 > 1)
+            if (inputNum2 > 0)
             {
                 Console.WriteLine($"Num2: {inputNum2}\n");
             }
@@ -3698,7 +3702,7 @@ while (cmazeyCalculator)
         }
         else
         {
-            if (inputNum > 1)
+            if (inputNum > 0)
             {
                 AnsiConsole.MarkupLine($"\n[white]Num1:[/] [green1]{inputNum}[/]");
             }
@@ -3706,7 +3710,7 @@ while (cmazeyCalculator)
             {
                 AnsiConsole.MarkupLine("\n[white]Num1:[/] [red]N/A[/]");
             }
-            if (inputNum2 > 1)
+            if (inputNum2 > 0)
             {
                 AnsiConsole.MarkupLine($"[white]Num2:[/] [green1]{inputNum2}[/]\n");
             }
@@ -3801,7 +3805,7 @@ while (cmazeyCalculator)
                 {
                     if (basic)
                     {
-                        if (inputNum > 1)
+                        if (inputNum > 0)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
@@ -3814,7 +3818,7 @@ while (cmazeyCalculator)
                     }
                     else
                     {
-                        if (inputNum > 1)
+                        if (inputNum > 0)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
@@ -3831,7 +3835,7 @@ while (cmazeyCalculator)
                 {
                     if (basic)
                     {
-                        if (inputNum > 1)
+                        if (inputNum > 0)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
@@ -3844,7 +3848,7 @@ while (cmazeyCalculator)
                     }
                     else
                     {
-                        if (inputNum > 1)
+                        if (inputNum > 0)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
