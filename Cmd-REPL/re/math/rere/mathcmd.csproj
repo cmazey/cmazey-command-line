@@ -10,12 +10,16 @@
 
   <ItemGroup>
     <None Remove="notifySound.mp3" />
+    <None Remove="Resources\InvalidAns.mp3" />
     <None Remove="Resources\notifySound.mp3" />
     <None Remove="Resources\startUp.mp3" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="logo_200x200.ico" />
+    <Content Include="Resources\InvalidAns.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

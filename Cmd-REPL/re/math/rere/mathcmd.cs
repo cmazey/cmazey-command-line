@@ -1,5 +1,10 @@
 using NAudio.Wave;
 using Spectre.Console;
+
+// --------------Cmazey Calculator is all written by Colton Mazey '25-------------------------------------------------
+// --------------Sound Effect Attribute: UNIVERSFIELD (https://pixabay.com/users/universfield-28281460/)--------------
+
+
 bool basic = false;
 bool crew = false;
 bool nameChange = false;
@@ -8,7 +13,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.35)"; // VERSION
+string version = "v1.1.5 (PRE v1.37)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -315,6 +320,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{add1} + {add2} = {addTotal}";
             }
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
         
     }
@@ -3870,6 +3876,7 @@ while (cmazeyCalculator)
             }
             catch
             {
+                incorrectAnsSoundEffect();
                 Console.WriteLine("Invalid Command, please try again.\n");
                 Random random = new();
                 int elseChoice = random.Next(1, 5);
@@ -3966,3 +3973,18 @@ while (cmazeyCalculator)
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
+
+static void answSoundEffect()
+{
+    var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(notifyAns);
+    waveOut.Play();
+}
+static void incorrectAnsSoundEffect()
+{
+    var invalidAns = new Mp3FileReader("Resources\\InvalidAns.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(invalidAns);
+    waveOut.Play();
+}
