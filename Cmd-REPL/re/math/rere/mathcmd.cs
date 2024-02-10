@@ -478,6 +478,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{sub1} - {sub2} = {subTotal}";
             }
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // HELP COMMAND
@@ -669,6 +670,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
+        answSoundEffect();
     }
     // DIVISION / DIVIDE
     else if (input == "division" || input == "/")
@@ -824,6 +826,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{div1} / {div2} = {divTotal}";
             }
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //CHANGECALCULATOR // CHANGE
@@ -3973,7 +3976,7 @@ while (cmazeyCalculator)
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
-
+answSoundEffect();
 static void answSoundEffect()
 {
     var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
