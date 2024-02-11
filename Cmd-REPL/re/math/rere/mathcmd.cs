@@ -5,7 +5,7 @@ using Spectre.Console;
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
 // ---------------------------Cmazey Calculator is all written by Colton Mazey '25------------------------------------
-// --------------Sound Effect Attribute: UNIVERSFIELD (https://pixabay.com/users/universfield-28281460/)--------------
+// -------------------------All Sound Effects are from Pixabay (https://pixabay.com/)---------------------------------
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.38)"; // VERSION
+string version = "v1.1.5 (PRE v1.39)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -283,7 +283,6 @@ while (cmazeyCalculator)
                 double addTotal = add1 + add2; // Adds the numbers
                 Console.WriteLine($"\n{add1} + {add2} = {addTotal}");
                 ansPrint = $"{add1} + {add2} = {addTotal}";
-                Console.ReadKey();
             }
         }
         else
@@ -378,6 +377,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
+                            invalidAnsSoundEffect();
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -410,6 +410,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -434,6 +435,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -571,6 +573,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
+                            invalidAnsSoundEffect();
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -603,6 +606,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -627,6 +631,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -727,6 +732,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
+                            invalidAnsSoundEffect();
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -759,6 +765,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -783,6 +790,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -874,6 +882,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -948,6 +957,7 @@ while (cmazeyCalculator)
     else if (input == "clear" || input == "cls")
     {
         Console.Clear();
+        Console.Beep();
         if (basic)
         {
             Console.WriteLine("\nType /help to show all the available commands!");
@@ -979,6 +989,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -996,6 +1007,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1013,6 +1025,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1030,6 +1043,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1087,6 +1101,7 @@ while (cmazeyCalculator)
         titleAppend = "-- Version --";
         Console.WriteLine($"\nVersion: {version}");
         Console.WriteLine($"Name: {name1}\n");
+        Thread.Sleep(1000);
         Console.Beep();
         ansPrint = $"v: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
     }
@@ -1110,6 +1125,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1262,6 +1278,7 @@ while (cmazeyCalculator)
                     if (checking > 99)
                     {
                         Console.WriteLine("Lot number can't exceed over 100, please enter your lottery number again (0 - 99):");
+                        answSoundEffect();
                         Console.Write("-> ");
                         inputLot = Console.ReadLine();
                     }
@@ -1273,18 +1290,21 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    answSoundEffect();
                     Console.Write("-> ");
                     inputLot = Console.ReadLine();
                 }
             }
             int entryNumber = Convert.ToInt32(inputLot);
             dimesAppend = $"Your Number: {entryNumber}";
+            selectSoundEffect();
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
             Console.WriteLine($"\nAnd the winning number is.... {winningNumber}");
             if (entryNumber == winningNumber)
             {
                 Console.WriteLine("Exact match! You win the grand prize of $100,000!");
+                cheerSoundEffect();
                 pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
@@ -1297,11 +1317,11 @@ while (cmazeyCalculator)
             else
             {
                 Console.WriteLine("No match. Better luck next time!");
+                wompwompSoundEffect();
                 pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
-
-            Console.ReadKey();
+            Thread.Sleep(2000);
         }
         else
         {
@@ -1329,6 +1349,7 @@ while (cmazeyCalculator)
 
             int entryNumber = Convert.ToInt32(lotInput);
             dimesAppend = $"Your Number: {entryNumber}";
+            selectSoundEffect();
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
 
@@ -1339,6 +1360,7 @@ while (cmazeyCalculator)
             if (entryNumber == winningNumber)
             {
                 AnsiConsole.Markup("[green1]Exact match[/]! You win the grand prize of [green1]$100,000![/]\n");
+                cheerSoundEffect();
                 pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
@@ -1351,6 +1373,7 @@ while (cmazeyCalculator)
             else
             {
                 AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
+                wompwompSoundEffect();
                 pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
@@ -1395,6 +1418,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1464,6 +1488,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -1525,6 +1550,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3382,6 +3408,8 @@ while (cmazeyCalculator)
             Console.WriteLine("\n--- Lottery Result ---\n");
             Console.WriteLine($"Wins: {lotWin}");
             Console.WriteLine($"Loss: {lotLoss}\n");
+            Thread.Sleep(1000);
+            Console.Beep();
         }
         else
         {
@@ -3609,6 +3637,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3636,6 +3665,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     AnsiConsole.MarkupLine("[red]Invalid answer, please try again:[/]");
+                    invalidAnsSoundEffect();
                     binInput = AnsiConsole.Ask<string>("[white]->[/]");
                 }
             }
@@ -3670,6 +3700,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
+                    invalidAnsSoundEffect();
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3766,6 +3797,7 @@ while (cmazeyCalculator)
                 AnsiConsole.MarkupLine("[white]Num2:[/] [red]N/A[/]\n");
             }
         }
+        Console.Beep();
     }
     //Log Access
     else if (input == "log")
@@ -4016,12 +4048,11 @@ while (cmazeyCalculator)
         }
     }
 }
-
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
 
-// Sound Effects
+// Sound Effects (via Pixabay)
 static void answSoundEffect()
 {
     var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
@@ -4062,4 +4093,27 @@ static void invalidAnsSoundEffect()
     waveOut.Play();
 }
 
+static void cheerSoundEffect()
+{
+    var cheerAns = new Mp3FileReader("Resources\\cheering.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(cheerAns);
+    waveOut.Play();
+}
+
+static void wompwompSoundEffect()
+{
+    var lostAns = new Mp3FileReader("Resources\\lost.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(lostAns);
+    waveOut.Play();
+}
+
+static void selectSoundEffect()
+{
+    var selectAns = new Mp3FileReader("Resources\\select.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(selectAns);
+    waveOut.Play();
+}
 
