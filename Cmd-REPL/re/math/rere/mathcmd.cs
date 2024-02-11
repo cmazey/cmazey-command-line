@@ -216,6 +216,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
+                            invalidAnsSoundEffect();
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -248,6 +249,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -272,6 +274,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
+                        invalidAnsSoundEffect();
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -303,7 +306,7 @@ while (cmazeyCalculator)
                     var add2 = AnsiConsole.Prompt(
                     new TextPrompt<double>($"[lightskyblue1]{inputNum} +[/] [green]?[/] = ? -> ")
                     .PromptStyle("blue")
-                    .ValidationErrorMessage("[red] That's not a valid number[/]")
+                    .ValidationErrorMessage($"[red] That's not a valid number[/]")
                     );
                     double addTotal = inputNum + add2;
                     var addTable = new Table();
@@ -4025,6 +4028,7 @@ static void answSoundEffect()
     waveOut.Init(notifyAns);
     waveOut.Play();
 }
+
 static void incorrectAnsSoundEffect()
 {
     var invalidAns = new Mp3FileReader("Resources\\InvalidAns.mp3");
@@ -4046,6 +4050,14 @@ static void logSoundEffect()
     var logCreatedAns = new Mp3FileReader("Resources\\logsCreated.mp3");
     var waveOut = new WaveOutEvent();
     waveOut.Init(logCreatedAns);
+    waveOut.Play();
+}
+
+static void invalidAnsSoundEffect()
+{
+    var invalidAns = new Mp3FileReader("Resources\\PLstryAgain.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(invalidAns);
     waveOut.Play();
 }
 
