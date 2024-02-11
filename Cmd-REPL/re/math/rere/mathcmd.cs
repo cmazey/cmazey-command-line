@@ -1,9 +1,14 @@
 using NAudio.Wave;
 using Spectre.Console;
 
-// --------------Cmazey Calculator is all written by Colton Mazey '25-------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// ---------------------------Cmazey Calculator is all written by Colton Mazey '25------------------------------------
 // --------------Sound Effect Attribute: UNIVERSFIELD (https://pixabay.com/users/universfield-28281460/)--------------
-
+// -------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
 
 bool basic = false;
 bool crew = false;
@@ -13,7 +18,7 @@ bool logAccess = false;
 string name = "[gray]Guest[/]";
 string fname = "";
 string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.37)"; // VERSION
+string version = "v1.1.5 (PRE v1.38)"; // VERSION
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -60,6 +65,14 @@ string dimesAppend = "";
 string nickelAppend = "";
 string pennieAppend = "";
 string changeAppend = "";
+int year = DateTime.Now.Year;
+int month = DateTime.Now.Month;
+int day = DateTime.Now.Day;
+int minute = DateTime.Now.Minute;
+int hour = DateTime.Now.Hour;
+int second = DateTime.Now.Second;
+int millisecond = DateTime.Now.Millisecond;
+
 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
@@ -212,7 +225,6 @@ while (cmazeyCalculator)
                     Console.WriteLine($"{inputNum} + {add2} = {addTotal}");
                     ansPrint = $"{inputNum} + {add2} = {addTotal}";
                     inputNum = 0;
-                    Console.ReadKey();
                 }
             }
             else
@@ -515,6 +527,7 @@ while (cmazeyCalculator)
         }
         Console.WriteLine("- numcheck (int)");
         Console.WriteLine("- Exit\n");
+        Console.Beep();
     }
     // MULTIPLICATION
     else if (input == "multiplication" || input == "x" || input == "*")
@@ -925,6 +938,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(100);
             });
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //Clear
@@ -1061,13 +1075,17 @@ while (cmazeyCalculator)
             linSlpeTable.AddColumn($"The slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
             AnsiConsole.Write(linSlpeTable);
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //VERSION
     else if (input == "version")
     {
+        titleAppend = "-- Version --";
         Console.WriteLine($"\nVersion: {version}");
         Console.WriteLine($"Name: {name1}\n");
+        Console.Beep();
+        ansPrint = $"v: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
     }
     //HeightToInches
     else if (input == "htoi" || input == "itoh")
@@ -1099,6 +1117,7 @@ while (cmazeyCalculator)
             int inches = height % num;
 
             Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
+            answSoundEffect();
             ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("----------------------------------------------\n");
         }
@@ -1116,6 +1135,7 @@ while (cmazeyCalculator)
 
             var heightTable = new Table();
             heightTable.AddColumn($"[yellow]{foot}[/]ft, [yellow]{inches}[/]in.");
+            answSoundEffect();
             AnsiConsole.Write(heightTable);
             ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("\n----------------------------------------------\n");
@@ -1344,10 +1364,6 @@ while (cmazeyCalculator)
         }
         else
         {
-            int year = DateTime.Now.Year;
-            int month = DateTime.Now.Month;
-            int day = DateTime.Now.Day;
-
             var calendar = new Calendar(year, month);
             calendar.HeaderStyle(Style.Parse("yellow"));
             calendar.AddCalendarEvent(year, month, day);
@@ -1405,6 +1421,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(trunTable);
             ansPrint = $"Truncated value is {trunTotal}\nRounded-Off value is {roundTotal}";
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Square Root
@@ -1482,6 +1499,7 @@ while (cmazeyCalculator)
                 ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
             }
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // BigMul Multiplication
@@ -1528,11 +1546,13 @@ while (cmazeyCalculator)
             AnsiConsole.Write(bigMultTable);
             ansPrint = $"{bigMult1} x {bigMult1} == {bigMultTotal}";
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // pi
     else if (input == "pi")
     {
+        answSoundEffect();
         if (basic)
         {
             Console.WriteLine("\nThe value of PI is " + Math.PI);
@@ -1551,6 +1571,7 @@ while (cmazeyCalculator)
     //e4
     else if (input == "e4" || input == "efour")
     {
+        answSoundEffect();
         if (basic)
         {
             Console.WriteLine("\nThe value of logarithmic base E is " + Math.E);
@@ -1594,6 +1615,7 @@ while (cmazeyCalculator)
         "Math.Sqrt", "Math.Abs", "Math.Round", "Math.Ceiling", "Math.Floor"
               }));
 
+            answSoundEffect();
             if (mathPrompt == "Math.Sqrt")
             {
                 double mathAns = Math.Sqrt(mathNum);
@@ -3043,6 +3065,7 @@ while (cmazeyCalculator)
             {
                 Console.WriteLine("Prompt Canceled");
             }
+            answSoundEffect();
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -3617,6 +3640,7 @@ while (cmazeyCalculator)
             ansPrint = $"Binary: {binInput} // {binaryInput}\nHexadecimal: {hexadecimalAns}";
 
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //decimal to binary
@@ -3662,9 +3686,9 @@ while (cmazeyCalculator)
             AnsiConsole.Write(decbinNum);
             ansPrint = $"Decimal: {decNum}\nBinary: {binaryNum}";
         }
+        answSoundEffect();
         Console.WriteLine("\n----------------------------------------------\n");
     }
-    
     // Exit
     else if (input == "exit")
     {
@@ -3685,6 +3709,7 @@ while (cmazeyCalculator)
 
             if (inputBasic == "y")
             {
+                Console.Beep();
                 basic = true;
             }
             else
@@ -3758,6 +3783,7 @@ while (cmazeyCalculator)
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
                         outputFile.WriteLine("-------------------------------------\n");
+                        logSoundEffect();
                     }
                 }
             }
@@ -3766,7 +3792,7 @@ while (cmazeyCalculator)
         {
             if (logAccess)
             {
-                AnsiConsole.MarkupLine("\n[white]Logs are enabled. It's store in '[green1]{path}[/]'.[/]\n");
+                AnsiConsole.MarkupLine($"\n[white]Logs are enabled. It's store in '[green1]{path}[/]'.[/]\n");
             }
             else
             {
@@ -3781,6 +3807,7 @@ while (cmazeyCalculator)
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
                         outputFile.WriteLine("-------------------------------------\n");
+                        logSoundEffect();
                     }
                 }
                 else
@@ -3799,6 +3826,7 @@ while (cmazeyCalculator)
             Console.WriteLine("\nNum1: CLEARED");
             inputNum2 = 0;
             Console.WriteLine("Num2: CLEARED\n");
+            answSoundEffect();
         }
         else
         {
@@ -3806,6 +3834,7 @@ while (cmazeyCalculator)
             AnsiConsole.MarkupLine("\n[white]Num1:[/] [green1]CLEARED[/]");
             inputNum2 = 0;
             AnsiConsole.MarkupLine("[white]Num2:[/] [green1]CLEARED[/]\n");
+            answSoundEffect();
         }
     }
     // INVALID RESPONSE
@@ -3824,11 +3853,13 @@ while (cmazeyCalculator)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
+                            numCheckSoundEffect();
                         }
                         else
                         {
                             Console.WriteLine(checking);
                             inputNum = checking;
+                            numCheckSoundEffect();
                         }
                     }
                     else
@@ -3837,11 +3868,13 @@ while (cmazeyCalculator)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
+                            numCheckSoundEffect();
                         }
                         else
                         {
                             AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
+                            numCheckSoundEffect();
                         }
                     }
                     break;
@@ -3854,11 +3887,13 @@ while (cmazeyCalculator)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
+                            numCheckSoundEffect();
                         }
                         else
                         {
                             Console.WriteLine(checking);
                             inputNum = checking;
+                            numCheckSoundEffect();
                         }
                     }
                     else
@@ -3867,11 +3902,13 @@ while (cmazeyCalculator)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
+                            numCheckSoundEffect();
                         }
                         else
                         {
                             AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
+                            numCheckSoundEffect();
                         }
                     }
                     break;
@@ -3976,7 +4013,7 @@ while (cmazeyCalculator)
 Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
-answSoundEffect();
+
 static void answSoundEffect()
 {
     var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
@@ -3991,3 +4028,21 @@ static void incorrectAnsSoundEffect()
     waveOut.Init(invalidAns);
     waveOut.Play();
 }
+
+static void numCheckSoundEffect()
+{
+    var numCheckAns = new Mp3FileReader("Resources\\numCheckNotify.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(numCheckAns);
+    waveOut.Play();
+}
+
+static void logSoundEffect()
+{
+    var logCreatedAns = new Mp3FileReader("Resources\\logsCreated.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(logCreatedAns);
+    waveOut.Play();
+}
+
+

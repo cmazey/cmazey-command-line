@@ -3,8 +3,6 @@ import time
 import os
 import pyglet
 current_directory = os.getcwd()
-from inspect import getsourcefile
-from os.path import abspath
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 

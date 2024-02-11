@@ -11,7 +11,9 @@
   <ItemGroup>
     <None Remove="notifySound.mp3" />
     <None Remove="Resources\InvalidAns.mp3" />
+    <None Remove="Resources\logsCreated.mp3" />
     <None Remove="Resources\notifySound.mp3" />
+    <None Remove="Resources\numCheckNotify.mp3" />
     <None Remove="Resources\startUp.mp3" />
   </ItemGroup>
 
@@ -20,7 +22,13 @@
     <Content Include="Resources\InvalidAns.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\logsCreated.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\notifySound.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\numCheckNotify.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
