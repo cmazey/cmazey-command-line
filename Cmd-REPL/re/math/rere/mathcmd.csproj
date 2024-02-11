@@ -14,7 +14,9 @@
     <None Remove="Resources\logsCreated.mp3" />
     <None Remove="Resources\notifySound.mp3" />
     <None Remove="Resources\numCheckNotify.mp3" />
+    <None Remove="Resources\PlstryAgain.mp3" />
     <None Remove="Resources\startUp.mp3" />
+    <None Remove="Resources\umm.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +31,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\numCheckNotify.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PlstryAgain.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\umm.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
