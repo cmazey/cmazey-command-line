@@ -3166,6 +3166,10 @@ while (cmazeyCalculator)
                     name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
                     fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
                     crew = true;
+                    var random1SoundEffect = new Mp3FileReader("Resources\\umm.mp3");
+                    waveOut.Init(random1SoundEffect);
+                    waveOut.Play();
+                    Thread.Sleep(15000);
                 }
                 else if (namePrompt == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}")
                 {
