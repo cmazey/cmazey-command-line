@@ -4014,6 +4014,7 @@ Console.Write("Press enter to exit program...");
 Console.ReadKey();
 Console.WriteLine();
 
+// Sound Effects
 static void answSoundEffect()
 {
     var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
@@ -4021,6 +4022,7 @@ static void answSoundEffect()
     waveOut.Init(notifyAns);
     waveOut.Play();
 }
+
 static void incorrectAnsSoundEffect()
 {
     var invalidAns = new Mp3FileReader("Resources\\InvalidAns.mp3");
