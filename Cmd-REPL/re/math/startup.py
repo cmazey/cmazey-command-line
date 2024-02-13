@@ -63,7 +63,7 @@ except OSError as e:
                
 try:
     subprocess.call('mathcmd', shell=False)
-except subprocess.CalledProcessError:
+except:
         os.chdir(original_directory)
         os.chdir('rere')
         try:
