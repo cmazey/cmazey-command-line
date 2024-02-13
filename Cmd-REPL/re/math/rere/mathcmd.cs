@@ -1,6 +1,6 @@
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.41)"; // VERSION
+string version = "v1.1.5 (PRE v1.42)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -344,7 +344,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{add1} + {add2} = {addTotal}";
             }
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
         
     }
@@ -505,7 +505,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{sub1} - {sub2} = {subTotal}";
             }
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // HELP COMMAND
@@ -701,7 +701,7 @@ while (cmazeyCalculator)
             }
         }
         Console.WriteLine("\n----------------------------------------------\n");
-        answSoundEffect();
+        answSoundEffect(audioAccess);
     }
     // DIVISION / DIVIDE
     else if (input == "division" || input == "/")
@@ -860,7 +860,7 @@ while (cmazeyCalculator)
                 ansPrint = $"{div1} / {div2} = {divTotal}";
             }
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //CHANGECALCULATOR // CHANGE
@@ -960,7 +960,7 @@ while (cmazeyCalculator)
                 Thread.Sleep(100);
             });
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //Clear
@@ -1102,7 +1102,7 @@ while (cmazeyCalculator)
             linSlpeTable.AddColumn($"The slope of the through points ([yellow]{x1}, {y1}[/]) and ([yellow]{x2}, {y2}[/]) is [blue]{slope}[/].");
             AnsiConsole.Write(linSlpeTable);
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //VERSION
@@ -1146,7 +1146,7 @@ while (cmazeyCalculator)
             int inches = height % num;
 
             Console.WriteLine($"\nYou are {foot}ft, {inches}in.");
-            answSoundEffect();
+            answSoundEffect(audioAccess);
             ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("----------------------------------------------\n");
         }
@@ -1164,7 +1164,7 @@ while (cmazeyCalculator)
 
             var heightTable = new Table();
             heightTable.AddColumn($"[yellow]{foot}[/]ft, [yellow]{inches}[/]in.");
-            answSoundEffect();
+            answSoundEffect(audioAccess);
             AnsiConsole.Write(heightTable);
             ansPrint = $"{foot}ft, {inches}in";
             Console.WriteLine("\n----------------------------------------------\n");
@@ -1288,7 +1288,7 @@ while (cmazeyCalculator)
                     if (checking > 99)
                     {
                         Console.WriteLine("Lot number can't exceed over 100, please enter your lottery number again (0 - 99):");
-                        answSoundEffect();
+                        answSoundEffect(audioAccess);
                         Console.Write("-> ");
                         inputLot = Console.ReadLine();
                     }
@@ -1300,7 +1300,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    answSoundEffect();
+                    answSoundEffect(audioAccess);
                     Console.Write("-> ");
                     inputLot = Console.ReadLine();
                 }
@@ -1458,7 +1458,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(trunTable);
             ansPrint = $"Truncated value is {trunTotal}\nRounded-Off value is {roundTotal}";
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Square Root
@@ -1537,7 +1537,7 @@ while (cmazeyCalculator)
                 ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
             }
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // BigMul Multiplication
@@ -1585,13 +1585,13 @@ while (cmazeyCalculator)
             AnsiConsole.Write(bigMultTable);
             ansPrint = $"{bigMult1} x {bigMult1} == {bigMultTotal}";
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // pi
     else if (input == "pi")
     {
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         if (basic)
         {
             Console.WriteLine("\nThe value of PI is " + Math.PI);
@@ -1610,7 +1610,7 @@ while (cmazeyCalculator)
     //e4
     else if (input == "e4" || input == "efour")
     {
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         if (basic)
         {
             Console.WriteLine("\nThe value of logarithmic base E is " + Math.E);
@@ -1654,7 +1654,7 @@ while (cmazeyCalculator)
         "Math.Sqrt", "Math.Abs", "Math.Round", "Math.Ceiling", "Math.Floor"
               }));
 
-            answSoundEffect();
+            answSoundEffect(audioAccess);
             if (mathPrompt == "Math.Sqrt")
             {
                 double mathAns = Math.Sqrt(mathNum);
@@ -3104,7 +3104,7 @@ while (cmazeyCalculator)
             {
                 Console.WriteLine("Prompt Canceled");
             }
-            answSoundEffect();
+            answSoundEffect(audioAccess);
         }
         Console.WriteLine("\n----------------------------------------------\n");
     }
@@ -3692,7 +3692,7 @@ while (cmazeyCalculator)
             ansPrint = $"Binary: {binInput} // {binaryInput}\nHexadecimal: {hexadecimalAns}";
 
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     //decimal to binary
@@ -3739,7 +3739,7 @@ while (cmazeyCalculator)
             AnsiConsole.Write(decbinNum);
             ansPrint = $"Decimal: {decNum}\nBinary: {binaryNum}";
         }
-        answSoundEffect();
+        answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Exit
@@ -3880,7 +3880,7 @@ while (cmazeyCalculator)
             Console.WriteLine("\nNum1: CLEARED");
             inputNum2 = 0;
             Console.WriteLine("Num2: CLEARED\n");
-            answSoundEffect();
+            answSoundEffect(audioAccess);
         }
         else
         {
@@ -3888,7 +3888,7 @@ while (cmazeyCalculator)
             AnsiConsole.MarkupLine("\n[white]Num1:[/] [green1]CLEARED[/]");
             inputNum2 = 0;
             AnsiConsole.MarkupLine("[white]Num2:[/] [green1]CLEARED[/]\n");
-            answSoundEffect();
+            answSoundEffect(audioAccess);
         }
     }
     // INVALID RESPONSE
