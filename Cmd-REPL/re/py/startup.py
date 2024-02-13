@@ -213,4 +213,7 @@ time.sleep(3)
 print()
 
 os.chdir('rere') # Changes Directory
-subprocess.call('python pycmd.py', shell=False) # Loads in Directory
+try:
+    subprocess.call('python pycmd.py', shell=False) # Loads in Directory
+except:
+    subprocess.call('python pycmd.py', shell=True) # Same command, but for the shell

@@ -44,7 +44,6 @@ except OSError as e:
 
     try:
         os.chdir("rere/bin/Debug/net6.0")
-    
     except OSError as e:
         print("mathcmd cannot be located in the bin files.")
         
@@ -54,15 +53,16 @@ except OSError as e:
         if Confirming == "y":
             os.chdir(original_directory)
             os.chdir('rere')
-            subprocess.call('dotnet run', shell=False)
+            try:
+                subprocess.call('dotnet run', shell=False)
+            except:
+                subprocess.call('dotnet run', shell=True)
         else:
             print("Application has been interupted, heading back to the main menu...")
             time.sleep(3)
-            
-            
+               
 try:
     subprocess.call('mathcmd', shell=False)
-
 except subprocess.CalledProcessError:
     print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
 

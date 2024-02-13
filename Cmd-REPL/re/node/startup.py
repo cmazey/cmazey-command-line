@@ -8,7 +8,7 @@ import subprocess
 print("NOTICE: The file that you are currently locating is not an executable file. This is a '.js' file, and you will need NODE.JS (LTS recommended)")
 print("to run this file. If you already have NODE.JS installed on your window system, then type in the follow prompt below v\n")
 print("i have nodejs installed")
-Confirming = input("-> ")
+Confirming = input("-> ".Lower())
 
 if Confirming == "i have nodejs installed":
     print("\nPROMPT AGREED")
@@ -104,8 +104,11 @@ if Confirming == "i have nodejs installed":
         subprocess.call('node ./nodecmd.js', shell=False)
 
     except:
-        print("Error has been occured while opening Node.JS file. Either package files aren't installed, or NODEJS isn't installed on your operating system.")
-        input()
+        try:
+            subprocess.call('node ./nodecmd.js', shell=True)
+        except:
+            print("Error has been occured while opening Node.JS file. Either package files aren't installed, or NODEJS isn't installed on your operating system.")
+            input()
 
     print("Heading back to the start menu, please hold...")
     sleep(3)

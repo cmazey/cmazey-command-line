@@ -59,7 +59,7 @@ while others:
     elif otherAns == "2.5":
         subprocess.call('cls', shell=True)
         os.chdir('re/2.5')
-        os.system('dotnet run program.cs')
+        os.system('dotnet run')
 
         print("\n\nPress enter to continue...")
         input()
@@ -74,7 +74,10 @@ while others:
     elif otherAns == "PswdGenrtr":
         subprocess.call('cls', shell=True)
         os.chdir('re/PswdGenrtr')
-        subprocess.call('python pass.py')
+        try:
+            subprocess.call('python pass.py', shell=False)
+        except:
+            subprocess.call('python pymath.py', shell=True)
 
         print("\n\nPress enter to continue...")
         input()
@@ -128,14 +131,20 @@ if NumGuess:
     time.sleep(3)
 
     os.chdir('re/GuessNum/bin/Debug/net6.0')
-    subprocess.call('guessnum', shell=False)
+    try:
+        subprocess.call('guessnum', shell=False)
+    except:
+        subprocess.call('guessnum', shell=True)
     os.chdir(original_directory)
 
 elif Tetris:
     time.sleep(3)
 
     os.chdir('re/Tetris')
-    subprocess.call('python Tetris.py', shell=False)
+    try:
+        subprocess.call('python Tetris.py', shell=False)
+    except:
+        subprocess.call('python Tetris.py', shell=True)
     os.chdir(original_directory)
 
 elif FlappyBird:

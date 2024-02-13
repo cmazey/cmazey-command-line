@@ -135,6 +135,7 @@ if Agreed:
     time.sleep(0.1)
     Prompt = True
 
+# Main
 while Prompt:
     print("- node")
     time.sleep(0.1)
@@ -336,7 +337,10 @@ if deBug:
             os.chdir(original_directory)
             
             os.chdir('re/node/rere')
-            subprocess.call('node ./nodecmd.js', shell=False)
+            try:
+                subprocess.call('node ./nodecmd.js', shell=False)
+            except:
+                subprocess.call('node ./nodecmd.js', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -377,7 +381,10 @@ if deBug:
             else:
                 time.sleep(0.5)
 
-            subprocess.call('python pycmd.py', shell=False)
+            try:
+                subprocess.call('python pycmd.py', shell=False)
+            except:
+                subprocess.call('python pycmd.py', shell=True)
             f.close()
 
             os.chdir(original_directory)
@@ -397,7 +404,10 @@ if deBug:
             os.chdir(original_directory)
 
             os.chdir('re/math/rere')
-            subprocess.call('dotnet run mathcmd.cs', shell=False)
+            try:
+                subprocess.call('dotnet run mathcmd.cs', shell=False)
+            except:
+                subprocess.call('dotnet run mathcmd.cs', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -416,7 +426,10 @@ if deBug:
             os.chdir(original_directory)
 
             os.chdir('re/others')
-            subprocess.call('python others.py', shell=False)
+            try:
+                subprocess.call('python others.py', shell=False)
+            except:
+                subprocess.call('python others.py', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -555,7 +568,10 @@ if deBugNoLogs:
 
             if dBugg == "node":
                 os.chdir('re/node/rere')
-                subprocess.call('node ./nodecmd.js', shell=False)
+                try:
+                    subprocess.call('node ./nodecmd.js', shell=False)
+                except:
+                    subprocess.call('node ./nodecmd.js', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "help":
@@ -569,13 +585,19 @@ if deBugNoLogs:
 
             elif dBugg == "py":
                 os.chdir('re/py/rere')
-                subprocess.call('python pycmd.py', shell=False)
+                try:
+                    subprocess.call('python pycmd.py', shell=False)
+                except:
+                    subprocess.call('python pycmd.py', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "math":
                 try:
                     os.chdir('re/math/rere')
-                    subprocess.call('dotnet run', shell=False)
+                    try:
+                        subprocess.call('dotnet run', shell=False)
+                    except:
+                        subprocess.call('dotnet run', shell=True)
                     os.chdir(original_directory)
                 except:
                     print("An error has occured while attempting to run the file.")
@@ -589,7 +611,10 @@ if deBugNoLogs:
                     i = i + 1
 
                 os.chdir('re/others')
-                subprocess.call('python others.py', shell=False)
+                try:
+                    subprocess.call('python others.py', shell=False)
+                except:
+                    subprocess.call('python others.py', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "lessons":
@@ -615,7 +640,10 @@ if deBugNoLogs:
             
             elif dBugg == "pymath":
                 os.chdir('re/pymath/re')
-                subprocess.call('python pymath.py', shell=False)
+                try:
+                    subprocess.call('python pymath.py', shell=False)
+                except:
+                    subprocess.call('python pymath.py', shell=True)
                 os.chdir(original_directory)
             
             elif dBugg == "exit":
