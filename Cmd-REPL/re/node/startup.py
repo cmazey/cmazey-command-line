@@ -104,7 +104,7 @@ if Confirming == "i have nodejs installed":
         subprocess.call('node ./nodecmd.js', shell=False)
 
     except:
-        print("Error has been occured while opening Node.JS file. Either package files aren't installed, or NODEJS isn't installed on your window operating system.")
+        print("Error has been occured while opening Node.JS file. Either package files aren't installed, or NODEJS isn't installed on your operating system.")
         input()
 
     print("Heading back to the start menu, please hold...")

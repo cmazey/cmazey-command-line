@@ -556,9 +556,12 @@ if deBugNoLogs:
                 os.chdir(original_directory)
 
             elif dBugg == "math":
-                os.chdir('re/math/rere')
-                subprocess.call('dotnet run mathcmd.cs', shell=False)
-                os.chdir(original_directory)
+                try:
+                    os.chdir('re/math/rere')
+                    subprocess.call('dotnet run', shell=False)
+                    os.chdir(original_directory)
+                except:
+                    print("An error has occured while attempting to run the file.")
 
             elif dBugg == "other":
                 i = 0

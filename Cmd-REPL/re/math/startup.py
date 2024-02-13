@@ -48,13 +48,13 @@ except OSError as e:
     except OSError as e:
         print("mathcmd cannot be located in the bin files.")
         
-        print("Do you want to run mathcmd.cs file? [.NET 6.0 IS REQUIRED] (y/n)")
+        print("Do you want to run the file? [.NET 6.0 IS REQUIRED] (y/n)")
         Confirming = input("-> ")
 
         if Confirming == "y":
             os.chdir(original_directory)
             os.chdir('rere')
-            subprocess.call('dotnet run mathcmd.cs', shell=False)
+            subprocess.call('dotnet run', shell=False)
         else:
             print("Application has been interupted, heading back to the main menu...")
             time.sleep(3)
