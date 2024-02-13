@@ -151,12 +151,18 @@ elif FlappyBird:
     time.sleep(3)
 
     os.chdir('re/FlappyBird')
-    subprocess.call('python fb.py', shell=False)
+    try:
+        subprocess.call('python fb.py', shell=False)
+    except:
+        subprocess.call('python fb.py', shell=True)
     os.chdir(original_directory)
 
 elif petRock:
     os.chdir('re/petRockAdventure')
-    subprocess.call('python petRockA.py', shell=False)
+    try:
+        subprocess.call('python petRockA.py', shell=False)
+    except:
+        subprocess.call('python petRockA.py', shell=True)
     os.chdir(original_directory)
 
 

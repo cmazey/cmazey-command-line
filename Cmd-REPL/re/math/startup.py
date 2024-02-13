@@ -64,5 +64,10 @@ except OSError as e:
 try:
     subprocess.call('mathcmd', shell=False)
 except subprocess.CalledProcessError:
-    print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
+        os.chdir(original_directory)
+        os.chdir('rere')
+        try:
+            subprocess.call('dotnet run', shell=True)
+        except:         
+            print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
 
