@@ -130,11 +130,17 @@ while others:
 if NumGuess:
     time.sleep(3)
 
-    os.chdir('re/GuessNum/bin/Debug/net6.0')
+    os.chdir('re/GuessNum/bin/Release/net6.0')
     try:
         subprocess.call('guessnum', shell=False)
     except:
-        subprocess.call('guessnum', shell=True)
+        os.chdir(original_directory)
+        os.chdir('re/GuessNum')
+        try:
+            subprocess.call('dotnet run', shell=True)
+        except:
+            print("An error has been occured while running this OTHER MODULE. Please report this in Github (32Dhu3q)")
+            input()
     os.chdir(original_directory)
 
 elif Tetris:
