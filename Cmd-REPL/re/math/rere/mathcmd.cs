@@ -1,5 +1,6 @@
 using NAudio.Wave;
 using Spectre.Console;
+string version = "v1.1.5 (PRE v1.41)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -10,15 +11,15 @@ using Spectre.Console;
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
 
-bool basic = false;
-bool crew = false;
+bool basic = false; // True if user give consent to use basic rather than normal.
+bool crew = false; // Only certain crew/cast members can have access to there.
 bool nameChange = false;
-bool basicAns = true;
-bool logAccess = false;
-string name = "[gray]Guest[/]";
-string fname = "";
-string name1 = "Guest";
-string version = "v1.1.5 (PRE v1.39)"; // VERSION
+bool audioAccess = true; // Only false if the start audio cannot be played.
+bool basicAns = true; // Used for while loops while checking if the answer is a number, and it will handle the exception if it's not.
+bool logAccess = false; // Only True if User give consents for logs and/or log file founded if the file was founded in Documents Folder
+string name = "[gray]Guest[/]"; // Full name
+string fname = ""; // First name only
+string name1 = "Guest"; // Full name for basic
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -127,11 +128,20 @@ while (true)
     }
 }
 
-var reader = new Mp3FileReader("Resources\\startUp.mp3");
-var waveOut = new WaveOutEvent();
-waveOut.Init(reader);
-waveOut.Play();
-Thread.Sleep(1000);
+try
+{
+    var reader = new Mp3FileReader("Resources\\startUp.mp3");
+    var waveOut = new WaveOutEvent();
+    waveOut.Init(reader);
+    waveOut.Play();
+    Thread.Sleep(1000);
+}
+catch
+{
+    Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
+    audioAccess = false;
+}
+
 if (basic)
 {
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
@@ -216,7 +226,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
-                            invalidAnsSoundEffect();
+                            invalidAnsSoundEffect(audioAccess);
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -249,7 +259,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -274,7 +284,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -377,7 +387,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
-                            invalidAnsSoundEffect();
+                            invalidAnsSoundEffect(audioAccess);
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -410,7 +420,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -435,7 +445,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -573,7 +583,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
-                            invalidAnsSoundEffect();
+                            invalidAnsSoundEffect(audioAccess);
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -606,7 +616,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -631,7 +641,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -732,7 +742,7 @@ while (cmazeyCalculator)
                         catch
                         {
                             Console.WriteLine("Not a valid answer, please enter a number below:");
-                            invalidAnsSoundEffect();
+                            invalidAnsSoundEffect(audioAccess);
                             Console.Write("-> ");
                             user_input = Console.ReadLine();
                         }
@@ -765,7 +775,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -790,7 +800,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -882,7 +892,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -989,7 +999,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1007,7 +1017,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1025,7 +1035,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1043,7 +1053,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1125,7 +1135,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1297,14 +1307,14 @@ while (cmazeyCalculator)
             }
             int entryNumber = Convert.ToInt32(inputLot);
             dimesAppend = $"Your Number: {entryNumber}";
-            selectSoundEffect();
+            selectSoundEffect(audioAccess);
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
             Console.WriteLine($"\nAnd the winning number is.... {winningNumber}");
             if (entryNumber == winningNumber)
             {
                 Console.WriteLine("Exact match! You win the grand prize of $100,000!");
-                cheerSoundEffect();
+                cheerSoundEffect(audioAccess);
                 pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
@@ -1317,7 +1327,7 @@ while (cmazeyCalculator)
             else
             {
                 Console.WriteLine("No match. Better luck next time!");
-                wompwompSoundEffect();
+                wompwompSoundEffect(audioAccess);
                 pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
@@ -1349,7 +1359,7 @@ while (cmazeyCalculator)
 
             int entryNumber = Convert.ToInt32(lotInput);
             dimesAppend = $"Your Number: {entryNumber}";
-            selectSoundEffect();
+            selectSoundEffect(audioAccess);
             int entryDigitOne = entryNumber / 10;
             int entryDigitTwo = entryNumber % 10;
 
@@ -1360,7 +1370,7 @@ while (cmazeyCalculator)
             if (entryNumber == winningNumber)
             {
                 AnsiConsole.Markup("[green1]Exact match[/]! You win the grand prize of [green1]$100,000![/]\n");
-                cheerSoundEffect();
+                cheerSoundEffect(audioAccess);
                 pennieAppend = "EXACT MATCH! YOU WON $100,000!!!";
                 lotWin++;
             }
@@ -1373,7 +1383,7 @@ while (cmazeyCalculator)
             else
             {
                 AnsiConsole.Markup("[red]No match[/]. Better luck next time!\n");
-                wompwompSoundEffect();
+                wompwompSoundEffect(audioAccess);
                 pennieAppend = "No match, sorry bud...";
                 lotLoss++;
             }
@@ -1418,7 +1428,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -1488,7 +1498,7 @@ while (cmazeyCalculator)
                     catch
                     {
                         Console.WriteLine("Not a valid answer, please enter a number below:");
-                        invalidAnsSoundEffect();
+                        invalidAnsSoundEffect(audioAccess);
                         Console.Write("-> ");
                         user_input = Console.ReadLine();
                     }
@@ -1550,7 +1560,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3195,10 +3205,14 @@ while (cmazeyCalculator)
                     name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
                     fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
                     crew = true;
-                    var random1SoundEffect = new Mp3FileReader("Resources\\umm.mp3");
-                    waveOut.Init(random1SoundEffect);
-                    waveOut.Play();
-                    Thread.Sleep(15000);
+                    if (audioAccess)
+                    {
+                        var random1SoundEffect = new Mp3FileReader("Resources\\umm.mp3");
+                        var waveOut = new WaveOutEvent();
+                        waveOut.Init(random1SoundEffect);
+                        waveOut.Play();
+                        Thread.Sleep(15000);
+                    }
                 }
                 else if (namePrompt == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}")
                 {
@@ -3242,6 +3256,7 @@ while (cmazeyCalculator)
                     fname = namePrompt;
                 }
                 nameChange = false;
+                Console.WriteLine();
             }
         }
     }
@@ -3637,7 +3652,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3665,7 +3680,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     AnsiConsole.MarkupLine("[red]Invalid answer, please try again:[/]");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     binInput = AnsiConsole.Ask<string>("[white]->[/]");
                 }
             }
@@ -3700,7 +3715,7 @@ while (cmazeyCalculator)
                 catch
                 {
                     Console.WriteLine("Not a valid answer, please enter a number below:");
-                    invalidAnsSoundEffect();
+                    invalidAnsSoundEffect(audioAccess);
                     Console.Write("-> ");
                     user_input = Console.ReadLine();
                 }
@@ -3822,7 +3837,7 @@ while (cmazeyCalculator)
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
                         outputFile.WriteLine("-------------------------------------\n");
-                        logSoundEffect();
+                        logSoundEffect(audioAccess);
                     }
                 }
             }
@@ -3846,7 +3861,7 @@ while (cmazeyCalculator)
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
                         outputFile.WriteLine("-------------------------------------\n");
-                        logSoundEffect();
+                        logSoundEffect(audioAccess);
                     }
                 }
                 else
@@ -3892,13 +3907,13 @@ while (cmazeyCalculator)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                         else
                         {
                             Console.WriteLine(checking);
                             inputNum = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                     }
                     else
@@ -3907,13 +3922,13 @@ while (cmazeyCalculator)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                         else
                         {
                             AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                     }
                     break;
@@ -3926,13 +3941,13 @@ while (cmazeyCalculator)
                         {
                             Console.WriteLine($":{checking}");
                             inputNum2 = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                         else
                         {
                             Console.WriteLine(checking);
                             inputNum = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                     }
                     else
@@ -3941,13 +3956,13 @@ while (cmazeyCalculator)
                         {
                             AnsiConsole.MarkupLine($"[blue]{checking}[/]");
                             inputNum2 = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                         else
                         {
                             AnsiConsole.MarkupLine($"[white]{checking}[/]");
                             inputNum = checking;
-                            numCheckSoundEffect();
+                            numCheckSoundEffect(audioAccess);
                         }
                     }
                     break;
@@ -3955,7 +3970,7 @@ while (cmazeyCalculator)
             }
             catch
             {
-                incorrectAnsSoundEffect();
+                incorrectAnsSoundEffect(audioAccess);
                 Console.WriteLine("Invalid Command, please try again.\n");
                 Random random = new();
                 int elseChoice = random.Next(1, 5);
@@ -4061,59 +4076,80 @@ static void answSoundEffect()
     waveOut.Play();
 }
 
-static void incorrectAnsSoundEffect()
+static void incorrectAnsSoundEffect(bool audioAccess)
 {
-    var invalidAns = new Mp3FileReader("Resources\\InvalidAns.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(invalidAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var invalidAns = new Mp3FileReader("Resources\\InvalidAns.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(invalidAns);
+        waveOut.Play();
+    }
 }
 
-static void numCheckSoundEffect()
+static void numCheckSoundEffect(bool audioAccess)
 {
-    var numCheckAns = new Mp3FileReader("Resources\\numCheckNotify.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(numCheckAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var numCheckAns = new Mp3FileReader("Resources\\numCheckNotify.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(numCheckAns);
+        waveOut.Play();
+    }
 }
 
-static void logSoundEffect()
+static void logSoundEffect(bool audioAccess)
 {
-    var logCreatedAns = new Mp3FileReader("Resources\\logsCreated.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(logCreatedAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var logCreatedAns = new Mp3FileReader("Resources\\logsCreated.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(logCreatedAns);
+        waveOut.Play();
+    }
 }
 
-static void invalidAnsSoundEffect()
+static void invalidAnsSoundEffect(bool audioAccess)
 {
-    var invalidAns = new Mp3FileReader("Resources\\PLstryAgain.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(invalidAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var invalidAns = new Mp3FileReader("Resources\\PLstryAgain.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(invalidAns);
+        waveOut.Play();
+    }
 }
 
-static void cheerSoundEffect()
+static void cheerSoundEffect(bool audioAccess)
 {
-    var cheerAns = new Mp3FileReader("Resources\\cheering.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(cheerAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var cheerAns = new Mp3FileReader("Resources\\cheering.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(cheerAns);
+        waveOut.Play();
+    }
 }
 
-static void wompwompSoundEffect()
+static void wompwompSoundEffect(bool audioAccess)
 {
-    var lostAns = new Mp3FileReader("Resources\\lost.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(lostAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var lostAns = new Mp3FileReader("Resources\\lost.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(lostAns);
+        waveOut.Play();
+    }
 }
 
-static void selectSoundEffect()
+static void selectSoundEffect(bool audioAccess)
 {
-    var selectAns = new Mp3FileReader("Resources\\select.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(selectAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var selectAns = new Mp3FileReader("Resources\\select.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(selectAns);
+        waveOut.Play();
+    }
 }
 
