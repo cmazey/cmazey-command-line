@@ -206,7 +206,7 @@ while Prompt:
             time.sleep(5)
 
             os.chdir('re/math')
-            subprocess.call('python startup.py', shell=False)
+            subprocess.call('python startup.py', shell=True)
 
             subprocess.call('cls', shell=True)
             os.chdir(original_directory)
