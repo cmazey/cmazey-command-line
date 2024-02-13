@@ -4068,7 +4068,7 @@ Console.ReadKey();
 Console.WriteLine();
 
 // Sound Effects (via Pixabay)
-static void answSoundEffect()
+static void answSoundEffect(bool audioAccess)
 {
     var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
     var waveOut = new WaveOutEvent();
