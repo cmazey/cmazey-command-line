@@ -66,15 +66,15 @@ string dimesAppend = "";
 string nickelAppend = "";
 string pennieAppend = "";
 string changeAppend = "";
-int year = DateTime.Now.Year;
-int month = DateTime.Now.Month;
-int day = DateTime.Now.Day;
-int minute = DateTime.Now.Minute;
-int hour = DateTime.Now.Hour;
-int second = DateTime.Now.Second;
-int millisecond = DateTime.Now.Millisecond;
+int year = DateTime.Now.Year; // Fetch the current year
+int month = DateTime.Now.Month; // Fetch the current month
+int day = DateTime.Now.Day; // Fetch the current day
+int minute = DateTime.Now.Minute; // Fetch the current minute
+int hour = DateTime.Now.Hour; // Fetch the current hour
+int second = DateTime.Now.Second; // Fetch the current second
+int millisecond = DateTime.Now.Millisecond; // Fetch the current millisecond
 
-string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // Fetch the Document directory
 
 Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
@@ -140,10 +140,13 @@ catch
 {
     Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
     audioAccess = false;
+    Thread.Sleep(3000);
+    Console.Clear();
 }
 
 if (basic)
 {
+    // Basic Title 
     Console.WriteLine("--- CMAZEY CALCULATOR ---");
     Console.WriteLine($"Version: {version}");
 }
@@ -157,6 +160,7 @@ else if (name1 == "Colton M" || name1 == "test")
 }
 else
 {
+    // Used to display my title in a cool way (which was FigletText)
     AnsiConsole.Write(
     new FigletText("CMAZEY CALCULATOR")
     .LeftJustified()
@@ -187,6 +191,7 @@ while (cmazeyCalculator)
         AnsiConsole.Write(new Markup("[gold1]->[/] "));
     }
     string input = Console.ReadLine().ToLower();
+    
     // ADDITION
     if (input == "addition" || input == "+")
     {
@@ -4070,10 +4075,13 @@ Console.WriteLine();
 // Sound Effects (via Pixabay)
 static void answSoundEffect(bool audioAccess)
 {
-    var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(notifyAns);
-    waveOut.Play();
+    if (audioAccess)
+    {
+        var notifyAns = new Mp3FileReader("Resources\\notifySound.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(notifyAns);
+        waveOut.Play();
+    }
 }
 
 static void incorrectAnsSoundEffect(bool audioAccess)
