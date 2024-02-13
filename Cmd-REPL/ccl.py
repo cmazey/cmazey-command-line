@@ -162,7 +162,10 @@ while Prompt:
             time.sleep(5)
 
             os.chdir('re/node')
-            subprocess.call('python startup.py', shell=False)
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                subprocess.call('python startup.py', shell=True)
 
             subprocess.call('cls', shell=True)
             os.chdir(original_directory)
@@ -184,7 +187,10 @@ while Prompt:
             time.sleep(3)
 
             os.chdir('re/py')
-            subprocess.call('python startup.py', shell=False)
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                subprocess.call('python startup.py', shell=True)
 
             subprocess.call('cls', shell=True)
             os.chdir(original_directory)
@@ -206,7 +212,13 @@ while Prompt:
             time.sleep(5)
 
             os.chdir('re/math')
-            subprocess.call('python startup.py', shell=True)
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                try:
+                    subprocess.call('python startup.py', shell=True)
+                except:
+                    print("An issue has been occured, please report this in Github if it keeps persisting. (E84391)")
 
             subprocess.call('cls', shell=True)
             os.chdir(original_directory)
@@ -223,7 +235,10 @@ while Prompt:
         if Confirming == "y":
             subprocess.call('cls', shell=True)
             os.chdir('re/others')
-            subprocess.call('python others.py', shell=False)
+            try:
+                subprocess.call('python others.py', shell=False)
+            except:
+                subprocess.call('python others.py', shell=True)
 
             os.chdir(original_directory)
 
@@ -260,10 +275,12 @@ while Prompt:
         print()
       else:
         print("Prompt Canceled\n")    
+    
     elif ans == "exit":
         print("Thanks for checking out " + '\033[93m' + "Cmazey Command Line! " + '\033[0m')
         time.sleep(3)
         Prompt = False
+   
     else:
         print("Invalid prompt...\n")
 
