@@ -77,10 +77,10 @@ That's it, The project has complied a Debug build, and it should be running the 
 
 ## Accessing Node
 
-When running a `.js` file, there are packages that you would need to install so that it will work out of the box without having any issues. This documentary will explain how you will download the package, and don't worry, it's going to be quick and easy.
+When running a `.js` file, there are packages that you would need to install so that it will work out of the box without having any issues. This documentary will explain how to download the necessary packages, and don't worry, it's going to be quick and easy.
 
 First, we will cd to `node`, and `rere`. 
-> (assuming that you are in the `re` directory, if you aren't in there, then `cd` there first)
+> Assuming that you are in the `Cmd-REPL/re` directory, if you aren't in there, then `cd` there first.
 
 <img title="a title" alt="Alt text" src="/images/image9.png">
 
