@@ -1,4 +1,4 @@
-# Cmazey Calculator: Google Shell Documentary
+# Cmazey Command Line: Google Shell Documentary
 
 This documentary is going to be quick, and short. So let's begin right now. So, after the virtual machine is done forking the project. Before you can access more of my code, there are a few things to do. So we are going to use the terminal. 
 
@@ -21,12 +21,12 @@ python ccl.py
 That's all that you have to do. If you are experiencing some issues, please let me know in my discord server, or open an issue request.
 
 
-## The Manual Way
+# The Manual Way
 > Directory is a fancy terminal-related term for folder
 
 This is optional, but if you prefer to manually direct yourself to the file, and run it yourself, then you can, but you should get some prior experience with the terminal, so let me teach you some cool tricks.
 
-First and only trick I will teach you is `ls` which is used to see what's inside the directory.
+The first and only trick I will teach you is `ls` which is used to see what's inside the directory.
 > Blue indicates that it's a folder
 <img title="a title" alt="Alt text" src="/images/image4.png">
 
@@ -37,9 +37,10 @@ So that's all that you would need experience-wise. Anyways, let's use the `cd` c
 ```
 cd re
 ```
+> If it doesn't work, then you weren't in the Cmd-REPL directory in the first place.
 
-When you are in the re file, then run the `ls` command, and see what directory, and/or files are in.
-> If it doesn't work, then you weren't in the Cmd-REPL directory in the first place
+
+When you are in the `re` directory, then run the `ls` command, and see what directory, and/or files are in.
 
 <img title="a title" alt="Alt text" src="/images/image6.png">
 
@@ -52,7 +53,7 @@ When you are in the re file, then run the `ls` command, and see what directory, 
 
 
 
-### Accessing Cmazey Calculator
+## Accessing Cmazey Calculator
 
 Since you are already in the `re` directory. Let cd to 2 directories, so we will be using `/` to navigate to 2 directories. So let's `cd` to  `math`, and `rere`
 
@@ -74,8 +75,7 @@ dotnet run
 That's it, The project has complied a Debug build, and it should be running the file now. But if it somehow freezes, and it stops responding. Then press `CTRL + C`. This will terminate the command, and you can run the command again. If the issue persists. Then please let me know in my discord server, or create a new issue request.
 
 
-
-### Accessing Node
+## Accessing Node
 
 When running a `.js` file, there are packages that you would need to install so that it will work out of the box without having any issues. This documentary will explain how you will download the package, and don't worry, it's going to be quick and easy.
 
