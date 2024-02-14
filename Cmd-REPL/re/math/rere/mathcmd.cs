@@ -138,7 +138,7 @@ try
 }
 catch
 {
-    Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
+    Console.WriteLine("There seems to be an issue playing the sound effects. AUDIO DISABLED");
     audioAccess = false;
     Thread.Sleep(3000);
     Console.Clear();
