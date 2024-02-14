@@ -109,5 +109,5 @@ node ./nodecmd.js
 > If you are having some issues running the file. Then double-check that you are in the same directory, and you have installed the necessary packages. Also, use the `ls` command to see what files are in the directory that you are currently in.
 
 
-> *Still working on it. Last updated 09:38 AM EST, 2/14/2024*
+*Still working on it. Last updated 09:38 AM EST, 2/14/2024*
 
