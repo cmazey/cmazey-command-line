@@ -1,8 +1,6 @@
 # CMAZEY COMMAND LINE
 > Updating README.md... It may take a while.
 
-I have revamped this amazing custom Command Line or REPL to make it easier for all, and it's all for fun, I hope you enjoy it!
-  
   [![GitHub](https://img.shields.io/github/license/cmazey/cmazey-command-line?style=plastic)](https://github.com/cmazey/cmazey-command-line/blob/main/license)
   [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgit.coltondogportraits.com%2F)
   [![Twitter Follow](https://img.shields.io/twitter/follow/cmazeyRBLX?style=social)](https://twitter.com/intent/follow?screen_name=cmazeyRBLX)
@@ -17,6 +15,8 @@ I have revamped this amazing custom Command Line or REPL to make it easier for a
   [![GitHub language count](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line?style=plastic)](https://img.shields.io/github/languages/count/cmazey/cmazey-command-line)
   [![Discord](https://img.shields.io/discord/1013992651676205128)](https://discord.gg/MP6DhTjzfj)
   [![CodeFactor](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/badge/main)](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/overview/main)
+
+**Cmazey Command Line** is a project that I started back in 2022 during my Freshman year in High School. This project includes a lot more projects that I have made which are `node command line` which is a custom command line with my commands that I made while I was learning Javascript. `py command line` is a custom command line that I made during early 2023 while I was learning python, and finally. Cmazey Calculator which is a terminal calculator that I made for fun at first, then it turned into an AP Project for my Junior year. Cmazey Command Line also includes smaller projects which are stored in `others`, and it also comes with `lessons` which store the lessons that I had to do during my Freshman and Junior years. If you are interested in trying out Cmazey Command-Line. Then head to my release page, or you can fork the entire project using Google Cloud Shell.
 
 ### FEATURES
 > Coming soon
