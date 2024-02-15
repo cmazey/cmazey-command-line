@@ -11,7 +11,7 @@ cd Cmd-REPL
 ```
 <img title="a title" alt="Alt text" src="/images/image2.png">
 
-After that, you will type in `python`, and then `ccl.py`. This will open the `ccl.py` file using Python. Python is already pre-installed, and it also includes Node.JS, C++, and C#, so there's no need to preinstall those.
+After that, you will type in `python`, and then `ccl.py`. This will open the `ccl.py` file using Python. Python is already pre-installed, and it also includes Node.JS and C#, so there's no need to preinstall those.
 
 ```
 python ccl.py
@@ -45,7 +45,7 @@ When you are in the `re` directory, then run the `ls` command, and see what dire
 <img title="a title" alt="Alt text" src="/images/image6.png">
 
 - `math` directory stores Cmazey Calculator aka `mathcmd.cs` file.
-- `py` directory stores  `pycmd.py` file which is referred to as CCL: py.
+- `py` directory stores `pycmd.py` file which is referred to as CCL: py.
 - `node` stores  `nodecmd.js` file which is referred as CCL: node.
 - `other` stores some additional small projects that I did.
 - `lesson` stores some lessons that I did during my freshman, and Junior year.
@@ -77,12 +77,16 @@ That's it, The project has complied a Debug build, and it should be running the 
 
 ## Accessing Node
 
-When running a `.js` file, there are packages that you would need to install so that it will work out of the box without having any issues. This documentary will explain how to download the necessary packages, and don't worry, it's going to be quick and easy.
+When running a `.js` file, there are packages that you would need to install so that it will work out of the box without having any issues. This documentary will explain how to download the necessary packages and don't worry, it's going to be quick and easy.
 
 First, we will cd to `node`, and `rere`. 
 > Assuming that you are in the `Cmd-REPL/re` directory, if you aren't in there, then `cd` there first.
 
 <img title="a title" alt="Alt text" src="/images/image9.png">
+
+```
+cd node/rere
+```
 
 Now that you are in the `rere` directory for `node`. We will install the necessary packages. If you already done that, then you can skip this part.
 
@@ -98,7 +102,7 @@ npm install readline-sync
 npm install colors
 ```
 
-After the necessary packages are installed. We are going to run the `nodecmd.js` file. To run the file, we have to type out `node` then we will add `./` which is telling the shell that we want to run a Javascript file in the same directory, and then we will type out the file name.
+After the necessary packages are installed. We are going to run the `nodecmd.js` file. To run the file, we have to type out `node` then we will add `./` which tells the shell that we want to run a Javascript file in the same directory, and then we will type out the file name.
 
 <img title="a title" alt="Alt text" src="/images/image11.png">
 
@@ -109,5 +113,5 @@ node ./nodecmd.js
 > If you are having some issues running the file. Then double-check that you are in the same directory, and you have installed the necessary packages. Also, use the `ls` command to see what files are in the directory that you are currently in.
 
 
-*Still working on it. Last updated 09:38 AM EST, 2/14/2024*
+*Still working on it. Last updated 06:02 PM EST, 2/15/2024*
 
