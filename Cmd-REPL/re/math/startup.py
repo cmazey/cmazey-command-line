@@ -47,7 +47,7 @@ except OSError as e:
     except OSError as e:
         print("mathcmd cannot be located in the bin files.")
         
-        print("Do you want to run the file? [.NET 6.0 IS REQUIRED] (y/n)")
+        print("Do you want to run the file? [.NET 6.0+ IS REQUIRED] (y/n)")
         Confirming = input("-> ")
 
         if Confirming == "y":
@@ -69,5 +69,7 @@ except:
         try:
             subprocess.call('dotnet run', shell=True)
         except:         
-            print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
+            print("There is an error running the file. Aborting...")
+
+print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
 

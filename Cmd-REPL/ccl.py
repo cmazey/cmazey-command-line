@@ -118,6 +118,7 @@ while termsNotice:
         os.chdir('re/others/re/um')
         try:
             subprocess.call('noeula.vbs', shell=True)
+            print("EULA NOT ACCEPTED, terminating program...")
         except:
             print("EULA NOT ACCEPTED, terminating program...")
             time.sleep(5)
