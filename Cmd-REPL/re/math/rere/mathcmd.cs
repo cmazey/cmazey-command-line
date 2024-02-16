@@ -1,6 +1,6 @@
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.42)"; // VERSION
+string version = "v1.1.5 (PRE v1.43)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -138,10 +138,23 @@ try
 }
 catch
 {
-    Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
-    audioAccess = false;
-    Thread.Sleep(3000);
-    Console.Clear();
+    try
+    {
+        Console.WriteLine("Linux Shell Detected. Sound Effect DISABLED");
+        Thread.Sleep(3000);
+        var reader = new Mp3FileReader("Resources//startUp.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(reader);
+        waveOut.Play();
+        Console.Clear();
+        audioAccess = false;
+    }
+    catch
+    {
+        Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
+        Thread.Sleep(3000);
+        Console.Clear();
+    }
 }
 
 if (basic)
