@@ -147,7 +147,6 @@ catch
         waveOut.Init(reader);
         waveOut.Play();
         Console.Clear();
-        audioAccess = false;
     }
     catch
     {
@@ -155,6 +154,7 @@ catch
         Thread.Sleep(3000);
         Console.Clear();
     }
+    audioAccess = false;
 }
 
 if (basic)
