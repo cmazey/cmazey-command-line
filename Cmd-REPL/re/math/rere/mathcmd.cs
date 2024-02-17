@@ -1,6 +1,7 @@
+using System.Reflection;
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.43)"; // VERSION
+string version = "v1.1.5 (PRE v1.45)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -75,15 +76,27 @@ int second = DateTime.Now.Second; // Fetch the current second
 int millisecond = DateTime.Now.Millisecond; // Fetch the current millisecond
 
 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // Fetch the Document directory
+string curntDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+// string shellPath = Environment.GetEnvironmentVariable("HOME");
 
 Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
 Thread.Sleep(3000);
+
+// Looks for 'CCLResult.txt' in your Documents Folder
 if (File.Exists($"{path}\\CCLResult.txt"))
 {
     Console.WriteLine($"RESULT LOCATED: '{path}\\CCLResult.txt'");
     logAccess = true;
     Thread.Sleep(2000);
 }
+
+// if (File.Exists($"{shellPath}/CCLResult.txt"))
+// {
+//     Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
+//     logAccess = true;
+//     Thread.Sleep(2000);
+// }
+
 Console.Clear();
 
 while (true)
@@ -3907,6 +3920,22 @@ while (cmazeyCalculator)
             inputNum2 = 0;
             AnsiConsole.MarkupLine("[white]Num2:[/] [green1]CLEARED[/]\n");
             answSoundEffect(audioAccess);
+        }
+    }
+    // Current Path/Directory
+    else if (input == "currentpath" || input == "crntpath" || input == "dir")
+    {
+        if (basic)
+        {
+            Console.WriteLine($"\nDocument Path: {path}");
+            // Console.WriteLine($"Shell Path: {shellPath}");
+            Console.WriteLine($"Current Path: {curntDir}\n");
+        }
+        else
+        {
+            AnsiConsole.MarkupLine($"\n[white]Document Path:[/] [green1]{path}[/]");
+            // AnsiConsole.MarkupLine($"[white]Shell Path:[/] [green1]{shellPath}[/]");
+            AnsiConsole.MarkupLine($"[white]Current Path:[/] [green1]{curntDir}[/]\n");
         }
     }
     // INVALID RESPONSE
