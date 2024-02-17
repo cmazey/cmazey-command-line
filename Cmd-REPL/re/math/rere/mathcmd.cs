@@ -1,7 +1,7 @@
 using System.Reflection;
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.45)"; // VERSION
+string version = "v1.1.5 (PRE v1.46)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -547,7 +547,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- Multiplication (x)");
         Console.WriteLine("- Division (/)");
         Console.WriteLine("- LineSlope (ls)");
-        Console.WriteLine("- HToI");
+        Console.WriteLine("- InchesToHeight (HToI\\IToH)");
         Console.WriteLine("- EightBall (8ball)");
         Console.WriteLine("- Lottery (lot)");
         Console.WriteLine("- LotteryResult (lotResult)");
@@ -845,6 +845,7 @@ while (cmazeyCalculator)
         }
         else
         {
+            AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
             if (inputNum > 0)
             {
                 if (inputNum2 > 0)
@@ -874,7 +875,6 @@ while (cmazeyCalculator)
             }
             else
             {
-                AnsiConsole.MarkupLine($"[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] {name}\n");
                 var div1 = AnsiConsole.Prompt(
                 new TextPrompt<double>("[green]?[/] / ? = ? -> ")
                 .PromptStyle("blue")
@@ -1148,7 +1148,7 @@ while (cmazeyCalculator)
         ansPrint = $"v: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
     }
     //HeightToInches
-    else if (input == "htoi" || input == "itoh")
+    else if (input == "inchestoheight" || input == "htoi" || input == "itoh")
     {
         Console.WriteLine("\n----------------------------------------------\n");
         titleAppend = "CMAZEY CALCULATOR: INCHES TO HEIGHT";
@@ -3185,7 +3185,6 @@ while (cmazeyCalculator)
                     name = "[darkgoldenrod]Colton Mazey[/]";
                     name1 = "Colton M";
                     fname = "Colton";
-                    crew = true;
                 }
                 else if (namePrompt == $"{ewqq}{cakoe}{asdc}{lijwq}")
                 {
