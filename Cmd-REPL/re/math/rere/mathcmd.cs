@@ -1,7 +1,7 @@
 using System.Reflection;
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.46)"; // VERSION
+string version = "v1.1.5 (PRE v1.47)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -3863,7 +3863,7 @@ while (cmazeyCalculator)
                 {
                     Console.WriteLine($"LOG ARE ENABLED, Logs/Results will be saved in '{path}'");
                     logAccess = true;
-                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLResult.txt"), true))
                     {
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
@@ -3887,7 +3887,7 @@ while (cmazeyCalculator)
                     AnsiConsole.MarkupLine("[green1]LOGS ARE ENABLED[/]");
                     AnsiConsole.MarkupLine($"[white]Logs will be saved in '[green1]{path}[/]'[/]\n");
                     logAccess = true;
-                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLRESULT.txt"), true))
+                    using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLResult.txt"), true))
                     {
                         outputFile.WriteLine("----- CMAZEY CALCULATOR RESULTS -----");
                         outputFile.WriteLine($"---------- Name: {name1} --------------");
