@@ -572,6 +572,7 @@ while (cmazeyCalculator)
             Console.WriteLine("- Little Shop of Horrors (play)");
         }
         Console.WriteLine("- numcheck (int)");
+        Console.WriteLine("- CurrentPath (CrntPath\\Dir)");
         Console.WriteLine("- Exit\n");
         Console.Beep();
     }
