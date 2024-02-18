@@ -3176,7 +3176,7 @@ while (cmazeyCalculator)
             if (nameChange)
             {
                 var namePrompt = AnsiConsole.Ask<string>("\nWhat's your [green]name[/]?").ToLower();
-                
+
                 if (namePrompt == "colton" || namePrompt == "colton m" || namePrompt == "colton mazey")
                 {
                     var nameCheck = AnsiConsole.Ask<string>("[white]Are you Colton Mazey?[/] [green1]<y/n>[/] -> ").ToLower();
@@ -3222,7 +3222,7 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine("\nNAME AUTOCORRECTED: Nolan Meyer");
                         Console.WriteLine("\\friend");
-                        name = "[darkslategray3]Nolan Meyer[/]";
+                        name = "[darkred]Nolan Meyer[/]";
                         name1 = "Nolan M";
                         fname = "Nolan";
                     }
@@ -3328,7 +3328,7 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine($"\nNAME AUTOCORRECTED: {c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}");
                         Console.WriteLine("\\friend");
-                        name = $"[darkgoldenrod]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
+                        name = $"[darkorange]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
                         name1 = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}";
                         fname = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc}";
                     }
