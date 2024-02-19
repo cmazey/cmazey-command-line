@@ -1,7 +1,7 @@
 using System.Reflection;
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.48)"; // VERSION
+string version = "v1.1.5 (PRE v1.49)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -18,9 +18,11 @@ bool nameChange = false;
 bool audioAccess = true; // Only false if the start audio cannot be played.
 bool basicAns = true; // Used for while loops while checking if the answer is a number, and it will handle the exception if it's not.
 bool logAccess = false; // Only True if User give consents for logs and/or log file founded if the file was founded in Documents Folder
+bool autoNameCheck = false;
 string name = "[gray]Guest[/]"; // Full name
 string fname = ""; // First name only
 string name1 = "Guest"; // Full name for basic
+string autoNameInput = "";
 int lotWin = 0;
 int lotLoss = 0;
 int i = 0;
@@ -124,10 +126,20 @@ while (true)
     {
         Console.Write("Enter a name: ");
         string nameInput = Console.ReadLine();
-        name = nameInput;
+        name = $"[white]{nameInput}[/]";
         name1 = nameInput;
         fname = nameInput;
         Console.WriteLine("Name Changed Confirmed!");
+        Thread.Sleep(1000);
+        Console.Clear();
+    }
+    else if (optionInput == "name -auto" || optionInput == "name -a")
+    {
+        Console.Write("Enter a name: ");
+        string nameInput = Console.ReadLine().ToLower();
+        autoNameInput = nameInput;
+        Console.WriteLine("Name Changed Confirmed! USR CONFIRMED: autocorrect");
+        autoNameCheck = true;
         Thread.Sleep(1000);
         Console.Clear();
     }
@@ -141,6 +153,103 @@ while (true)
     }
 }
 
+// If user type in 'name -auto'. It will check, and auto correct the name if founded in database
+if (autoNameCheck)
+{
+    if (autoNameInput == "colton" || autoNameInput == "colton m" || autoNameInput == "colton mazey")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Colton Mazey");
+        name = "[darkgoldenrod]Colton Mazey[/]";
+        name1 = "Colton M";
+        fname = "Colton";
+    }
+    else if (autoNameInput == $"{ewqq}{cakoe}{asdc}{lijwq}" || autoNameInput == "andy s" || autoNameInput == "andy scott")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Andy Scott");
+        name = "[darkgoldenrod]Andy Scott[/]";
+        name1 = "Andy S";
+        fname = "Andy";
+    }
+    else if (autoNameInput == $"{cakoe}{kewd}{ciako}{ewqq}{cakoe}" || autoNameInput == "nolan m" || autoNameInput == "nolan meyer")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Nolan Meyer");
+        name = "[darkred]Nolan Meyer[/]";
+        name1 = "Nolan M";
+        fname = "Nolan";
+    }
+    else if (autoNameInput == $"{oeda}randon" || autoNameInput == $"{oeda}randon r" || autoNameInput == $"{oeda}randon reed")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Brandon Reed");
+        name = "[purple]Brandon Reed[/]";
+        name1 = "Brandon R";
+        fname = "Brandon";
+        crew = true;
+    }
+    else if (autoNameInput == $"{oeda}raeden" || autoNameInput == $"{oeda}raeden b" || autoNameInput == $"{oeda}raeden barker")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Braeden Barker");
+        name = "[blue]Braeden Barker[/]";
+        name1 = "Braeden B";
+        fname = "Braeden";
+        crew = true;
+
+    }
+    else if (autoNameInput == $"{kewd}{skmkw}{smcd}{cakoe}" || autoNameInput == "owen k" || autoNameInput == $"owen k{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: {ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}");
+        name = $"[darkgoldenrod]{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}[/]";
+        name1 = $"{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}";
+        fname = $"{ckwqo}{skmkw}{smcd}{cakoe}";
+    }
+    else if (autoNameInput == $"{dokd}{smcd}{ciako}{smcd}{cakoe}" || autoNameInput == $"h{smcd}le{cakoe} g" || autoNameInput == $"h{smcd}le{cakoe} ge{dkoq}{dkoq}i{fokcao}y")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: {dokd}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
+        name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
+        name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
+        fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
+        crew = true;
+    }
+    else if (autoNameInput == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}" || autoNameInput == "david b" || autoNameInput == $"david b{eiiwq}{dkoq}{okdq}{smcd}")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: {c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}");
+        name = $"[darkorange]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
+        name1 = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}";
+        fname = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc}";
+    }
+    else if (autoNameInput == $"{caokw}{smcd}{ewqq}{cakoe}" || autoNameInput == $"s{smcd}{ewqq}{cakoe} {c9oqa}")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: {caokw}{smcd}{ewqq}{cakoe} {c9oqa}");
+        name = $"[darkgoldenrod]{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}[/]";
+        name1 = $"{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}";
+        fname = $"{jiweq}{smcd}{ewqq}{cakoe}";
+    }
+    else if (autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd}" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} g" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} gray")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: {okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}");
+        name = $"[darkgoldenrod]{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}[/]";
+        name1 = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}";
+        fname = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd}";
+    }
+    else if (autoNameInput == $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}")
+    {
+        Console.WriteLine($"NAME AUTOCORRECTED: Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}");
+        name = $"[darkgoldenrod]Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
+        name1 = $"Anthony {rifkoa}";
+        fname = $"Anthony";
+    }
+    else
+    {
+        name = $"[white]{autoNameInput}[/]";
+        name1 = autoNameInput;
+        fname = autoNameInput;
+        Console.WriteLine($"NAME NOT FOUND IN DATA: DEFAULT: {name1}");
+    }
+    Thread.Sleep(2000);
+    autoNameCheck = false;
+    Console.Clear();
+}
+
+// Play the intro sound effect (With Exceptions)
 try
 {
     var reader = new Mp3FileReader("Resources\\startUp.mp3");
@@ -3251,7 +3360,7 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine("\nNAME AUTOCORRECTED: Brandon Reed");
                         Console.WriteLine("\\friend");
-                        name = "[darkgoldenrod]Brandon Reed[/]";
+                        name = "[purple]Brandon Reed[/]";
                         name1 = "Brandon R";
                         fname = "Brandon";
                         crew = true;
@@ -3271,7 +3380,7 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine("\nNAME AUTOCORRECTED: Braeden Barker");
                         Console.WriteLine("\\friend");
-                        name = "[darkgoldenrod]Braeden Barker[/]";
+                        name = "[blue]Braeden Barker[/]";
                         name1 = "Braeden B";
                         fname = "Braeden";
                         crew = true;
@@ -3397,9 +3506,9 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine($"\nNAME AUTOCORRECTED: {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}");
                         Console.WriteLine("\\CS Teacher");
-                        name = $"[darkgoldenrod]{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
-                        name1 = $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}";
-                        fname = $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}";
+                        name = $"[darkgoldenrod]Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
+                        name1 = $"Anthony {rifkoa}";
+                        fname = $"Anthony";
                     }
                     else
                     {
