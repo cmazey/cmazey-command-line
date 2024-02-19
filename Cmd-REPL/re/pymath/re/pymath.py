@@ -13,7 +13,11 @@ document_path = os.path.expanduser('~/Documents')
 # I hope you enjoy this, but don't forget, this is the most basic version for a 'terminal calculator'.
 # Anyways, here's my useless code, and have a great day/night/evening etc!
 
+print("Loading Appli: Cmazey Pylicator")
+time.sleep(3)
 os.system('cls')
+
+time.sleep(2)
 print("------- CMAZEY PYLICATOR -------")
 print("Type '/help' to see all available commands!\n")
 
