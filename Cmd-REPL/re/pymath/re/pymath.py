@@ -28,24 +28,22 @@ while cmazeyPylicator:
                 num1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input(f"{num1} + [?] = ? -> ")
         while usrTest:
             try:
                 num2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         numTotal = num1+num2
-        print(f"{num1} + {num2} = {numTotal}")
+        print(f"\n{num1} + {num2} = {numTotal}")
         print("\n---\n")
     # Help
     elif CPinput == "/help" or CPinput == "help":
         print("\n- Addition (+)")
         print("- Subtraction (-)")
-        print("- Multiplication (x*)")
+        print("- Multiplication (x\\*)")
         print("- Division (/)")
         print("- InchesToHeight (IToH)")
         print("- LineSlope (ls)")
@@ -59,16 +57,14 @@ while cmazeyPylicator:
                 num1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input(f"{num1} - [?] = ? -> ")
         while usrTest:
             try:
                 num2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         numTotal = num1 - num2
         print(f"{num1} - {num2} = {numTotal}")
         print("\n---\n")
@@ -81,16 +77,14 @@ while cmazeyPylicator:
                 num1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input(f"{num1} x [?] = ? -> ")
         while usrTest:
             try:
                 num2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         numTotal = num1 * num2
         print(f"{num1} x {num2} = {numTotal}")
         print("\n---\n")
@@ -103,16 +97,14 @@ while cmazeyPylicator:
                 num1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input(f"{num1} / [?] = ? -> ")
         while usrTest:
             try:
                 num2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         numTotal = num1/num2
         print(f"{num1} / {num2} = {numTotal}")
         print("\n---\n")
@@ -125,8 +117,7 @@ while cmazeyPylicator:
                 num1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         foot = int(num1 / 12)
         inches = num1 % 12
         print(f"{foot}ft, {inches}in")
@@ -140,35 +131,33 @@ while cmazeyPylicator:
                 x1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input("y1: ")
         while usrTest:
             try:
                 y1 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input("x2: ")
         while usrTest:
             try:
                 x2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         usrInput = input("y2: ")
         while usrTest:
             try:
                 y2 = int(usrInput)
                 break
             except:
-                print("Invalid input, please try again...")
-                usrInput = input("-> ")
+                usrInput = input("Invalid input, please try again -> ")
         slope = (y2-y1)/(x2-x1)
         print(f"({x1}, {y1}) ({x2}, {y2}) == {slope}")
         print("\n---\n")
+    #
+
     # More Commands Coming soon
     
     # exit
