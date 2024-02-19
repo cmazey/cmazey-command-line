@@ -1140,13 +1140,23 @@ while (cmazeyCalculator)
     //VERSION
     else if (input == "version")
     {
-        titleAppend = "-- Version --";
         Console.WriteLine($"\nVersion: {version}");
         Console.WriteLine($"Name: {name1}\n");
-        Thread.Sleep(1000);
+        if (name1 == "Colton M" || name1 == "colton m")
+        {
+            titleAppend = "-- Version --";
+            ansPrint = $"v: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
+        }
         Console.Beep();
-        ansPrint = $"v: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
     }
+    //VERSION logged
+    else if (input == "version --log")
+    {
+        titleAppend = "-- Version --";
+        ansPrint = $"[USR REQUEST]\nv: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
+        Console.Beep();
+        Console.WriteLine();
+    }  
     //HeightToInches
     else if (input == "inchestoheight" || input == "htoi" || input == "itoh")
     {
