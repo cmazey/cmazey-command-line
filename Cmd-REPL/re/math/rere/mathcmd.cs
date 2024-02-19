@@ -101,6 +101,7 @@ if (File.Exists($"{path}\\CCLResult.txt"))
 
 Console.Clear();
 
+// Startup Menu (Choose beteeen basic or normal and set a name(use 'name -a' for autocorrect name if in database))
 while (true)
 {
     Console.WriteLine("Choose an option below:");
@@ -237,6 +238,13 @@ if (autoNameCheck)
         name1 = $"Anthony {rifkoa}";
         fname = $"Anthony";
     }
+    else if (autoNameInput == "rusto")
+    {
+        Console.WriteLine("NAME AUTOCORRECTED: Rusto");
+        name = "[yellow]Rusto[/]";
+        name1 = "Rusto";
+        fname = "Rusto";
+    }
     else
     {
         name = $"[white]{autoNameInput}[/]";
@@ -278,7 +286,7 @@ catch
     }
     audioAccess = false;
 }
-
+// Title/Version
 if (basic)
 {
     // Basic Title 
@@ -302,9 +310,29 @@ else
     .Color(Color.Red));
     AnsiConsole.Markup($"[yellow]{version}[/]");
 }
+// Help Recommendation
 if (basic)
 {
-    Console.WriteLine("\nType /help to show all the available commands!");
+    if (name1 == "Guest")
+    {
+        Console.WriteLine("Type /help to show all the available commands!");
+    }
+    else
+    {
+        if (hour >= 0 && hour < 12)
+        {
+            Console.Write($"\nGood Morning, {name1}! ");
+        }
+        else if (hour >= 12 && hour < 18)
+        {
+            Console.Write($"\nGood Afternoon, {name1}! ");
+        }
+        else
+        {
+            Console.Write($"\nGood Evening, {name1}! ");
+        }
+        Console.WriteLine("Type /help to show all the available commands!");
+    }
 }
 else if (name1 == "Colton M" || name1 == "test")
 {
@@ -312,8 +340,28 @@ else if (name1 == "Colton M" || name1 == "test")
 }
 else
 {
-    AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
+    if (name == "[gray]Guest[/]")
+    {
+        AnsiConsole.MarkupLine("\n[white]Type [green1]/help[/] to show all the available commands![/]");
+    }
+    else
+    {
+        if (hour >= 0 && hour < 12)
+        {
+            AnsiConsole.Markup($"\n[white]Good Morning, {name}![/] ");
+        }
+        else if (hour >= 12 && hour < 18)
+        {
+            AnsiConsole.Markup($"\n[white]Good Afternoon, {name}![/] ");
+        }
+        else
+        {
+            AnsiConsole.Markup($"\n[white]Good Evening, {name}![/] ");
+        }
+        AnsiConsole.MarkupLine("[white]Type [green1]/help[/] to show all the available commands![/]");
+    }
 }
+// Main Content
 bool cmazeyCalculator = true;
 while (cmazeyCalculator)
 {
@@ -3509,6 +3557,25 @@ while (cmazeyCalculator)
                         name = $"[darkgoldenrod]Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
                         name1 = $"Anthony {rifkoa}";
                         fname = $"Anthony";
+                    }
+                    else
+                    {
+                        Console.WriteLine($"NAME CHANGED: {namePrompt}");
+                        name = namePrompt;
+                        name1 = namePrompt;
+                        fname = namePrompt;
+                    }
+                }
+                else if (namePrompt == "rusto")
+                {
+                    var nameCheck = AnsiConsole.Ask<string>("[white]Are you Rusto?[/] [green1]<y/n>[/] -> ").ToLower();
+                    if (nameCheck == "y")
+                    {
+                        Console.WriteLine($"\nNAME AUTOCORRECTED: Rusto");
+                        Console.WriteLine("\\Friend");
+                        name = "[yellow]Rusto[/]";
+                        name1 = "Rusto";
+                        fname = "Rusto";
                     }
                     else
                     {
