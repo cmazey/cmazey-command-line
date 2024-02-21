@@ -266,19 +266,19 @@ try
     waveOut.Play();
     Thread.Sleep(1000);
 }
-catch
+catch // It would mainly catch when it's happening on a Linux machine (E.G. Cloud Shell/Linux Distros/etc)
 {
     try
     {
         Console.WriteLine("Linux Shell Detected. Sound Effect DISABLED");
         Thread.Sleep(3000);
-        var reader = new Mp3FileReader("Resources//startUp.mp3");
+        var reader = new Mp3FileReader("Resources/startUp.mp3");
         var waveOut = new WaveOutEvent();
         waveOut.Init(reader);
         waveOut.Play();
         Console.Clear();
     }
-    catch
+    catch // The try wouldn't work either way, but it's there if it somehow works
     {
         Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
         Thread.Sleep(3000);
