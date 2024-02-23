@@ -1478,6 +1478,10 @@ while (cmazeyCalculator)
         quarterAppend = $"Winning Number: {winningNumber}";
         if (basic)
         {
+            if (name1 == "Colton M" || name1 == "test")
+            {
+                Console.WriteLine($"--- DEBUG ---\n-- Wnnm #{winningNumber} --\n---------------\n");
+            }
             Console.Write("Enter your lottery number (0 - 99): ");
             string inputLot = Console.ReadLine();
             while (basicAns)
@@ -4280,7 +4284,7 @@ while (cmazeyCalculator)
         var exampTable = new Table();
         exampTable.AddColumn($"[lightskyblue1]{exnum1} + {exnum2} =[/] [yellow]{exnum1 + exnum2}[/]");
         AnsiConsole.Write(exampTable);
-        Console.WriteLine("\n----------------------------------------------\n---");
+        Console.WriteLine("\n----------------------------------------------\n---Scroll up for more info ^^^");
     }
     // subtraction -h
     else if (input == "subtraction -h" || input == "subtraction --help" || input == "- -h" || input == "- --help")
@@ -4314,7 +4318,7 @@ while (cmazeyCalculator)
         var exampTable = new Table();
         exampTable.AddColumn($"[lightskyblue1]{exnum1} - {exnum2} =[/] [yellow]{exnum1 - exnum2}[/]");
         AnsiConsole.Write(exampTable);
-        Console.WriteLine("\n----------------------------------------------\n---");
+        Console.WriteLine("\n----------------------------------------------\n---Scroll up for more info ^^^");
     }
     // Multiplication -h
     else if (input == "multiplication -h" || input == "multiplication --help" || input == "x -h" || input == "x --help")
@@ -4348,7 +4352,7 @@ while (cmazeyCalculator)
         var exampTable = new Table();
         exampTable.AddColumn($"[lightskyblue1]{exnum1} x {exnum2} =[/] [yellow]{exnum1 * exnum2}[/]");
         AnsiConsole.Write(exampTable);
-        Console.WriteLine("\n----------------------------------------------\n---");
+        Console.WriteLine("\n----------------------------------------------\n---Scroll up for more info ^^^");
     }
     // division -h
     else if (input == "division -h" || input == "division --help" || input == "/ -h" || input == "/ --help")
@@ -4382,7 +4386,7 @@ while (cmazeyCalculator)
         var exampTable = new Table();
         exampTable.AddColumn($"[lightskyblue1]{exnum1} / {exnum2} =[/] [yellow]{exnum1 / exnum2}[/]");
         AnsiConsole.Write(exampTable);
-        Console.WriteLine("\n----------------------------------------------\n---");
+        Console.WriteLine("\n----------------------------------------------\n---Scroll up for more info ^^^");
     }
     // change -h
     else if (input == "change -h" || input == "change --help")
@@ -4406,7 +4410,7 @@ while (cmazeyCalculator)
         Console.WriteLine($"Nickels: {Nickels}");
         Console.WriteLine($"Pennies: {Pennies}");
         Console.WriteLine("\n----------------------------------------------");
-        Console.WriteLine("---");
+        Console.WriteLine("---Scroll up for info ^^^");
     }
     // Line Slope -h
     else if (input == "lineslope -h" || input == "lineslope --help" || input == "ls -h" || input == "ls --help")
@@ -4416,6 +4420,7 @@ while (cmazeyCalculator)
         Console.WriteLine("-- DEFINITION --");
         Console.WriteLine("- The slope of a line is the measure of the steepness and the direction of the line\n");
         Console.WriteLine("This equation supports decimal numbers. (duh, or this terminal calculator would be useless)\n");
+        Console.WriteLine("FORMAT: (y2 - y1) / (x2 - x1)\n");
         Console.WriteLine("Command(s): lineslope , ls \n");
         Console.WriteLine("--- Example 1: --- \n-> ls");
         Console.WriteLine("\n----------------------------------------------\n");
@@ -4430,7 +4435,7 @@ while (cmazeyCalculator)
         Console.WriteLine($"y2: {exY2}");
         Console.WriteLine($"\nThe slope of the through points ({exX1}, {exY1}) and ({exX2}, {exY2}) is {(exY2 - exY1) / (exX2 - exX1)}!");
         Console.WriteLine("\n----------------------------------------------");
-        Console.WriteLine("---");
+        Console.WriteLine("---Scroll up for info ^^^");
     }
     // square root -h
     else if (input == "square -h" || input == "square --help" || input == "squareroot -h" || input == "squareroot --help")
@@ -4448,7 +4453,7 @@ while (cmazeyCalculator)
         Console.WriteLine($"Enter a number: {exNum}\n");
         Console.WriteLine($"Square Root: {Math.Sqrt(exNum)}");
         Console.WriteLine("\n----------------------------------------------");
-        Console.WriteLine("---");
+        Console.WriteLine("---Scroll up for info ^^^");
     }
     // truncate -h
     else if (input == "truncate -h" || input == "truncate --help")
@@ -4466,7 +4471,7 @@ while (cmazeyCalculator)
         Console.WriteLine($"Enter a value: {randomDecimal}\n");
         Console.WriteLine($"Truncated value is {Math.Truncate(randomDecimal)}\nRounded-Off value is {Math.Round(randomDecimal)}");
         Console.WriteLine("\n----------------------------------------------");
-        Console.WriteLine("---");
+        Console.WriteLine("---Scroll up for info ^^^");
     }
     // InchesToHeight -h
     else if (input == "inchestoheight -h" || input == "inchestoheight --help" || input == "itoh -h" || input == "itoh --help")
@@ -4483,7 +4488,7 @@ while (cmazeyCalculator)
         Console.WriteLine($"Enter your height in inches: {testNum}\n");
         Console.WriteLine($"You are {testNum / 12}, {testNum % 12}in.");
         Console.WriteLine("\n----------------------------------------------\n");
-        Console.WriteLine("---");
+        Console.WriteLine("---Scroll up for info ^^^");
     }
     // -h (used if command is invalid, or the user requested it)
     else if (input.Contains("-h") || input.Contains("--help"))
@@ -4575,7 +4580,7 @@ while (cmazeyCalculator)
                 incorrectAnsSoundEffect(audioAccess);
                 Console.WriteLine("Invalid Command, please try again.\n");
                 Random random = new();
-                int elseChoice = random.Next(1, 6);
+                int elseChoice = random.Next(1, 8);
                 if (elseChoice == 1)
                 {
                     Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
@@ -4602,6 +4607,21 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine($"Hey {fname}! Don't forget that you can check out the LSOH Program by typing in 'play'!");
                     }    
+                }
+                else if (elseChoice == 5)
+                {
+                    Console.WriteLine("If you are confused of what the equation is all about. Don't worry. Add '-h' or '--help' at the end of the command, and you can get extra information about it!");
+                }
+                else if (elseChoice == 6)
+                {
+                    if (name1 == "Guest")
+                    {
+                        Console.WriteLine("You can add a custom name. It will be showcased everytime you start an equation. Type in 'name' to get started.");
+                    }
+                }
+                else if (elseChoice == 7)
+                {
+                    Console.WriteLine("You can type in numbers first. Then the equation sign like (+ - / *), and it will do the equation without any need to type in a prompt. Type in '[EQUATION] -h' for more information.");
                 }
                 break;
             }
