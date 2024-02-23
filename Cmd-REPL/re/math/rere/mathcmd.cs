@@ -4485,6 +4485,13 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
         Console.WriteLine("---");
     }
+    // -h (used if command is invalid, or the user requested it)
+    else if (input.Contains("-h") || input.Contains("--help"))
+    {
+        Console.WriteLine("\nThis command is used to show more information about said command. Below are some example of how to access it.");
+        Console.WriteLine("NOTE: Not ALL COMMANDS are supported\n");
+        Console.WriteLine("-- EXAMPLE: 1 --\n'-> truncate -h'\n'-> + --help'\n");
+    }
     // --------- ADDITIONAL CMDS ---------
     // INVALID RESPONSE
     else
