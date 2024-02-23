@@ -1,7 +1,7 @@
-using System.Reflection;
 using NAudio.Wave;
 using Spectre.Console;
-string version = "v1.1.5 (PRE v1.49)"; // VERSION
+using System.Reflection;
+string version = "v1.1.5 (PRE v1.49.5)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -92,12 +92,14 @@ if (File.Exists($"{path}\\CCLResult.txt"))
     Thread.Sleep(2000);
 }
 
+// ------------------------------------------------------------------------
 // if (File.Exists($"{shellPath}/CCLResult.txt"))
 // {
 //     Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
 //     logAccess = true;
 //     Thread.Sleep(2000);
 // }
+// ------------------------------------------------------------------------
 
 Console.Clear();
 
@@ -374,9 +376,9 @@ while (cmazeyCalculator)
         AnsiConsole.Write(new Markup("[gold1]->[/] "));
     }
     string input = Console.ReadLine().ToLower();
-    
+    // --------- Commands ---------
     // ADDITION
-    if (input == "addition" || input == "+")
+    if (input == "addition" || input == "+" || input == "add")
     {
         titleAppend = "CMAZEY CALCULATOR: ADDITION [+]";
         Console.WriteLine("\n----------------------------------------------\n");
@@ -534,7 +536,7 @@ while (cmazeyCalculator)
         }
         answSoundEffect(audioAccess);
         Console.WriteLine("\n----------------------------------------------\n");
-        
+
     }
     // SUBTRACTION
     else if (input == "subtraction" || input == "-")
@@ -699,7 +701,7 @@ while (cmazeyCalculator)
     // HELP COMMAND
     else if (input == "/help" || input == "help")
     {
-        Console.WriteLine("\n- Addition (+)");
+        Console.WriteLine("\n- Addition (+\\Add)");
         Console.WriteLine("- Subtraction (-)");
         Console.WriteLine("- Multiplication (x)");
         Console.WriteLine("- Division (/)");
@@ -731,7 +733,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- numcheck (int)");
         Console.WriteLine("- CurrentPath (CrntPath\\Dir)");
         Console.WriteLine("- Exit\n");
-        Console.Beep();
+        Console.WriteLine("Some commands have an additional help command for more information about it. '-h', '--help'.\n");
     }
     // MULTIPLICATION
     else if (input == "multiplication" || input == "x" || input == "*")
@@ -1059,7 +1061,7 @@ while (cmazeyCalculator)
         titleAppend = "CMAZEY CALCULATOR: CHANGE CALCULATOR [c]";
         if (basic)
         {
-            Console.WriteLine($"CMAZEY CALCULATOR: CHANGE CALCULATOR [₵] || {name1}");
+            Console.WriteLine($"CMAZEY CALCULATOR: CHANGE CALCULATOR [c] || {name1}");
             Console.Write("\nEnter change to give back (1c - 99c): ");
             string user_input = Console.ReadLine();
             while (basicAns)
@@ -1104,7 +1106,7 @@ while (cmazeyCalculator)
         }
         else
         {
-            AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR:[/] [white]CHANGE CALCULATOR [[₵]] ||[/] {name}");
+            AnsiConsole.MarkupLine($"[yellow]CMAZEY CALCULATOR:[/] [white]CHANGE CALCULATOR [[c]] ||[/] {name}");
             var change = AnsiConsole.Prompt(
               new TextPrompt<int>("Enter [yellow]Change Amount[/]: ")
               .ValidationErrorMessage("[red]Not a valid number/Cannot be a decibel number[/]")
@@ -1313,7 +1315,7 @@ while (cmazeyCalculator)
         ansPrint = $"[USR REQUEST]\nv: {version}\nName: {name1}\nDate: {month}/{day}/{year}\nTime: {hour}:{minute}:{second}:{millisecond}";
         Console.Beep();
         Console.WriteLine();
-    }  
+    }
     //HeightToInches
     else if (input == "inchestoheight" || input == "htoi" || input == "itoh")
     {
@@ -1661,7 +1663,7 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Square Root
-    else if (input == "square" || input == "square root")
+    else if (input == "square" || input == "squareroot")
     {
         titleAppend = "CMAZEY CALCULATOR: SQUARE ROOT [√]";
         Console.WriteLine("\n----------------------------------------------\n");
@@ -1705,7 +1707,7 @@ while (cmazeyCalculator)
                 double squareNum = Convert.ToDouble(user_input);
                 double squareTotal = Math.Sqrt(squareNum);
                 Console.WriteLine($"\nSquare root: {squareTotal}");
-                ansPrint =$"Number: {squareNum}\nSquare Root: {squareTotal}";
+                ansPrint = $"Number: {squareNum}\nSquare Root: {squareTotal}";
             }
         }
         else
@@ -3982,7 +3984,7 @@ while (cmazeyCalculator)
             {
                 try
                 {
-                    int checking = Convert.ToInt32(user_input,2);
+                    int checking = Convert.ToInt32(user_input, 2);
                     string checkingBin = checking.ToString("X");
                     break;
                 }
@@ -4010,7 +4012,7 @@ while (cmazeyCalculator)
             {
                 try
                 {
-                    int checking = Convert.ToInt32(binInput,2);
+                    int checking = Convert.ToInt32(binInput, 2);
                     string checkingBin = checking.ToString("X");
                     break;
                 }
@@ -4021,7 +4023,7 @@ while (cmazeyCalculator)
                     binInput = AnsiConsole.Ask<string>("[white]->[/]");
                 }
             }
-            int binaryInput = Convert.ToInt32(binInput,2);
+            int binaryInput = Convert.ToInt32(binInput, 2);
             string hexadecimalAns = binaryInput.ToString("X");
             var hexBinTable = new Table();
             hexBinTable.AddColumn($"[yellow]Binary:[/] [green1]{binaryInput}[/] \\ [yellow]Hexadecimal[/]: [green1]{hexadecimalAns}[/]");
@@ -4244,6 +4246,246 @@ while (cmazeyCalculator)
             AnsiConsole.MarkupLine($"[white]Current Path:[/] [green1]{curntDir}[/]\n");
         }
     }
+    // --------- ADDITIONAL HELP COMMANDS ---------
+    // Addition -h
+    else if (input == "addition -h" || input == "addition --help" || input == "+ -h" || input == "+ --help" || input == "add -h" || input == "add --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: ADDITION HELP [+] | {name1}\n");
+
+        Console.WriteLine("- DEFINITION -\n- Addition in math is a fundamental operation that involves combining two or more numbers to find their total sum.");
+        Console.WriteLine("\nThis equations supports decimal numbers.\n");
+        Console.WriteLine("\nBASIC FORMAT: [?] + ? = ? -> ");
+        AnsiConsole.MarkupLine("NORMAL FORMAT: [green][[?]] + ?[/] = ? -> \n");
+        Console.WriteLine("Command(s): + , additon , add\n");
+        Console.WriteLine("--- Example 1: ---\n");
+        Console.WriteLine("-> +");
+        Console.WriteLine("----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: ADDITION [+] || Test Example\n");
+        double exnum1 = random.Next(1, 99);
+        double exnum2 = random.Next(1, 99);
+        Console.WriteLine($"[?] + ? = -> {exnum1}");
+        Console.WriteLine($"{exnum2} + [?] = ? -> {exnum2}");
+        Console.WriteLine($"\n{exnum1} + {exnum2} = {exnum1 + exnum2}");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("--- Example 2: ---\n");
+        exnum1 = random.Next(1, 99);
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum1}");
+        AnsiConsole.MarkupLine($"[white]{exnum1}[/]");
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum2}");
+        AnsiConsole.MarkupLine($"[blue]{exnum2}[/]");
+        AnsiConsole.MarkupLine("[gold1]->[/] +");
+        Console.WriteLine("\n----------------------------------------------\n");
+        AnsiConsole.MarkupLine("[white]CMAZEY CALCULATOR: ADDITION [[+]] ||[/] [gray]Test Example[/]");
+        var exampTable = new Table();
+        exampTable.AddColumn($"[lightskyblue1]{exnum1} + {exnum2} =[/] [yellow]{exnum1 + exnum2}[/]");
+        AnsiConsole.Write(exampTable);
+        Console.WriteLine("\n----------------------------------------------\n---");
+    }
+    // subtraction -h
+    else if (input == "subtraction -h" || input == "subtraction --help" || input == "- -h" || input == "- --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: SUBTRACTION HELP [-] | {name1}\n");
+
+        Console.WriteLine("It will subtract 2 numbers, and it will return an answer.\nThis equations supports decimal numbers.\n");
+        Console.WriteLine("\nBASIC FORMAT: [?] - ? = ? -> ");
+        AnsiConsole.MarkupLine("NORMAL FORMAT: [green][[?]] - ?[/] = ? -> \n");
+        Console.WriteLine("Command(s): - , subtraction\n");
+        Console.WriteLine("--- Example 1: ---\n");
+        Console.WriteLine("-> -");
+        Console.WriteLine("----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: SUBTRACTION [-] || Test Example\n");
+        double exnum1 = random.Next(1, 99);
+        double exnum2 = random.Next(1, 99);
+        Console.WriteLine($"[?] - ? = -> {exnum1}");
+        Console.WriteLine($"{exnum2} - [?] = ? -> {exnum2}");
+        Console.WriteLine($"\n{exnum1} - {exnum2} = {exnum1 - exnum2}");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("--- Example 2: ---\n");
+        exnum1 = random.Next(1, 99);
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum1}");
+        AnsiConsole.MarkupLine($"[white]{exnum1}[/]");
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum2}");
+        AnsiConsole.MarkupLine($"[blue]{exnum2}[/]");
+        AnsiConsole.MarkupLine("[gold1]->[/] -");
+        Console.WriteLine("\n----------------------------------------------\n");
+        AnsiConsole.MarkupLine("[white]CMAZEY CALCULATOR: SUBTRACTION [[-]] ||[/] [gray]Test Example[/]");
+        var exampTable = new Table();
+        exampTable.AddColumn($"[lightskyblue1]{exnum1} - {exnum2} =[/] [yellow]{exnum1 - exnum2}[/]");
+        AnsiConsole.Write(exampTable);
+        Console.WriteLine("\n----------------------------------------------\n---");
+    }
+    // Multiplication -h
+    else if (input == "multiplication -h" || input == "multiplication --help" || input == "x -h" || input == "x --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: MULTIPLICATION HELP [+] | {name1}\n");
+
+        Console.WriteLine("It will multiply 2 numbers, and it will return an answer.\nThis equations supports decimal numbers.\n");
+        Console.WriteLine("\nBASIC FORMAT: [?] x ? = ? -> ");
+        AnsiConsole.MarkupLine("NORMAL FORMAT: [green][[?]] x ?[/] = ? -> \n");
+        Console.WriteLine("Command(s): x , *, multiplication\n");
+        Console.WriteLine("--- Example 1: ---\n");
+        Console.WriteLine("-> x");
+        Console.WriteLine("----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: MULTIPLICATION [x] || Test Example\n");
+        double exnum1 = random.Next(1, 99);
+        double exnum2 = random.Next(1, 99);
+        Console.WriteLine($"[?] x ? = -> {exnum1}");
+        Console.WriteLine($"{exnum2} x [?] = ? -> {exnum2}");
+        Console.WriteLine($"\n{exnum1} x {exnum2} = {exnum1 * exnum2}");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("--- Example 2: ---\n");
+        exnum1 = random.Next(1, 99);
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum1}");
+        AnsiConsole.MarkupLine($"[white]{exnum1}[/]");
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum2}");
+        AnsiConsole.MarkupLine($"[blue]{exnum2}[/]");
+        AnsiConsole.MarkupLine("[gold1]->[/] *");
+        Console.WriteLine("\n----------------------------------------------\n");
+        AnsiConsole.MarkupLine("[white]CMAZEY CALCULATOR: MULTIPLICATION [[x]] ||[/] [gray]Test Example[/]");
+        var exampTable = new Table();
+        exampTable.AddColumn($"[lightskyblue1]{exnum1} x {exnum2} =[/] [yellow]{exnum1 * exnum2}[/]");
+        AnsiConsole.Write(exampTable);
+        Console.WriteLine("\n----------------------------------------------\n---");
+    }
+    // division -h
+    else if (input == "division -h" || input == "division --help" || input == "/ -h" || input == "/ --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: DIVISION HELP [/] | {name1}\n");
+
+        Console.WriteLine("It will divide 2 numbers, and it will return an answer.\nThis equations supports decimal numbers.\n");
+        Console.WriteLine("\nBASIC FORMAT: [?] / ? = ? -> ");
+        AnsiConsole.MarkupLine("NORMAL FORMAT: [green][[?]] / ?[/] = ? -> \n");
+        Console.WriteLine("Command(s): / , division\n");
+        Console.WriteLine("--- Example 1: ---\n");
+        Console.WriteLine("-> +");
+        Console.WriteLine("----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: DIVISION [/] || Test Example\n");
+        double exnum1 = random.Next(1, 99);
+        double exnum2 = random.Next(1, 99);
+        Console.WriteLine($"[?] / ? = -> {exnum1}");
+        Console.WriteLine($"{exnum2} / [?] = ? -> {exnum2}");
+        Console.WriteLine($"\n{exnum1} / {exnum2} = {exnum1 / exnum2}");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("--- Example 2: ---\n");
+        exnum1 = random.Next(1, 99);
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum1}");
+        AnsiConsole.MarkupLine($"[white]{exnum1}[/]");
+        AnsiConsole.MarkupLine($"[gold1]->[/] {exnum2}");
+        AnsiConsole.MarkupLine($"[blue]{exnum2}[/]");
+        AnsiConsole.MarkupLine("[gold1]->[/] /");
+        Console.WriteLine("\n----------------------------------------------\n");
+        AnsiConsole.MarkupLine("[white]CMAZEY CALCULATOR: DIVISION [[/]] ||[/] [gray]Test Example[/]");
+        var exampTable = new Table();
+        exampTable.AddColumn($"[lightskyblue1]{exnum1} / {exnum2} =[/] [yellow]{exnum1 / exnum2}[/]");
+        AnsiConsole.Write(exampTable);
+        Console.WriteLine("\n----------------------------------------------\n---");
+    }
+    // change -h
+    else if (input == "change -h" || input == "change --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: CHANGE CALCULATOR HELP [c] || {name1}\n");
+        Console.WriteLine("It will take the total amount, and it will get sorted by Quarter, Nickel, Dime, and Pennie.\nThis equation does not support decimal number.\n");
+        Console.WriteLine("Command(s): change\n");
+        Console.WriteLine("--- EXAMPLE 1: ---\n-> change");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: CHANGE CALCULATOR [c] || Test Example\n");
+        int exampChange = random.Next(2, 100);
+        Console.WriteLine($"Enter change to give back (1c - 99c): {exampChange}");
+        Console.WriteLine($"Change Amount: {exampChange}\n");
+        int Quarters = exampChange / 25; // Divides the change amount by 25.
+        int Dimes = (exampChange - (Quarters * 25)) / 10; // Multiply the quarter by 25, and subtract it by the change amount, then divide it by 10.
+        int Nickels = (exampChange - (Quarters * 25 + Dimes * 10)) / 5; // Multiply the Quarter, and Dime, then add them all, and subtract it by the change amount, then divide it by 5.
+        int Pennies = (exampChange - (Quarters * 25 + Dimes * 10 + Nickels * 5)) / 1; // Multiply the Quarter, Dime, and Nickel, and add them all, then subtract it by the change amount, and divide it by 1;
+        Console.WriteLine($"Quarters: {Quarters}");
+        Console.WriteLine($"Dimes: {Dimes}");
+        Console.WriteLine($"Nickels: {Nickels}");
+        Console.WriteLine($"Pennies: {Pennies}");
+        Console.WriteLine("\n----------------------------------------------");
+        Console.WriteLine("---");
+    }
+    // Line Slope -h
+    else if (input == "lineslope -h" || input == "lineslope --help" || input == "ls -h" || input == "ls --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: LineSlope HELP || {name1}\n");
+        Console.WriteLine("-- DEFINITION --");
+        Console.WriteLine("- The slope of a line is the measure of the steepness and the direction of the line\n");
+        Console.WriteLine("This equation supports decimal numbers. (duh, or this terminal calculator would be useless)\n");
+        Console.WriteLine("Command(s): lineslope , ls \n");
+        Console.WriteLine("--- Example 1: --- \n-> ls");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: Line Slope Calculator || Test Example");
+        double exX1 = random.Next(1, 499);
+        Console.WriteLine($"x1: {exX1}");
+        double exY1 = random.Next(1, 499);
+        Console.WriteLine($"y1: {exY1}");
+        double exX2 = random.Next(1, 499);
+        Console.WriteLine($"x2: {exX2}");
+        double exY2 = random.Next(1, 499);
+        Console.WriteLine($"y2: {exY2}");
+        Console.WriteLine($"\nThe slope of the through points ({exX1}, {exY1}) and ({exX2}, {exY2}) is {(exY2 - exY1) / (exX2 - exX1)}!");
+        Console.WriteLine("\n----------------------------------------------");
+        Console.WriteLine("---");
+    }
+    // square root -h
+    else if (input == "square -h" || input == "square --help" || input == "squareroot -h" || input == "squareroot --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: SQUARE ROOT HELP [√] || {fname}\n");
+        Console.WriteLine("-- DEFINITION --");
+        Console.WriteLine("- A square root of a number is a value that, when multiplied by itself, gives the original number\n");
+        Console.WriteLine("This equation supports decimal numbers.\n");
+        Console.WriteLine("command(s): square , squareroot\n");
+        Console.WriteLine("--- EXAMPLE: 1 ---\n-> square");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: SQUARE ROOT [√] || Test Example\n");
+        double exNum = random.Next(1, 999);
+        Console.WriteLine($"Enter a number: {exNum}\n");
+        Console.WriteLine($"Square Root: {Math.Sqrt(exNum)}");
+        Console.WriteLine("\n----------------------------------------------");
+        Console.WriteLine("---");
+    }
+    // truncate -h
+    else if (input == "truncate -h" || input == "truncate --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: Truncate HELP [.] || {name1}\n");
+        Console.WriteLine("-- DEFINITION --");
+        Console.WriteLine("- Truncation of a number is shortening it at a particular place value and filling in any zeros to keep it the same size. It is similar to rounding down to a given degree of accuracy");
+        Console.WriteLine("This equations support decimal numbers.\n");
+        Console.WriteLine("Command(s): truncate\n");
+        Console.WriteLine("--- EXAMPLE: 1 ---\n-> truncate");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: Truncate [.] || Test Example");
+        decimal randomDecimal = random.NextDecimal();
+        Console.WriteLine($"Enter a value: {randomDecimal}\n");
+        Console.WriteLine($"Truncated value is {Math.Truncate(randomDecimal)}\nRounded-Off value is {Math.Round(randomDecimal)}");
+        Console.WriteLine("\n----------------------------------------------");
+        Console.WriteLine("---");
+    }
+    // InchesToHeight -h
+    else if (input == "inchestoheight -h" || input == "inchestoheight --help" || input == "itoh -h" || input == "itoh --help")
+    {
+        Random random = new Random();
+        Console.WriteLine($"---\n\nCMAZEY CALCULATOR: INCHES TO HEIGHT HELP || {name1}\n");
+        Console.WriteLine("Converts inches to height, and inches. Useful if you want to measure a short(y) person.");
+        Console.WriteLine("This equation doesn't support decimal numbers.\n");
+        Console.WriteLine("Command(s): inchestoheight , itoh\n");
+        Console.WriteLine("--- EXAMPLE: 1 ---\n-> itoh");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("CMAZEY CALCULATOR: INCHES TO HEIGHT || Test Example\n");
+        int testNum = random.Next(36, 87);
+        Console.WriteLine($"Enter your height in inches: {testNum}\n");
+        Console.WriteLine($"You are {testNum / 12}, {testNum % 12}in.");
+        Console.WriteLine("\n----------------------------------------------\n");
+        Console.WriteLine("---");
+    }
+    // --------- ADDITIONAL CMDS ---------
     // INVALID RESPONSE
     else
     {
@@ -4326,7 +4568,7 @@ while (cmazeyCalculator)
                 incorrectAnsSoundEffect(audioAccess);
                 Console.WriteLine("Invalid Command, please try again.\n");
                 Random random = new();
-                int elseChoice = random.Next(1, 5);
+                int elseChoice = random.Next(1, 6);
                 if (elseChoice == 1)
                 {
                     Console.WriteLine("Fun Fact: A command start with a capital letter!\n");
@@ -4347,10 +4589,17 @@ while (cmazeyCalculator)
                         Console.WriteLine();
                     }
                 }
+                else if (elseChoice == 4)
+                {
+                    if (crew)
+                    {
+                        Console.WriteLine($"Hey {fname}! Don't forget that you can check out the LSOH Program by typing in 'play'!");
+                    }    
+                }
                 break;
             }
         }
-    }   
+    }
     // Append strings into a .txt file
     if (logAccess)
     {
@@ -4361,12 +4610,12 @@ while (cmazeyCalculator)
         else
         {
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, "CCLResult.txt"), true))
-                {
-                    outputFile.WriteLine("\n----------\n");
-                    outputFile.WriteLine(titleAppend);
-                    outputFile.WriteLine(ansPrint);
-                    outputFile.WriteLine("\n----------\n");
-                }
+            {
+                outputFile.WriteLine("\n----------\n");
+                outputFile.WriteLine(titleAppend);
+                outputFile.WriteLine(ansPrint);
+                outputFile.WriteLine("\n----------\n");
+            }
             ansPrint = "";
             titleAppend = "";
         }
@@ -4509,3 +4758,20 @@ static void selectSoundEffect(bool audioAccess)
     }
 }
 
+// Used for truncate example only
+public static class RandomExtensions
+{
+    public static int NextInt32(this Random rng)
+    {
+        int firstBits = rng.Next(0, 1 << 4) << 28;
+        int lastBits = rng.Next(0, 1 << 28);
+        return firstBits | lastBits;
+    }
+
+    public static decimal NextDecimal(this Random rng)
+    {
+        byte scale = (byte)rng.Next(29);
+        bool sign = rng.Next(2) == 2; 
+        return new decimal(rng.NextInt32(), rng.NextInt32(), rng.NextInt32(), sign, scale);
+    }
+}
