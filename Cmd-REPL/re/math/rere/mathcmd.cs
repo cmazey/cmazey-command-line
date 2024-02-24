@@ -1,7 +1,7 @@
 using NAudio.Wave;
 using Spectre.Console;
 using System.Reflection;
-string version = "v1.1.5 (PRE v1.49.5)"; // VERSION
+string version = "v1.1.5 (PRE v1.49.7)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -69,6 +69,10 @@ string dimesAppend = "";
 string nickelAppend = "";
 string pennieAppend = "";
 string changeAppend = "";
+string fileAppendname = ""; // Fetch name if autoname txt file is founded
+string fileAppendname1 = ""; // Fetch name for basic mode if autoname txt file is founded
+string fileAppendfname = ""; // Fetch first name if autoname txt file is founded
+string fileAppendCrew = ""; // Fetch crew bool (if its there) in autoname txt file
 int year = DateTime.Now.Year; // Fetch the current year
 int month = DateTime.Now.Month; // Fetch the current month
 int day = DateTime.Now.Day; // Fetch the current day
@@ -90,6 +94,33 @@ if (File.Exists($"{path}\\CCLResult.txt"))
     Console.WriteLine($"RESULT LOCATED: '{path}\\CCLResult.txt'");
     logAccess = true;
     Thread.Sleep(2000);
+}
+// Look for 'CCAuToName.txt' in the Resources Folder
+if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+{
+        foreach (var line in File.ReadLines($"{curntDir}\\Resources\\CCAuToName.txt").Take(7))
+        {
+            fileAppendname = line;
+        }
+        foreach (var line in File.ReadLines($"{curntDir}\\Resources\\CCAuToName.txt").Take(9))
+        {
+            fileAppendfname = line;
+        }
+        foreach (var line in File.ReadLines($"{curntDir}\\Resources\\CCAuToName.txt").Take(11))
+        {
+            fileAppendname1 = line;
+        }
+        foreach (var line in File.ReadLines($"{curntDir}\\Resources\\CCAuToName.txt").Take(17))
+        {
+            fileAppendCrew = line;
+        }
+        if (fileAppendCrew == "crewTrue")
+        {
+            crew = true;
+        }
+        name = fileAppendname;
+        name1 = fileAppendname1;
+        fname = fileAppendfname;
 }
 
 // ------------------------------------------------------------------------
@@ -127,14 +158,23 @@ while (true)
     }
     else if (optionInput == "name")
     {
-        Console.Write("Enter a name: ");
-        string nameInput = Console.ReadLine();
-        name = $"[white]{nameInput}[/]";
-        name1 = nameInput;
-        fname = nameInput;
-        Console.WriteLine("Name Changed Confirmed!");
-        Thread.Sleep(1000);
-        Console.Clear();
+        if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+        {
+            Console.WriteLine("AUTONAME IS ENABLED, NAME CMD DISABLED...");
+            Thread.Sleep(3000);
+            Console.Clear();
+        }
+        else
+        {
+            Console.Write("Enter a name: ");
+            string nameInput = Console.ReadLine();
+            name = $"[white]{nameInput}[/]";
+            name1 = nameInput;
+            fname = nameInput;
+            Console.WriteLine("Name Changed Confirmed!");
+            Thread.Sleep(1000);
+            Console.Clear();
+        }
     }
     else if (optionInput == "name -auto" || optionInput == "name -a")
     {
@@ -376,7 +416,7 @@ while (cmazeyCalculator)
         AnsiConsole.Write(new Markup("[gold1]->[/] "));
     }
     string input = Console.ReadLine().ToLower();
-    // --------- Commands ---------
+    // --------- COMMANDS ---------
     // ADDITION
     if (input == "addition" || input == "+" || input == "add")
     {
@@ -4214,6 +4254,17 @@ while (cmazeyCalculator)
             }
         }
     }
+    // Read All Logs
+    else if (input == "log --readall" || input == "log -ra")
+    {
+        Console.WriteLine("\n----------------------------------------------\n");
+        string[]logReadAllLines = File.ReadAllLines($"{path}\\CCLResult.txt");
+        foreach (string logRdAlLines in logReadAllLines)
+        {
+            Console.WriteLine(logRdAlLines);
+        }
+        Console.WriteLine("\n----------------------------------------------\nScroll up ^^^^^^^\n");
+    }
     // Clear num
     else if (input == "clearint" || input == "clsint")
     {
@@ -4248,6 +4299,62 @@ while (cmazeyCalculator)
             AnsiConsole.MarkupLine($"\n[white]Document Path:[/] [green1]{path}[/]");
             // AnsiConsole.MarkupLine($"[white]Shell Path:[/] [green1]{shellPath}[/]");
             AnsiConsole.MarkupLine($"[white]Current Path:[/] [green1]{curntDir}[/]\n");
+        }
+    }
+    // Auto name / Auto Startup Proceeder
+    else if (input == "name --auto" || input == "name -a")
+    {
+        if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+        {
+            Console.WriteLine("AUTONAME file has already been created in the Resource folder.\n");
+        }
+        if (name1 == "Guest")
+        {
+            Console.WriteLine("\nYou don't have a name setup yet, type 'name', then come back here to setup the auto startup proceeder\n");
+        }
+        else
+        {
+            Console.WriteLine("--- AUTO NAME ---\n");
+            Console.WriteLine($"NAME == [{name}] \\ NAME1 == [{name1}] \\ FNAME == [{fname}]\n");
+            Console.Write("Do you want the program to recognize your name every time you opened up the program? (Y/N) -> ");
+            string stringInput = Console.ReadLine().ToLower();
+            if (stringInput == "y")
+            {
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine($"{curntDir}\\Resources\\CCAuToName.txt"), true))
+                    {
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        outputFile.WriteLine("-------------------CMAZEY CALCULATOR AUTONAME-------------------------------------");
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        outputFile.WriteLine("---AUTONAME-----------------------------------------------------------------------");
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        outputFile.WriteLine(":::NAME:::");
+                        outputFile.WriteLine(name);
+                        outputFile.WriteLine(":::FNAME:::");
+                        outputFile.WriteLine(fname);
+                        outputFile.WriteLine(":::NAME1:::");
+                        outputFile.WriteLine(name1);
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        if (crew)
+                        {
+                            outputFile.WriteLine("----------------------------------------------------------------------------------");
+                            outputFile.WriteLine("::CREWBOOL::");
+                            outputFile.WriteLine("crewTrue");
+                            outputFile.WriteLine("----------------------------------------------------------------------------------");
+                        }
+                    }
+                Console.WriteLine("TXT FILE CREATED, AND STORED IN '" + curntDir + "\\Resources\\CCAuToName.txt'.");
+                Console.WriteLine("Autoname Creator is now shutting down. Goodbye!");
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Got it, Prompt has been canceled. Goodbye\n");
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
         }
     }
     // --------- ADDITIONAL HELP COMMANDS ---------
@@ -4490,7 +4597,28 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
         Console.WriteLine("---Scroll up for info ^^^");
     }
-    // -h (used if command is invalid, or the user requested it)
+    // name -h
+    else if (input == "name -h" || input == "name --help")
+    {
+        Console.WriteLine("---\n\nCMAZEY CALCULATOR: NAME HELP\n");
+        Console.WriteLine("The name will be stored in 3 different strings.\nname string stores the full name with color. It's used for spectre console, and all my friends have special colors.");
+        Console.WriteLine("fname string stores only the first name.");
+        Console.WriteLine("name1 string is only used for basic mode that has the full name, but without the colors.\n");
+        Console.WriteLine("ADDITIONAL COMMANDS:\n- name -a\\name --auto: It will store your name in a text, and it will change into your name automatically whenever you opened the program.");
+        Console.WriteLine("\n-- EXAMPLES: --");
+        AnsiConsole.MarkupLine("name: [orange1]Placeholder Name[/]");
+        Console.WriteLine("fname: Placeholder");
+        Console.WriteLine("name1: Placeholder Name\n\n---Scroll up for more info");
+    }
+    // log -h
+    else if (input == "log -h" || input == "name --help")
+    {
+        Console.WriteLine("---\n\nCMAZEY CALCULATOR: LOG HELP\n");
+        Console.WriteLine("Append equations into a txt file.\n");
+        Console.WriteLine("-- ADDITIONAL CMDS --\n");
+        Console.WriteLine("- log -ra\\log -readall: Read, and output the whole textfile.\n\n---");
+    }
+    // -h (used if command is invalid but has -h or --help in it, or the user requested it)
     else if (input.Contains("-h") || input.Contains("--help"))
     {
         Console.WriteLine("\nThis command is used to show more information about said command. Below are some example of how to access it.");
@@ -4498,7 +4626,7 @@ while (cmazeyCalculator)
         Console.WriteLine("-- EXAMPLE: 1 --\n'-> truncate -h'\n'-> + --help'\n");
     }
     // --------- ADDITIONAL CMDS ---------
-    // INVALID RESPONSE
+    // -- INVALID RESPONSE --
     else
     {
         while (basicAns)
