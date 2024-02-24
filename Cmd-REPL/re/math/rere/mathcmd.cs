@@ -4254,14 +4254,17 @@ while (cmazeyCalculator)
             }
         }
     }
-    // Read All Logs
+    // Read All Logs & output them
     else if (input == "log --readall" || input == "log -ra")
     {
         Console.WriteLine("\n----------------------------------------------\n");
-        string[]logReadAllLines = File.ReadAllLines($"{path}\\CCLResult.txt");
-        foreach (string logRdAlLines in logReadAllLines)
+        using (StreamReader reader = new StreamReader($"{path}\\CCLResult.txt"))
         {
-            Console.WriteLine(logRdAlLines);
+            string logRdLine;
+            while((logRdLine = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(logRdLine);
+            }
         }
         Console.WriteLine("\n----------------------------------------------\nScroll up ^^^^^^^\n");
     }
@@ -4625,6 +4628,7 @@ while (cmazeyCalculator)
         Console.WriteLine("NOTE: Not ALL COMMANDS are supported\n");
         Console.WriteLine("-- EXAMPLE: 1 --\n'-> truncate -h'\n'-> + --help'\n");
     }
+    
     // --------- ADDITIONAL CMDS ---------
     // -- INVALID RESPONSE --
     else
