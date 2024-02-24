@@ -4621,6 +4621,33 @@ while (cmazeyCalculator)
         Console.WriteLine("-- ADDITIONAL CMDS --\n");
         Console.WriteLine("- log -ra\\log -readall: Read, and output the whole textfile.\n\n---");
     }
+    // pi -h
+    else if (input == "pi -h" || input == "pi --help")
+    {
+        Console.WriteLine("\nPi is a mathematical constant that represents the ratio between the circumference and the diameter of a circle|\n");
+    }
+    // e4 -h
+    else if (input == "e4 -h" || input == "e4 --help")
+    {
+        Console.WriteLine("\nAn irrational number approximately equal to 2.718281828. It plays a crucial role in exponential growth, compound interest, and mathematical phenomena.\n");
+    }
+    // lottery -h
+    else if (input == "lottery -h" || input == "lottery -h" || input == "lot -h" || input == "lot --help")
+    {
+        Console.WriteLine("---\n\nCMAZEY CALCULATOR: LOTTERY HELP\n");
+        Console.WriteLine("This lottery game consist of finding the right number, and earning some big cash (not literally).");
+        Console.WriteLine("You will win $100,000 if you have gotten the answer correct.");
+        Console.WriteLine("You will earn $3,000 if you got the right answer, but the digits are mixed up.\n");
+        Console.WriteLine("Command(s): lottery , lot\n");
+        Console.WriteLine("-- NORMAL CONTROLS --");
+        Console.WriteLine("Normal or the spectre wizard of stuff will use a prompt instead of typing something in.");
+        Console.WriteLine("So you will use your arrows to move UP or DOWN, and you will press ENTER/RETURN to select said number.\n");
+        Console.WriteLine("UP: ↑");
+        Console.WriteLine("DOWN: ↓");
+        Console.WriteLine("SELECT: [ENTER] ↵\n");
+        Console.WriteLine("-- BASIC CONTROLS --\n");
+        Console.WriteLine("You will type in the number, but it can't be above 100, or below 1, or it won't accept the prompt.\n\n---Scroll up for more info");
+    }
     // -h (used if command is invalid but has -h or --help in it, or the user requested it)
     else if (input.Contains("-h") || input.Contains("--help"))
     {
@@ -4628,7 +4655,6 @@ while (cmazeyCalculator)
         Console.WriteLine("NOTE: Not ALL COMMANDS are supported\n");
         Console.WriteLine("-- EXAMPLE: 1 --\n'-> truncate -h'\n'-> + --help'\n");
     }
-    
     // --------- ADDITIONAL CMDS ---------
     // -- INVALID RESPONSE --
     else
