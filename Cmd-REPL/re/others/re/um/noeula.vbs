@@ -1,1 +1,0 @@
-x=msgbox("Program has been canceled. Reason: Didn't agree to the EULA", 0+16, "ccl.exe")
