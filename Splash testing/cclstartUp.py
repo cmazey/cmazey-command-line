@@ -1,16 +1,11 @@
 import tkinter as tk
 import time
 import os
-import pyglet
+import winsound
+
 current_directory = os.getcwd()
+filename = 'image\\startUpSound.wav'
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    music = pyglet.resource.media('image/startUpSound.mp3')
-    music.play()
-except:
-    print("audio not working:::->" + current_directory)
 
 def centerWindow(width, height, root):  # Return 4 values needed to center Window
     screen_width = root.winfo_screenwidth()  # Width of the screen
@@ -35,6 +30,7 @@ label.pack()
 splash_screen.update()
  
 # MAIN WINDOW CODE + Other Processing
+winsound.PlaySound(filename, winsound.SND_FILENAME)
 time.sleep(15)
  
 # Start the event loop
@@ -101,6 +97,8 @@ time.sleep(0.1)
 
 os.system('cls')
 
-
-os.system('ccl.py')
+try:
+    os.system('ccl.exe')
+except:
+    os.system('ccl.py')
 
