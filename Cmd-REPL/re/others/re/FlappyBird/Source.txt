@@ -1,0 +1,15 @@
+CREDITS:
+https://www.geeksforgeeks.org/how-to-make-flappy-bird-game-in-pygame/#
+- bansalshubhamcse21
+
+
+
+
+REQUIREMENTS:
+Make sure you install the required packages in case the code isn't working for you
+
+PyGame:
+- pip install pygame
+
+If you are still having issues, let me know by emailing me at mazeycolt@sehs.net, or in my discord server that's link down below!
+- https://discord.gg/MP6DhTjzfj

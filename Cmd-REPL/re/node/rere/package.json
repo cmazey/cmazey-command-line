@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "git": "^0.1.5",
+    "mime": "^3.0.0",
+    "readline-sync": "^1.4.10"
+  },
+  "name": "@cmazey/cmazey-command-line",
+  "version": "1.0.0",
+  "description": "Start",
+  "main": "command.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "author": "",
+  "license": "ISC"
+}
