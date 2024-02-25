@@ -6,10 +6,18 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 CCAuToName.txt*
+
+# Folders Hidden
 obj/
 Debug/
 debugs/
 Result/
+.idea/
+.vs/
+.vscode/
+
+# Hide exe files
+ccl.exe*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
