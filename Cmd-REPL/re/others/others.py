@@ -4,6 +4,7 @@ others = False
 Tetris = False
 FlappyBird = False
 petRock = False
+startUp = True
 import itertools
 import threading
 import sys
@@ -11,8 +12,9 @@ import subprocess
 
 original_directory = os.getcwd()
 
-print('\033[1m' + "OTHERS" + '\033[0m')
-time.sleep(2)
+if startUp:
+    print('\033[1m' + "OTHERS" + '\033[0m')
+    time.sleep(2)
 others = True
 NumGuess = False
 
@@ -49,7 +51,6 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
-
     # tetris game (pygame needed)
     elif otherAns == "Tetris":
         print("OTHER:: Tetris")
@@ -60,7 +61,6 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
-
     # 2.5 Lesson Project
     elif otherAns == "2.5":
         subprocess.call('cls', shell=True)
@@ -76,7 +76,6 @@ while others:
         time.sleep(2)
         print("- exit")
         time.sleep(0.1)
-    
     # Password Generator
     elif otherAns == "PswdGenrtr":
         subprocess.call('cls', shell=True)
@@ -95,7 +94,7 @@ while others:
         time.sleep(2)
         print("- exit")
         time.sleep(0.1)
-
+    # flappy bird
     elif otherAns == "FlappyBird":
         print("OTHER:: Flappy Bird")
         Confirming = input("Continue? (y/n) -> ")
@@ -105,7 +104,7 @@ while others:
             subprocess.call('cls', shell=True)
         else:
             print("Prompt Canceled\n")
-
+    # petrockadventure
     elif otherAns == "petRockAdventure":
         print("OTHER::petRockAdventure")
         Confirming = input("Continue? (y/n) -> ")
@@ -131,6 +130,7 @@ while others:
     elif otherAns == "exit":
         others = False
         exit = True
+    # Invalid prompt
     else:
         print("Undefined prompt, please try again.\n")
 
@@ -189,16 +189,17 @@ print()
 print()
 print()
 
-def animate():
-    for c in itertools.cycle(['|', '/', '-', '\\']):
-        if done:
-            break
-        sys.stdout.write('\rTransfering back to "ccl.py", please hold... ' + c)
-        sys.stdout.flush()
-        time.sleep(0.1)
-t = threading.Thread(target=animate)
-t.start()
+if startUp:
+    def animate():
+        for c in itertools.cycle(['|', '/', '-', '\\']):
+            if done:
+                break
+            sys.stdout.write('\rTransfering back to "ccl.py", please hold... ' + c)
+            sys.stdout.flush()
+            time.sleep(0.1)
+    t = threading.Thread(target=animate)
+    t.start()
 
-time.sleep(4)
-done = True
+    time.sleep(4)
+    done = True
 
