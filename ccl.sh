@@ -1,3 +1,5 @@
 #!/bin/bash
 
-cd Cmd-REPL && python3 ccl.py
+pip install pyfiglet
+
+python3 ./Cmd-REPL/ccl.py

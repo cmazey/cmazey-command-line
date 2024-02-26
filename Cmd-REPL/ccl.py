@@ -3,7 +3,9 @@ import time
 import itertools
 import threading
 import sys
+import pyfiglet
 import subprocess
+import platform
 from datetime import datetime
 Agreed = False
 deBug = False
@@ -11,9 +13,22 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v.1.1)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
+# This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
+
+if platform.system() == "Linux":
+    subprocess.call('cls', shell=True)
+else:
+    try:
+        os.chdir('Cmd-REPL')
+    except:
+        print("Woah dude, you can't run this exe file here, run the other one lmao")
+        input()
+        sys.exit()
+
+# Startup Proceeder
 print("Welcome!")
 time.sleep(0.1)
 print("Current directory:", os.getcwd())
@@ -35,6 +50,8 @@ time.sleep(5)
 done = True
 
 subprocess.call('cls', shell=True)
+
+# EULA AGREEMENT
 
 print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
 print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
@@ -129,164 +146,151 @@ if Agreed:
     print('\033[93m')
     subprocess.call('cls', shell=True)
     
-    print('\033[1m' + 'CMAZEY COMMAND LINE')
-    print('\033[0m')
-    time.sleep(0.1)
-    print(version)
-    time.sleep(2)
-    print("- chngdir")
-    time.sleep(0.1)
+    CCLresult = pyfiglet.figlet_format("Cmazey Command Line", font = "slant") 
+
+    print('\033[1m' + CCLresult + '\033[0m')
+    print("Type 'help' to show all available commands!\n")
     Prompt = True
-
-# Main
+    
+# CCL (CMAZEY COMMAND LINE INTERFACE)
 while Prompt:
-    print("- node")
-    time.sleep(0.1)
-    print("- py")
-    time.sleep(0.1)
-    print("- math")
-    time.sleep(0.1)
-    print("- lessons (disable due to issues)")
-    time.sleep(0.1)
-    print("- other")
-    time.sleep(0.1)
-    print("- exit")
-    time.sleep(0.1)
-    ans = input("-> ")
+    cclInput = input("---> ")
 
-    if ans == "node":
-        print("Command Line Selected: 'node'")
-        Confirming = input("Do you want to continue? (y/n)-> ")
-        
-        if Confirming == "y":
-            subprocess.call('cls', shell=True)
-            print('\033[1m' + '\033[93m' + "CMAZEY COMMAND LINE: NODE.JS EDITION", '\033[0m')
-            time.sleep(1)
-            print("Please hold...")
-            time.sleep(5)
+    # help cmd
+    if cclInput == "/help" or cclInput == "help":
+        print("\n-- MODULES --")
+        print("- Math: Cmazey Calculator")
+        print("- Node: Command Line in Javascript")
+        print("- Others: Additional Projects that I had worked on. (for fun)")
+        print("- Py: command line using python")
+        print("- Lessons: Temp Disabled\n")
+        print("-- Additional Cmds --")
+        print("- Directory (dir): Show the current directory")
+        print("- Clear: Clear the terminal output")
+        print("- Version: Fetch the current version")
+        print("- Exit\n")
 
-            os.chdir('re/node')
+    # ------ Cmazey Calculator ------
+    # math
+    elif cclInput == "math" or cclInput == "ccmath":
+        print("NOTE: YOU ARE SWITCHING FROM 'CCL' to 'CMAZEY CALCULATOR'")
+        promptInput = input("Do you want to continue? (y/n) -> ")
+
+        if promptInput == "y":
+            os.chdir("re/math")
             try:
                 subprocess.call('python startup.py', shell=False)
             except:
                 subprocess.call('python startup.py', shell=True)
-
-            subprocess.call('cls', shell=True)
             os.chdir(original_directory)
-
-            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-            time.sleep(1)
+            print("\n")
         else:
-            print("Prompt Canceled\n")
-    
-    elif ans == "py":
-        print("Command Line Selected: py")
-        Confirming = input("Do you want to continue? (y/n) -> ")
+            print("Prompt canceled...\n")
 
-        if Confirming == "y":
-            subprocess.call('cls', shell=True)
-            print('\033[1m' + '\033[94m' + "CMAZEY COMMAND LINE: PYTHON EDITION", '\033[0m')
-            time.sleep(1)
-            print("Please hold...")
-            time.sleep(3)
-
-            os.chdir('re/py')
-            try:
-                subprocess.call('python startup.py', shell=False)
-            except:
-                subprocess.call('python startup.py', shell=True)
-
-            subprocess.call('cls', shell=True)
-            os.chdir(original_directory)
-
-            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-            time.sleep(1)
-        else:
-            print()
-
-    elif ans == "math":
-        print("Command Line Selected: math (C#)")
-        Confirming = input("Do you want to continue? (y/n) -> ")
-
-        if Confirming == "y":
-            subprocess.call('cls', shell=True)
-            print('\033[1m' + '\033[96m' + "CMAZEY MATH COMMAND (C#)" + '\033[0m',)
-            time.sleep(1)
-            print("Please hold...")
-            time.sleep(5)
-
-            os.chdir('re/math')
-            try:
-                subprocess.call('python startup.py', shell=False)
-            except:
-                try:
-                    subprocess.call('python startup.py', shell=True)
-                except:
-                    print("An issue has been occured, please report this in Github if it keeps persisting. (E84391)")
-
-            subprocess.call('cls', shell=True)
-            os.chdir(original_directory)
-
-            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-            time.sleep(1)
-        else:
-            print("Prompt Canceled\n")
-
-    elif ans == "other":
-        print("Option Chosen: others")
-        Confirming = input("Do you want to continue? (y/n) -> ")
-
-        if Confirming == "y":
-            subprocess.call('cls', shell=True)
-            os.chdir('re/others')
-            try:
-                subprocess.call('python others.py', shell=False)
-            except:
-                subprocess.call('python others.py', shell=True)
-
-            os.chdir(original_directory)
-
-            subprocess.call('cls', shell=True)
-            print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-        else:
-            print("Prompt Canceled\n")
-
-    elif ans == "lessons":
-        print("This module has been disabled since most of the code is being flagged as 'malware'. We apologizes for the inconvience but don't worry. The issue will be resolved soon.\n")
-        # print("Option Chosen: lessons")
-        # Confirming = input("Do you want to continue? (y/n) -> ")
-
-        # if Confirming == "y":           
-        #    subprocess.call('cls', shell=True)
-        #    os.chdir('re/lessons')
-        #    subprocess.call('python lessons.py', shell=False)
-
-        #    os.chdir(original_directory)
-
-        #    subprocess.call('cls', shell=True)
-        #    print("Welcome back to " + '\033[1m' + 'CMAZEY COMMAND LINE' + '\033[0m' + '.')
-        # else:
-        #    print("Prompt Canceled\n")
-            
-    elif ans == "chngdir":
-      print("Are you sure you want to change the directory to Cmd-REPL? (y/n)")
-      print('\033[91m' + "NOTE: THIS IS MEANT TO BE USED IN REPLIT", '\033[0m')
-      Confirming = input("-> ")
-
-      if Confirming == "y":
-        os.chdir('Cmd-REPL')
-        print("DIRECTORY CHANGED: ", os.getcwd())
+    # math (without startup)
+    elif cclInput == "math -w -r -o" or cclInput == "math --s":
         print()
-      else:
-        print("Prompt Canceled\n")    
+        # Head to Release/Debug Directory
+        try:
+            os.chdir('re/math/rere/bin/Debug/net6.0/')
+        except:
+            os.chdir(original_directory)
+            try:
+                os.chdir('re/math/rere/bin/Debug/net6.0/')
+            except:
+                print("ERROR: Release/Debug builded not founded. This command doesn't work in linux btw.\n")
+        
+        # Create a '.txt' file, and writing it
+        try:
+            os.chdir('Resources')
+            f = open("CCLIGNORESTARTUP.txt", "w")
+            f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
+            f.close()
+            os.chdir('..')
+            # Running the executable file
+            subprocess.call('mathcmd', shell=True)
+            os.chdir('Resources')
+            os.remove('CCLIGNORESTARTUP.txt')
+            os.chdir(original_directory)
+            print("\n")
+        except:
+            continue
     
-    elif ans == "exit":
-        print("Thanks for checking out " + '\033[93m' + "Cmazey Command Line! " + '\033[0m')
+    # ----------- node --------------
+    # node
+    elif cclInput == "node":
+        print("NOTE: YOU ARE SWITCHING FROM 'CCL' to 'CCL: node'")
+        promptInput = input("Do you want to continue? (y/n) -> ")
+
+        if promptInput == "y":
+            os.chdir("re/node")
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                subprocess.call('python startup.py', shell=True)
+            os.chdir(original_directory)
+            print("\n")
+        else:
+            print("Prompt canceled...\n")
+    # ----------- py ----------------
+    # py
+    elif cclInput == "py":
+        print("NOTE: YOU ARE SWITCHING FROM 'CCL' to 'CCL: py'")
+        promptInput = input("Do you want to continue? (y/n) -> ")
+
+        if promptInput == "y":
+            os.chdir("re/py")
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                subprocess.call('python startup.py', shell=True)
+            os.chdir(original_directory)
+            print("\n")
+        else:
+            print("Prompt canceled...\n")
+    # --------- others --------------
+    # other
+    elif cclInput == "other":
+        print("NOTE: YOU ARE SWITCHING FROM 'CCL' to 'CCL: node'")
+        promptInput = input("Do you want to continue? (y/n) -> ")
+
+        if promptInput == "y":
+            os.chdir("re/others")
+            try:
+                subprocess.call('python startup.py', shell=False)
+            except:
+                subprocess.call('python startup.py', shell=True)
+            os.chdir(original_directory)
+            print("\n")
+        else:
+            print("Prompt canceled...\n")
+    # -------- lessons --------------
+    # lessons
+    elif cclInput == "lessons":
+        print("lessons module disabled....")
+    # ---- Additional Commands ------
+    # clear
+    elif cclInput == "clear":
+        subprocess.call('cls', shell=True)
+    # version
+    elif cclInput == "version":
+        print(f"\nCCL Version: {version}\n")
+    # current directory
+    elif cclInput == "dir" or cclInput == "directory":
+        print("\nCurrent Path: '" + os.getcwd() + "'\n")
+    # exit
+    elif cclInput == "exit":
+        print("Thanks for trying out Cmazey Command Line, see ya later!")
         time.sleep(3)
         Prompt = False
-   
-    else:
-        print("Invalid prompt...\n")
+
+
+
+
+
+
+
+
 
 # debug option
 if deBug:
@@ -665,6 +669,3 @@ if deBugNoLogs:
             else:
                 print("Invalid prompt, please try again.\n")
             
-
-
-

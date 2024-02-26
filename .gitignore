@@ -16,6 +16,9 @@ Result/
 .vs/
 .vscode/
 
+# Session txt files
+CCLIGNORESTARTUP.txt*
+
 # Hide exe files
 Cmd-REPL/ccl.exe
 

@@ -19,6 +19,7 @@ bool audioAccess = true; // Only false if the start audio cannot be played.
 bool basicAns = true; // Used for while loops while checking if the answer is a number, and it will handle the exception if it's not.
 bool logAccess = false; // Only True if User give consents for logs and/or log file founded if the file was founded in Documents Folder
 bool autoNameCheck = false; // If True, it will check, and autocorrect name/fname/name1 if founded in database
+bool startUp = true; // It will only turn false if it detects a txt file in the Resource Directory
 string name = "[gray]Guest[/]"; // Full name
 string fname = ""; // First name only
 string name1 = "Guest"; // Full name for basic
@@ -85,16 +86,43 @@ string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); 
 string curntDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 // string shellPath = Environment.GetEnvironmentVariable("HOME");
 
-Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
-Thread.Sleep(3000);
+// Disable the startup bool if txt file has been detected
+if (File.Exists($"{curntDir}\\Resources\\CCLIGNORESTARTUP.txt"))
+{
+    startUp = false;
+}
+if (File.Exists($"{curntDir}/Resources/CCLIGNORESTARTUP.txt"))
+{
+    startUp = false;
+}
+
+// Default Startup Proceeder
+if (startUp)
+{
+    Console.WriteLine("Loading Appli: CMAZEY CALCULATOR");
+    Thread.Sleep(3000);
+}
 
 // Looks for 'CCLResult.txt' in your Documents Folder
 if (File.Exists($"{path}\\CCLResult.txt"))
 {
-    Console.WriteLine($"RESULT LOCATED: '{path}\\CCLResult.txt'");
     logAccess = true;
-    Thread.Sleep(2000);
+    if (startUp)
+    {
+        Console.WriteLine($"RESULT LOCATED: '{path}\\CCLResult.txt'");
+        Thread.Sleep(2000);
+    }
 }
+
+// ------------------------------------------------------------------------
+// if (File.Exists($"{shellPath}/CCLResult.txt"))
+// {
+//     Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
+//     logAccess = true;
+//     Thread.Sleep(2000);
+// }
+// ------------------------------------------------------------------------
+
 // Look for 'CCAuToName.txt' in the Resources Folder
 if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
 {
@@ -123,264 +151,257 @@ if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
         fname = fileAppendfname;
 }
 
-// ------------------------------------------------------------------------
-// if (File.Exists($"{shellPath}/CCLResult.txt"))
-// {
-//     Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
-//     logAccess = true;
-//     Thread.Sleep(2000);
-// }
-// ------------------------------------------------------------------------
-
-Console.Clear();
-
-// Startup Menu (Choose beteeen basic or normal and set a name(use 'name -a' for autocorrect name if in database))
-while (true)
+if (startUp)
 {
-    Console.WriteLine("Choose an option below:");
-    Console.WriteLine("- basic");
-    Console.WriteLine("- normal");
-    Console.WriteLine("- name");
-    Console.Write("-\\> ");
-    string optionInput = Console.ReadLine();
+    Console.Clear();
 
-    if (optionInput == "basic")
+    // Startup Menu (Choose beteeen basic or normal and set a name(use 'name -a' for autocorrect name if in database))
+    while (true)
     {
-        Console.Clear();
-        basic = true;
-        break;
-    }
-    else if (optionInput == "normal")
-    {
-        Console.Clear();
-        basic = false;
-        break;
-    }
-    else if (optionInput == "name")
-    {
-        if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+        Console.WriteLine("Choose an option below:");
+        Console.WriteLine("- basic");
+        Console.WriteLine("- normal");
+        Console.WriteLine("- name");
+        Console.Write("-\\> ");
+        string optionInput = Console.ReadLine();
+
+        if (optionInput == "basic")
         {
-            Console.WriteLine("AUTONAME IS ENABLED, NAME CMD DISABLED...");
-            Thread.Sleep(3000);
             Console.Clear();
+            basic = true;
+            break;
         }
-        else
+        else if (optionInput == "normal")
+        {
+            Console.Clear();
+            basic = false;
+            break;
+        }
+        else if (optionInput == "name")
+        {
+            if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+            {
+                Console.WriteLine("AUTONAME IS ENABLED, NAME CMD DISABLED...");
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
+            else
+            {
+                Console.Write("Enter a name: ");
+                string nameInput = Console.ReadLine();
+                name = $"[white]{nameInput}[/]";
+                name1 = nameInput;
+                fname = nameInput;
+                Console.WriteLine("Name Changed Confirmed!");
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
+        }
+        else if (optionInput == "name -auto" || optionInput == "name -a")
         {
             Console.Write("Enter a name: ");
-            string nameInput = Console.ReadLine();
-            name = $"[white]{nameInput}[/]";
-            name1 = nameInput;
-            fname = nameInput;
-            Console.WriteLine("Name Changed Confirmed!");
+            string nameInput = Console.ReadLine().ToLower();
+            autoNameInput = nameInput;
+            Console.WriteLine("Name Changed Confirmed! USR CONFIRMED: autocorrect");
+            autoNameCheck = true;
             Thread.Sleep(1000);
             Console.Clear();
         }
-    }
-    else if (optionInput == "name -auto" || optionInput == "name -a")
-    {
-        Console.Write("Enter a name: ");
-        string nameInput = Console.ReadLine().ToLower();
-        autoNameInput = nameInput;
-        Console.WriteLine("Name Changed Confirmed! USR CONFIRMED: autocorrect");
-        autoNameCheck = true;
-        Thread.Sleep(1000);
-        Console.Clear();
-    }
-    else
-    {
-        Console.WriteLine("Input invalid, defaulting to normal...");
-        Thread.Sleep(2000);
-        Console.Clear();
-        basic = false;
-        break;
-    }
-}
-
-// If user type in 'name -auto'. It will check, and auto correct the name if founded in database
-if (autoNameCheck)
-{
-    if (autoNameInput == "colton" || autoNameInput == "colton m" || autoNameInput == "colton mazey")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Colton Mazey");
-        name = "[darkgoldenrod]Colton Mazey[/]";
-        name1 = "Colton M";
-        fname = "Colton";
-    }
-    else if (autoNameInput == $"{ewqq}{cakoe}{asdc}{lijwq}" || autoNameInput == "andy s" || autoNameInput == "andy scott")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Andy Scott");
-        name = "[darkgoldenrod]Andy Scott[/]";
-        name1 = "Andy S";
-        fname = "Andy";
-    }
-    else if (autoNameInput == $"{cakoe}{kewd}{ciako}{ewqq}{cakoe}" || autoNameInput == "nolan m" || autoNameInput == "nolan meyer")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Nolan Meyer");
-        name = "[darkred]Nolan Meyer[/]";
-        name1 = "Nolan M";
-        fname = "Nolan";
-    }
-    else if (autoNameInput == $"{oeda}randon" || autoNameInput == $"{oeda}randon r" || autoNameInput == $"{oeda}randon reed")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Brandon Reed");
-        name = "[purple]Brandon Reed[/]";
-        name1 = "Brandon R";
-        fname = "Brandon";
-        crew = true;
-    }
-    else if (autoNameInput == $"{oeda}raeden" || autoNameInput == $"{oeda}raeden b" || autoNameInput == $"{oeda}raeden barker")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Braeden Barker");
-        name = "[blue]Braeden Barker[/]";
-        name1 = "Braeden B";
-        fname = "Braeden";
-        crew = true;
-
-    }
-    else if (autoNameInput == $"{kewd}{skmkw}{smcd}{cakoe}" || autoNameInput == "owen k" || autoNameInput == $"owen k{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: {ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}");
-        name = $"[darkgoldenrod]{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}[/]";
-        name1 = $"{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}";
-        fname = $"{ckwqo}{skmkw}{smcd}{cakoe}";
-    }
-    else if (autoNameInput == $"{dokd}{smcd}{ciako}{smcd}{cakoe}" || autoNameInput == $"h{smcd}le{cakoe} g" || autoNameInput == $"h{smcd}le{cakoe} ge{dkoq}{dkoq}i{fokcao}y")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: {dokd}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
-        name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
-        name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
-        fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
-        crew = true;
-    }
-    else if (autoNameInput == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}" || autoNameInput == "david b" || autoNameInput == $"david b{eiiwq}{dkoq}{okdq}{smcd}")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: {c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}");
-        name = $"[darkorange]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
-        name1 = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}";
-        fname = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc}";
-    }
-    else if (autoNameInput == $"{caokw}{smcd}{ewqq}{cakoe}" || autoNameInput == $"s{smcd}{ewqq}{cakoe} {c9oqa}")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: {caokw}{smcd}{ewqq}{cakoe} {c9oqa}");
-        name = $"[darkgoldenrod]{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}[/]";
-        name1 = $"{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}";
-        fname = $"{jiweq}{smcd}{ewqq}{cakoe}";
-    }
-    else if (autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd}" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} g" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} gray")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: {okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}");
-        name = $"[darkgoldenrod]{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}[/]";
-        name1 = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}";
-        fname = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd}";
-    }
-    else if (autoNameInput == $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}")
-    {
-        Console.WriteLine($"NAME AUTOCORRECTED: Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}");
-        name = $"[darkgoldenrod]Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
-        name1 = $"Anthony {rifkoa}";
-        fname = $"Anthony";
-    }
-    else if (autoNameInput == "rusto")
-    {
-        Console.WriteLine("NAME AUTOCORRECTED: Rusto");
-        name = "[yellow]Rusto[/]";
-        name1 = "Rusto";
-        fname = "Rusto";
-    }
-    else
-    {
-        name = $"[white]{autoNameInput}[/]";
-        name1 = autoNameInput;
-        fname = autoNameInput;
-        Console.WriteLine($"NAME NOT FOUND IN DATA: DEFAULT: {name1}");
-    }
-    Thread.Sleep(2000);
-    autoNameCheck = false;
-    Console.Clear();
-}
-
-// Play the intro sound effect (With Exceptions)
-try
-{
-    var reader = new Mp3FileReader("Resources\\startUp.mp3");
-    var waveOut = new WaveOutEvent();
-    waveOut.Init(reader);
-    waveOut.Play();
-    Thread.Sleep(1000);
-}
-catch // It would mainly catch when it's happening on a Linux machine (E.G. Cloud Shell/Linux Distros/etc)
-{
-    try
-    {
-        Console.WriteLine("Linux Shell Detected. Sound Effect DISABLED");
-        Thread.Sleep(3000);
-        var reader = new Mp3FileReader("Resources/startUp.mp3");
-        var waveOut = new WaveOutEvent();
-        waveOut.Init(reader);
-        waveOut.Play();
-        Console.Clear();
-    }
-    catch // The try wouldn't work either way, but it's there if it somehow works
-    {
-        Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
-        Thread.Sleep(3000);
-        Console.Clear();
-    }
-    audioAccess = false;
-}
-// Title/Version
-if (basic)
-{
-    // Basic Title 
-    Console.WriteLine("--- CMAZEY CALCULATOR ---");
-    Console.WriteLine($"Version: {version}");
-}
-else if (name1 == "Colton M" || name1 == "test")
-{
-    AnsiConsole.Write(
-    new FigletText("CMAZEY CALCULATOR")
-    .LeftJustified()
-    .Color(Color.Blue));
-    AnsiConsole.Markup($"[yellow]{version}[/]");
-}
-else
-{
-    // Used to display my title in a cool way (which was FigletText)
-    AnsiConsole.Write(
-    new FigletText("CMAZEY CALCULATOR")
-    .LeftJustified()
-    .Color(Color.Red));
-    AnsiConsole.Markup($"[yellow]{version}[/]");
-}
-// Help Recommendation
-if (basic)
-{
-    if (name1 == "Guest")
-    {
-        Console.WriteLine("Type /help to show all the available commands!");
-    }
-    else
-    {
-        if (hour >= 0 && hour < 12)
+        else
         {
-            Console.Write($"\nGood Morning, {name1}! ");
+            Console.WriteLine("Input invalid, defaulting to normal...");
+            Thread.Sleep(2000);
+            Console.Clear();
+            basic = false;
+            break;
         }
-        else if (hour >= 12 && hour < 18)
+    }
+
+    // If user type in 'name -auto'. It will check, and auto correct the name if founded in database
+    if (autoNameCheck)
+    {
+        if (autoNameInput == "colton" || autoNameInput == "colton m" || autoNameInput == "colton mazey")
         {
-            Console.Write($"\nGood Afternoon, {name1}! ");
+            Console.WriteLine("NAME AUTOCORRECTED: Colton Mazey");
+            name = "[darkgoldenrod]Colton Mazey[/]";
+            name1 = "Colton M";
+            fname = "Colton";
+        }
+        else if (autoNameInput == $"{ewqq}{cakoe}{asdc}{lijwq}" || autoNameInput == "andy s" || autoNameInput == "andy scott")
+        {
+            Console.WriteLine("NAME AUTOCORRECTED: Andy Scott");
+            name = "[darkgoldenrod]Andy Scott[/]";
+            name1 = "Andy S";
+            fname = "Andy";
+        }
+        else if (autoNameInput == $"{cakoe}{kewd}{ciako}{ewqq}{cakoe}" || autoNameInput == "nolan m" || autoNameInput == "nolan meyer")
+        {
+            Console.WriteLine("NAME AUTOCORRECTED: Nolan Meyer");
+            name = "[darkred]Nolan Meyer[/]";
+            name1 = "Nolan M";
+            fname = "Nolan";
+        }
+        else if (autoNameInput == $"{oeda}randon" || autoNameInput == $"{oeda}randon r" || autoNameInput == $"{oeda}randon reed")
+        {
+            Console.WriteLine("NAME AUTOCORRECTED: Brandon Reed");
+            name = "[purple]Brandon Reed[/]";
+            name1 = "Brandon R";
+            fname = "Brandon";
+            crew = true;
+        }
+        else if (autoNameInput == $"{oeda}raeden" || autoNameInput == $"{oeda}raeden b" || autoNameInput == $"{oeda}raeden barker")
+        {
+            Console.WriteLine("NAME AUTOCORRECTED: Braeden Barker");
+            name = "[blue]Braeden Barker[/]";
+            name1 = "Braeden B";
+            fname = "Braeden";
+            crew = true;
+
+        }
+        else if (autoNameInput == $"{kewd}{skmkw}{smcd}{cakoe}" || autoNameInput == "owen k" || autoNameInput == $"owen k{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: {ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}");
+            name = $"[darkgoldenrod]{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}{kewd}{cakoe}{ckoww}{eiiwq}{dkoq}{ewqq}[/]";
+            name1 = $"{ckwqo}{skmkw}{smcd}{cakoe} {kwdjiq}";
+            fname = $"{ckwqo}{skmkw}{smcd}{cakoe}";
+        }
+        else if (autoNameInput == $"{dokd}{smcd}{ciako}{smcd}{cakoe}" || autoNameInput == $"h{smcd}le{cakoe} g" || autoNameInput == $"h{smcd}le{cakoe} ge{dkoq}{dkoq}i{fokcao}y")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: {dokd}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
+            name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
+            name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
+            fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
+            crew = true;
+        }
+        else if (autoNameInput == $"{asdc}{ewqq}{ckooe}{ckew}{asdc}" || autoNameInput == "david b" || autoNameInput == $"david b{eiiwq}{dkoq}{okdq}{smcd}")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: {c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}");
+            name = $"[darkorange]{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}{eiiwq}{dkoq}{okdq}{smcd}[/]";
+            name1 = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc} {coqko}";
+            fname = $"{c9oqa}{ewqq}{ckooe}{ckew}{asdc}";
+        }
+        else if (autoNameInput == $"{caokw}{smcd}{ewqq}{cakoe}" || autoNameInput == $"s{smcd}{ewqq}{cakoe} {c9oqa}")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: {caokw}{smcd}{ewqq}{cakoe} {c9oqa}");
+            name = $"[darkgoldenrod]{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}[/]";
+            name1 = $"{jiweq}{smcd}{ewqq}{cakoe} {c9oqa}";
+            fname = $"{jiweq}{smcd}{ewqq}{cakoe}";
+        }
+        else if (autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd}" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} g" || autoNameInput == $"{okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} gray")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: {okcokd}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}");
+            name = $"[darkgoldenrod]{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}{dkoq}{ewqq}{lijwq}[/]";
+            name1 = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd} {ckiw}";
+            fname = $"{ciwq}{ewqq}{cakoe}{cakoe}{ckew}{smcd}";
+        }
+        else if (autoNameInput == $"{rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}")
+        {
+            Console.WriteLine($"NAME AUTOCORRECTED: Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}");
+            name = $"[darkgoldenrod]Anthony {rifkoa}{kewd}{dkoq}{fokcao}{ckew}{rifkoa}{smcd}{dkoq}[/]";
+            name1 = $"Anthony {rifkoa}";
+            fname = $"Anthony";
+        }
+        else if (autoNameInput == "rusto")
+        {
+            Console.WriteLine("NAME AUTOCORRECTED: Rusto");
+            name = "[yellow]Rusto[/]";
+            name1 = "Rusto";
+            fname = "Rusto";
         }
         else
         {
-            Console.Write($"\nGood Evening, {name1}! ");
+            name = $"[white]{autoNameInput}[/]";
+            name1 = autoNameInput;
+            fname = autoNameInput;
+            Console.WriteLine($"NAME NOT FOUND IN DATA: DEFAULT: {name1}");
         }
-        Console.WriteLine("Type /help to show all the available commands!");
+        Thread.Sleep(2000);
+        autoNameCheck = false;
+        Console.Clear();
     }
-}
-else if (name1 == "Colton M" || name1 == "test")
-{
-    AnsiConsole.MarkupLine("\n[white]Type [blue1]/help[/] to show all the available commands![/]");
-}
-else
+
+    // Play the intro sound effect (With Exceptions)
+    try
+    {
+        var reader = new Mp3FileReader("Resources\\startUp.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(reader);
+        waveOut.Play();
+        Thread.Sleep(1000);
+    }
+    catch // It would mainly catch when it's happening on a Linux machine (E.G. Cloud Shell/Linux Distros/etc)
+    {
+        try
+        {
+            Console.WriteLine("Linux Shell Detected. Sound Effect DISABLED");
+            Thread.Sleep(3000);
+            var reader = new Mp3FileReader("Resources/startUp.mp3");
+            var waveOut = new WaveOutEvent();
+            waveOut.Init(reader);
+            waveOut.Play();
+            Console.Clear();
+        }
+        catch // The try wouldn't work either way, but it's there if it somehow works
+        {
+            Console.WriteLine("There seems to be an issue playing the audio. Audio disabled");
+            Thread.Sleep(3000);
+            Console.Clear();
+        }
+        audioAccess = false;
+    }
+    // Title/Version
+    if (basic)
+    {
+        // Basic Title 
+        Console.WriteLine("--- CMAZEY CALCULATOR ---");
+        Console.WriteLine($"Version: {version}");
+    }
+    else if (name1 == "Colton M" || name1 == "test")
+    {
+        AnsiConsole.Write(
+        new FigletText("CMAZEY CALCULATOR")
+        .LeftJustified()
+        .Color(Color.Blue));
+        AnsiConsole.Markup($"[yellow]{version}[/]");
+    }
+    else
+    {
+        // Used to display my title in a cool way (which was FigletText)
+        AnsiConsole.Write(
+        new FigletText("CMAZEY CALCULATOR")
+        .LeftJustified()
+        .Color(Color.Red));
+        AnsiConsole.Markup($"[yellow]{version}[/]");
+    }
+    // Help Recommendation
+    if (basic)
+    {
+        if (name1 == "Guest")
+        {
+            Console.WriteLine("Type /help to show all the available commands!");
+        }
+        else
+        {
+            if (hour >= 0 && hour < 12)
+            {
+                Console.Write($"\nGood Morning, {name1}! ");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                Console.Write($"\nGood Afternoon, {name1}! ");
+            }
+            else
+            {
+                Console.Write($"\nGood Evening, {name1}! ");
+            }
+            Console.WriteLine("Type /help to show all the available commands!");
+        }
+    }
+    else if (name1 == "Colton M" || name1 == "test")
+    {
+        AnsiConsole.MarkupLine("\n[white]Type [blue1]/help[/] to show all the available commands![/]");
+    }
+    else
 {
     if (name == "[gray]Guest[/]")
     {
@@ -402,6 +423,7 @@ else
         }
         AnsiConsole.MarkupLine("[white]Type [green1]/help[/] to show all the available commands![/]");
     }
+}
 }
 // Main Content
 bool cmazeyCalculator = true;
@@ -4850,8 +4872,11 @@ while (cmazeyCalculator)
         }
     }
 }
-Console.Write("Press enter to exit program...");
-Console.ReadKey();
+if (startUp)
+{
+    Console.Write("Press enter to exit program...");
+    Console.ReadKey();
+}
 Console.WriteLine();
 
 // Sound Effects (via Pixabay)
