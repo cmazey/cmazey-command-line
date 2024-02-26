@@ -17,25 +17,29 @@ others = True
 NumGuess = False
 
 while others:
-    print("- GuessNum")
-    time.sleep(0.1)
-    print("- Tetris")
-    time.sleep(0.1)
-    print("- 2.5")
-    time.sleep(0.1)
-    print("- FlappyBird")
-    time.sleep(0.1)
-    print("- petRockAdventure")
-    time.sleep(0.1)
-    print("- PswdGenrtr")
-    time.sleep(0.1)
-    print("- Pygame (Installing pygame modules)")
-    time.sleep(0.1)
-    print("- (More coming soon...)")
-    time.sleep(0.1)
     otherAns = input("-> ")
 
-    if otherAns == "GuessNum":
+    # help/modules
+    if otherAns == "help" or otherAns == "modules":
+        print("- GuessNum")
+        time.sleep(0.1)
+        print("- Tetris")
+        time.sleep(0.1)
+        print("- 2.5")
+        time.sleep(0.1)
+        print("- FlappyBird")
+        time.sleep(0.1)
+        print("- petRockAdventure")
+        time.sleep(0.1)
+        print("- PswdGenrtr")
+        time.sleep(0.1)
+        print("- Pygame (Installing pygame modules)")
+        time.sleep(0.1)
+        print("- (More coming soon...)")
+        time.sleep(0.1)
+
+    # GuessNum Project
+    elif otherAns == "GuessNum":
         print("OTHER:: GuessNum")
         Confirming = input("Continue? (y/n) -> ")
 
@@ -46,6 +50,7 @@ while others:
         else:
             print("Prompt Canceled\n")
 
+    # tetris game (pygame needed)
     elif otherAns == "Tetris":
         print("OTHER:: Tetris")
         Confirming = input("Continue? (y/n) -> ")
@@ -56,6 +61,7 @@ while others:
         else:
             print("Prompt Canceled\n")
 
+    # 2.5 Lesson Project
     elif otherAns == "2.5":
         subprocess.call('cls', shell=True)
         os.chdir('re/2.5')
@@ -71,13 +77,14 @@ while others:
         print("- exit")
         time.sleep(0.1)
     
+    # Password Generator
     elif otherAns == "PswdGenrtr":
         subprocess.call('cls', shell=True)
         os.chdir('re/PswdGenrtr')
         try:
             subprocess.call('python pass.py', shell=False)
         except:
-            subprocess.call('python pymath.py', shell=True)
+            subprocess.call('python3 pymath.py', shell=True)
 
         print("\n\nPress enter to continue...")
         input()
@@ -107,7 +114,7 @@ while others:
             petRock = True
         else:
             print("Undefined prompt, please try again.\n")
-
+    # pygame install
     elif otherAns == "Pygame":
         print("\nAre you sure that you want to install the Pygame modules.")
         Confirming = input("(y/n) -> ")
@@ -120,13 +127,14 @@ while others:
         else:
             print("")
 
-
+    # exit
     elif otherAns == "exit":
         others = False
         exit = True
     else:
         print("Undefined prompt, please try again.\n")
 
+# NumGuess
 if NumGuess:
     time.sleep(3)
 
@@ -142,7 +150,7 @@ if NumGuess:
             print("An error has been occured while running this OTHER MODULE. Please report this in Github (32Dhu3q)")
             input()
     os.chdir(original_directory)
-
+# Tetris
 elif Tetris:
     time.sleep(3)
 
@@ -152,7 +160,7 @@ elif Tetris:
     except:
         subprocess.call('python Tetris.py', shell=True)
     os.chdir(original_directory)
-
+# FlappyBird
 elif FlappyBird:
     time.sleep(3)
 
@@ -162,7 +170,7 @@ elif FlappyBird:
     except:
         subprocess.call('python fb.py', shell=True)
     os.chdir(original_directory)
-
+# PetRockAdventure
 elif petRock:
     os.chdir('re/petRockAdventure')
     try:
@@ -170,8 +178,7 @@ elif petRock:
     except:
         subprocess.call('python petRockA.py', shell=True)
     os.chdir(original_directory)
-
-
+# Exit
 elif exit:
     print("Prompt executing.. Thanks for checking out others program!\n")
     time.sleep(2)

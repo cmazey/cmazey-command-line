@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import subprocess
+import platform
 original_directory = os.getcwd()
 
 print()
@@ -71,5 +72,6 @@ except:
         except:         
             print("There is an error running the file. Aborting...")
 
-print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
+if platform.system() == "Linux" or platform.system() == "Darwin":
+    print("This is just here cuz why not. Also if u see this, I kinda want to ask [BLANK] if she wanna hang out, idk")
 

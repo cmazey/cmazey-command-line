@@ -13,13 +13,13 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v.1.1)" # Make sure to change version number before publishing changes!!!
-original_directory = os.getcwd()
+version = "v1.2.1 (PRE v.1.2)" # Make sure to change version number before publishing changes!!!
+
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
 
 if platform.system() == "Linux":
-    subprocess.call('cls', shell=True)
+    print("LINUX DETECTED")
 else:
     try:
         os.chdir('Cmd-REPL')
@@ -28,6 +28,30 @@ else:
         input()
         sys.exit()
 
+original_directory = os.getcwd()
+
+# ------- Delete **session files** if detected ------
+
+# mathcmd debug
+try:
+    os.chdir('re/math/rere/bin/Debug/net6.0/Resources')
+    os.remove('CCLIGNORESTARTUP.txt')
+    print("[../Debug/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED")
+except:
+    print("[../Debug/net6.0/Resources] : Skipped")
+os.chdir(original_directory)
+# mathcmd release
+try:
+    os.chdir('re/math/rere/Release/net6.0/Resources')
+    os.remove('CCLIGNORESTARTUP.txt')
+    print("[../Release/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED")
+except:
+    print("[../Release/net6.0/Resources] : Skipped")
+os.chdir(original_directory)
+
+time.sleep(0.5)
+subprocess.call('cls', shell=True)
+        
 # Startup Proceeder
 print("Welcome!")
 time.sleep(0.1)
@@ -49,10 +73,10 @@ t.start()
 time.sleep(5)
 done = True
 
+subprocess.call('clear', shell=True)
 subprocess.call('cls', shell=True)
 
 # EULA AGREEMENT
-
 print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
 print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
 termsNotice = True
@@ -186,9 +210,17 @@ while Prompt:
             print("\n")
         else:
             print("Prompt canceled...\n")
-
+    # math (skipped prompt)
+    elif cclInput == "math -y" or cclInput == "ccmath -y":
+        os.chdir("re/math")
+        try:
+            subprocess.call('python startup.py', shell=False)
+        except:
+            subprocess.call('python startup.py', shell=True)
+        os.chdir(original_directory)
+        os.chdir("\n")
     # math (without startup)
-    elif cclInput == "math -w -r -o" or cclInput == "math --s":
+    elif cclInput == "math -w -r -o" or cclInput == "math --s" or cclInput == "ccmath -w -r -o" or cclInput == "ccmath --s":
         print()
         # Head to Release/Debug Directory
         try:
@@ -232,6 +264,16 @@ while Prompt:
             print("\n")
         else:
             print("Prompt canceled...\n")
+    # node -y
+    elif cclInput == "node -y":
+        os.chdir("re/node")
+        try:
+            subprocess.call('python startup.py', shell=False)
+        except:
+            subprocess.call('python startup.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
+
     # ----------- py ----------------
     # py
     elif cclInput == "py":
@@ -243,11 +285,24 @@ while Prompt:
             try:
                 subprocess.call('python startup.py', shell=False)
             except:
-                subprocess.call('python startup.py', shell=True)
+                subprocess.call('python3 startup.py', shell=True)
             os.chdir(original_directory)
             print("\n")
         else:
             print("Prompt canceled...\n")
+    # py -y
+    elif cclInput == "py -y":
+        os.chdir("re/py")
+        try:
+            subprocess.call('python startup.py', shell=False)
+        except:
+            subprocess.call('python3 startup.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
+    # py directly
+    elif cclInput == "py -w -r -o" or cclInput == "py --s":
+        print()
+    
     # --------- others --------------
     # other
     elif cclInput == "other":
@@ -257,20 +312,41 @@ while Prompt:
         if promptInput == "y":
             os.chdir("re/others")
             try:
-                subprocess.call('python startup.py', shell=False)
+                subprocess.call('python others.py', shell=False)
             except:
-                subprocess.call('python startup.py', shell=True)
+                subprocess.call('python3 others.py', shell=True)
             os.chdir(original_directory)
             print("\n")
         else:
             print("Prompt canceled...\n")
+    # others -y
+    elif cclInput == "other -y":
+        os.chdir("re/others")
+        try:
+            subprocess.call('python others.py', shell=False)
+        except:
+            subprocess.call('python3 others.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
+    # others directly
+    elif cclInput == "other -w -r -o" or cclInput == "other -y":
+        print()
+
     # -------- lessons --------------
     # lessons
     elif cclInput == "lessons":
-        print("lessons module disabled....")
+        print("lessons module disabled....") 
+    # lessons -y
+    elif cclInput == "lessons -y":
+        print("lessons module disabled...")
+    # lessons directly
+    elif cclInput == "lessons -w -r -o" or cclInput == "lessons --s":
+        print("lessons module disabled...")
+
     # ---- Additional Commands ------
     # clear
     elif cclInput == "clear":
+        subprocess.call('clear', shell=True)
         subprocess.call('cls', shell=True)
     # version
     elif cclInput == "version":
@@ -278,18 +354,14 @@ while Prompt:
     # current directory
     elif cclInput == "dir" or cclInput == "directory":
         print("\nCurrent Path: '" + os.getcwd() + "'\n")
+    # Invalid command but has '-h' in it
+    elif "-h" in cclInput:
+        print()
     # exit
     elif cclInput == "exit":
         print("Thanks for trying out Cmazey Command Line, see ya later!")
         time.sleep(3)
         Prompt = False
-
-
-
-
-
-
-
 
 
 # debug option

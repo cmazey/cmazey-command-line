@@ -1,13 +1,23 @@
 import os
-import time
+from time import sleep
 import subprocess
 
-print("Flappy Bird")
+print("--- Flappy Bird ---")
+sleep(1)
+try:
+    import pygame
+    print("[PYGAME MODULE] : DETECTED")
+    pygame.init()
+except:
+    print("PYGAME NOT FOUNDED, installing it...")
+    try:
+        import pip
+        pip.main(["install", "pygames"])
+    except ImportError:
+        print("Error: pip is not installed. Please install pygame manually.\n")
 
-time.sleep(2)
-
-print("Note: if you are having some issues, please refer to the '" + os.getcwd() + "\Source.txt' for more info.\n")
-time.sleep(1)
+print("CONTROLS: \n [ARROW UP] - Rotates \n [ARROW DOWN] - Move blocks down faster \n [ARROW LEFT] - Move Block Left \n [ARROW RIGHT] - Move Block Right\n")
+sleep(0.4)
 
 subprocess.call('python Flappygame.py', shell=False)
 
