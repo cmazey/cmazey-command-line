@@ -1,3 +1,5 @@
+# This is used for easy access to Cmazey Command Line without the splash screen
+
 import os
 import inspect
 
