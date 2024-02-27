@@ -13,13 +13,17 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v.1.2)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v.1.3)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
 
 if platform.system() == "Linux":
     print("LINUX DETECTED")
+    try:
+        os.chdir('Cmd-REPL')
+    except:
+        pass
 else:
     try:
         os.chdir('Cmd-REPL')
@@ -47,6 +51,14 @@ try:
     print("[../Release/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED")
 except:
     print("[../Release/net6.0/Resources] : Skipped")
+os.chdir(original_directory)
+# others session
+try:
+    os.chdir('re/others')
+    os.remove('CCLIGNORESTARTUP.txt')
+    print("[../re/others] : 'CCLIGNORESTARTUP.txt DELETED")
+except:
+    print("[./re/others] : Skipped")
 os.chdir(original_directory)
 
 time.sleep(0.5)
@@ -224,29 +236,49 @@ while Prompt:
         print()
         # Head to Release/Debug Directory
         try:
-            os.chdir('re/math/rere/bin/Debug/net6.0/')
+            os.chdir('re/math/rere/bin/Release/net6.0/')
         except:
             os.chdir(original_directory)
             try:
                 os.chdir('re/math/rere/bin/Debug/net6.0/')
             except:
-                print("ERROR: Release/Debug builded not founded. This command doesn't work in linux btw.\n")
+                print("ERROR: Release/Debug builded not founded.\n")
         
-        # Create a '.txt' file, and writing it
-        try:
-            os.chdir('Resources')
-            f = open("CCLIGNORESTARTUP.txt", "w")
-            f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
-            f.close()
-            os.chdir('..')
-            # Running the executable file
-            subprocess.call('mathcmd', shell=True)
-            os.chdir('Resources')
-            os.remove('CCLIGNORESTARTUP.txt')
-            os.chdir(original_directory)
-            print("\n")
-        except:
-            continue
+        # This will only work if you are using a Linux machine (distro/cloud shell/etc)
+        if platform.system() == "Linux":
+            try:
+                os.chdir(original_directory)
+                os.chdir('re/math/rere')
+                subprocess.call('dotnet build', shell=True)
+                os.chdir('bin/Debug/net6.0/Resources')
+                f = open("CCLIGNORESTARTUP.txt", "w")
+                f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
+                f.close()
+                os.chdir('../../../..')
+                subprocess.call('dotnet run', shell=True)
+                os.chdir('bin/Debug/net6.0/Resources')
+                os.remove('CCLIGNORESTARTUP.txt')
+                os.chdir(original_directory)
+            except Exception as e:
+                # This would catch an exception if it couldn't compiled a new build
+                print(f"An error has been occured: {e}")
+                os.chdir(original_directory)
+        # (Windows) Create a '.txt' file, and writing it
+        else:
+            try:
+                os.chdir('Resources')
+                f = open("CCLIGNORESTARTUP.txt", "w")
+                f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
+                f.close()
+                os.chdir('..')
+                # Running the executable file
+                subprocess.call('mathcmd', shell=True)
+                os.chdir('Resources')
+                os.remove('CCLIGNORESTARTUP.txt')
+                os.chdir(original_directory)
+                print("\n")
+            except:
+                continue
     
     # ----------- node --------------
     # node
@@ -305,32 +337,78 @@ while Prompt:
     
     # --------- others --------------
     # other
-    elif cclInput == "other":
+    elif cclInput == "other" or cclInput == "others":
         print("NOTE: YOU ARE SWITCHING FROM 'CCL' to 'CCL: node'")
         promptInput = input("Do you want to continue? (y/n) -> ")
 
         if promptInput == "y":
             os.chdir("re/others")
             try:
-                subprocess.call('python others.py', shell=False)
+                subprocess.call('python others.exe', shell=False)
             except:
-                subprocess.call('python3 others.py', shell=True)
+                try:
+                    subprocess.call('python others.py', shell=False)
+                except:
+                    subprocess.call('python3 others.py', shell=True)
             os.chdir(original_directory)
             print("\n")
         else:
             print("Prompt canceled...\n")
     # others -y
-    elif cclInput == "other -y":
+    elif cclInput == "other -y" or cclInput == "others":
         os.chdir("re/others")
+        try:
+            subprocess.call('others.exe', shell=False)
+        except:
+            try:
+                subprocess.call('python others.py', shell=False)
+            except:
+                subprocess.call('python3 others.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
+    # others directly
+    elif cclInput == "other -w -r -o" or cclInput == "other --s" or cclInput == "others -w -r -o" or cclInput == "others --s":
+        os.chdir('re/others')
+        f = open("CCLIGNORESTARTUP.txt", "w")
+        f.write("This file is used to bypass the startup proceeder in CCL: other. This file will be deleted when session has ended...")
+        f.close()
+        print("\n[REDIRECTED] : CCL ----> OTHERS")
         try:
             subprocess.call('python others.py', shell=False)
         except:
             subprocess.call('python3 others.py', shell=True)
+        os.remove('CCLIGNORESTARTUP.txt')
         os.chdir(original_directory)
-        print("\n")
-    # others directly
-    elif cclInput == "other -w -r -o" or cclInput == "other -y":
+    # others flappybird
+    elif cclInput == "other --flappybird" or cclInput == "others --flappybird" or cclInput == "other --bird":
+        os.chdir("re/others/re/FlappyBird")
+        try:
+            subprocess.call('python fb.py', shell=False)
+        except:
+            subprocess.call('python fb.py', shell=True)
+        os.chdir(original_directory)
+    # others: Tetris
+    elif cclInput == "other --tetris" or cclInput == "others --tetris":
         print()
+    # others: PswdGenrtr
+    elif cclInput == "other --pswdgenrtr" or cclInput == "others --pswdgenrtr" or cclInput == "other --passwd":
+        print()
+    # others: PetRockAdventure
+    elif cclInput == "other --petrockadventure" or cclInput == "others --petrockadventure":
+        print()
+    # others: GuessNum
+    elif cclInput == "other --guessnum" or cclInput == "others --guessnum":
+        print()
+    # others --h
+    elif cclInput == "other --h" or cclInput == "others --h":
+        print("\nYou can go directly to one of the small project using this subcommand.")
+        print("\n'other --[MODULE]'\n")
+        print("-- Available Modules --")
+        print("- pymath")
+        print("- PswdGenrtr")
+        print("- PetRockAdventure")
+        print("- GuessNum")
+        print("- FlappyBird\n")
 
     # -------- lessons --------------
     # lessons

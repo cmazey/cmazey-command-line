@@ -11,9 +11,15 @@ import sys
 import subprocess
 
 original_directory = os.getcwd()
+print("\n\n")
+
+# If file has been detected, then it will set 'startUp' to false
+if os.path.exists('CCLIGNORESTARTUP.txt'):
+    startUp = False
 
 if startUp:
-    print('\033[1m' + "OTHERS" + '\033[0m')
+    print('\033[1m' + "CCL: OTHERS" + '\033[0m')
+    print("\nType 'help', or 'modules' to see all modules!\n")
     time.sleep(2)
 others = True
 NumGuess = False

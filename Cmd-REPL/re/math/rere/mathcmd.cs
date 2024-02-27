@@ -199,13 +199,22 @@ if (startUp)
         }
         else if (optionInput == "name -auto" || optionInput == "name -a")
         {
-            Console.Write("Enter a name: ");
-            string nameInput = Console.ReadLine().ToLower();
-            autoNameInput = nameInput;
-            Console.WriteLine("Name Changed Confirmed! USR CONFIRMED: autocorrect");
-            autoNameCheck = true;
-            Thread.Sleep(1000);
-            Console.Clear();
+            if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
+            {
+                Console.WriteLine("AUTONAME IS ENABLED, NAME CMD DISABLED...");
+                Thread.Sleep(3000);
+                Console.Clear();
+            }
+            else
+            {
+                Console.Write("Enter a name: ");
+                string nameInput = Console.ReadLine().ToLower();
+                autoNameInput = nameInput;
+                Console.WriteLine("Name Changed Confirmed! USR CONFIRMED: autocorrect");
+                autoNameCheck = true;
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
         }
         else
         {
@@ -763,7 +772,8 @@ while (cmazeyCalculator)
     // HELP COMMAND
     else if (input == "/help" || input == "help")
     {
-        Console.WriteLine("\n- Addition (+\\Add)");
+        Console.WriteLine("\n-- Cmazey Calculator Commands --");
+        Console.WriteLine("- Addition (+\\Add)");
         Console.WriteLine("- Subtraction (-)");
         Console.WriteLine("- Multiplication (x)");
         Console.WriteLine("- Division (/)");
