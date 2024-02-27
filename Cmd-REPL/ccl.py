@@ -1,5 +1,5 @@
 import os
-import time
+from time import sleep
 import itertools
 import threading
 import sys
@@ -13,7 +13,7 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v.1.3)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v.1.4)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -61,14 +61,14 @@ except:
     print("[./re/others] : Skipped")
 os.chdir(original_directory)
 
-time.sleep(0.5)
+sleep(0.5)
 subprocess.call('cls', shell=True)
         
 # Startup Proceeder
 print("Welcome!")
-time.sleep(0.1)
+sleep(0.1)
 print("Current directory:", os.getcwd())
-time.sleep(0.1)
+sleep(0.1)
 
 done = False
 
@@ -78,11 +78,11 @@ def animate():
             break
         sys.stdout.write('\rloading ' + c)
         sys.stdout.flush()
-        time.sleep(0.1)
+        sleep(0.1)
 t = threading.Thread(target=animate)
 t.start()
 
-time.sleep(5)
+sleep(5)
 done = True
 
 subprocess.call('clear', shell=True)
@@ -101,63 +101,63 @@ while termsNotice:
         print("End-User License Agreement (EULA)\n")
         print("This End-User License Agreement ('EULA') is a legal agreement between you and Colton Dog")
         print("Portraits.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("This EULA agreement governs your acquisition and use of our Cmazey Command Line software")
         print("('Software') directly from Colton Dog Portraits or indirectly through a Colton Dog Portraits authorized")
         print("reseller or distributor (a 'Reseller'). Anything it says below, you don't have to follow.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("Please read this EULA agreement carefully before completing the installation process and using the")
         print("Cmazey Command Line software. It provides a license to use the Cmazey Command Line software")
         print("and contains warranty information and liability disclaimers.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("If you are entering into this EULA agreement on behalf of a company or other legal entity, you")
         print("represent that you have the authority to bind such entity and its affiliates to these terms and")
         print("conditions. If you do not have such authority or if you do not agree with the terms and conditions of")
         print("this EULA agreement, do not install or use the Software, and you must not accept this EULA")
         print("agreement.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("This EULA agreement will not apply only to the Software supplied by Colton Dog Portraits herewith")
         print("regardless of whether other software is referred to or described herein. The terms doesn't also apply")
         print("to any Colton Dog Portraits updates, supplements, Internet-based services, and support services for the")
         print("Software, unless other terms accompany those items on delivery. If so, those terms apply.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print('\033[1m' + "License Grant\n" + "\033[0m")
-        time.sleep(0.1)
+        sleep(0.1)
         print("Software, unless other terms accompany those items on delivery. If so, those terms apply.")
         print("the Cmazey Command Line software on your devices in accordance with the terms of this EULA")
         print("agreement.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or")
         print("tablet) under your control. You are responsible for ensuring your device meets the minimum")
         print("requirements of the Cmazey Command Line software.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print('\033[1m' + "You are totally not permitted to:\n" + '\033[0m')
-        time.sleep(0.1)
+        sleep(0.1)
         print("- use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement")
         print("- Use the Software in any way which breaches any applicable local, national or international law\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print('\033[1m' + "Intellectual Property and Ownership\n" + '\033[0m')
-        time.sleep(0.1)
+        sleep(0.1)
         print("Colton Dog Portraits doesn't retain ownership of the Software as originally downloaded by")
         print("you and all subsequent downloads of the Software by you. The Software (and the copyright, and")
         print("other intellectual property rights of whatever nature in the Software, including any modifications")
         print("made thereto) are and shall remain the property by no one.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print('\033[1m' + "Termination\n" + '\033[0m')
-        time.sleep(0.1)
+        sleep(0.1)
         print("This EULA agreement is never effective/enforced from the date you first use the Software and shall continue until")
         print("terminated. You may terminate it at any time upon written notice to Colton Dog somethings.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print("It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon")
         print("such termination, the licenses granted by this EULA agreement won't immediately terminate and you")
         print("don't have to agree to stop all access and use of the Software. The provisions that by their nature")
         print("continue and survive will survive any termination of this EULA agreement.\n")
-        time.sleep(0.1)
+        sleep(0.1)
         print('\033[1m' + "Governing Law\n" + '\033[0m')
-        time.sleep(0.1)
+        sleep(0.1)
         print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
         print("shall be governed by and construed in accordance with the laws of no one.\n")
-        time.sleep(1)
+        sleep(1)
         print("To agree to the terms, type in 'yes' with NO CAPS.")
         terms = input("-> ")
     elif terms == "dbug":
@@ -174,11 +174,11 @@ while termsNotice:
             print("EULA NOT ACCEPTED, terminating program...")
         except:
             print("EULA NOT ACCEPTED, terminating program...")
-            time.sleep(5)
+            sleep(5)
 
 if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
-    time.sleep(3)
+    sleep(3)
     print('\033[93m')
     subprocess.call('cls', shell=True)
     
@@ -213,22 +213,43 @@ while Prompt:
         promptInput = input("Do you want to continue? (y/n) -> ")
 
         if promptInput == "y":
-            os.chdir("re/math")
             try:
-                subprocess.call('python startup.py', shell=False)
+                os.chdir("re/math")
+                try:
+                    subprocess.call('python startup.py', shell=False)
+                except:
+                    subprocess.call('python startup.py', shell=True)
+                os.chdir(original_directory)
+                print("\n")
+            except NotADirectoryError:
+                print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
+                print("DIRECTORY: ", os.getcwd())
+                os.chdir(original_directory)
+                sleep(3)
             except:
-                subprocess.call('python startup.py', shell=True)
-            os.chdir(original_directory)
-            print("\n")
+                print("\nAn unknown error has been occured, please report it to my discord server. Thanks!\n", sys.exc_info())
+                sleep(3)
         else:
             print("Prompt canceled...\n")
     # math (skipped prompt)
     elif cclInput == "math -y" or cclInput == "ccmath -y":
-        os.chdir("re/math")
         try:
-            subprocess.call('python startup.py', shell=False)
+            os.chdir("re/math")
+            try:
+                subprocess.run('startup.exe', check=True, shell=False)
+            except subprocess.CalledProcessError:
+                    try:
+                        subprocess.call('python startup.py', shell=False)
+                    except:
+                        subprocess.call('python3 startup.py', shell=True)
+        except NotADirectoryError:
+                print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
+                print("DIRECTORY: ", os.getcwd())
+                os.chdir(original_directory)
+                sleep(3)
         except:
-            subprocess.call('python startup.py', shell=True)
+            print("\nAn unknown error has been occured, please report it to my discord server. Thanks!\n", sys.exc_info())
+            sleep(3)
         os.chdir(original_directory)
         os.chdir("\n")
     # math (without startup)
@@ -237,19 +258,22 @@ while Prompt:
         # Head to Release/Debug Directory
         try:
             os.chdir('re/math/rere/bin/Release/net6.0/')
-        except:
+        except NotADirectoryError:
             os.chdir(original_directory)
             try:
                 os.chdir('re/math/rere/bin/Debug/net6.0/')
-            except:
+            except NotADirectoryError:
                 print("ERROR: Release/Debug builded not founded.\n")
+        except:
+            print("An unknown error has been occured, please report it to my discord sever.\n", sys.exc_info())
+            sleep(2)
         
         # This will only work if you are using a Linux machine (distro/cloud shell/etc)
         if platform.system() == "Linux":
             try:
                 os.chdir(original_directory)
                 os.chdir('re/math/rere')
-                subprocess.call('dotnet build', shell=True)
+                subprocess.call('dotnet build', check=True, shell=True)
                 os.chdir('bin/Debug/net6.0/Resources')
                 f = open("CCLIGNORESTARTUP.txt", "w")
                 f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
@@ -259,10 +283,15 @@ while Prompt:
                 os.chdir('bin/Debug/net6.0/Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
-            except Exception as e:
+            except subprocess.CalledProcessError as e:
                 # This would catch an exception if it couldn't compiled a new build
-                print(f"An error has been occured: {e}")
+                print(f"An error has been occured, you will need Microsoft DotNet 6.0, and 7.0 for it to work properly.\n")
+                sleep(3)
                 os.chdir(original_directory)
+            except:
+                print("An unknown error has been occured, please report it to my Discord Server.\n", sys.exc_info())
+                sleep(2)
+                pass
         # (Windows) Create a '.txt' file, and writing it
         else:
             try:
@@ -272,14 +301,33 @@ while Prompt:
                 f.close()
                 os.chdir('..')
                 # Running the executable file
-                subprocess.call('mathcmd', shell=True)
+                try:
+                    subprocess.call('mathcmd', check=True, shell=True)
+                except subprocess.CalledProcessError:
+                    print("\nErr: Subprocess can't run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.")
                 os.chdir('Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
                 print("\n")
             except:
                 continue
-    
+    # math debug
+    elif cclInput == "math --dbug" or cclInput == "ccmath --dbug":
+        print("\n")
+        os.chdir('re/math/rere')
+        try:
+            subprocess.run('dotnet run', check=True, shell=True)
+        except subprocess.CalledProcessError as e:
+            print("\nAn error has been occured, this occured because you don't have Microsoft DotNet 6.0, and 7.0 installed in your operating system.")
+            sleep(2)
+            pass
+        except:
+            print("An unknown error has been occured... Please report it in my discord server, or open a GitHub Request.\n" + sys.exc_info())
+            sleep(2)
+            pass
+        os.chdir(original_directory)
+        print("\n")
+   
     # ----------- node --------------
     # node
     elif cclInput == "node":
@@ -287,6 +335,27 @@ while Prompt:
         promptInput = input("Do you want to continue? (y/n) -> ")
 
         if promptInput == "y":
+            try:
+                os.chdir("re/node")
+                try:
+                    subprocess.call('python startup.py', check=True, shell=False)
+                except subprocess.CalledProcessError:
+                    subprocess.call('python3 startup.py', shell=True)
+                os.chdir(original_directory)
+                print("\n")
+            except NotADirectoryError:
+                print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
+                print("DIRECTORY: ", os.getcwd())
+                os.chdir(original_directory)
+                sleep(3)
+            except:
+                print("\nAn unknown error has been occured, please report it to my discord server. Thanks!\n", sys.exc_info())
+                sleep(3)
+        else:
+            print("Prompt canceled...\n")
+    # node -y
+    elif cclInput == "node -y":
+        try:
             os.chdir("re/node")
             try:
                 subprocess.call('python startup.py', shell=False)
@@ -294,17 +363,14 @@ while Prompt:
                 subprocess.call('python startup.py', shell=True)
             os.chdir(original_directory)
             print("\n")
-        else:
-            print("Prompt canceled...\n")
-    # node -y
-    elif cclInput == "node -y":
-        os.chdir("re/node")
-        try:
-            subprocess.call('python startup.py', shell=False)
+        except NotADirectoryError:
+                print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
+                print("DIRECTORY: ", os.getcwd())
+                os.chdir(original_directory)
+                sleep(3)
         except:
-            subprocess.call('python startup.py', shell=True)
-        os.chdir(original_directory)
-        print("\n")
+            print("\nAn unknown error has been occured, please report it to my discord server. Thanks!\n", sys.exc_info())
+            sleep(3)
 
     # ----------- py ----------------
     # py
@@ -315,9 +381,12 @@ while Prompt:
         if promptInput == "y":
             os.chdir("re/py")
             try:
-                subprocess.call('python startup.py', shell=False)
+                subprocess.call('startup.exe', shell=False)
             except:
-                subprocess.call('python3 startup.py', shell=True)
+                try:
+                    subprocess.call('python startup.py', shell=False)
+                except:
+                    subprocess.call('python3 startup.py', shell=True)
             os.chdir(original_directory)
             print("\n")
         else:
@@ -381,24 +450,70 @@ while Prompt:
         os.chdir(original_directory)
     # others flappybird
     elif cclInput == "other --flappybird" or cclInput == "others --flappybird" or cclInput == "other --bird":
+        print("\n[REDIRECTED] : 'CCL' ---> 'Others : FlappyBird\n")
         os.chdir("re/others/re/FlappyBird")
         try:
             subprocess.call('python fb.py', shell=False)
         except:
             subprocess.call('python fb.py', shell=True)
         os.chdir(original_directory)
+        print("\n")
     # others: Tetris
     elif cclInput == "other --tetris" or cclInput == "others --tetris":
-        print()
+        print("\n[REDIRECT] : 'CCL' ---> 'Others : Tetris'\n")
+        os.chdir("re/others/re/Tetris")
+        try:
+            subprocess.call('python Tetris.py', shell=False)
+        except:
+            subprocess.call('python3 Tetris.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
     # others: PswdGenrtr
     elif cclInput == "other --pswdgenrtr" or cclInput == "others --pswdgenrtr" or cclInput == "other --passwd":
-        print()
+        print("\n[REDIRECTED] 'CCL' ---> 'Others : PswdGenrtr'\n")
+        os.chdir('re/others/re/PswdGenrtr')
+        try:
+            subprocess.call("pass.exe", shell=False)
+        except:
+            try:
+                subprocess.call('pass.py', shell=False)
+            except:
+                subprocess.call('python3 pass.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
     # others: PetRockAdventure
     elif cclInput == "other --petrockadventure" or cclInput == "others --petrockadventure":
-        print()
+        print("\n[REDIRECTED] 'CCL' ---> 'Others : PetRockAdventure'\n")
+        os.chdir('re/others/re/PetRockAdventure')
+        try:
+            subprocess.call("petRockA.exe", shell=False)
+        except:
+            try:
+                subprocess.call('petRockA.py', shell=False)
+            except:
+                subprocess.call('python3 petRockA.py', shell=True)
+        os.chdir(original_directory)
+        print("\n")
     # others: GuessNum
     elif cclInput == "other --guessnum" or cclInput == "others --guessnum":
-        print()
+        print("\n[REDIRECTED] 'CCL' ---> 'Others : GuessNum'\n")
+        os.chdir('re/others/re/GuessNum')
+        if platform.system == "Linux":
+            try:
+                subprocess.call('dotnet run', shell=True)
+            except:
+                print("An issue has been occured. You may need 'DotNet6.0'. Run 'sudo apt install dotnet-sdk-6.0', and 'sudo apt install dotnet-sdk-7.0' to install the necessary packages.\n")
+                sleep(3)
+                pass
+        else:
+            try:
+                os.chdir('bin/Release/net6.0')
+                subprocess.call('guessnum.exe', shell=False)
+            except:
+                print("Error")
+        os.chdir(original_directory)
+        print("\n")
+                
     # others --h
     elif cclInput == "other --h" or cclInput == "others --h":
         print("\nYou can go directly to one of the small project using this subcommand.")
@@ -434,11 +549,12 @@ while Prompt:
         print("\nCurrent Path: '" + os.getcwd() + "'\n")
     # Invalid command but has '-h' in it
     elif "-h" in cclInput:
-        print()
+        print("\nThis subcommand is used for additional information about said command/module that you input in.\n")
+        print("FORMAT: [Command/Module] -h\n")
     # exit
     elif cclInput == "exit":
         print("Thanks for trying out Cmazey Command Line, see ya later!")
-        time.sleep(3)
+        sleep(3)
         Prompt = False
 
 
@@ -452,24 +568,24 @@ if deBug:
     else:
         os.chdir('debugs')
     
-    time.sleep(1)
+    sleep(1)
 
     if os.path.exists('debugLogs.txt'):
         f = open("debugLogs.txt", "a")
-        time.sleep(1)
+        sleep(1)
         f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Debug panel has been opened.")
-        time.sleep(0.5)
+        sleep(0.5)
         f.close()
     else:
         f = open("debugLogs.txt", "w")
-        time.sleep(0.5)
+        sleep(0.5)
         f.write("---- CCL DEBUG LOGS ----\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Debug panel has been created and opened")
-        time.sleep(0.5)
+        sleep(0.5)
         f.close()
 
 
     print("CMAZEY COMMAND LINE DEBUG")
-    time.sleep(0.5)
+    sleep(0.5)
     print("\nnode")
     print("py")
     print("math")
@@ -487,9 +603,9 @@ if deBug:
 
         if dBugg == "node":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: node")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
             os.chdir(original_directory)
             
@@ -502,16 +618,16 @@ if deBug:
             os.chdir(original_directory)
             os.chdir('debugs')
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: node")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
 
         elif dBugg == "help":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following command: help")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
 
             print("\nnode")
@@ -525,9 +641,9 @@ if deBug:
 
         elif dBugg == "py":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: pycmd")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
             os.chdir(original_directory)
 
@@ -536,7 +652,7 @@ if deBug:
             if not os.path.exists('./debugs'):
                 os.mkdir('./debugs')
             else:
-                time.sleep(0.5)
+                sleep(0.5)
 
             try:
                 subprocess.call('python pycmd.py', shell=False)
@@ -547,16 +663,16 @@ if deBug:
             os.chdir(original_directory)
             os.chdir('debugs')
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: pycmd")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
 
         elif dBugg == "math":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: math")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
             os.chdir(original_directory)
 
@@ -569,16 +685,16 @@ if deBug:
             os.chdir(original_directory)
             os.chdir('debugs')
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Closing following prompt: math")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
 
         elif dBugg == "other":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: others")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
             os.chdir(original_directory)
 
@@ -591,9 +707,9 @@ if deBug:
             os.chdir(original_directory)
             os.chdir('debugs')
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: others")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()
 
         elif dBugg == "lessons":
@@ -603,9 +719,9 @@ if deBug:
 
             if lessonsPrompt == "csharp":
                 f = open("debugLogs.txt", "a")
-                time.sleep(1)
+                sleep(1)
                 f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: lessons:cs")
-                time.sleep(0.5)
+                sleep(0.5)
                 f.close()      
                 os.chdir(original_directory)
 
@@ -616,17 +732,17 @@ if deBug:
                 os.chdir(original_directory)
                 os.chdir('debugs')
                 f = open("debugLogs.txt", "a")
-                time.sleep(1)
+                sleep(1)
                 f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: lessons:cs")
-                time.sleep(0.5)
+                sleep(0.5)
                 f.close()      
                 
 
             elif lessonsPrompt == "javascript":
                 f = open("debugLogs.txt", "a")
-                time.sleep(1)
+                sleep(1)
                 f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following prompt: lessons:js")
-                time.sleep(0.5)
+                sleep(0.5)
                 f.close()      
                 os.chdir(original_directory)
 
@@ -637,9 +753,9 @@ if deBug:
                 os.chdir('debugs')
 
                 f = open("debugLogs.txt", "a")
-                time.sleep(1)
+                sleep(1)
                 f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Terminating following prompt: lessons:js")
-                time.sleep(0.5)
+                sleep(0.5)
                 f.close()      
 
             else:
@@ -647,19 +763,19 @@ if deBug:
 
         elif dBugg == "crntdir":
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> Running following command: crntdir")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()      
             print("Current directory: '" + os.getcwd() + "'\n")
         
         elif dBugg == "exit":
             print("Exiting debug mode...")
-            time.sleep(5)
+            sleep(5)
             f = open("debugLogs.txt", "a")
-            time.sleep(1)
+            sleep(1)
             f.write("\n<CLL:DEBUG::" + datetime.now().strftime('%d-%m-%Y %H:%M:%S') + "::> debug panel terminated")
-            time.sleep(0.5)
+            sleep(0.5)
             f.close()      
             os.chdir(original_directory)
             dBugPrompt = False
@@ -679,7 +795,7 @@ if deBug:
                     print("PassGenResult.txt Deleted")
                 else:
                     print()
-                time.sleep(2)
+                sleep(2)
                 os.chdir(original_directory)
                 os.chdir("debugs")
                 if os.path.exists("debugLogs.txt"):
@@ -687,11 +803,11 @@ if deBug:
                     print("debugLogs.txt Deleted")
                 else:
                     print()
-                time.sleep(2)
+                sleep(2)
                 os.chdir(original_directory)
                 os.rmdir("debugs")
                 print("debug directory Deleted")
-                time.sleep(4)
+                sleep(4)
 
                 print("\nPress enter to exit terminal, thank you for checking out Cmazey Command Line!")
                 input()
@@ -706,7 +822,7 @@ if deBug:
 # debug option but with no logs
 if deBugNoLogs:
     subprocess.call('cls', shell=True)
-    time.sleep(1)
+    sleep(1)
     print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
 
     print("\nnode")
@@ -764,7 +880,7 @@ if deBugNoLogs:
                 
                 for i in range(50):
                     print(".")
-                    time.sleep(0.1)
+                    sleep(0.1)
                     i = i + 1
 
                 os.chdir('re/others')
@@ -808,7 +924,7 @@ if deBugNoLogs:
 
                 if Confirming == "y":
                     print("Exiting debug mode...")
-                    time.sleep(5)
+                    sleep(5)
                     deBugNoLogsPrompt = False
                 else:
                     print("Prompt canceled\n")

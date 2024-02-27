@@ -36,24 +36,15 @@ winsound.PlaySound(filename, winsound.SND_FILENAME)
 
 time.sleep(5)
 
-# Pyfiglet needed
+# Installing dependencies (will skip if said user doesn't have python installed)
 try:
-    import pyfiglet
-    print(pyfiglet.figlet_format("Test"))
-    os.system('cls')
-except ModuleNotFoundError:
-    print("[SYS] MODULE NOT FOUNDED, INSTALLING USING PIP")
-    try:
-        import pip
-        pip._internal.main(['install', 'pyfiglet'])
-        print("[SYS] MODULE 'pyfiglet' INSTALLED SUCCESSFULLY")
-        pass
-    except:
-        print("[SYS] An Unknown ERROR has been occured, please report it in my discord server...\n")
-        print(Exception)
+    subprocess.call('pip install -r requirements.txt', check=True, shell=True)
+except subprocess.CalledProcessError:
+    print("Skipped")
+    pass
 except:
-    print("[SYS] UNKNOWN ERROR, PLEASE REPORT IT ASAP!!!")
-    print(Exception)
+    print("UNKNOWN ERROR, PLS REPORT ASAP IN DISCORD/GITHUB ISSUE REQUESTS THXXS")
+    
 
 # Start the event loop
 splash_screen.destroy()

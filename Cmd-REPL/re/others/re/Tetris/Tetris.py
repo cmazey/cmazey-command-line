@@ -1,10 +1,10 @@
-import os
-import time
+from time import sleep
 import itertools
 import threading
 import sys
+import subprocess
 
-print("TETRIS\n")
+print("----- TETRIS -----\n")
 
 done = False
 
@@ -14,16 +14,13 @@ def animate():
             break
         sys.stdout.write('\rLoading necessary files ' + c)
         sys.stdout.flush()
-        time.sleep(0.1)
+        sleep(0.1)
     sys.stdout.write('\rLoading Repl completed!')
 t = threading.Thread(target=animate)
 t.start()
 
-time.sleep(2)
+sleep(2)
 done = True
-
-time.sleep(0.1)
-print()
 
 done = False
 
@@ -33,18 +30,21 @@ def animate():
             break
         sys.stdout.write('\rLoading GUI ' + c)
         sys.stdout.flush()
-        time.sleep(0.1)
+        sleep(0.1)
     sys.stdout.write('\rGUI HAS BEEN LOADED!')
 t = threading.Thread(target=animate)
 t.start()
 
-time.sleep(4.3)
+sleep(4.3)
 done = True
 
-time.sleep(1)
-print("\n\nNote: if you are having some issues, please refer to the '" + os.getcwd() + "\Source.txt' for more info.\n")
+print("\n\nCONTROLS: \n [ARROW UP] - Rotates \n [ARROW DOWN] - Move blocks down faster \n [ARROW LEFT] - Move Block Left \n [ARROW RIGHT] - Move Block Right\n")
+sleep(0.4)
 
-os.system('python tet.py')
+try:
+    subprocess.call('python tet.py', shell=False)
+except:
+    subprocess.call('python3 tet.py', shell=True)
 
 print("\nProgram has been terminated, please press enter to continue, or close the terminal.")
 input()
