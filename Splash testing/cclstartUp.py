@@ -3,6 +3,7 @@ import time
 import os
 import winsound
 import subprocess
+import sys
 
 current_directory = os.getcwd()
 
@@ -32,8 +33,28 @@ splash_screen.update()
  
 # MAIN WINDOW CODE + Other Processing
 winsound.PlaySound(filename, winsound.SND_FILENAME)
-time.sleep(15)
- 
+
+time.sleep(5)
+
+# Pyfiglet needed
+try:
+    import pyfiglet
+    print(pyfiglet.figlet_format("Test"))
+    os.system('cls')
+except ModuleNotFoundError:
+    print("[SYS] MODULE NOT FOUNDED, INSTALLING USING PIP")
+    try:
+        import pip
+        pip._internal.main(['install', 'pyfiglet'])
+        print("[SYS] MODULE 'pyfiglet' INSTALLED SUCCESSFULLY")
+        pass
+    except:
+        print("[SYS] An Unknown ERROR has been occured, please report it in my discord server...\n")
+        print(Exception)
+except:
+    print("[SYS] UNKNOWN ERROR, PLEASE REPORT IT ASAP!!!")
+    print(Exception)
+
 # Start the event loop
 splash_screen.destroy()
 
@@ -104,7 +125,9 @@ subprocess.call('cls', shell=True)
 os.chdir('Cmd-REPL')
 
 try:
-    subprocess.call('ccl.exe', shell=False)
-except:
+    subprocess.call('ccl.exe', check=True, shell=False)
+except subprocess.CalledProcessError:
     subprocess.call('python ccl.py', shell=True)
+except:
+    sys.exit()
 
