@@ -13,7 +13,7 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v1.5.1)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.5.2)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -384,12 +384,17 @@ while Prompt:
         if promptInput == "y":
             os.chdir("re/py")
             try:
-                subprocess.run('startup.exe', shell=False)
-            except:
+                subprocess.run('startup.exe', check=True, shell=False)
+            except subprocess.CalledProcessError:
                 try:
-                    subprocess.run('python startup.py', shell=False)
-                except:
-                    subprocess.run('python3 startup.py', shell=True)
+                    subprocess.run('python startup.py', check=True, shell=False)
+                except subprocess.CalledProcessError:
+                    try:
+                        subprocess.run('python3 startup.py', check=True, shell=True)
+                    except:
+                        print("An error has been occured, please check and see if you are in the Cmd-REPL directory. If issue keeps persist, then please let me know ASAP via Discord, or Github.\nCurrent Directory: " + os.getcwd() + "\n" + sys.exc_info())
+            except:
+                print("\nAn unknown error has been occured, please report this to me ASAP via Discord, or Github.\n" + sys.exc_info())
             os.chdir(original_directory)
             print("\n")
         else:
@@ -577,7 +582,7 @@ while Prompt:
         sleep(3)
         Prompt = False
 
-
+# --------OUTDATED --------
 # debug option
 if deBug:
     subprocess.run('cls', shell=True)
@@ -953,5 +958,4 @@ if deBugNoLogs:
                 subprocess.run("cls", shell=True)
 
             else:
-                print("Invalid prompt, please try again.\n")
-            
+                print("Invalid prompt, please try again.\n")         
