@@ -13,11 +13,11 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v.1.4)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.5)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
-
+# v Delete this if you want to run the Python File in Windows (overwise, run the exe file that's included) v
 if platform.system() == "Linux":
     print("LINUX DETECTED")
     try:
@@ -62,7 +62,7 @@ except:
 os.chdir(original_directory)
 
 sleep(0.5)
-subprocess.call('cls', shell=True)
+subprocess.run('cls', shell=True)
         
 # Startup Proceeder
 print("Welcome!")
@@ -85,8 +85,8 @@ t.start()
 sleep(5)
 done = True
 
-subprocess.call('clear', shell=True)
-subprocess.call('cls', shell=True)
+subprocess.run('clear', shell=True)
+subprocess.run('cls', shell=True)
 
 # EULA AGREEMENT
 print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
@@ -170,7 +170,7 @@ while termsNotice:
         termsNotice = False
         os.chdir('re/others/re/um')
         try:
-            subprocess.call('noeula.vbs', shell=True)
+            subprocess.run('noeula.vbs', shell=True)
             print("EULA NOT ACCEPTED, terminating program...")
         except:
             print("EULA NOT ACCEPTED, terminating program...")
@@ -180,7 +180,7 @@ if Agreed:
     print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
     sleep(3)
     print('\033[93m')
-    subprocess.call('cls', shell=True)
+    subprocess.run('cls', shell=True)
     
     CCLresult = pyfiglet.figlet_format("Cmazey Command Line", font = "slant") 
 
@@ -201,6 +201,7 @@ while Prompt:
         print("- Py: command line using python")
         print("- Lessons: Temp Disabled\n")
         print("-- Additional Cmds --")
+        print("- figlet")
         print("- Directory (dir): Show the current directory")
         print("- Clear: Clear the terminal output")
         print("- Version: Fetch the current version")
@@ -216,19 +217,18 @@ while Prompt:
             try:
                 os.chdir("re/math")
                 try:
-                    subprocess.call('python startup.py', shell=False)
+                    subprocess.run('python startup.py', shell=False)
                 except:
-                    subprocess.call('python startup.py', shell=True)
-                os.chdir(original_directory)
+                    subprocess.run('python startup.py', shell=True)
                 print("\n")
-            except NotADirectoryError:
+            except FileNotFoundError:
                 print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
                 print("DIRECTORY: ", os.getcwd())
-                os.chdir(original_directory)
                 sleep(3)
             except:
                 print("\nAn unknown error has been occured, please report it to my discord server. Thanks!\n", sys.exc_info())
                 sleep(3)
+            os.chdir(original_directory)
         else:
             print("Prompt canceled...\n")
     # math (skipped prompt)
@@ -237,12 +237,12 @@ while Prompt:
             os.chdir("re/math")
             try:
                 subprocess.run('startup.exe', check=True, shell=False)
-            except subprocess.CalledProcessError:
+            except subprocess.runedProcessError:
                     try:
-                        subprocess.call('python startup.py', shell=False)
+                        subprocess.run('python startup.py', shell=False)
                     except:
-                        subprocess.call('python3 startup.py', shell=True)
-        except NotADirectoryError:
+                        subprocess.run('python3 startup.py', shell=True)
+        except FileNotFoundError:
                 print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
                 print("DIRECTORY: ", os.getcwd())
                 os.chdir(original_directory)
@@ -257,15 +257,16 @@ while Prompt:
         print()
         # Head to Release/Debug Directory
         try:
-            os.chdir('re/math/rere/bin/Release/net6.0/')
-        except NotADirectoryError:
+            os.chdir('re/math/rere/bin/Releas/net6.0/')
+        except FileNotFoundError:
             os.chdir(original_directory)
             try:
                 os.chdir('re/math/rere/bin/Debug/net6.0/')
-            except NotADirectoryError:
-                print("ERROR: Release/Debug builded not founded.\n")
+            except FileNotFoundError:
+                print("ERROR: Release/Debug builded not founded.\n", sys.exc_info())
         except:
             print("An unknown error has been occured, please report it to my discord sever.\n", sys.exc_info())
+            os.chdir(original_directory)
             sleep(2)
         
         # This will only work if you are using a Linux machine (distro/cloud shell/etc)
@@ -273,17 +274,17 @@ while Prompt:
             try:
                 os.chdir(original_directory)
                 os.chdir('re/math/rere')
-                subprocess.call('dotnet build', check=True, shell=True)
+                subprocess.run('dotnet build', check=True, shell=True)
                 os.chdir('bin/Debug/net6.0/Resources')
                 f = open("CCLIGNORESTARTUP.txt", "w")
                 f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
                 f.close()
                 os.chdir('../../../..')
-                subprocess.call('dotnet run', shell=True)
+                subprocess.run('dotnet run', shell=True)
                 os.chdir('bin/Debug/net6.0/Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
-            except subprocess.CalledProcessError as e:
+            except subprocess.runedProcessError as e:
                 # This would catch an exception if it couldn't compiled a new build
                 print(f"An error has been occured, you will need Microsoft DotNet 6.0, and 7.0 for it to work properly.\n")
                 sleep(3)
@@ -301,14 +302,16 @@ while Prompt:
                 f.close()
                 os.chdir('..')
                 # Running the executable file
-                try:
-                    subprocess.call('mathcmd', check=True, shell=True)
-                except subprocess.CalledProcessError:
-                    print("\nErr: Subprocess can't run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.")
+                subprocess.run('mathcd', check=True, shell=True)
                 os.chdir('Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
                 print("\n")
+            except subprocess.runedProcessError:
+                print("\nErr: Subprocess can't find/run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.\n")
+                os.chdir(original_directory)
+                sleep(3)
+                pass
             except:
                 continue
     # math debug
@@ -317,7 +320,7 @@ while Prompt:
         os.chdir('re/math/rere')
         try:
             subprocess.run('dotnet run', check=True, shell=True)
-        except subprocess.CalledProcessError as e:
+        except subprocess.runedProcessError as e:
             print("\nAn error has been occured, this occured because you don't have Microsoft DotNet 6.0, and 7.0 installed in your operating system.")
             sleep(2)
             pass
@@ -338,12 +341,12 @@ while Prompt:
             try:
                 os.chdir("re/node")
                 try:
-                    subprocess.call('python startup.py', check=True, shell=False)
-                except subprocess.CalledProcessError:
-                    subprocess.call('python3 startup.py', shell=True)
+                    subprocess.run('python startup.py', check=True, shell=False)
+                except subprocess.runedProcessError:
+                    subprocess.run('python3 startup.py', shell=True)
                 os.chdir(original_directory)
                 print("\n")
-            except NotADirectoryError:
+            except FileNotFoundError:
                 print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
                 print("DIRECTORY: ", os.getcwd())
                 os.chdir(original_directory)
@@ -358,12 +361,12 @@ while Prompt:
         try:
             os.chdir("re/node")
             try:
-                subprocess.call('python startup.py', shell=False)
+                subprocess.run('python startup.py', shell=False)
             except:
-                subprocess.call('python startup.py', shell=True)
+                subprocess.run('python startup.py', shell=True)
             os.chdir(original_directory)
             print("\n")
-        except NotADirectoryError:
+        except FileNotFoundError:
                 print("Err: This error occured because it couldn't find the directory. Please ensure that you are in the 'Cmd-REPL' directory.")
                 print("DIRECTORY: ", os.getcwd())
                 os.chdir(original_directory)
@@ -381,12 +384,12 @@ while Prompt:
         if promptInput == "y":
             os.chdir("re/py")
             try:
-                subprocess.call('startup.exe', shell=False)
+                subprocess.run('startup.exe', shell=False)
             except:
                 try:
-                    subprocess.call('python startup.py', shell=False)
+                    subprocess.run('python startup.py', shell=False)
                 except:
-                    subprocess.call('python3 startup.py', shell=True)
+                    subprocess.run('python3 startup.py', shell=True)
             os.chdir(original_directory)
             print("\n")
         else:
@@ -395,9 +398,13 @@ while Prompt:
     elif cclInput == "py -y":
         os.chdir("re/py")
         try:
-            subprocess.call('python startup.py', shell=False)
+            subprocess.run('python startup.py', check=True, shell=False)
+        except subprocess.CalledProcessError:
+            subprocess.run('python3 startup.py', shell=True)
         except:
-            subprocess.call('python3 startup.py', shell=True)
+            print("An error has been occured, please ensure that you are within the 'Cmd-REPL' directory. If it's past 'Cmd-REPL', then please let me know ASAP via Discord/GitHub")
+            print("DIRECTORY: " + os.getcwd())
+            sleep(3)
         os.chdir(original_directory)
         print("\n")
     # py directly
@@ -413,12 +420,15 @@ while Prompt:
         if promptInput == "y":
             os.chdir("re/others")
             try:
-                subprocess.call('python others.exe', shell=False)
-            except:
+                subprocess.run('python others.exe', check=True, shell=False)
+            except subprocess.CalledProcessError:
                 try:
-                    subprocess.call('python others.py', shell=False)
-                except:
-                    subprocess.call('python3 others.py', shell=True)
+                    subprocess.run('python others.py', check=True, shell=False)
+                except subprocess.CalledProcessError:
+                    try:
+                        subprocess.run('python3 others.py', check=True, shell=True)
+                    except subprocess.CalledProcessError:
+                        print("An error has been occured, please ensure that you are in the 'Cmd-REPL' directory. If it's past 'Cmd-REPL', then please report to me ASAP via Discord/GitHub.\nDirectory: " + os.getcwd() + "\n")
             os.chdir(original_directory)
             print("\n")
         else:
@@ -427,12 +437,12 @@ while Prompt:
     elif cclInput == "other -y" or cclInput == "others":
         os.chdir("re/others")
         try:
-            subprocess.call('others.exe', shell=False)
+            subprocess.run('others.exe', shell=False)
         except:
             try:
-                subprocess.call('python others.py', shell=False)
+                subprocess.run('python others.py', shell=False)
             except:
-                subprocess.call('python3 others.py', shell=True)
+                subprocess.run('python3 others.py', shell=True)
         os.chdir(original_directory)
         print("\n")
     # others directly
@@ -443,9 +453,9 @@ while Prompt:
         f.close()
         print("\n[REDIRECTED] : CCL ----> OTHERS")
         try:
-            subprocess.call('python others.py', shell=False)
+            subprocess.run('python others.py', shell=False)
         except:
-            subprocess.call('python3 others.py', shell=True)
+            subprocess.run('python3 others.py', shell=True)
         os.remove('CCLIGNORESTARTUP.txt')
         os.chdir(original_directory)
     # others flappybird
@@ -453,9 +463,9 @@ while Prompt:
         print("\n[REDIRECTED] : 'CCL' ---> 'Others : FlappyBird\n")
         os.chdir("re/others/re/FlappyBird")
         try:
-            subprocess.call('python fb.py', shell=False)
+            subprocess.run('python fb.py', shell=False)
         except:
-            subprocess.call('python fb.py', shell=True)
+            subprocess.run('python fb.py', shell=True)
         os.chdir(original_directory)
         print("\n")
     # others: Tetris
@@ -463,9 +473,9 @@ while Prompt:
         print("\n[REDIRECT] : 'CCL' ---> 'Others : Tetris'\n")
         os.chdir("re/others/re/Tetris")
         try:
-            subprocess.call('python Tetris.py', shell=False)
+            subprocess.run('python Tetris.py', shell=False)
         except:
-            subprocess.call('python3 Tetris.py', shell=True)
+            subprocess.run('python3 Tetris.py', shell=True)
         os.chdir(original_directory)
         print("\n")
     # others: PswdGenrtr
@@ -473,12 +483,12 @@ while Prompt:
         print("\n[REDIRECTED] 'CCL' ---> 'Others : PswdGenrtr'\n")
         os.chdir('re/others/re/PswdGenrtr')
         try:
-            subprocess.call("pass.exe", shell=False)
+            subprocess.run("pass.exe", shell=False)
         except:
             try:
-                subprocess.call('pass.py', shell=False)
+                subprocess.run('pass.py', shell=False)
             except:
-                subprocess.call('python3 pass.py', shell=True)
+                subprocess.run('python3 pass.py', shell=True)
         os.chdir(original_directory)
         print("\n")
     # others: PetRockAdventure
@@ -486,12 +496,12 @@ while Prompt:
         print("\n[REDIRECTED] 'CCL' ---> 'Others : PetRockAdventure'\n")
         os.chdir('re/others/re/PetRockAdventure')
         try:
-            subprocess.call("petRockA.exe", shell=False)
+            subprocess.run("petRockA.exe", shell=False)
         except:
             try:
-                subprocess.call('petRockA.py', shell=False)
+                subprocess.run('petRockA.py', shell=False)
             except:
-                subprocess.call('python3 petRockA.py', shell=True)
+                subprocess.run('python3 petRockA.py', shell=True)
         os.chdir(original_directory)
         print("\n")
     # others: GuessNum
@@ -500,7 +510,7 @@ while Prompt:
         os.chdir('re/others/re/GuessNum')
         if platform.system == "Linux":
             try:
-                subprocess.call('dotnet run', shell=True)
+                subprocess.run('dotnet run', shell=True)
             except:
                 print("An issue has been occured. You may need 'DotNet6.0'. Run 'sudo apt install dotnet-sdk-6.0', and 'sudo apt install dotnet-sdk-7.0' to install the necessary packages.\n")
                 sleep(3)
@@ -508,7 +518,7 @@ while Prompt:
         else:
             try:
                 os.chdir('bin/Release/net6.0')
-                subprocess.call('guessnum.exe', shell=False)
+                subprocess.run('guessnum.exe', shell=False)
             except:
                 print("Error")
         os.chdir(original_directory)
@@ -537,10 +547,15 @@ while Prompt:
         print("lessons module disabled...")
 
     # ---- Additional Commands ------
+    # Figlet
+    elif cclInput == "figlet":
+        usrOuput = input("Enter something -> ")
+        result = pyfiglet.figlet_format(usrOuput)
+        print("\n" + result + "\n")
     # clear
     elif cclInput == "clear":
-        subprocess.call('clear', shell=True)
-        subprocess.call('cls', shell=True)
+        subprocess.run('clear', shell=True)
+        subprocess.run('cls', shell=True)
     # version
     elif cclInput == "version":
         print(f"\nCCL Version: {version}\n")
@@ -560,7 +575,7 @@ while Prompt:
 
 # debug option
 if deBug:
-    subprocess.call('cls', shell=True)
+    subprocess.run('cls', shell=True)
 
     if not os.path.exists('./debugs'):
         os.mkdir('./debugs')
@@ -611,9 +626,9 @@ if deBug:
             
             os.chdir('re/node/rere')
             try:
-                subprocess.call('node ./nodecmd.js', shell=False)
+                subprocess.run('node ./nodecmd.js', shell=False)
             except:
-                subprocess.call('node ./nodecmd.js', shell=True)
+                subprocess.run('node ./nodecmd.js', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -655,9 +670,9 @@ if deBug:
                 sleep(0.5)
 
             try:
-                subprocess.call('python pycmd.py', shell=False)
+                subprocess.run('python pycmd.py', shell=False)
             except:
-                subprocess.call('python pycmd.py', shell=True)
+                subprocess.run('python pycmd.py', shell=True)
             f.close()
 
             os.chdir(original_directory)
@@ -678,9 +693,9 @@ if deBug:
 
             os.chdir('re/math/rere')
             try:
-                subprocess.call('dotnet run mathcmd.cs', shell=False)
+                subprocess.run('dotnet run mathcmd.cs', shell=False)
             except:
-                subprocess.call('dotnet run mathcmd.cs', shell=True)
+                subprocess.run('dotnet run mathcmd.cs', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -700,9 +715,9 @@ if deBug:
 
             os.chdir('re/others')
             try:
-                subprocess.call('python others.py', shell=False)
+                subprocess.run('python others.py', shell=False)
             except:
-                subprocess.call('python others.py', shell=True)
+                subprocess.run('python others.py', shell=True)
 
             os.chdir(original_directory)
             os.chdir('debugs')
@@ -727,7 +742,7 @@ if deBug:
 
 
                 os.chdir('re/lessons/re/cs')
-                subprocess.call('python csharp.py', shell=False)
+                subprocess.run('python csharp.py', shell=False)
 
                 os.chdir(original_directory)
                 os.chdir('debugs')
@@ -747,7 +762,7 @@ if deBug:
                 os.chdir(original_directory)
 
                 os.chdir('re/lessons/re/js')
-                subprocess.call('python javascript.py', shell=False)
+                subprocess.run('python javascript.py', shell=False)
 
                 os.chdir(original_directory)
                 os.chdir('debugs')
@@ -781,7 +796,7 @@ if deBug:
             dBugPrompt = False
 
         elif dBugg == "clear" or dBugg == "cls":
-            subprocess.call("cls", shell=True)
+            subprocess.run("cls", shell=True)
 
         elif dBugg == "del":
             print("Are you sure that you want to delete Pswd Results, and any Debug Directorys?")
@@ -821,7 +836,7 @@ if deBug:
 
 # debug option but with no logs
 if deBugNoLogs:
-    subprocess.call('cls', shell=True)
+    subprocess.run('cls', shell=True)
     sleep(1)
     print("CMAZEY COMMAND LINE: DEBUG PANEL (NO LOGS)\n")
 
@@ -842,9 +857,9 @@ if deBugNoLogs:
             if dBugg == "node":
                 os.chdir('re/node/rere')
                 try:
-                    subprocess.call('node ./nodecmd.js', shell=False)
+                    subprocess.run('node ./nodecmd.js', shell=False)
                 except:
-                    subprocess.call('node ./nodecmd.js', shell=True)
+                    subprocess.run('node ./nodecmd.js', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "help":
@@ -859,18 +874,18 @@ if deBugNoLogs:
             elif dBugg == "py":
                 os.chdir('re/py/rere')
                 try:
-                    subprocess.call('python pycmd.py', shell=False)
+                    subprocess.run('python pycmd.py', shell=False)
                 except:
-                    subprocess.call('python pycmd.py', shell=True)
+                    subprocess.run('python pycmd.py', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "math":
                 try:
                     os.chdir('re/math/rere')
                     try:
-                        subprocess.call('dotnet run', shell=False)
+                        subprocess.run('dotnet run', shell=False)
                     except:
-                        subprocess.call('dotnet run', shell=True)
+                        subprocess.run('dotnet run', shell=True)
                     os.chdir(original_directory)
                 except:
                     print("An error has occured while attempting to run the file.")
@@ -885,9 +900,9 @@ if deBugNoLogs:
 
                 os.chdir('re/others')
                 try:
-                    subprocess.call('python others.py', shell=False)
+                    subprocess.run('python others.py', shell=False)
                 except:
-                    subprocess.call('python others.py', shell=True)
+                    subprocess.run('python others.py', shell=True)
                 os.chdir(original_directory)
 
             elif dBugg == "lessons":
@@ -897,12 +912,12 @@ if deBugNoLogs:
 
                 if lessonsPrompt == "csharp":
                     os.chdir('re/lessons/re/cs')
-                    subprocess.call('python csharp.py', shell=False)
+                    subprocess.run('python csharp.py', shell=False)
                     os.chdir(original_directory)
     
                 elif lessonsPrompt == "javascript":   
                     os.chdir('re/lessons/re/js')
-                    subprocess.call('python javascript.py', shell=False)
+                    subprocess.run('python javascript.py', shell=False)
                     os.chdir(original_directory)   
 
                 else:
@@ -914,9 +929,9 @@ if deBugNoLogs:
             elif dBugg == "pymath":
                 os.chdir('re/pymath/re')
                 try:
-                    subprocess.call('python pymath.py', shell=False)
+                    subprocess.run('python pymath.py', shell=False)
                 except:
-                    subprocess.call('python pymath.py', shell=True)
+                    subprocess.run('python pymath.py', shell=True)
                 os.chdir(original_directory)
             
             elif dBugg == "exit":
@@ -930,7 +945,7 @@ if deBugNoLogs:
                     print("Prompt canceled\n")
 
             elif dBugg == "clear" or dBugg == "cls":
-                subprocess.call("cls", shell=True)
+                subprocess.run("cls", shell=True)
 
             else:
                 print("Invalid prompt, please try again.\n")
