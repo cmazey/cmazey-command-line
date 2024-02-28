@@ -13,7 +13,7 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v1.5)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.5.1)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -483,12 +483,17 @@ while Prompt:
         print("\n[REDIRECTED] 'CCL' ---> 'Others : PswdGenrtr'\n")
         os.chdir('re/others/re/PswdGenrtr')
         try:
-            subprocess.run("pass.exe", shell=False)
-        except:
+            subprocess.run("pass.exe", Pass=True, shell=False)
+        except subprocess.CalledProcessError:
             try:
-                subprocess.run('pass.py', shell=False)
-            except:
-                subprocess.run('python3 pass.py', shell=True)
+                subprocess.run('pass.py', Pass=True, shell=False)
+            except subprocess.CalledProcessError:
+                try:
+                    subprocess.run('python3 pass.py', shell=True)
+                except subprocess.CalledProcessError:
+                    print("An error has occured, while opening the file. Please check, and see if you are in 'Cmd-REPL', if you are past Cmd-REPL, please report the issue to me via GitHub or Discord.\nCUrrent Directory: " + os.getcwd() + "\n")
+        except:
+            print("An unknown error has occured. Please report the issue to me via Github or Discord.\n" + sys.exc_info())
         os.chdir(original_directory)
         print("\n")
     # others: PetRockAdventure
