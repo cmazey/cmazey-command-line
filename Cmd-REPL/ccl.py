@@ -98,7 +98,7 @@ os.chdir(original_directory)
 
 # math Debug directory
 try:
-    os.chdir('re/math/rere/bin/debug/.net6.0')
+    os.chdir('re/math/rere/bin/Debug/net6.0')
     if os.path.exists('mathcmd.exe'):
         print("[SYS::DEBUG] mathcmd.exe : DETECTED")
     else:
@@ -212,6 +212,7 @@ if errorDirectory:
     print("Press enter to continue application...")
     input()
 
+input()
 sleep(0.8)
 
 try:
