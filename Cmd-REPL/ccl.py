@@ -13,7 +13,9 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
-version = "v1.2.1 (PRE v1.5.2)" # Make sure to change version number before publishing changes!!!
+errorReport = False
+errorDirectory = False
+version = "v1.2.1 (PRE v1.7)" # Make sure to change version number before publishing changes!!!
 
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -28,7 +30,7 @@ else:
     try:
         os.chdir('Cmd-REPL')
     except:
-        print("Woah dude, you can't run this exe file here, run the other one lmao")
+        print("You can't run this file in windows, please run the included executable file that's outside the 'Cmd-REPL' directory.")
         input()
         sys.exit()
 
@@ -40,7 +42,7 @@ original_directory = os.getcwd()
 try:
     os.chdir('re/math/rere/bin/Debug/net6.0/Resources')
     os.remove('CCLIGNORESTARTUP.txt')
-    print("[../Debug/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED")
+    print('\033[93m' + "[../Debug/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED" + '\033[0m')
 except:
     print("[../Debug/net6.0/Resources] : Skipped")
 os.chdir(original_directory)
@@ -48,20 +50,171 @@ os.chdir(original_directory)
 try:
     os.chdir('re/math/rere/Release/net6.0/Resources')
     os.remove('CCLIGNORESTARTUP.txt')
-    print("[../Release/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED")
+    print('\033[93m' + "[../Release/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED" + '\033[0m')
 except:
-    print("[../Release/net6.0/Resources] : Skipped")
+    print("[../Release/net6.0/Resources] : SKIPPED")
 os.chdir(original_directory)
 # others session
 try:
     os.chdir('re/others')
     os.remove('CCLIGNORESTARTUP.txt')
-    print("[../re/others] : 'CCLIGNORESTARTUP.txt DELETED")
+    print('\033[93m' + "[../re/others] : 'CCLIGNORESTARTUP.txt DELETED" + '\033[0m')
 except:
-    print("[./re/others] : Skipped")
+    print("[../re/others] : SKIPPED")
 os.chdir(original_directory)
 
 sleep(0.5)
+
+# --- DETECTING MODULES ---
+
+# lessons
+try:
+    os.chdir('re/lessons')
+    if os.path.exists('lessons.py'):
+        print("[MODULE] LESSONS : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE] LESSONS : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/lessons)\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n" + sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# math 'mathcmd.cs'
+try:
+    os.chdir('re/math/rere')
+    if os.path.exists('mathcmd.cs'):
+        print("[MODULE] MATHCMD.CS : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE] MATHCMD.CS : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/math/rere)\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n" + sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# math Debug directory
+try:
+    os.chdir('re/math/rere/bin/debug/.net6.0')
+    if os.path.exists('mathcmd.exe'):
+        print("[SYS::DEBUG] mathcmd.exe : DETECTED")
+    else:
+        print('\033[93m' +"[SYS::DEBUG] mathcmd.exe : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS::DEBUG] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/math/rere/bin/Debug/net6.0) : SKIPPED" + '\033[0m')
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\33[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# math release directory
+try:
+    os.chdir('re/math/rere/bin/Release/net6.0')
+    if os.path.exists('mathcmd.exe'):
+        print("[SYS] mathcmd.exe : DETECTED")
+    else:
+        print('\033[93m' +"[SYS] mathcmd.exe : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/math/rere/bin/Release/net6.0)\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# node
+try:
+    os.chdir('re/node/rere')
+    if os.path.exists('nodecmd.js'):
+        print("[MODULE] NODECMD.JS : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE] NODECMD.JS : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/node/rere)\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# node startup file
+try:
+    os.chdir('re/node')
+    if os.path.exists('startup.py'):
+        print("[MODULE:NODE] STARTUP.py : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE:NODE] STARTUP.py : NOT DETECTED" + '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/node)", "\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# others
+try:
+    os.chdir('re/others')
+    if os.path.exists('others.py'):
+        print("[MODULE] OTHERS.py : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE] OTHERS.py : NOT DETECTED", '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/others)", "\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# py
+try:
+    os.chdir('re/py/rere')
+    if os.path.exists('pycmd.py'):
+        print("[MODULE] PYCMD.py : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE] PYCMD.py : NOT DETECTED", '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/py/rere)", "\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# py startup.py
+try:
+    os.chdir('re/py/')
+    if os.path.exists('startup.py'):
+        print("[MODULE:PY] STARTUP.py : DETECTED")
+    else:
+        print('\033[93m' + "[MODULE:PY] STARTUP.py : NOT DETECTED", '\033[0m')
+except FileNotFoundError:
+    print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/py)", "\n", sys.exc_info(), '\033[0m')
+    errorDirectory = True
+except:
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
+    errorReport = True
+os.chdir(original_directory)
+
+# True if it found unhandled errors (may happened if there are os class issues)
+if errorReport:
+    print("\nAn unknown error has been occured, please report the issue to me ASAP via GitHub/Discord. **APPLI HALT**")
+    input()
+    sys.exit()
+# True if an error has occured while changing directories (files)
+if errorDirectory:
+    print("\nAnalysis check detected that you are probably not in the 'Cmd-REPL' directory.")
+    print(os.getcwd())
+    print("Press enter to continue application...")
+    input()
+input()
+
+sleep(0.8)
 subprocess.run('cls', shell=True)
         
 # Startup Proceeder
@@ -284,7 +437,7 @@ while Prompt:
                 os.chdir('bin/Debug/net6.0/Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
-            except subprocess.runedProcessError as e:
+            except subprocess.CalledProcessError as e:
                 # This would catch an exception if it couldn't compiled a new build
                 print(f"An error has been occured, you will need Microsoft DotNet 6.0, and 7.0 for it to work properly.\n")
                 sleep(3)
@@ -302,12 +455,12 @@ while Prompt:
                 f.close()
                 os.chdir('..')
                 # Running the executable file
-                subprocess.run('mathcd', check=True, shell=True)
+                subprocess.run('mathcmd', check=True, shell=True)
                 os.chdir('Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
                 print("\n")
-            except subprocess.runedProcessError:
+            except subprocess.CalledProcessError:
                 print("\nErr: Subprocess can't find/run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.\n")
                 os.chdir(original_directory)
                 sleep(3)
@@ -320,8 +473,9 @@ while Prompt:
         os.chdir('re/math/rere')
         try:
             subprocess.run('dotnet run', check=True, shell=True)
-        except subprocess.runedProcessError as e:
+        except subprocess.CalledProcessError as e:
             print("\nAn error has been occured, this occured because you don't have Microsoft DotNet 6.0, and 7.0 installed in your operating system.")
+            print("This error can also be caused if it's already being runned in DeBug mode. (you cant run this more than one in debug mode)" + sys.exc_info())
             sleep(2)
             pass
         except:
@@ -557,6 +711,9 @@ while Prompt:
         print("lessons module disabled...")
 
     # ---- Additional Commands ------
+    # Status
+    elif cclInput == "status":
+        print("Coming soon..\n")
     # Figlet
     elif cclInput == "figlet":
         usrOuput = input("Enter something -> ")
