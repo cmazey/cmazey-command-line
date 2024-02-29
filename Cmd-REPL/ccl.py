@@ -13,9 +13,10 @@ termsNotice = False
 Prompt = False
 deBugNoLogs = False
 dBugPrompt = False
+Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.8)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.9)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -356,6 +357,11 @@ while Prompt:
         print("- Others: Additional Projects that I had worked on. (for fun)")
         print("- Py: command line using python")
         print("- Lessons: Temp Disabled\n")
+        print("-- Math Cmds --")
+        print("- +")
+        print("- -")
+        print("- /")
+        print("- x\\*\n")
         print("-- Additional Cmds --")
         print("- figlet")
         print("- Directory (dir): Show the current directory")
@@ -713,7 +719,85 @@ while Prompt:
     elif cclInput == "lessons -w -r -o" or cclInput == "lessons --s":
         print("lessons module disabled...")
 
+    # ----------------- COMMANDS --------------------------
+    # -- Math --
+    # addition
+    elif cclInput == "+":
+        add1 = input("[?] + ? = ? -> ")
+        while Chcker:
+            try:
+                int(add1)
+                break
+            except:
+                add1 = input("Invalid prompt, please try again::[?]+?=? -> ")
+        add2 = (input(f"{add1} + [?] = ? -> "))
+        while Chcker:
+            try:
+                int(add2)
+                break
+            except:
+                add2 = input(f"Invalid prompt, please try again::{add1}+[?]=? ->")
+        print(f"{add1} + {add2} = {int(add1)+int(add2)}\n")
+        print("Check out Cmazey Calculator for more math-related commands! Type 'math' to switch from CCL to Cmazey Calculator!\n")
+    # subtraction
+    elif cclInput == "-":
+        sub1 = input("[?] - ? = ? -> ")
+        while Chcker:
+            try:
+                int(sub1)
+                break
+            except:
+                sub1 = input("Invalid prompt, please try again::[?]-?=? -> ")
+        sub2 = (input(f"{add1} - [?] = ? -> "))
+        while Chcker:
+            try:
+                int(sub2)
+                break
+            except:
+                sub2 = input(f"Invalid prompt, please try again::{sub1}-[?]=? ->")
+        print(f"{sub1} - {sub1} = {int(add1)-int(sub2)}\n")
+        print("Check out Cmazey Calculator for more math-related commands! Type 'math' to switch from CCL to Cmazey Calculator!\n")
+    # multiplication
+    elif cclInput == "x" or cclInput == "*":
+        mult1 = input("[?] x ? = ? -> ")
+        while Chcker:
+            try:
+                int(mult1)
+                break
+            except:
+                mult1 = input("Invalid prompt, please try again::[?]x?=? -> ")
+        mult2 = (input(f"{mult1} x [?] = ? -> "))
+        while Chcker:
+            try:
+                int(mult2)
+                break
+            except:
+                mult2 = input(f"Invalid prompt, please try again::{mult1}x[?]=? ->")
+        print(f"{mult1} x {mult2} = {int(mult1)*int(mult2)}\n")
+        print("Check out Cmazey Calculator for more math-related commands! Type 'math' to switch from CCL to Cmazey Calculator!\n")
+    # division
+    elif cclInput == "/":
+        div1 = input("[?] / ? = ? -> ")
+        while Chcker:
+            try:
+                int(div1)
+                break
+            except:
+                div1 = input("Invalid prompt, please try again::[?]/?=? -> ")
+        div2 = (input(f"{div1} / [?] = ? -> "))
+        while Chcker:
+            try:
+                int(div2)
+                break
+            except:
+                div2 = input(f"Invalid prompt, please try again::{div1}/[?]=? ->")
+        print(f"{div1} / {div2} = {int(div1)/int(div2)}\n")
+        print("Check out Cmazey Calculator for more math-related commands! Type 'math' to switch from CCL to Cmazey Calculator!\n")
+    
     # ---- Additional Commands ------
+    # print
+    elif 'print' in cclInput:
+        print(f"\n{cclInput}\n".replace('print', ''))
     # Status
     elif cclInput == "status":
         print("Coming soon..\n")
@@ -736,6 +820,9 @@ while Prompt:
     elif "-h" in cclInput:
         print("\nThis subcommand is used for additional information about said command/module that you input in.\n")
         print("FORMAT: [Command/Module] -h\n")
+    # Invalid command but has '--s' in it--s
+    elif "--s" in cclInput:
+        print("\nWith great power comes great responsibility, and beyond!\n")
     # exit
     elif cclInput == "exit":
         print("Thanks for trying out Cmazey Command Line, see ya later!")
