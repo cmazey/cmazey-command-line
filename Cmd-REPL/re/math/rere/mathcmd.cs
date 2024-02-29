@@ -1,7 +1,7 @@
 using NAudio.Wave;
 using Spectre.Console;
 using System.Reflection;
-string version = "v1.1.5 (PRE v1.49.7)"; // VERSION
+string version = "v1.1.5 (PRE v1.49.8)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -1739,7 +1739,7 @@ while (cmazeyCalculator)
         Console.WriteLine("\n----------------------------------------------\n");
     }
     // Square Root
-    else if (input == "square" || input == "squareroot")
+    else if (input == "square" || input == "squareroot" || input == "square root")
     {
         titleAppend = "CMAZEY CALCULATOR: SQUARE ROOT [√]";
         Console.WriteLine("\n----------------------------------------------\n");
