@@ -15,8 +15,8 @@ deBugNoLogs = False
 dBugPrompt = False
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.7)" # Make sure to change version number before publishing changes!!!
-
+version = "v1.2.1 (PRE v1.8)" # Make sure to change version number before publishing changes!!!
+original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
 # v Delete this if you want to run the Python File in Windows (overwise, run the exe file that's included) v
@@ -27,14 +27,12 @@ if platform.system() == "Linux":
     except:
         pass
 else:
-    try:
-        os.chdir('Cmd-REPL')
-    except:
-        print("You can't run this file in windows, please run the included executable file that's outside the 'Cmd-REPL' directory.")
-        input()
-        sys.exit()
-
-original_directory = os.getcwd()
+        if os.path.exists('CCLSTARTUP.txt'):
+            print()
+        else:
+            print("You can't run this file in windows, please run the included executable file that's outside the 'Cmd-REPL' directory.")
+            input()
+            sys.exit()
 
 # ------- Delete **session files** if detected ------
 
@@ -212,11 +210,16 @@ if errorDirectory:
     print(os.getcwd())
     print("Press enter to continue application...")
     input()
-input()
 
 sleep(0.8)
+
+try:
+    os.remove('CCLSTARTUP.txt')
+except:
+    print()
+
 subprocess.run('cls', shell=True)
-        
+
 # Startup Proceeder
 print("Welcome!")
 sleep(0.1)
