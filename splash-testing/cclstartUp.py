@@ -22,7 +22,7 @@ root.withdraw()
 # SPLASH SCREEN CODE
 splash_screen = tk.Toplevel(background="gray")
 splash_screen.overrideredirect(True)
-splash_screen.title("Splash Screen")
+splash_screen.title("Cmazey Command LIne")
 x, y = centerWindow(1000, 444, root)
 splash_screen.geometry(f"1000x444+{x}+{y}")
  
