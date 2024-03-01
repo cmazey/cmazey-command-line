@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.9)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.10)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -33,7 +33,7 @@ else:
         else:
             print("You can't run this file in windows, please run the included executable file that's outside the 'Cmd-REPL' directory.")
             input()
-            sys.exit()
+            # sys.exit()
 
 # ------- Delete **session files** if detected ------
 
@@ -43,7 +43,7 @@ try:
     os.remove('CCLIGNORESTARTUP.txt')
     print('\033[93m' + "[../Debug/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED" + '\033[0m')
 except:
-    print("[../Debug/net6.0/Resources] : Skipped")
+    print("[../Debug/net6.0/Resources] : SKIPPED")
 os.chdir(original_directory)
 # mathcmd release
 try:
@@ -77,7 +77,7 @@ except FileNotFoundError:
     print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/lessons)\n", sys.exc_info(), '\033[0m')
     errorDirectory = True
 except:
-    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n" + sys.exc_info(), '\033[0m')
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
     errorReport = True
 os.chdir(original_directory)
 
@@ -92,7 +92,7 @@ except FileNotFoundError:
     print('\033[93m' + "[SYS] DIRECTORY NOT FOUNDED :: (../Cmd-REPL/re/math/rere)\n", sys.exc_info(), '\033[0m')
     errorDirectory = True
 except:
-    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n" + sys.exc_info(), '\033[0m')
+    print('\33[41m' + "[SYS] UNKNOWN ERROR, PLEASE REPORT VIA GITHUB/DISCORD\n", sys.exc_info(), '\033[0m')
     errorReport = True
 os.chdir(original_directory)
 
@@ -212,7 +212,6 @@ if errorDirectory:
     print("Press enter to continue application...")
     input()
 
-input()
 sleep(0.8)
 
 try:
@@ -485,11 +484,11 @@ while Prompt:
             subprocess.run('dotnet run', check=True, shell=True)
         except subprocess.CalledProcessError as e:
             print("\nAn error has been occured, this occured because you don't have Microsoft DotNet 6.0, and 7.0 installed in your operating system.")
-            print("This error can also be caused if it's already being runned in DeBug mode. (you cant run this more than one in debug mode)" + sys.exc_info())
+            print("This error can also be caused if it's already being runned in DeBug mode. (you cant run this more than one in debug mode)", sys.exc_info())
             sleep(2)
             pass
         except:
-            print("An unknown error has been occured... Please report it in my discord server, or open a GitHub Request.\n" + sys.exc_info())
+            print("An unknown error has been occured... Please report it in my discord server, or open a GitHub Request.\n", sys.exc_info())
             sleep(2)
             pass
         os.chdir(original_directory)
@@ -556,9 +555,9 @@ while Prompt:
                     try:
                         subprocess.run('python3 startup.py', check=True, shell=True)
                     except:
-                        print("An error has been occured, please check and see if you are in the Cmd-REPL directory. If issue keeps persist, then please let me know ASAP via Discord, or Github.\nCurrent Directory: " + os.getcwd() + "\n" + sys.exc_info())
+                        print("An error has been occured, please check and see if you are in the Cmd-REPL directory. If issue keeps persist, then please let me know ASAP via Discord, or Github.\nCurrent Directory: " + os.getcwd() + "\n", sys.exc_info())
             except:
-                print("\nAn unknown error has been occured, please report this to me ASAP via Discord, or Github.\n" + sys.exc_info())
+                print("\nAn unknown error has been occured, please report this to me ASAP via Discord, or Github.\n", sys.exc_info())
             os.chdir(original_directory)
             print("\n")
         else:
@@ -662,7 +661,7 @@ while Prompt:
                 except subprocess.CalledProcessError:
                     print("An error has occured, while opening the file. Please check, and see if you are in 'Cmd-REPL', if you are past Cmd-REPL, please report the issue to me via GitHub or Discord.\nCUrrent Directory: " + os.getcwd() + "\n")
         except:
-            print("An unknown error has occured. Please report the issue to me via Github or Discord.\n" + sys.exc_info())
+            print("An unknown error has occured. Please report the issue to me via Github or Discord.\n", sys.exc_info())
         os.chdir(original_directory)
         print("\n")
     # others: PetRockAdventure
