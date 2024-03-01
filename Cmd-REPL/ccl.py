@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.10)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.11)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -823,11 +823,18 @@ while Prompt:
     # Invalid command but has '--s' in it--s
     elif "--s" in cclInput:
         print("\nWith great power comes great responsibility, and beyond!\n")
+    # Nothing
+    elif cclInput == "":
+        pass  
     # exit
     elif cclInput == "exit":
         print("Thanks for trying out Cmazey Command Line, see ya later!")
         sleep(3)
         Prompt = False
+    # Invalid
+    else:
+        print("\nInvalid command/module prompt...\n")
+
 
 # --------OUTDATED --------
 # debug option
