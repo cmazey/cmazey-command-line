@@ -17,9 +17,16 @@
     <None Remove="Resources\notifySound.mp3" />
     <None Remove="Resources\numCheckNotify.mp3" />
     <None Remove="Resources\PlstryAgain.mp3" />
+    <None Remove="Resources\secStartuP.mp3" />
     <None Remove="Resources\select.mp3" />
     <None Remove="Resources\startUp.mp3" />
     <None Remove="Resources\umm.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\secStartuP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
