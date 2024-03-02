@@ -13,6 +13,10 @@ cd Cmd-REPL
 
 - **IMPORTANT**: INSTALL THE REQUIREMENT DEPENDENCY OR IT WONT WORK:: `python -m pip install -r requirements.txt`
 
+```
+python -m pip install -r requirements.txt`
+```
+
 After that, you will type in `python`, and then `ccl.py`. This will open the `ccl.py` file using Python. Python is already pre-installed, and it also includes Node.JS and C#, so there's no need to preinstall those.
 
 ```
