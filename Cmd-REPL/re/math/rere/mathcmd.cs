@@ -277,7 +277,7 @@ if (startUp)
         else if (autoNameInput == $"{dokd}{smcd}{ciako}{smcd}{cakoe}" || autoNameInput == $"h{smcd}le{cakoe} g" || autoNameInput == $"h{smcd}le{cakoe} ge{dkoq}{dkoq}i{fokcao}y")
         {
             Console.WriteLine($"NAME AUTOCORRECTED: {dokd}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
-            name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
+            name = $"[rgb(178,172,136)]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
             name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
             fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
             crew = true;
@@ -3545,7 +3545,7 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine($"\nNAME AUTOCORRECTED: {iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}");
                         Console.WriteLine("\\friend");
-                        name = $"[lightpink1]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
+                        name = $"[rgb(178,172,136)]{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}{smcd}{dkoq}{dkoq}{ckew}{fokcao}{lijwq}[/]";
                         name1 = $"{iciqa}{smcd}{ciako}{smcd}{cakoe} {ckiw}";
                         fname = $"{iciqa}{smcd}{ciako}{smcd}{cakoe}";
                         crew = true;
