@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.12)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -361,7 +361,7 @@ while Prompt:
         print("- +")
         print("- -")
         print("- /")
-        print("- x\\*\n")
+        print("- x \\ *\n")
         print("-- Additional Cmds --")
         print("- figlet")
         print("- Directory (dir): Show the current directory")
@@ -399,7 +399,7 @@ while Prompt:
             os.chdir("re/math")
             try:
                 subprocess.run('startup.exe', check=True, shell=False)
-            except subprocess.runedProcessError:
+            except subprocess.CalledProcessError:
                     try:
                         subprocess.run('python startup.py', shell=False)
                     except:
@@ -419,7 +419,7 @@ while Prompt:
         print()
         # Head to Release/Debug Directory
         try:
-            os.chdir('re/math/rere/bin/Releas/net6.0/')
+            os.chdir('re/math/rere/bin/Release/net6.0/')
         except FileNotFoundError:
             os.chdir(original_directory)
             try:
