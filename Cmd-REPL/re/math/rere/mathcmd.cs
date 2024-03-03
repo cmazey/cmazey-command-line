@@ -1,7 +1,7 @@
 using NAudio.Wave;
 using Spectre.Console;
 using System.Reflection;
-string version = "v1.1.5 (PRE v1.49.9)"; // VERSION
+string version = "v1.1.5 (PRE v1.49.9.1)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -87,12 +87,27 @@ string curntDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
 // string shellPath = Environment.GetEnvironmentVariable("HOME");
 
 // Disable the startup bool if txt file has been detected
-if (File.Exists($"{curntDir}\\Resources\\CCLIGNORESTARTUP.txt"))
-{
-    startUp = false;
-}
 if (File.Exists($"{curntDir}/Resources/CCLIGNORESTARTUP.txt"))
 {
+    audioAccess = false;
+    startUp = false;
+}
+
+if (File.Exists($"{curntDir}\\Resources\\CCLIGNORESTARTUP.txt"))
+{
+    try
+    {
+        var selectAns = new Mp3FileReader("Resources\\secStartup.mp3");
+        var waveOut = new WaveOutEvent();
+        waveOut.Init(selectAns);
+        waveOut.Play();
+        audioAccess = true;
+    }
+    catch
+    {
+        Console.WriteLine();
+        audioAccess = false;
+    }
     startUp = false;
 }
 

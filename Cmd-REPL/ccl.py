@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.11)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.12)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -33,7 +33,7 @@ else:
         else:
             print("You can't run this file in windows, please run the included executable file that's outside the 'Cmd-REPL' directory.")
             input()
-            # sys.exit()
+            sys.exit()
 
 # ------- Delete **session files** if detected ------
 
