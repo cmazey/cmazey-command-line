@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.13)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13.1)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -436,7 +436,10 @@ while Prompt:
             try:
                 os.chdir(original_directory)
                 os.chdir('re/math/rere')
-                subprocess.run('dotnet build', check=True, shell=True)
+                if os.path.exists('bin/Debug/net6.0/Resources'):
+                    pass
+                else:
+                    subprocess.run('dotnet build', check=True, shell=True)
                 os.chdir('bin/Debug/net6.0/Resources')
                 f = open("CCLIGNORESTARTUP.txt", "w")
                 f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
