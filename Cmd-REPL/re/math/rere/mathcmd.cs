@@ -14,7 +14,7 @@ string version = "v1.1.5 (PRE v1.49.9)"; // VERSION
 
 bool basic = false; // True if user give consent to use basic rather than normal.
 bool crew = false; // Only certain crew/cast members can have access to there.
-bool nameChange = false;
+bool nameChange = false; // SET TO ETUR IF USER NWTA OT CENAHG EAMN IN THE OPRGAMR. 
 bool audioAccess = true; // Only false if the start audio cannot be played.
 bool basicAns = true; // Used for while loops while checking if the answer is a number, and it will handle the exception if it's not.
 bool logAccess = false; // Only True if User give consents for logs and/or log file founded if the file was founded in Documents Folder
