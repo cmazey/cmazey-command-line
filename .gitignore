@@ -18,7 +18,7 @@ Result/
 
 # Session txt files
 CCLIGNORESTARTUP.txt*
-CLLSTARTUP.txt*
+/Cmd-REPL/CLLSTARTUP.txt*
 
 # Hide exe files
 Cmd-REPL/ccl.exe
