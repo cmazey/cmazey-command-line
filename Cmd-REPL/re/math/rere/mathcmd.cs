@@ -1,7 +1,7 @@
 using NAudio.Wave;
 using Spectre.Console;
 using System.Reflection;
-string version = "v1.2.0"; // VERSION
+string version = "v1.2.0 (PRE v0.1)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -4175,7 +4175,7 @@ while (cmazeyCalculator)
     // Exit
     else if (input == "exit")
     {
-        Console.WriteLine("Exiting...\n\n");
+        Console.WriteLine("Exiting...");
         cmazeyCalculator = false;
     }
     // Basic Mode
@@ -4902,7 +4902,7 @@ if (startUp)
     Console.Write("Press enter to exit program...");
     Console.ReadKey();
 }
-Console.WriteLine();
+    Console.WriteLine();
 
 // Sound Effects (via Pixabay)
 static void answSoundEffect(bool audioAccess)

@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.13.1)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13.3)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -242,8 +242,10 @@ t.start()
 sleep(5)
 done = True
 
-subprocess.run('clear', shell=True)
-subprocess.run('cls', shell=True)
+if platform.system() == "Windows":
+    subprocess.run('cls', shell=True)
+else:
+    subprocess.run('clear', shell=True)
 
 # EULA AGREEMENT
 print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
@@ -415,7 +417,7 @@ while Prompt:
         os.chdir(original_directory)
         os.chdir("\n")
     # math (without startup)
-    elif cclInput == "math -w -r -o" or cclInput == "math --s" or cclInput == "ccmath -w -r -o" or cclInput == "ccmath --s":
+    elif cclInput == "math -w -r -o" or cclInput == "math --s" or cclInput == "ccmath -w -r -o" or cclInput == "ccmath --s" or cclInput == "math --s -d":
         print()
         # Head to Release/Debug Directory
         try:
@@ -458,6 +460,18 @@ while Prompt:
                 print("An unknown error has been occured, please report it to my Discord Server.\n", sys.exc_info())
                 sleep(2)
                 pass
+        elif (" -d" in cclInput):
+            os.chdir(original_directory)
+            os.chdir('re/math/rere/bin/Debug/net6.0/Resources')
+            f = open("CCLIGNORESTARTUP.txt", "w")
+            f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
+            f.close()
+            os.chdir('..')
+            try:
+                subprocess.run('mathcmd', check=True, shell=True)
+            except subprocess.CalledProcessError:
+                print("\nnErr: Subprocess can't find/run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.\n")
+            os.chdir(original_directory)
         # (Windows) Create a '.txt' file, and writing it
         else:
             try:
@@ -471,7 +485,6 @@ while Prompt:
                 os.chdir('Resources')
                 os.remove('CCLIGNORESTARTUP.txt')
                 os.chdir(original_directory)
-                print("\n")
             except subprocess.CalledProcessError:
                 print("\nErr: Subprocess can't find/run 'mathcmd.exe'. Run 'math --dbug' to compile a new build.\n")
                 os.chdir(original_directory)
