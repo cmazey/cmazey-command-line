@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.13.3)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13.4)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -47,7 +47,7 @@ except:
 os.chdir(original_directory)
 # mathcmd release
 try:
-    os.chdir('re/math/rere/Release/net6.0/Resources')
+    os.chdir('re/math/rere/bin/Release/net6.0/Resources')
     os.remove('CCLIGNORESTARTUP.txt')
     print('\033[93m' + "[../Release/net6.0/Resources] : 'CCLIGNORESTARTUP.txt DELETED" + '\033[0m')
 except:
