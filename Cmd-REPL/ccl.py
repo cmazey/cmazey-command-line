@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.13.2)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13.3)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
