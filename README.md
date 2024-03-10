@@ -16,7 +16,7 @@
   [![Discord](https://img.shields.io/discord/1013992651676205128)](https://discord.gg/MP6DhTjzfj)
   [![CodeFactor](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/badge/main)](https://www.codefactor.io/repository/github/cmazey/cmazey-command-line/overview/main)
 
-**Cmazey Command Line** is a project that I started back in 2022 during my freshman year of high school. This project includes a lot of projects that I have worked on since high school. The `Node command line` is a custom command line with my own commands that I made while I was learning Javascript. The `py command line` is a custom command line that I made in early 2023 while I was learning Python. `Cmazey Calculator`, which is a terminal calculator that I made for fun at first, but it has turned into an AP project for my junior year. Cmazey Command Line also includes smaller projects that are stored in `others`, and it also comes with `lessons` that store the lessons that I had to do during my freshman and junior years. If you are interested in trying out Cmazey Command-Line, Then head to my release page, or you can fork the entire project using Google Cloud Shell.
+**Cmazey Command Line** is a custom command line interface that is made using Python, Node.js, and C# (C-Sharp). Head to my [about CCL page](https://about.coltondogportraits.com/CCL.html) to learn more about it!
 
 ## FEATURES
 > Coming soon
