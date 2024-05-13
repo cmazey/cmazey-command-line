@@ -247,105 +247,121 @@ if platform.system() == "Windows":
 else:
     subprocess.run('clear', shell=True)
 
-# EULA AGREEMENT
-print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
-print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
-termsNotice = True
-terms = input("-> ")
-while termsNotice:
-    if terms == "yes":
-        termsNotice = False
-        Agreed = True
-    elif terms == "terms":
-        print("End-User License Agreement (EULA)\n")
-        print("This End-User License Agreement ('EULA') is a legal agreement between you and Colton Dog")
-        print("Portraits.\n")
-        sleep(0.1)
-        print("This EULA agreement governs your acquisition and use of our Cmazey Command Line software")
-        print("('Software') directly from Colton Dog Portraits or indirectly through a Colton Dog Portraits authorized")
-        print("reseller or distributor (a 'Reseller'). Anything it says below, you don't have to follow.\n")
-        sleep(0.1)
-        print("Please read this EULA agreement carefully before completing the installation process and using the")
-        print("Cmazey Command Line software. It provides a license to use the Cmazey Command Line software")
-        print("and contains warranty information and liability disclaimers.\n")
-        sleep(0.1)
-        print("If you are entering into this EULA agreement on behalf of a company or other legal entity, you")
-        print("represent that you have the authority to bind such entity and its affiliates to these terms and")
-        print("conditions. If you do not have such authority or if you do not agree with the terms and conditions of")
-        print("this EULA agreement, do not install or use the Software, and you must not accept this EULA")
-        print("agreement.\n")
-        sleep(0.1)
-        print("This EULA agreement will not apply only to the Software supplied by Colton Dog Portraits herewith")
-        print("regardless of whether other software is referred to or described herein. The terms doesn't also apply")
-        print("to any Colton Dog Portraits updates, supplements, Internet-based services, and support services for the")
-        print("Software, unless other terms accompany those items on delivery. If so, those terms apply.\n")
-        sleep(0.1)
-        print('\033[1m' + "License Grant\n" + "\033[0m")
-        sleep(0.1)
-        print("Software, unless other terms accompany those items on delivery. If so, those terms apply.")
-        print("the Cmazey Command Line software on your devices in accordance with the terms of this EULA")
-        print("agreement.\n")
-        sleep(0.1)
-        print("You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or")
-        print("tablet) under your control. You are responsible for ensuring your device meets the minimum")
-        print("requirements of the Cmazey Command Line software.\n")
-        sleep(0.1)
-        print('\033[1m' + "You are totally not permitted to:\n" + '\033[0m')
-        sleep(0.1)
-        print("- use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement")
-        print("- Use the Software in any way which breaches any applicable local, national or international law\n")
-        sleep(0.1)
-        print('\033[1m' + "Intellectual Property and Ownership\n" + '\033[0m')
-        sleep(0.1)
-        print("Colton Dog Portraits doesn't retain ownership of the Software as originally downloaded by")
-        print("you and all subsequent downloads of the Software by you. The Software (and the copyright, and")
-        print("other intellectual property rights of whatever nature in the Software, including any modifications")
-        print("made thereto) are and shall remain the property by no one.\n")
-        sleep(0.1)
-        print('\033[1m' + "Termination\n" + '\033[0m')
-        sleep(0.1)
-        print("This EULA agreement is never effective/enforced from the date you first use the Software and shall continue until")
-        print("terminated. You may terminate it at any time upon written notice to Colton Dog somethings.\n")
-        sleep(0.1)
-        print("It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon")
-        print("such termination, the licenses granted by this EULA agreement won't immediately terminate and you")
-        print("don't have to agree to stop all access and use of the Software. The provisions that by their nature")
-        print("continue and survive will survive any termination of this EULA agreement.\n")
-        sleep(0.1)
-        print('\033[1m' + "Governing Law\n" + '\033[0m')
-        sleep(0.1)
-        print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
-        print("shall be governed by and construed in accordance with the laws of no one.\n")
-        sleep(1)
-        print("To agree to the terms, type in 'yes' with NO CAPS.")
-        terms = input("-> ")
-    elif terms == "dbug":
-        termsNotice = False
-        deBug = True
-    elif terms == "dbugnoloogs" or terms == "dbugn/l":
-        termsNotice = False
-        deBugNoLogs = True
-    else:
-        termsNotice = False
-        os.chdir('re/others/re/um')
-        try:
-            subprocess.run('noeula.vbs', shell=True)
-            print("EULA NOT ACCEPTED, terminating program...")
-        except:
-            print("EULA NOT ACCEPTED, terminating program...")
-            sleep(5)
+if os.path.exists("eula.txt"):
+    pass
+else:
+    # EULA AGREEMENT
+    print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
+    print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
+    termsNotice = True
+    terms = input("-> ")
+    while termsNotice:
+        if terms == "yes":
+            if os.path.exists("eula.txt"):
+                termsNotice = False
+                Agreed = True
+            else:
+                print("Please review the EULA before continuing...")
+                sleep(3)
+                if platform.system() == "Windows":
+                    subprocess.run('cls', shell=True)
+                else:
+                    subprocess.run('clear', shell=True)
+                print('\033[1m' + "EULA AGREEMENT\n" + '\033[0m')
+                print("Type in `terms` to see the EULA terms. To agree to the terms, and continue, type in `yes` with NO CAPS.")
+                terms = input("-> ")
+        elif terms == "terms":
+            print("End-User License Agreement (EULA)\n")
+            print("This End-User License Agreement ('EULA') is a legal agreement between you and Colton Dog")
+            print("Portraits.\n")
+            sleep(0.1)
+            print("This EULA agreement governs your acquisition and use of our Cmazey Command Line software")
+            print("('Software') directly from Colton Dog Portraits or indirectly through a Colton Dog Portraits authorized")
+            print("reseller or distributor (a 'Reseller'). Anything it says below, you don't have to follow.\n")
+            sleep(0.1)
+            print("Please read this EULA agreement carefully before completing the installation process and using the")
+            print("Cmazey Command Line software. It provides a license to use the Cmazey Command Line software")
+            print("and contains warranty information and liability disclaimers.\n")
+            sleep(0.1)
+            print("If you are entering into this EULA agreement on behalf of a company or other legal entity, you")
+            print("represent that you have the authority to bind such entity and its affiliates to these terms and")
+            print("conditions. If you do not have such authority or if you do not agree with the terms and conditions of")
+            print("this EULA agreement, do not install or use the Software, and you must not accept this EULA")
+            print("agreement.\n")
+            sleep(0.1)
+            print("This EULA agreement will not apply only to the Software supplied by Colton Dog Portraits herewith")
+            print("regardless of whether other software is referred to or described herein. The terms doesn't also apply")
+            print("to any Colton Dog Portraits updates, supplements, Internet-based services, and support services for the")
+            print("Software, unless other terms accompany those items on delivery. If so, those terms apply.\n")
+            sleep(0.1)
+            print('\033[1m' + "License Grant\n" + "\033[0m")
+            sleep(0.1)
+            print("Software, unless other terms accompany those items on delivery. If so, those terms apply.")
+            print("the Cmazey Command Line software on your devices in accordance with the terms of this EULA")
+            print("agreement.\n")
+            sleep(0.1)
+            print("You are permitted to load the Cmazey Command Line software (for example a PC, laptop, mobile or")
+            print("tablet) under your control. You are responsible for ensuring your device meets the minimum")
+            print("requirements of the Cmazey Command Line software.\n")
+            sleep(0.1)
+            print('\033[1m' + "You are totally not permitted to:\n" + '\033[0m')
+            sleep(0.1)
+            print("- use the Software for any purpose that Colton Dog Portraits considers is a breach of this EULA agreement")
+            print("- Use the Software in any way which breaches any applicable local, national or international law\n")
+            sleep(0.1)
+            print('\033[1m' + "Intellectual Property and Ownership\n" + '\033[0m')
+            sleep(0.1)
+            print("Colton Dog Portraits doesn't retain ownership of the Software as originally downloaded by")
+            print("you and all subsequent downloads of the Software by you. The Software (and the copyright, and")
+            print("other intellectual property rights of whatever nature in the Software, including any modifications")
+            print("made thereto) are and shall remain the property by no one.\n")
+            sleep(0.1)
+            print('\033[1m' + "Termination\n" + '\033[0m')
+            sleep(0.1)
+            print("This EULA agreement is never effective/enforced from the date you first use the Software and shall continue until")
+            print("terminated. You may terminate it at any time upon written notice to Colton Dog somethings.\n")
+            sleep(0.1)
+            print("It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon")
+            print("such termination, the licenses granted by this EULA agreement won't immediately terminate and you")
+            print("don't have to agree to stop all access and use of the Software. The provisions that by their nature")
+            print("continue and survive will survive any termination of this EULA agreement.\n")
+            sleep(0.1)
+            print('\033[1m' + "Governing Law\n" + '\033[0m')
+            sleep(0.1)
+            print("This EULA agreement, and any dispute arising out of or in connection with this EULA agreement,")
+            print("shall be governed by and construed in accordance with the laws of no one.\n")
+            sleep(1)
+            print("To agree to the terms, type in 'yes' with NO CAPS.")
+            f = open("eula.txt", "w")
+            f.write("eula = true")
+            f.close()
+            terms = input("-> ")
+        elif terms == "dbug":
+            termsNotice = False
+            deBug = True
+        elif terms == "dbugnoloogs" or terms == "dbugn/l":
+            termsNotice = False
+            deBugNoLogs = True
+        else:
+            termsNotice = False
+            os.chdir('re/others/re/um')
+            try:
+                subprocess.run('noeula.vbs', shell=True)
+                print("EULA NOT ACCEPTED, terminating program...")
+            except:
+                print("EULA NOT ACCEPTED, terminating program...")
+                sleep(5)
 
-if Agreed:
-    print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
-    sleep(3)
-    print('\033[93m')
-    subprocess.run('cls', shell=True)
+    if Agreed:
+        print('\033[92m' + "PERMISSION GRANTED" + '\033[0m' + ", please hold...")
+        sleep(3)
+        subprocess.run('cls', shell=True)
     
-    CCLresult = pyfiglet.figlet_format("Cmazey Command Line", font = "slant") 
-
-    print('\033[1m' + CCLresult + '\033[0m')
-    print("Type 'help' to show all available commands!\n")
-    Prompt = True
+CCLresult = pyfiglet.figlet_format("Cmazey Command Line", font = "slant") 
+print('\033[93m')
+print('\033[1m' + CCLresult + '\033[0m')
+print("Type 'help' to show all available commands!\n")
+Prompt = True
     
 # CCL (CMAZEY COMMAND LINE INTERFACE)
 while Prompt:
