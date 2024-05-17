@@ -857,7 +857,7 @@ while Prompt:
     # make folder
     elif 'mkf' in cclInput:
         if cclInput == "mkf":
-            print("Type whatever you want to create a folder/directory.")
+            print("Specify a name for your folder/directory after you typed in mkf.")
             print("Example: mkf test")
         else:
             crndir = os.getcwd()
