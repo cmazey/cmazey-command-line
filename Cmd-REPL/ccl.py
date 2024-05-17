@@ -16,7 +16,7 @@ dBugPrompt = False
 Chcker = True
 errorReport = False
 errorDirectory = False
-version = "v1.2.1 (PRE v1.13.4)" # Make sure to change version number before publishing changes!!!
+version = "v1.2.1 (PRE v1.13.5)" # Make sure to change version number before publishing changes!!!
 original_directory = os.getcwd()
 
 # This detects if you are on a window computer that's trying to run this directly (you can't, use the exe file provided LOOOL)
@@ -383,6 +383,8 @@ while Prompt:
         print("-- Additional Cmds --")
         print("- figlet")
         print("- Directory (dir): Show the current directory")
+        print("- cd: Changed to the specify directory/folder that you typed in")
+        print("- mkf: Make a folder/directory")
         print("- Clear: Clear the terminal output")
         print("- Version: Fetch the current version")
         print("- Exit\n")
@@ -395,7 +397,14 @@ while Prompt:
 
         if promptInput == "y":
             try:
-                os.chdir("re/math")
+                try:
+                    os.chdir("re/math")
+                except:
+                    os.chdir(original_directory)
+                    crntdir = os.getcwd()
+                    print(f"Changing Directory: {crntdir}")
+                    os.chdir("re/math")
+                    sleep(1)
                 try:
                     subprocess.run('python startup.py', shell=False)
                 except:
@@ -414,7 +423,14 @@ while Prompt:
     # math (skipped prompt)
     elif cclInput == "math -y" or cclInput == "ccmath -y":
         try:
-            os.chdir("re/math")
+            try:
+                os.chdir("re/math")
+            except:
+                os.chdir(original_directory)
+                crntdir = os.getcwd()
+                print(f"Changing Directory: {crntdir}")
+                sleep(1)
+                os.chdir("re/math")
             try:
                 subprocess.run('startup.exe', check=True, shell=False)
             except subprocess.CalledProcessError:
@@ -436,6 +452,7 @@ while Prompt:
     elif cclInput == "math -w -r -o" or cclInput == "math --s" or cclInput == "ccmath -w -r -o" or cclInput == "ccmath --s" or cclInput == "math --s -d":
         print()
         # Head to Release/Debug Directory
+        os.chdir(original_directory)
         try:
             os.chdir('re/math/rere/bin/Release/net6.0/')
         except FileNotFoundError:
@@ -443,7 +460,7 @@ while Prompt:
             try:
                 os.chdir('re/math/rere/bin/Debug/net6.0/')
             except FileNotFoundError:
-                print("ERROR: Release/Debug builded not founded.\n", sys.exc_info())
+                print("ERROR: Release/Debug build not founded.\n", sys.exc_info())
         except:
             print("An unknown error has been occured, please report it to my discord sever.\n", sys.exc_info())
             os.chdir(original_directory)
@@ -495,7 +512,7 @@ while Prompt:
                 f = open("CCLIGNORESTARTUP.txt", "w")
                 f.write("This file is used to bypass the startup proceeder in Cmazey Calculator (aka mathcmd.cs). This file will be deleted when session has ended...")
                 f.close()
-                os.chdir('..')
+                os.chdir('../')
                 # Running the executable file
                 subprocess.run('mathcmd', check=True, shell=True)
                 os.chdir('Resources')
@@ -511,7 +528,14 @@ while Prompt:
     # math debug
     elif cclInput == "math --dbug" or cclInput == "ccmath --dbug":
         print("\n")
-        os.chdir('re/math/rere')
+        try:
+            os.chdir('re/math/rere')
+        except:
+            os.chdir(original_directory)
+            crntdir = os.getcwd()
+            print(f"Changing Directory: {crntdir}")
+            sleep(1)
+            os.chdir('re/math/rere')
         try:
             subprocess.run('dotnet run', check=True, shell=True)
         except subprocess.CalledProcessError as e:
@@ -830,6 +854,36 @@ while Prompt:
     # print
     elif 'print' in cclInput:
         print(f"\n{cclInput}\n".replace('print', ''))
+    # make folder
+    elif 'mkf' in cclInput:
+        if cclInput == "mkf":
+            print("Type whatever you want to create a folder/directory.")
+            print("Example: mkf test")
+        else:
+            crndir = os.getcwd()
+            makefolder = f"{cclInput}".replace('mkf', '')
+            makefolder1 = makefolder.replace(" ", "")
+            try:
+                os.makedirs(makefolder1)
+                print(f"FOLDER CREATED IN: {crndir}\\{makefolder1}")
+            except:
+                print(f"Folder already existed: {crndir}\\{makefolder1}")
+    # change directory
+    elif 'cd' in cclInput:
+       if cclInput == "cd":
+           print("Specify a directory that you want to switch too after typing in cd")
+           print("Example: cd test; cd C:\\test; cd ..\n")
+       else:
+           newdir = f"{cclInput}".replace('cd', '')
+           newdir1 = newdir.replace(" ", "")
+           try:
+               os.chdir(newdir1)
+               dirchange = os.getcwd()
+               print(f"Sucessfully changed directory: {dirchange}")
+           except:
+               dirchange = os.getcwd()
+               print(f"Directory does not exist; current directory: {dirchange}")
+
     # Status
     elif cclInput == "status":
         print("Coming soon..\n")
