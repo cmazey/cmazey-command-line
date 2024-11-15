@@ -1,7 +1,8 @@
 using NAudio.Wave;
 using Spectre.Console;
+using System.ComponentModel;
 using System.Reflection;
-string version = "v1.2.0 (PRE v0.2)"; // VERSION
+string version = "v1.2.0 (PRE v0.2.1)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -128,12 +129,18 @@ if (File.Exists($"{path}\\CCLResult.txt"))
         Thread.Sleep(2000);
     }
 }
-
-if (File.Exists($"{shellPath}/CCLResult.txt"))
+try
 {
-   Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
-    logAccess = true;
-    Thread.Sleep(2000);
+    if (File.Exists($"{shellPath}/CCLResult.txt"))
+    {
+      Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
+        logAccess = true;
+        Thread.Sleep(2000);
+    }
+}
+catch
+{
+    Console.WriteLine();
 }
 
 // Look for 'CCAuToName.txt' in the Resources Folder
