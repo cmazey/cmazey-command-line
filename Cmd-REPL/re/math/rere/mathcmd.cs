@@ -1,7 +1,7 @@
 using NAudio.Wave;
 using Spectre.Console;
 using System.Reflection;
-string version = "v1.2.0 (PRE v0.1)"; // VERSION
+string version = "v1.2.0 (PRE v0.2)"; // VERSION
 
 // -------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ int millisecond = DateTime.Now.Millisecond; // Fetch the current millisecond
 
 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // Fetch the Document directory
 string curntDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-// string shellPath = Environment.GetEnvironmentVariable("HOME");
+string shellPath = Environment.GetEnvironmentVariable("HOME");
 
 // Disable the startup bool if txt file has been detected
 if (File.Exists($"{curntDir}/Resources/CCLIGNORESTARTUP.txt"))
@@ -129,14 +129,12 @@ if (File.Exists($"{path}\\CCLResult.txt"))
     }
 }
 
-// ------------------------------------------------------------------------
-// if (File.Exists($"{shellPath}/CCLResult.txt"))
-// {
-//     Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
-//     logAccess = true;
-//     Thread.Sleep(2000);
-// }
-// ------------------------------------------------------------------------
+if (File.Exists($"{shellPath}/CCLResult.txt"))
+{
+   Console.WriteLine($"SHELL RESULT LOCATED: '{path}/CCLResult.txt'");
+    logAccess = true;
+    Thread.Sleep(2000);
+}
 
 // Look for 'CCAuToName.txt' in the Resources Folder
 if (File.Exists($"{curntDir}\\Resources\\CCAuToName.txt"))
@@ -813,6 +811,7 @@ while (cmazeyCalculator)
         Console.WriteLine("- BinaryToHexadecimal (BToH)");
         Console.WriteLine("- DecimalToBinary (DToB)");
         Console.WriteLine("- Name");
+        Console.WriteLine("- log");
         if (crew)
         {
             Console.WriteLine("- Little Shop of Horrors (play)");
@@ -4341,7 +4340,7 @@ while (cmazeyCalculator)
         if (basic)
         {
             Console.WriteLine($"\nDocument Path: {path}");
-            // Console.WriteLine($"Shell Path: {shellPath}");
+            Console.WriteLine($"Shell Path: {shellPath}");
             Console.WriteLine($"Current Path: {curntDir}\n");
         }
         else
@@ -4823,10 +4822,14 @@ while (cmazeyCalculator)
                     {
                         Console.WriteLine("You can add a custom name. It will be showcased everytime you start an equation. Type in 'name' to get started.");
                     }
+                    else
+                    {
+                        Console.WriteLine("You can save your name without ever needing to type it in again. Type in 'name -help' for more information.");
+                    }
                 }
                 else if (elseChoice == 7)
                 {
-                    Console.WriteLine("You can type in numbers first. Then the equation sign like (+ - / *), and it will do the equation without any need to type in a prompt. Type in '[EQUATION] -h' for more information.");
+                    Console.WriteLine("You can type in numbers first. Then the equation sign like (+ - / *), and it will do the equation without any need to type in a prompt. Type in '[EQUATION] -help' for more information.");
                 }
                 break;
             }
